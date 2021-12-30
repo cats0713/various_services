@@ -59,25 +59,26 @@
   <div class='bigBox'>
     <h1>YOU GAME</h1>
     <div class="buttonBox">
-      <div id="rock" class="userButton userButton1">✊</div>
-      <div id="paper" class="userButton userButton2">🖐</div>
-      <div id="scissors" class="userButton userButton3">✌️</div>
+      <div id="userRock" class="userButton userButton1">✊</div>
+      <div id="userPaper" class="userButton userButton2">🖐</div>
+      <div id="userScissors" class="userButton userButton3">✌️</div>
     </div>
     <div id="comHand" class="comHand">🖥</div>
-    <div id="winOrLose" class="winOrLose">WHO WIN?</div>
+    <div id="winOrLose" class="winOrLose">WHO'S WIN?</div>
   </div>
 
   <script>
-    let rock = document.getElementById("rock");
-    let paper = document.getElementById("paper");
-    let scissors = document.getElementById("scissors");
+    let userRock = document.getElementById("userRock");
+    let userPaper = document.getElementById("userPaper");
+    let userScissors = document.getElementById("userScissors");
+
     let winOrLose = document.getElementById("winOrLose");
     let comHand = document.getElementById("comHand");
 
-    function comVsUser() {
+    function comVsUser() { // 컴퓨터 랜덤 함수를 가위바위보중 하나로 바꾸는 작업
       let comGame = Math.floor(Math.random() * 3);
       if (comGame == 0) {
-        comGame = "rock";
+        comGame = "rock"
       } else if (comGame == 1) {
         comGame = 'paper';
       } else {
@@ -86,7 +87,7 @@
       return comGame;
     }
 
-    function gameResult(gameR) {
+    function gameResult(gameR) { //게임 결과를 출력
       if (gameR == 0) {
         winOrLose.innerHTML = "YOU WIN👑";
       } else if (gameR == 1) {
@@ -95,8 +96,9 @@
         winOrLose.innerHTML = "YOU DRAW🤔";
       }
     }
+
     // button을 눌렀을때
-    rock.onclick = function () {
+    userRock.onclick = function () { 
       let = comGameResult = comVsUser();
       if (comGameResult == 'rock') {
         gameResult(3);
@@ -108,7 +110,7 @@
       comHand.innerHTML = `🖥 ${comGameResult}`;
     }
 
-    paper.onclick = function () {
+    userPaper.onclick = function () {
       let = comGameResult = comVsUser();
       if (comGameResult == 'rock') {
         gameResult(0);
@@ -120,7 +122,7 @@
       comHand.innerHTML = `🖥 ${comGameResult}`;
     }
 
-    scissors.onclick = function () {
+    userScissors.onclick = function () {
       let = comGameResult = comVsUser();
       if (comGameResult == 'rock') {
         gameResult(1);
