@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;  
+    }
+
+    .ms_second {
+      font-family: 'Gaegu', cursive;
+      position: absolute;
+      width: 546px;
+      height: 402px;
+      top: 50%;
+      left: 50%;
+      margin-top: -190px;
+      margin-left: -273px;
+    }
+
+    .msTitle {
+      font-size: 30px;
+      text-align: center;
+      line-height: 30px;
+      text-shadow: 0.2rem 0.2rem 0.2rem lightgray;
+      
+    }
+
+    .userInputBox1,
+    .userInputBox2 {
+      position: relative;
+      width: 500px;
+      height: 150px;
+      border-radius: 40px;
+      border: 3px solid #7da453;
+      margin: 20px;
+      box-shadow: 0.2rem 0.2rem 0.3rem lightgray;
+    }
+
+    .userMsNumber {
+      width: 160px;
+      height: 30px;
+      position: absolute;
+      top: 60px;
+      left: 20px;
+      float: left;
+    }
+
+    .inputMs {
+      position: absolute;
+      top: 70px;
+      left: 190px;
+    }
+
+    .checkBtn {
+      position: absolute;
+      top: 50px;
+      left: 230px;
+      float: left;
+      width: 50px;
+      height: 50px;
+      font-size: 20px;
+      text-align: center;
+      line-height: 55px;
+      background-color: #aed581;
+      border-radius: 50%;
+      color: white;
+    }
+
+    .checkBtn:hover {
+      background-color: #e1ffb1;
+      cursor: pointer;
+    }
+    .xBox{
+      position: absolute;
+      top: 7px;
+      left: 15px;
+      font-size: 30px;
+      color: #aed581;
+    }
+    .xBox:hover{
+      color: #e1ffb1;
+      cursor: pointer;
+    }
+
+    .resultBox {
+      overflow: auto;
+      white-space: nowrap;
+      color: black;
+      width: 180px;
+      height: 50px;
+      font-size: 20px;
+      position: absolute;
+      top: 70px;
+      right: 30px;
+      text-align: right;
+    }
+
+    .userInputBox2 > input {
+      width: 30px;
+      height: 30px;
+      position: absolute;
+    }
+
+    .userInput2 {
+      position: absolute;
+    }
+
+    .userDay {
+      top: 60px;
+      left: 10px;
+    }
+
+    .inputDay {
+      top: 70px;
+      left: 50px;
+    }
+
+    .userHours {
+      top: 60px;
+      left: 65px;
+    }
+
+    .inputHours {
+      top: 70px;
+      left: 105px;
+    }
+
+    .userMin {
+      top: 60px;
+      left: 120px;
+    }
+
+    .inputMin {
+      top: 70px;
+      left: 155px;
+    }
+
+    .userSecond {
+      top: 60px;
+      left: 170px;
+    }
+
+    .inputSecond {
+      top: 70px;
+      left: 205px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="ms_second">
+    <h1 class="msTitle">ms 계산기</h1>
+    <div class="userInputBox1">
+      <input type="number" name="userMsNumber" id="userMsNumber1" class="userMsNumber" min="0">
+      <p class="inputMs">ms</p>
+      <div id="checkBtn1" class="checkBtn">확인</div>
+      <div id="xBox1" class="xBox">x</div>
+      <div id="resultBox1" class="resultBox">0</div>
+    </div>
+
+    <div class="userInputBox2">
+      <input type="number" name="userDay" id="userDay" class="userDay" min="0">
+      <p class="userInput2 inputDay">일</p>
+      <input type="number" name="userHours" id="userHours" class="userHours" min="0">
+      <p class="userInput2 inputHours">시</p>
+      <input type="number" name="userMin" id="userMin" class="userMin" min="0">
+      <p class="userInput2 inputMin">분</p>
+      <input type="number" name="userSecond" id="userSecond" class="userSecond" min="0">
+      <p class="userInput2 inputSecond">초</p>
+      <div id="checkBtn2" class="checkBtn">확인</div>
+      <div id="xBox2" class="xBox">x</div>
+      <div id="resultBox2" class="resultBox">0</div>
+    </div>
+  </div>
+
+
+  <script>
+    let userMsNumber1 = document.getElementById("userMsNumber1");
+    let checkBtn1 = document.getElementById("checkBtn1");
+    let resultBox1 = document.getElementById("resultBox1");
+    let xBox1 = document.getElementById("xBox1");
+
+    let userDay = document.getElementById("userDay");
+    let userHours = document.getElementById("userHours");
+    let userMin = document.getElementById("userMin");
+    let userSecond = document.getElementById("userSecond");
+    let checkBtn2 = document.getElementById("checkBtn2");
+    let resultBox2 = document.getElementById("resultBox2");
+    let xBox2 = document.getElementById("xBox2");
+
+    checkBtn1.onclick = function () {
+      let msTrans = 0;
+      let resultSecond = 0;
+      let resultMin = 0;
+      let resultHours = 0;
+      let resultDay = 0;
+
+      msTrans = userMsNumber1.value / 1000;
+      //console.log(userMsNumber.value);
+
+      resultHours = Math.floor(msTrans / 3600);
+      resultMin = Math.floor((msTrans % 3600) / 60);
+      resultSecond = Math.floor(msTrans % 3600) % 60;
+      resultDay = Math.floor(resultHours / 24);
+      resultHours = Math.floor(resultHours % 24);
+
+      if (resultDay > 0) {
+        resultBox1.innerHTML = `${resultDay}일 ${resultHours}시간 ${resultMin}분 ${resultSecond}초`;
+      } else if (resultHours > 0) {
+        resultBox1.innerHTML = `${resultHours}시간 ${resultMin}분 ${resultSecond}초`;
+      } else if (resultMin > 0) {
+        resultBox1.innerHTML = `${resultMin}분 ${resultSecond}초`;
+      } else {
+        resultBox1.innerHTML = `${resultSecond}초`;
+      }
+
+    }
+
+    checkBtn2.onclick = function () {
+      let secondTrans = 0;
+      let resultSecond = 0;
+      let resultMin = 0;
+      let resultHours = 0;
+      let resultDay = 0;
+
+
+      resultDay = userDay.value * 86400000;
+      resultHours = userHours.value * 3600000;
+      resultMin = userMin.value * 6000;
+      resultSecond = userSecond.value * 1000;
+
+      secondTrans = resultSecond + resultMin + resultHours + resultDay;
+      /*console.log(`${resultSecond}ms`);
+      console.log(`${resultMin}ms`);
+      console.log(`${resultHours}ms`);
+      console.log(`${resultDay}ms`);*/
+
+      resultBox2.innerHTML = `${secondTrans}ms`;
+
+    }
+
+    xBox1.onclick = function () {
+      userMsNumber1.value = null;
+      resultBox1.innerHTML = 0;
+    }
+
+    xBox2.onclick = function () {
+      userDay.value = null;
+      userHours.value = null;
+      userMin.value = null;
+      userSecond.value = null;
+      resultBox2.innerHTML = 0;
+    }
+  </script>
+</body>
+
+</html>
