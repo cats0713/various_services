@@ -10,144 +10,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="./matrix_calculator.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 
   <style>
     /* style*/
     @import url("./matrix_calculator.css");
 
-
-
-    /*@charset "utf-8";*/
-
-    * {
-      margin: 0;
-      padding: 0;
-      background-color: #59667a;
-    }
-
-    body {
-      font-family: 'Nanum Gothic', sans-serif;
-    }
-
-    [class *='Btn'] {
-      width: 3rem;
-      height: 3rem;
-      text-align: center;
-      line-height: 3rem;
-      border-radius: 50%;
-      box-shadow: 0.1rem 0.1rem 0.8rem #3e454f;
-      background-color: #E9EAEC;
-      color: #ee8315;
-
-    }
-
-    [class *='Btn']:hover {
-      transition: all 0.2s linear;
-      background-color: #d6d6d6;
-      cursor: pointer;
-    }
-
-    fieldset {
-      border: none;
-    }
-
-    .addBtn {
-      font-size: 3rem;
-      position: absolute;
-      top: 80%;
-      left: 25%;
-    }
-
-    .miusBtn {
-      font-size: 3.5rem;
-      position: absolute;
-      top: 80%;
-      left: 40%;
-    }
-
-    .mulBtn {
-      font-size: 3rem;
-      position: absolute;
-      top: 80%;
-      left: 55%;
-    }
-
-    .resultBtn {
-      font-size: 3rem;
-      position: absolute;
-      top: 80%;
-      left: 70%;
-    }
-
-    /*  Btn   */
-
-    .matirxArr {
-      width: 18.7rem;
-      display: inline-block;
-      position: absolute;
-      top: 10%;
-      left: 10%;
-    }
-
-
-
-    legend {
-      text-align: center;
-      color: #E9EAEC;
-
-    }
-
-    [class *='inputArr'] {
-      text-align: center;
-      line-height: 3rem;
-      width: 4rem;
-      height: 3rem;
-      border: none;
-      border-radius: 0.7rem;
-      box-shadow: 0.1rem 0.1rem 0.8rem #3e454f;
-      background-color: #E9EAEC;
-
-    }
-
-    .inputArrBtn {
-      font-weight: bold;
-      margin-top: 1rem;
-      display: inline-block;
-      width: 3rem;
-      height: 3rem;
-      margin-left: 1rem;
-    }
-
-
-    .inputArrAX {
-      margin-left: 2rem;
-    }
-
-    .inputArrAY {
-      margin-left: 1rem;
-    }
-
-    .arrAXY {
-      margin-top: 1rem;
-      margin-left: 1.5rem;
-
-    }
-
-    .arrA {
-      width: 3rem;
-      height: 2.5rem;
-      border-radius: 0.7rem;
-      box-shadow: 0.1rem 0.1rem 0.8rem #3e454f;
-      background-color: #E9EAEC;
-      margin: 0.5rem;
-      border: none;
-    }
-
-    p {
-      display: inline-block;
-      color: #E9EAEC;
-      margin-left: 1rem;
-    }
   </style>
 </head>
 
@@ -159,27 +27,73 @@
         <input id="inputArrAX" class="inputArrAX" type="number" min="1" max="10">
         <p>X</p>
         <input id="inputArrAY" class="inputArrAY" type="number" min="1" max="10">
-        <div id="inputArrBtn" class="inputArrBtn">확인</div>
+        <div id="inputArrBtn" class="inputArrABtn">확인</div>
       
         <div class="arrAXY">
           <input id="arrA1" class="arrA" type="number"></input>
           <input id="arrA2" class="arrA" type="number"></input><br>
           <input id="arrA3" class="arrA" type="number"></input>
+          <input id="arrA4" class="arrA" type="number"></input><br>
+          <input id="arrA3" class="arrA" type="number"></input>
           <input id="arrA4" class="arrA" type="number"></input>
+          <input id="arrA4" class="arrA" type="number"></input><br>
+          <input id="arrA3" class="arrA" type="number"></input>
+          <input id="arrA4" class="arrA" type="number"></input><br>
+          <input id="arrA3" class="arrA" type="number"></input>
+          <input id="arrA4" class="arrA" type="number"></input><br>
+          <input id="arrA3" class="arrA" type="number"></input>
+          <input id="arrA4" class="arrA" type="number"></input><br>
+          <input id="arrA3" class="arrA" type="number"></input>
+          <input id="arrA4" class="arrA" type="number"></input><br>
+          <input id="arrA3" class="arrA" type="number"></input>
+          <input id="arrA4" class="arrA" type="number"></input><br>
+          <input id="arrA3" class="arrA" type="number"></input>
         </div>
       </fieldset>
     </form>
+  </div>
 
+  <div id="arrABox" class="arrBBox">
+    <form class="matirxArr" action="matirxArr">
+      <fieldset>
+        <legend>행렬 A</legend>
+        <input id="inputArrAX" class="inputArrAX" type="number" min="1" max="10">
+        <p>X</p>
+        <input id="inputArrAY" class="inputArrAY" type="number" min="1" max="10">
+        <div id="inputArrBtn" class="inputArrABtn">확인</div>
+      
+        <div class="arrAXY">
+          <input id="arrA1" class="arrA" type="number"></input>
+          <input id="arrA2" class="arrA" type="number"></input><br>
+          <input id="arrA3" class="arrA" type="number"></input>
+          <input id="arrA4" class="arrA" type="number"></input><br>
+          <input id="arrA3" class="arrA" type="number"></input>
+          <input id="arrA4" class="arrA" type="number"></input>
+          <input id="arrA4" class="arrA" type="number"></input><br>
+          <input id="arrA3" class="arrA" type="number"></input>
+          <input id="arrA4" class="arrA" type="number"></input><br>
+          <input id="arrA3" class="arrA" type="number"></input>
+          <input id="arrA4" class="arrA" type="number"></input><br>
+          <input id="arrA3" class="arrA" type="number"></input>
+          <input id="arrA4" class="arrA" type="number"></input><br>
+          <input id="arrA3" class="arrA" type="number"></input>
+          <input id="arrA4" class="arrA" type="number"></input><br>
+          <input id="arrA3" class="arrA" type="number"></input>
+          <input id="arrA4" class="arrA" type="number"></input><br>
+          <input id="arrA3" class="arrA" type="number"></input>
+        </div>
+      </fieldset>
+    </form>
   </div>
 
 
 
 
   <div class="btnBox">
-    <div id="addBtn" class="addBtn">+</div>
-    <div id="miusBtn" class="miusBtn">-</div>
-    <div id="mulBtn" class="mulBtn">*</div>
-    <div id="resultBtn" class="resultBtn">=</div>
+    <i id="addBtn" class="addBtn xi-plus"></i>
+    <i id="miusBtn" class="miusBtn xi-minus"></i>
+    <i id="mulBtn" class="mulBtn xi-close"></i>
+    <i id="resultBtn" class="resultBtn xi-drag-handle"></i>
   </div>
 
 
