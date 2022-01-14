@@ -1,0 +1,132 @@
+$backgrundColor: #59667a;
+$btnColor: #E9EAEC;
+$btnHoverColor: #d6d6d6;
+$btnShadowColor: dee3eb;
+$inputColor: #E9EAEC;
+$inputShadowColor: #3e454f;
+$textColor: #ee8315;
+
+* {
+  margin: 0;
+  padding: 0;
+  background-color: $backgrundColor;
+}
+
+body {
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+.arrABox{
+
+  .arrAInputBox{
+    width: 18.75rem;
+    height: 3rem;
+    background-color: $btnColor;
+  
+    [class *= 'input']{
+      width: 3.2rem;
+      height: 3rem;
+      background-color: $btnColor;
+      border: none;
+      border-radius: 1rem;
+      text-align: center;
+      box-shadow: 0.1rem 0.1rem 0.8rem $btnShadowColor;
+      -webkit-border-radius: 1rem;
+      -moz-border-radius: 1rem;
+      -ms-border-radius: 1rem;
+      -o-border-radius: 1rem;
+    }
+    [class *= 'input']:hover{
+      transition: all 0.1s linear;
+      background-color: $btnShadowColor;
+      cursor: pointer;
+      -webkit-transition: all 0.1s linear;
+      -moz-transition: all 0.1s linear;
+      -ms-transition: all 0.1s linear;
+      -o-transition: all 0.1s linear;
+}
+    .inputArrAX{
+      }
+
+    p{
+      display: inline-block;
+        color: $btnColor;
+        margin-left: 1rem;
+    }
+
+    .inputArrAY{
+    }
+    .inputArrABtn{
+      width: 3rem;
+      height: 3rem;
+      display: inline-block;
+      font-weight: bold;
+      color: $textColor;
+    }
+  }
+}
+
+.arrA{
+  width: 2.3rem;
+  height: 1.8rem;
+  border: none;
+  border-radius: 0.7rem;
+  box-shadow: 0.1rem 0.1rem 0.8rem $btnShadowColor;
+  background-color: $btnColor;
+  margin: 0.5rem;
+  text-align: center;
+  -webkit-border-radius: 0.7rem;
+  -moz-border-radius: 0.7rem;
+  -ms-border-radius: 0.7rem;
+  -o-border-radius: 0.7rem;
+}
+
+.btnBox{
+  .addBtn {
+    font-size: 2rem;
+    position: fixed;
+    top: 80%;
+    left: 25%;
+  }
+
+  .miusBtn {
+    font-size: 2rem;
+    position: fixed;
+    top: 80%;
+    left: 40%;
+  }
+
+  .mulBtn {
+    font-size: 2rem;
+    position: fixed;
+    top: 80%;
+    left: 55%;
+  }
+
+  .resultBtn {
+    font-size: 2rem;
+    position: fixed;
+    top: 80%;
+    left: 70%;
+  }
+
+  [class *='Btn']{
+    width: 3rem;
+    height: 3rem;
+    background-color: $btnColor;
+    color: $textColor;
+    text-align: center;
+    line-height: 3rem;
+    border-radius: 50%;
+    box-shadow: 0.1rem 0.1rem 0.8rem $btnShadowColor;
+  }
+  [class *='Btn']:hover {
+    transition: all 0.1s linear;
+    background-color: $btnHoverColor;
+    cursor: pointer;
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    -ms-transition: all 0.1s linear;
+    -o-transition: all 0.1s linear;
+  }
+}

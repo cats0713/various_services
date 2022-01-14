@@ -1,140 +1,121 @@
-@charset "utf-8";
+* {
+  margin: 0;
+  padding: 0;
+  background-color: #59667a;
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      background-color: #59667a;
-    }
+body {
+  font-family: 'Nanum Gothic', sans-serif;
+}
 
-    body {
-      font-family: 'Nanum Gothic', sans-serif;
-    }
+.arrABox .arrAInputBox {
+  width: 18.75rem;
+  height: 3rem;
+  background-color: #E9EAEC;
+}
 
-    [class *='Btn'] {
-      width: 3rem;
-      height: 3rem;
-      text-align: center;
-      line-height: 3rem;
-      border-radius: 50%;
-      box-shadow: 0.1rem 0.1rem 0.8rem #3e454f;
-      background-color: #E9EAEC;
-      color: #ee8315;
+.arrABox .arrAInputBox [class*='input'] {
+  width: 3.2rem;
+  height: 3rem;
+  background-color: #E9EAEC;
+  border: none;
+  border-radius: 1rem;
+  text-align: center;
+  -webkit-box-shadow: 0.1rem 0.1rem 0.8rem dee3eb;
+          box-shadow: 0.1rem 0.1rem 0.8rem dee3eb;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
 
-    }
+.arrABox .arrAInputBox [class*='input']:hover {
+  transition: all 0.1s linear;
+  background-color: dee3eb;
+  cursor: pointer;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  -ms-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+}
 
-    [class *='Btn']:hover {
-      transition: all 0.1s linear;
-      background-color: #d6d6d6;
-      cursor: pointer;
-    }
+.arrABox .arrAInputBox p {
+  display: inline-block;
+  color: #E9EAEC;
+  margin-left: 1rem;
+}
 
-    fieldset {
-      border: none;
-    }
+.arrABox .arrAInputBox .inputArrABtn {
+  width: 3rem;
+  height: 3rem;
+  display: inline-block;
+  font-weight: bold;
+  color: #ee8315;
+}
 
-    .addBtn {
-      font-size: 2rem;
-      position: fixed;
-      top: 80%;
-      left: 25%;
-    }
+.arrA {
+  width: 2.3rem;
+  height: 1.8rem;
+  border: none;
+  border-radius: 0.7rem;
+  -webkit-box-shadow: 0.1rem 0.1rem 0.8rem dee3eb;
+          box-shadow: 0.1rem 0.1rem 0.8rem dee3eb;
+  background-color: #E9EAEC;
+  margin: 0.5rem;
+  text-align: center;
+  -webkit-border-radius: 0.7rem;
+  -moz-border-radius: 0.7rem;
+  -ms-border-radius: 0.7rem;
+  -o-border-radius: 0.7rem;
+}
 
-    .miusBtn {
-      font-size: 2rem;
-      position: fixed;
-      top: 80%;
-      left: 40%;
-    }
+.btnBox .addBtn {
+  font-size: 2rem;
+  position: fixed;
+  top: 80%;
+  left: 25%;
+}
 
-    .mulBtn {
-      font-size: 2rem;
-      position: fixed;
-      top: 80%;
-      left: 55%;
-    }
+.btnBox .miusBtn {
+  font-size: 2rem;
+  position: fixed;
+  top: 80%;
+  left: 40%;
+}
 
-    .resultBtn {
-      font-size: 2rem;
-      position: fixed;
-      top: 80%;
-      left: 70%;
-    }
+.btnBox .mulBtn {
+  font-size: 2rem;
+  position: fixed;
+  top: 80%;
+  left: 55%;
+}
 
-    /*  Btn   */
-    .arrBBox{
+.btnBox .resultBtn {
+  font-size: 2rem;
+  position: fixed;
+  top: 80%;
+  left: 70%;
+}
 
-      position: absolute;
-      top: 10%;
-      left: 30%;
+.btnBox [class*='Btn'] {
+  width: 3rem;
+  height: 3rem;
+  background-color: #E9EAEC;
+  color: #ee8315;
+  text-align: center;
+  line-height: 3rem;
+  border-radius: 50%;
+  -webkit-box-shadow: 0.1rem 0.1rem 0.8rem dee3eb;
+          box-shadow: 0.1rem 0.1rem 0.8rem dee3eb;
+}
 
-    }
-    .matirxArr {
-      width: 18.7rem;
-      display: inline-block;
-      position: absolute;
-      top: 10%;
-      left: 10%;
-    }
-
-
-
-    legend {
-      text-align: center;
-      color: #E9EAEC;
-
-    }
-
-    [class *='inputArr'] {
-      text-align: center;
-      line-height: 2.7rem;
-      width: 3.6rem;
-      height: 2.7rem;
-      border: none;
-      border-radius: 0.7rem;
-      box-shadow: 0.1rem 0.1rem 0.8rem #3e454f;
-      background-color: #E9EAEC;
-
-    }
-
-    .inputArrABtn {
-      font-weight: bold;
-      margin-top: 1rem;
-      display: inline-block;
-      width: 2.5rem;
-      height: 2.7rem;
-      margin-left: 1rem;
-    }
-
-
-    .inputArrAX {
-      margin-left: 2rem;
-    }
-
-    .inputArrAY {
-      margin-left: 1rem;
-    }
-
-    .arrAXY {
-      display: none;
-      margin-top: 1rem;
-      margin-left: 1.5rem;
-
-    }
-    .arrABox{
-
-    }
-    .arrA {
-      width: 2.3rem;
-      height: 1.8rem;
-      border-radius: 0.7rem;
-      box-shadow: 0.1rem 0.1rem 0.8rem #3e454f;
-      background-color: #E9EAEC;
-      margin: 0.5rem;
-      border: none;
-    }
-
-    p {
-      display: inline-block;
-      color: #E9EAEC;
-      margin-left: 1rem;
-    }
+.btnBox [class*='Btn']:hover {
+  transition: all 0.1s linear;
+  background-color: #d6d6d6;
+  cursor: pointer;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  -ms-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+}
+/*# sourceMappingURL=matrix_calculator.css.map */

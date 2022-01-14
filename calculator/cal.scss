@@ -36,10 +36,13 @@ html, body{
   }
 
   .printLCD{
+    font-family: 'Orbitron', sans-serif;
     width: 24rem;
     height: 5rem;
     font-size: 2rem;
     position: absolute;
+    border-width: 0;
+    outline: none;
     top: 5rem;
     left: 5rem;
     text-align: right;
@@ -51,6 +54,9 @@ html, body{
     -moz-border-radius: 1rem;
     -ms-border-radius: 1rem;
     -o-border-radius: 1rem;
+  }
+  .printLCD::placeholder{
+    color: black;
   }
   
   .keyPad{

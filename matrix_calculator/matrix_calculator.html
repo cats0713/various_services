@@ -15,21 +15,21 @@
   <style>
     /* style*/
     @import url("./matrix_calculator.css");
-
   </style>
 </head>
 
 <body>
   <div id="arrABox" class="arrABox">
+    <div id="arrAInputBox" class="arrAInputBox">
+      <input id="inputArrAX" class="inputArrAX" type="number" min="1" max="10">
+      <p>X</p>
+      <input id="inputArrAY" class="inputArrAY" type="number" min="1" max="10">
+      <div id="inputArrABtn" class="inputArrABtn">확인</div>
+    </div>
+    
     <form class="matirxArr" action="matirxArr">
       <fieldset>
-        <legend>행렬 A</legend>
-        <input id="inputArrAX" class="inputArrAX" type="number" min="1" max="10">
-        <p>X</p>
-        <input id="inputArrAY" class="inputArrAY" type="number" min="1" max="10">
-        <div id="inputArrABtn" class="inputArrABtn">확인</div>
-      
-        <div id="arrAXY" class="arrAXY">
+        <legend>A</legend>
           <input id="arrA1" class="arrA" type="number"></input>
           <input id="arrA2" class="arrA" type="number"></input>
           <input id="arrA3" class="arrA" type="number"></input><br>
@@ -39,13 +39,11 @@
           <input id="arrA7" class="arrA" type="number"></input>
           <input id="arrA8" class="arrA" type="number"></input>
           <input id="arrA9" class="arrA" type="number"></input>
-          
-        </div>
       </fieldset>
     </form>
   </div>
 
-  
+
 
 
 
@@ -62,3 +60,4 @@
 </body>
 
 </html>
+
