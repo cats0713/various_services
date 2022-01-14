@@ -1,121 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
 * {
   margin: 0;
   padding: 0;
-  background-color: #59667a;
+  font-size: 10px;
 }
 
-body {
-  font-family: 'Nanum Gothic', sans-serif;
+html, body {
+  font-family: 'Orbitron', sans-serif;
+  background-color: #263142;
 }
 
-.arrABox .arrAInputBox {
-  width: 18.75rem;
-  height: 3rem;
-  background-color: #E9EAEC;
-}
-
-.arrABox .arrAInputBox [class*='input'] {
-  width: 3.2rem;
-  height: 3rem;
-  background-color: #E9EAEC;
-  border: none;
-  border-radius: 1rem;
+.btnBox {
+  background-color: #f0f0f3;
+  -webkit-box-shadow: -0.1rem -0.1rem 1rem black, 0.3rem 0.3rem 0.5rem black;
+          box-shadow: -0.1rem -0.1rem 1rem black, 0.3rem 0.3rem 0.5rem black;
+  width: 35rem;
+  height: 7rem;
+  border-radius: 2rem;
+  position: fixed;
+  top: 80%;
+  left: 50%;
+  margin-left: -15rem;
   text-align: center;
-  -webkit-box-shadow: 0.1rem 0.1rem 0.8rem dee3eb;
-          box-shadow: 0.1rem 0.1rem 0.8rem dee3eb;
-  -webkit-border-radius: 1rem;
-  -moz-border-radius: 1rem;
-  -ms-border-radius: 1rem;
-  -o-border-radius: 1rem;
 }
 
-.arrABox .arrAInputBox [class*='input']:hover {
-  transition: all 0.1s linear;
-  background-color: dee3eb;
-  cursor: pointer;
-  -webkit-transition: all 0.1s linear;
-  -moz-transition: all 0.1s linear;
-  -ms-transition: all 0.1s linear;
-  -o-transition: all 0.1s linear;
-}
-
-.arrABox .arrAInputBox p {
-  display: inline-block;
-  color: #E9EAEC;
-  margin-left: 1rem;
-}
-
-.arrABox .arrAInputBox .inputArrABtn {
-  width: 3rem;
-  height: 3rem;
-  display: inline-block;
-  font-weight: bold;
-  color: #ee8315;
-}
-
-.arrA {
-  width: 2.3rem;
-  height: 1.8rem;
-  border: none;
-  border-radius: 0.7rem;
-  -webkit-box-shadow: 0.1rem 0.1rem 0.8rem dee3eb;
-          box-shadow: 0.1rem 0.1rem 0.8rem dee3eb;
-  background-color: #E9EAEC;
-  margin: 0.5rem;
+.btnBox [class*="Btn"] {
+  background-color: #f0f0f3;
+  -webkit-box-shadow: -0.1rem -0.1rem 0.5rem #fff, 0.3rem 0.3rem 0.5rem #aeaec0;
+          box-shadow: -0.1rem -0.1rem 0.5rem #fff, 0.3rem 0.3rem 0.5rem #aeaec0;
+  color: #E89123;
+  width: 5rem;
+  height: 5rem;
+  margin: 1rem;
+  line-height: 5rem;
   text-align: center;
-  -webkit-border-radius: 0.7rem;
-  -moz-border-radius: 0.7rem;
-  -ms-border-radius: 0.7rem;
-  -o-border-radius: 0.7rem;
-}
-
-.btnBox .addBtn {
   font-size: 2rem;
-  position: fixed;
-  top: 80%;
-  left: 25%;
-}
-
-.btnBox .miusBtn {
-  font-size: 2rem;
-  position: fixed;
-  top: 80%;
-  left: 40%;
-}
-
-.btnBox .mulBtn {
-  font-size: 2rem;
-  position: fixed;
-  top: 80%;
-  left: 55%;
-}
-
-.btnBox .resultBtn {
-  font-size: 2rem;
-  position: fixed;
-  top: 80%;
-  left: 70%;
-}
-
-.btnBox [class*='Btn'] {
-  width: 3rem;
-  height: 3rem;
-  background-color: #E9EAEC;
-  color: #ee8315;
-  text-align: center;
-  line-height: 3rem;
   border-radius: 50%;
-  -webkit-box-shadow: 0.1rem 0.1rem 0.8rem dee3eb;
-          box-shadow: 0.1rem 0.1rem 0.8rem dee3eb;
 }
 
-.btnBox [class*='Btn']:hover {
-  transition: all 0.1s linear;
-  background-color: #d6d6d6;
+.btnBox [class*="Btn"]:hover {
+  -webkit-box-shadow: inset 0.3rem 0.3rem 0.3rem #aeaec0, 0.3rem 0.3rem 0.3rem #fff;
+          box-shadow: inset 0.3rem 0.3rem 0.3rem #aeaec0, 0.3rem 0.3rem 0.3rem #fff;
   cursor: pointer;
-  -webkit-transition: all 0.1s linear;
-  -moz-transition: all 0.1s linear;
-  -ms-transition: all 0.1s linear;
-  -o-transition: all 0.1s linear;
+}
+
+.arrAInputBox {
+  background-color: #f0f0f3;
+  -webkit-box-shadow: -0.1rem -0.1rem 1rem black, 0.3rem 0.3rem 0.5rem black;
+          box-shadow: -0.1rem -0.1rem 1rem black, 0.3rem 0.3rem 0.5rem black;
+  text-align: center;
+  width: 25rem;
+  height: 6rem;
+  border-radius: 1rem;
+}
+
+.arrAInputBox [class*='input'] {
+  background-color: #f0f0f3;
+  -webkit-box-shadow: -0.1rem -0.1rem 0.5rem #fff, 0.3rem 0.3rem 0.5rem #aeaec0;
+          box-shadow: -0.1rem -0.1rem 0.5rem #fff, 0.3rem 0.3rem 0.5rem #aeaec0;
+  float: left;
+  display: inline-block;
+  width: 4rem;
+  height: 3rem;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  margin: 1.5rem;
+  outline: none;
+  border: none;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.arrAInputBox .inputArrABtn:hover {
+  -webkit-box-shadow: inset 0.3rem 0.3rem 0.3rem #aeaec0, 0.3rem 0.3rem 0.3rem #fff;
+          box-shadow: inset 0.3rem 0.3rem 0.3rem #aeaec0, 0.3rem 0.3rem 0.3rem #fff;
+  cursor: pointer;
+}
+
+.arrAInputBox p {
+  display: inline-block;
+  float: left;
+  width: 1rem;
+  height: 1rem;
+  margin: 0.5rem;
+  margin-top: 2.5rem;
+  cursor: default;
+}
+
+.arrAInputBox div {
+  text-align: center;
 }
 /*# sourceMappingURL=matrix_calculator.css.map */
