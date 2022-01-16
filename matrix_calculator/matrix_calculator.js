@@ -10,6 +10,6 @@ inputArrABtn.onclick = function(){
   //console.log(arrX , arrY);
   //console.log("in ABtn");
 
-  arrAXY.style.display = 'block';
+
 
 }

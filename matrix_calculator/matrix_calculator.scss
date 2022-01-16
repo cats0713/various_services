@@ -28,7 +28,8 @@ html, body{
   background-color: #263142;
 }
 
-.btnBox{ //버튼 박스
+//버튼 css
+.btnBox{
   @include boxShadow();
   width: 35rem;
   height: 7rem;
@@ -56,47 +57,89 @@ html, body{
   }
 }
 
+// 행렬 css
+.arrABox{
+  width: 35rem;
+  text-align: center;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+}
 
 .arrAInputBox{
   @include boxShadow();
   text-align: center;
-  width: 25rem;
-  height: 6rem;
+  width: 35rem;
+  height: 8rem;
   border-radius: 1rem;
 
   
   [class *= 'input']{
     @include itemShadow();
-    float: left;
     display: inline-block;
-    width: 4rem;
-    height: 3rem; 
-    border-radius: 1rem;
+    width: 6rem;
+    height: 4rem; 
     font-size: 1.5rem;
     margin: 1.5rem;
+    border-radius: 1rem;
     outline: none;
     border: none;
     font-family: 'Orbitron', sans-serif;
+    text-align: center;
   }
   .inputArrABtn:hover{
     @include itemClickShadow();
+    color: #aeaec0;
+
   }
   p{
     display: inline-block;
-    float: left; 
     width: 1rem;
     height: 1rem;
     margin: 0.5rem;
     margin-top: 2.5rem;
     cursor: default;
+    font-size: 1.5rem;
   }
   div{
     text-align: center;
+    line-height: 4rem;
     
   }
 }
 
+.matirxArr{
+  @include boxShadow();
+  text-align: center;
+  width: 35rem;
+  border-radius: 1rem;
+  margin-top: 2rem;
+  fieldset{
+    border: none;
+    width: 35rem;
+  }
+  .arrA{
+    @include itemShadow();
+    display: inline-block;
+    width: 4rem;
+    height: 3rem; 
+    font-size: 1rem;
+    margin: 1rem;
+    border-radius: 1rem;
+    outline: none;
+    border: none;
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
 
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {//input:number 화살표 없애기 크롬,사파리 등등
+  -webkit-appearance: none;}
+  input[type=number] { //input:number 화살표 없애기 파이어폭스
+    -moz-appearance: textfield;}
+
+  
+}
 
 
 
