@@ -1,15 +1,7 @@
-let inputArrABtn = document.getElementById("inputArrABtn");
-let arrAXY = document.getElementById("arrAXY");
-let inputArrAX = document.getElementById("inputArrAX");
-let inputArrAY = document.getElementById("inputArrAY"); 
+/* matrtix_calculator  by ahyeon*/
 
-
-inputArrABtn.onclick = function(){
-  let arrX = inputArrAX.value;
-  let arrY = inputArrAY.value;
-  //console.log(arrX , arrY);
-  //console.log("in ABtn");
-
-
+function ArrInputBox(arrWidth, arrHeight){
+  this.width = arrWidth;
+  this.height = arrHeight;
 
 }
