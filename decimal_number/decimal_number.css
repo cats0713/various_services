@@ -1,1 +1,96 @@
-/* No CSS *//*# sourceMappingURL=decimal_number.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+}
+
+html, body {
+  font-family: 'Orbitron', sans-serif;
+  background-color: #a72f1d;
+}
+
+.userBox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -20rem;
+  margin-left: -15rem;
+  width: 30rem;
+  height: 40rem;
+  background-color: #e07464;
+  color: white;
+  display: inline-block;
+  -webkit-box-shadow: 1.8rem 1.8rem 1.8rem #751102;
+          box-shadow: 1.8rem 1.8rem 1.8rem #751102;
+  border-radius: 2rem;
+}
+
+.userBox .userInputBox {
+  width: 26rem;
+  height: 5rem;
+  margin: 2rem;
+  border-radius: 2rem;
+  -webkit-box-shadow: inset 0.3rem 0.3rem 0.3rem #c55241, inset -0.3rem -0.3rem 0.3rem #f59e91;
+          box-shadow: inset 0.3rem 0.3rem 0.3rem #c55241, inset -0.3rem -0.3rem 0.3rem #f59e91;
+}
+
+.userBox .userInputBox div {
+  width: 3rem;
+  height: 5rem;
+  float: left;
+  text-align: center;
+  line-height: 5rem;
+}
+
+.userBox .userInputBox .userInput {
+  display: inline-block;
+  float: left;
+  width: 19rem;
+  height: 5rem;
+  border: none;
+  outline: none;
+  text-align: center;
+  color: white;
+  background-color: rgba(255, 255, 255, 0);
+  border-bottom-left-radius: 1.8rem;
+  border-top-left-radius: 1.8rem;
+}
+
+.userBox .userInputBox .checkBtn {
+  border-bottom-right-radius: 1.8rem;
+  border-top-right-radius: 1.8rem;
+}
+
+.userBox .userInputBox .checkBtn:hover {
+  color: #a72f1d;
+  cursor: pointer;
+}
+
+.userBox .userInputBox .cancelBtn:hover {
+  color: #a72f1d;
+  cursor: pointer;
+}
+
+.userBox .resultBox {
+  position: relative;
+  margin-top: 4rem;
+}
+
+.userBox .resultBox .binaryBox, .userBox .resultBox .octalBox, .userBox .resultBox .decimalyBox, .userBox .resultBox .hexadecimalBox {
+  width: 26rem;
+  height: 4rem;
+  margin-left: 2rem;
+  margin-bottom: 3rem;
+  border-radius: 1.5rem;
+  text-align: center;
+  line-height: 4rem;
+  -webkit-box-shadow: inset 0.3rem 0.3rem 0.3rem #c55241, inset -0.3rem -0.3rem 0.3rem #f59e91;
+          box-shadow: inset 0.3rem 0.3rem 0.3rem #c55241, inset -0.3rem -0.3rem 0.3rem #f59e91;
+}
+
+.userBox .resultBox .tagBinary {
+  position: absolute;
+  top: 0;
+}
+/*# sourceMappingURL=decimal_number.css.map */
