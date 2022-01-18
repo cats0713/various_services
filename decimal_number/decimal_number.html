@@ -11,19 +11,26 @@
 </head>
 
 <body>
+  <div class="instructionBox">10 -> 정수<br>
+    0b01000001 -> 2진수<br>
+    0o101 -> 8진수<br>
+    0x41 -> 16진수</div>
   <div class="userBox">
     <div class="userInputBox">
-      <input type="number" id="userInput" class="userInput" value="0">
+      <input type="text" id="userInput" class="userInput" placeholder="0">
       <div id="cancelBtn" class="cancelBtn">x</div>
       <div id="checkBtn" class="checkBtn">확인</div>
     </div>
     <div class="resultBox">
-      <div id="binaryBox" class="binaryBox">0</div>
-      <div id="octalBox" class="octalBox">0</div>
-      <div id="decimalyBox" class="decimalyBox">0</div>
-      <div id="hexadecimalBox" class="hexadecimalBox">0</div>
-      <p class="tagBinary">2진</p>
+      <input id="binaryBox" class="binaryBox" value="0" readonly>
+      <input id="octalBox" class="octalBox" value="0" readonly>
+      <input id="decimalyBox" class="decimalyBox" value="0" readonly>
+      <input id="hexadecimalBox" class="hexadecimalBox" value="0" readonly>
     </div>
+    <p class="tagBinary">2진</p>
+    <p class="tagOcta">8진</p>
+    <p class="tagDecimaly">10진</p>
+    <p class="tagHexadecimal">16진</p>
 </div>
 
 
