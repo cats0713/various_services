@@ -20,9 +20,6 @@ checkBtn.addEventListener("click", function(){
       binaryNumArr.unshift(Math.floor(numberCal % 2));
       numberCal = Math.floor(numberCal / 2);
 
-      console.log(binaryNumArr);
-      console.log(numberCal); 
-    
       if( numberCal == 1 ){
         binaryNumArr.unshift(numberCal);
         break;
@@ -39,9 +36,77 @@ checkBtn.addEventListener("click", function(){
     return binaryNum;
   }
 
+  function octalFunc(decimalNum){
+    let octalNumArr = [];
+    let octalNum = '';
+    let numberCal = decimalNum;
+    let i = 0;
+
+    while(true){
+      octalNumArr.unshift(Math.floor(numberCal % 8));
+      numberCal = Math.floor(numberCal / 8);
+
+      console.log(octalNumArr);
+      console.log(numberCal);
+
+      if( numberCal > 8 ){
+        octalNumArr.unshift(numberCal);
+        break;
+      }else if( numberCal == 0){
+        break;
+      }
+    }
+
+    while(i < octalNumArr.length){
+      octalNum +=  octalNumArr[i]
+      i++;
+    }
+
+    return octalNum;
+  } 
+  
+  function hexadecimalFunc(decimalNum){
+    let hexadecimalNumArr = [];
+    let hexadecimalNum = '';
+    let numberCal = decimalNum;
+    let i = 0;
+
+    while(true){
+      hexadecimalNumArr.unshift(Math.floor(numberCal % 16));
+      numberCal = Math.floor(numberCal / 16);
+    
+      if( numberCal >= 16 ){
+        hexadecimalNumArr.unshift(numberCal);
+        break;
+      }else if( numberCal == 0){
+        break;
+      }
+    }
+
+    while(i < hexadecimalNumArr.length){
+      switch (hexadecimalNumArr[i]){
+        case 10 : hexadecimalNumArr[i] = 'A'; break;
+        case 11 : hexadecimalNumArr[i] = 'B'; break; 
+        case 12 : hexadecimalNumArr[i] = 'C'; break; 
+        case 13 : hexadecimalNumArr[i] = 'D'; break;
+        case 14 : hexadecimalNumArr[i] = 'E'; break;
+        case 15 : hexadecimalNumArr[i] = 'F'; break;
+      }
+      i++;
+    }
+    i = 0;
+    while(i < hexadecimalNumArr.length){
+      
+      hexadecimalNum +=  hexadecimalNumArr[i];
+    i++;
+    }
+    return hexadecimalNum;
+  } 
+
   binaryNum = binaryFunc(decimalNum); // 바이너리로 바꿈
-
-
+  octalNum = octalFunc(decimalNum); // 8진수
+  hexadecimalNum = hexadecimalFunc(decimalNum); // 16진수
+  
   while(i < 4){ //출력
     switch(i){
       case 0: 
