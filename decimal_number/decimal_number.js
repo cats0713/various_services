@@ -136,7 +136,7 @@ cancelBtn.addEventListener("click", function(){
   let userResult = document.querySelectorAll(".resultBox>input");
   let i = 0;
 
-  userInput.value = '0';
+  userInput.value = '';
   while(i<4){
     userResult[i].value = 0;
     i++;
