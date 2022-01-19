@@ -16,7 +16,7 @@ checkBtn.addEventListener("click", function(){
     let numberCal = decimalNum;
     let i = 0;
 
-    while(true){
+    while(true){ //계산
       binaryNumArr.unshift(Math.floor(numberCal % 2));
       numberCal = Math.floor(numberCal / 2);
 
@@ -28,7 +28,7 @@ checkBtn.addEventListener("click", function(){
       }
     }
 
-    while(i < binaryNumArr.length){
+    while(i < binaryNumArr.length){ //배열을 문자열로 바꾸는 과정
       binaryNum +=  binaryNumArr[i]
       i++;
     }
@@ -42,14 +42,14 @@ checkBtn.addEventListener("click", function(){
     let numberCal = decimalNum;
     let i = 0;
 
-    while(true){
+    while(true){ //계산
       octalNumArr.unshift(Math.floor(numberCal % 8));
       numberCal = Math.floor(numberCal / 8);
 
       console.log(octalNumArr);
       console.log(numberCal);
 
-      if( numberCal > 8 ){
+      if( numberCal > 8 ){ 
         octalNumArr.unshift(numberCal);
         break;
       }else if( numberCal == 0){
@@ -57,7 +57,7 @@ checkBtn.addEventListener("click", function(){
       }
     }
 
-    while(i < octalNumArr.length){
+    while(i < octalNumArr.length){ //배열을 문자열로 바꾸는 과정
       octalNum +=  octalNumArr[i]
       i++;
     }
