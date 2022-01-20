@@ -49,7 +49,7 @@ checkBtn.addEventListener("click", function(){
       console.log(octalNumArr);
       console.log(numberCal);
 
-      if( numberCal > 8 ){ 
+      if( numberCal < 8 ){
         octalNumArr.unshift(numberCal);
         break;
       }else if( numberCal == 0){
@@ -75,7 +75,7 @@ checkBtn.addEventListener("click", function(){
       hexadecimalNumArr.unshift(Math.floor(numberCal % 16));
       numberCal = Math.floor(numberCal / 16);
     
-      if( numberCal >= 16 ){
+      if( numberCal < 16 ){
         hexadecimalNumArr.unshift(numberCal);
         break;
       }else if( numberCal == 0){
