@@ -4,139 +4,212 @@
 $backgroundColor: #e07464;
 
 * {
-  margin: 0;
-  padding: 0;
-  font-size: 10px;
+	margin: 0;
+	padding: 0;
+	font-size: 10px;
 }
-html, body{
-  font-family: 'Orbitron', 'Nanum Gothic Coding',sans-serif;
-  background-color: #a72f1d;
+html,
+body {
+	font-family: 'Orbitron', 'Nanum Gothic Coding', sans-serif;
+	background-color: #a72f1d;
 }
-.instructionBox{
-  width: 20rem;
-  height: 10rem;
-  background-color: $backgroundColor;
-  color: white;
-  display: inline-block;
-  box-shadow: 1.8rem 1.8rem 1.8rem #751102; 
-  border-radius: 2rem;
-  font-size: 1.5rem;
-  text-align: center;
-  line-height: 2.3rem;
-  margin-top: 30rem;
-  margin-left: 4%;
 
-}
-.userBox{
+.errorBox{
+  display: none;
   position: absolute;
   top: 50%;
   left: 50%;
-  margin-top: -20rem;
-  margin-left: -15rem;
-  width: 30rem;
-  height: 40rem;
-  background-color: $backgroundColor;
-  color: white;
-  display: inline-block;
-  box-shadow: 1.8rem 1.8rem 1.8rem #751102; 
+  margin-top: -8rem;
+	margin-left: -20rem;
+  z-index: 10;
+  width: 40rem;
+	height: 10rem;
+	background-color: $backgroundColor;
+  box-shadow: 1.8rem 1.8rem 1.8rem #751102, -0.1rem -0.1rem 0.3rem #fff;
   border-radius: 2rem;
+	line-height: 2.3rem;
+  color: white;
 
+  div{
+    width: 1rem;
+    height: 1rem;
+    display: inline-block;
+    margin-left: 3%;
+    margin-top: 2%;
 
-  .userInputBox{
-    width: 26rem;
-    height: 5rem;
-    margin: 2rem;
-    border-radius: 2rem;
-    box-shadow: inset 0.3rem 0.3rem 0.3rem #c55241, inset -0.3rem -0.3rem 0.3rem #f59e91; 
+    i{
+      font-size: 1.5rem;
+    }
+  }
+  div:hover{
+    color: #a72f1d;
+    cursor: pointer; 
+  }
+  p{
+    text-align: center;
+    width: 40rem;
+    height: 2rem;
+    font-size: 2rem;
+    margin-top: 2%;
+    display: inline-block;
+    -ms-user-select: none; 
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
     
+  }
 
-    input[type="number"]::-webkit-outer-spin-button,
-    input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  
 }
 
-    div{
-      width: 3rem;
-      height: 5rem;
-      float: left;
-      text-align: center;
-      line-height: 5rem;
+.instructionBox {
+	width: 20rem;
+	height: 10rem;
+	background-color: $backgroundColor;
+	color: white;
+	display: inline-block;
+	box-shadow: 1.8rem 1.8rem 1.8rem #751102;
+	border-radius: 2rem;
+	text-align: center;
+	line-height: 2.3rem;
+	margin-top: 30rem;
+	margin-left: 4%;
+	p {
+    width: 20rem;
+    height: 10rem;
+    font-size: 1.5rem;
+    margin-top: 0.3rem;
+    
+		i{
+      line-height: 1rem;
+      font: {
+        weight: 700;
+      }
     }
-    .userInput{
-      font-family: 'Orbitron', 'Nanum Gothic Coding',sans-serif;
-      display: inline-block;
-      float: left;
-      width: 19rem;
-      height: 5rem;
-      border: none;
-      outline: none;
-      text-align: center;
-      color: white;
-      background-color: rgba( 255, 255, 255, 0 );
-      border-bottom-left-radius: 1.8rem;
-      border-top-left-radius: 1.8rem;
+	}
+}
+.userBox {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -20rem;
+	margin-left: -15rem;
+	width: 30rem;
+	height: 40rem;
+	background-color: $backgroundColor;
+	color: white;
+	display: inline-block;
+	box-shadow: 1.8rem 1.8rem 1.8rem #751102;
+	border-radius: 2rem;
 
+	.userInputBox {
+		width: 85%;
+		height: 5rem;
+		margin: 2rem;
+		border-radius: 2rem;
+		box-shadow: inset 0.3rem 0.3rem 0.3rem #c55241, inset -0.3rem -0.3rem 0.3rem #f59e91;
+
+		input[type='number']::-webkit-outer-spin-button,
+		input[type='number']::-webkit-inner-spin-button {
+			-webkit-appearance: none;
+			margin: 0;
+		}
+
+    .userInputSmallBox{
+      .userInput {
+        font-family: 'Orbitron', 'Nanum Gothic Coding', sans-serif;
+        display: inline-block;
+        float: left;
+        width: 19rem;
+        height: 5rem;
+        border: none;
+        outline: none;
+        text-align: right;
+        color: white;
+        background-color: rgba(255, 255, 255, 0);
+        border-bottom-left-radius: 1.8rem;
+        border-top-left-radius: 1.8rem;
+      }
+      .userInput::placeholder {
+        color: white;
+      }
     }
-    .userInput::placeholder{
-      color: white;
-    }
-    .checkBtn{
+
+		.checkBtn {
+			width: 3rem;
+			height: 5rem;
+			float: left;
+			text-align: center;
+			line-height: 5rem;
       border-bottom-right-radius: 1.8rem;
-      border-top-right-radius: 1.8rem;
-    }
-    .checkBtn:hover{
-      color: #a72f1d;
-      cursor: pointer;
+			border-top-right-radius: 1.8rem;
+		}
+    .cancelBtn {
+			width: 2rem;
+			height: 5rem;
+      margin-left: 1rem;
+			float: left;
+			text-align: center;
+			line-height: 5rem;
+		}
 
-    }
-    .cancelBtn:hover{
-      color: #a72f1d;
-      cursor: pointer;
+		.checkBtn:hover {
+			color: #a72f1d;
+			cursor: pointer;
+		}
+		.cancelBtn:hover {
+			color: #a72f1d;
+			cursor: pointer;
+		}
+	} //userInputBox
+	.resultBox {
+		position: relative;
+		margin-top: 4rem;
 
-    }
-  }//userInputBox
-  .resultBox{
-    position: relative;
-    margin-top: 4rem;
-    .binaryBox, .octalBox, .decimalyBox, .hexadecimalBox{
-      width: 26rem;
-      height: 4rem;
-      margin-left: 2rem;
-      margin-bottom: 3rem;
-      border-radius: 1.5rem;
-      text-align: center;
-      line-height: 4rem;
-      box-shadow: inset 0.3rem 0.3rem 0.3rem #c55241, inset -0.3rem -0.3rem 0.3rem #f59e91; 
-      border: none;
-      outline: none;
-      background-color: rgba( 255, 255, 255, 0 );
-      font-family: 'Orbitron', 'Nanum Gothic Coding',sans-serif;
-      color: white;
-    }
+		.resultInput {
+			width: 85%;
+			height: 4rem;
+			margin-left: 2rem;
+			margin-bottom: 3rem;
+			border-radius: 1.5rem;
+			box-shadow: inset 0.3rem 0.3rem 0.3rem #c55241, inset -0.3rem -0.3rem 0.3rem #f59e91;
+      text-align: right;
+      input{
+        width: 24rem;
+        height: 4rem;
+        text-align: right;
+        margin-right: 5rem;
+        line-height: 4rem;
+        border: none;
+			  outline: none;
+			  background-color: rgba(255, 255, 255, 0);
+			  font-family: 'Orbitron', 'Nanum Gothic Coding', sans-serif;
+			  color: white;
+      }
+		}
+	}
 
-  }
-  
-  .tagBinary{
-    position: absolute;
-    top: 9.2rem;
-    left: 2.5rem;
-  }
-  .tagOcta{
-    position: absolute;
-    top: 16.2rem;
-    left: 2.5rem;
-  }
-  .tagDecimaly{
-    position: absolute;
-    top: 23.2rem;
-    left: 2.5rem;
-  }
-  .tagHexadecimal{
-    position: absolute;
-    top: 30.2rem;
-    left: 2.5rem;
-  }
+	.tagBinary {
+		position: absolute;
+		top: 9.2rem;
+		left: 2.5rem;
+    
+	}
+	.tagOcta {
+		position: absolute;
+		top: 16.2rem;
+		left: 2.5rem;
+	}
+	.tagDecimaly {
+		position: absolute;
+		top: 23.2rem;
+		left: 2.5rem;
+	}
+	.tagHexadecimal {
+		position: absolute;
+		top: 30.2rem;
+		left: 2.5rem;
+	}
+} //userBox
 
-
-}//userBox

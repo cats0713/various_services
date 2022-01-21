@@ -2,37 +2,58 @@
 <html lang="ko">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>10진수 계산기</title>
-  <link rel="stylesheet" href="./decimal_number.css">
-  <link rel="shortcut icon" href="./calculator.ico">
+  <link rel="stylesheet" href="./decimal_number.css" />
+  <link rel="shortcut icon" href="./calculator.ico" />
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css" />
 </head>
 
 <body>
-  <div class="instructionBox">10 -> 정수<br>
-    0b01000001 -> 2진수<br>
-    0o101 -> 8진수<br>
-    0x41 -> 16진수</div>
+  <div id="errorBox" class="errorBox">
+    <div id="errorXBtn" class="errorXBtn"><i class="xi-close"></i></div>
+    <p>숫자를 다시 입력하여 주십시오.</p>
+  </div>
+ 
+  <div class="instructionBox">
+    <p>
+      10 <i class="xi-arrow-right"></i> 10진수<br />
+      0b01001 <i class="xi-arrow-right"></i> 2진수<br />
+      0o101 <i class="xi-arrow-right"></i> 8진수<br />
+      0x41 <i class="xi-arrow-right"></i> 16진수
+    </p>
+  </div>
   <div class="userBox">
     <div class="userInputBox">
-      <input type="text" id="userInput" class="userInput" placeholder="0">
-      <div id="cancelBtn" class="cancelBtn">x</div>
+      <div id="cancelBtn" class="cancelBtn"><i class="xi-close"></i></div>
+      <div class="userInputSmallBox">
+        <input type="text" id="userInput" class="userInput" placeholder="0" />
+      </div>
+
       <div id="checkBtn" class="checkBtn">확인</div>
     </div>
     <div class="resultBox">
-      <input id="binaryBox" class="binaryBox" value="0" readonly>
-      <input id="octalBox" class="octalBox" value="0" readonly>
-      <input id="decimalyBox" class="decimalyBox" value="0" readonly>
-      <input id="hexadecimalBox" class="hexadecimalBox" value="0" readonly>
+      <div class="resultInput">
+        <input id="binaryBox" class="binaryBox" value="0" readonly />
+      </div>
+      <div class="resultInput">
+        <input id="octalBox" class="octalBox" value="0" readonly />
+      </div>
+      <div class="resultInput">
+        <input id="decimalyBox" class="decimalyBox" value="0" readonly />
+      </div>
+      <div class="resultInput">
+        <input id="hexadecimalBox" class="hexadecimalBox" value="0" readonly />
+      </div>
+
     </div>
     <p class="tagBinary">2진</p>
     <p class="tagOcta">8진</p>
     <p class="tagDecimaly">10진</p>
     <p class="tagHexadecimal">16진</p>
-</div>
-
+  </div>
 
   <script src="./decimal_number.js"></script>
 </body>

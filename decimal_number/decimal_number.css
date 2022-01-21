@@ -5,9 +5,58 @@
   font-size: 10px;
 }
 
-html, body {
-  font-family: 'Orbitron', 'Nanum Gothic Coding',sans-serif;
+html,
+body {
+  font-family: 'Orbitron', 'Nanum Gothic Coding', sans-serif;
   background-color: #a72f1d;
+}
+
+.errorBox {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -8rem;
+  margin-left: -20rem;
+  z-index: 10;
+  width: 40rem;
+  height: 10rem;
+  background-color: #e07464;
+  -webkit-box-shadow: 1.8rem 1.8rem 1.8rem #751102, -0.1rem -0.1rem 0.3rem #fff;
+          box-shadow: 1.8rem 1.8rem 1.8rem #751102, -0.1rem -0.1rem 0.3rem #fff;
+  border-radius: 2rem;
+  line-height: 2.3rem;
+  color: white;
+}
+
+.errorBox div {
+  width: 1rem;
+  height: 1rem;
+  display: inline-block;
+  margin-left: 3%;
+  margin-top: 2%;
+}
+
+.errorBox div i {
+  font-size: 1.5rem;
+}
+
+.errorBox div:hover {
+  color: #a72f1d;
+  cursor: pointer;
+}
+
+.errorBox p {
+  text-align: center;
+  width: 40rem;
+  height: 2rem;
+  font-size: 2rem;
+  margin-top: 2%;
+  display: inline-block;
+  -ms-user-select: none;
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .instructionBox {
@@ -19,11 +68,22 @@ html, body {
   -webkit-box-shadow: 1.8rem 1.8rem 1.8rem #751102;
           box-shadow: 1.8rem 1.8rem 1.8rem #751102;
   border-radius: 2rem;
-  font-size: 1.5rem;
   text-align: center;
   line-height: 2.3rem;
   margin-top: 30rem;
   margin-left: 4%;
+}
+
+.instructionBox p {
+  width: 20rem;
+  height: 10rem;
+  font-size: 1.5rem;
+  margin-top: 0.3rem;
+}
+
+.instructionBox p i {
+  line-height: 1rem;
+  font-weight: 700;
 }
 
 .userBox {
@@ -43,7 +103,7 @@ html, body {
 }
 
 .userBox .userInputBox {
-  width: 26rem;
+  width: 85%;
   height: 5rem;
   margin: 2rem;
   border-radius: 2rem;
@@ -51,54 +111,60 @@ html, body {
           box-shadow: inset 0.3rem 0.3rem 0.3rem #c55241, inset -0.3rem -0.3rem 0.3rem #f59e91;
 }
 
-.userBox .userInputBox input[type="number"]::-webkit-outer-spin-button,
-.userBox .userInputBox input[type="number"]::-webkit-inner-spin-button {
+.userBox .userInputBox input[type='number']::-webkit-outer-spin-button,
+.userBox .userInputBox input[type='number']::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.userBox .userInputBox div {
-  width: 3rem;
-  height: 5rem;
-  float: left;
-  text-align: center;
-  line-height: 5rem;
-}
-
-.userBox .userInputBox .userInput {
-  font-family: 'Orbitron', 'Nanum Gothic Coding',sans-serif;
+.userBox .userInputBox .userInputSmallBox .userInput {
+  font-family: 'Orbitron', 'Nanum Gothic Coding', sans-serif;
   display: inline-block;
   float: left;
   width: 19rem;
   height: 5rem;
   border: none;
   outline: none;
-  text-align: center;
+  text-align: right;
   color: white;
   background-color: rgba(255, 255, 255, 0);
   border-bottom-left-radius: 1.8rem;
   border-top-left-radius: 1.8rem;
 }
 
-.userBox .userInputBox .userInput::-webkit-input-placeholder {
+.userBox .userInputBox .userInputSmallBox .userInput::-webkit-input-placeholder {
   color: white;
 }
 
-.userBox .userInputBox .userInput:-ms-input-placeholder {
+.userBox .userInputBox .userInputSmallBox .userInput:-ms-input-placeholder {
   color: white;
 }
 
-.userBox .userInputBox .userInput::-ms-input-placeholder {
+.userBox .userInputBox .userInputSmallBox .userInput::-ms-input-placeholder {
   color: white;
 }
 
-.userBox .userInputBox .userInput::placeholder {
+.userBox .userInputBox .userInputSmallBox .userInput::placeholder {
   color: white;
 }
 
 .userBox .userInputBox .checkBtn {
+  width: 3rem;
+  height: 5rem;
+  float: left;
+  text-align: center;
+  line-height: 5rem;
   border-bottom-right-radius: 1.8rem;
   border-top-right-radius: 1.8rem;
+}
+
+.userBox .userInputBox .cancelBtn {
+  width: 2rem;
+  height: 5rem;
+  margin-left: 1rem;
+  float: left;
+  text-align: center;
+  line-height: 5rem;
 }
 
 .userBox .userInputBox .checkBtn:hover {
@@ -116,20 +182,27 @@ html, body {
   margin-top: 4rem;
 }
 
-.userBox .resultBox .binaryBox, .userBox .resultBox .octalBox, .userBox .resultBox .decimalyBox, .userBox .resultBox .hexadecimalBox {
-  width: 26rem;
+.userBox .resultBox .resultInput {
+  width: 85%;
   height: 4rem;
   margin-left: 2rem;
   margin-bottom: 3rem;
   border-radius: 1.5rem;
-  text-align: center;
-  line-height: 4rem;
   -webkit-box-shadow: inset 0.3rem 0.3rem 0.3rem #c55241, inset -0.3rem -0.3rem 0.3rem #f59e91;
           box-shadow: inset 0.3rem 0.3rem 0.3rem #c55241, inset -0.3rem -0.3rem 0.3rem #f59e91;
+  text-align: right;
+}
+
+.userBox .resultBox .resultInput input {
+  width: 24rem;
+  height: 4rem;
+  text-align: right;
+  margin-right: 5rem;
+  line-height: 4rem;
   border: none;
   outline: none;
   background-color: rgba(255, 255, 255, 0);
-  font-family: 'Orbitron', 'Nanum Gothic Coding',sans-serif;
+  font-family: 'Orbitron', 'Nanum Gothic Coding', sans-serif;
   color: white;
 }
 
