@@ -7,13 +7,13 @@
 
 html, body {
   font-family: 'Orbitron', sans-serif;
-  background-color: #263142;
+  background-color: #313C4D;
 }
 
 .btnBox {
-  background-color: #f0f0f3;
-  -webkit-box-shadow: -0.1rem -0.1rem 1rem black, 0.3rem 0.3rem 0.5rem black;
-          box-shadow: -0.1rem -0.1rem 1rem black, 0.3rem 0.3rem 0.5rem black;
+  background-color: #e9eaee;
+  -webkit-box-shadow: -0.2rem -0.2rem 0.3rem #5b6679, 0.5rem 0.5rem 1.3rem #0c2034;
+          box-shadow: -0.2rem -0.2rem 0.3rem #5b6679, 0.5rem 0.5rem 1.3rem #0c2034;
   width: 35rem;
   height: 7rem;
   border-radius: 2rem;
@@ -25,9 +25,9 @@ html, body {
 }
 
 .btnBox [class*="Btn"] {
-  background-color: #f0f0f3;
-  -webkit-box-shadow: -0.1rem -0.1rem 0.5rem #fff, 0.3rem 0.3rem 0.5rem #aeaec0;
-          box-shadow: -0.1rem -0.1rem 0.5rem #fff, 0.3rem 0.3rem 0.5rem #aeaec0;
+  background-color: #e9eaee;
+  -webkit-box-shadow: -0.1rem -0.1rem 0.3rem #fff, 0.3rem 0.3rem 0.3rem #aeaec0;
+          box-shadow: -0.1rem -0.1rem 0.3rem #fff, 0.3rem 0.3rem 0.3rem #aeaec0;
   color: #E89123;
   width: 5rem;
   height: 5rem;
@@ -53,9 +53,9 @@ html, body {
 }
 
 .arrAInputBox {
-  background-color: #f0f0f3;
-  -webkit-box-shadow: -0.1rem -0.1rem 1rem black, 0.3rem 0.3rem 0.5rem black;
-          box-shadow: -0.1rem -0.1rem 1rem black, 0.3rem 0.3rem 0.5rem black;
+  background-color: #e9eaee;
+  -webkit-box-shadow: -0.2rem -0.2rem 0.3rem #5b6679, 0.5rem 0.5rem 1.3rem #0c2034;
+          box-shadow: -0.2rem -0.2rem 0.3rem #5b6679, 0.5rem 0.5rem 1.3rem #0c2034;
   text-align: center;
   width: 35rem;
   height: 8rem;
@@ -63,9 +63,9 @@ html, body {
 }
 
 .arrAInputBox [class*='input'] {
-  background-color: #f0f0f3;
-  -webkit-box-shadow: -0.1rem -0.1rem 0.5rem #fff, 0.3rem 0.3rem 0.5rem #aeaec0;
-          box-shadow: -0.1rem -0.1rem 0.5rem #fff, 0.3rem 0.3rem 0.5rem #aeaec0;
+  background-color: #e9eaee;
+  -webkit-box-shadow: -0.1rem -0.1rem 0.3rem #fff, 0.3rem 0.3rem 0.3rem #aeaec0;
+          box-shadow: -0.1rem -0.1rem 0.3rem #fff, 0.3rem 0.3rem 0.3rem #aeaec0;
   display: inline-block;
   width: 6rem;
   height: 4rem;
@@ -101,9 +101,10 @@ html, body {
 }
 
 .matirxArr {
-  background-color: #f0f0f3;
-  -webkit-box-shadow: -0.1rem -0.1rem 1rem black, 0.3rem 0.3rem 0.5rem black;
-          box-shadow: -0.1rem -0.1rem 1rem black, 0.3rem 0.3rem 0.5rem black;
+  display: none;
+  background-color: #e9eaee;
+  -webkit-box-shadow: -0.2rem -0.2rem 0.3rem #5b6679, 0.5rem 0.5rem 1.3rem #0c2034;
+          box-shadow: -0.2rem -0.2rem 0.3rem #5b6679, 0.5rem 0.5rem 1.3rem #0c2034;
   text-align: center;
   width: 35rem;
   border-radius: 1rem;
@@ -116,9 +117,9 @@ html, body {
 }
 
 .matirxArr .arrA {
-  background-color: #f0f0f3;
-  -webkit-box-shadow: -0.1rem -0.1rem 0.5rem #fff, 0.3rem 0.3rem 0.5rem #aeaec0;
-          box-shadow: -0.1rem -0.1rem 0.5rem #fff, 0.3rem 0.3rem 0.5rem #aeaec0;
+  background-color: #e9eaee;
+  -webkit-box-shadow: -0.1rem -0.1rem 0.3rem #fff, 0.3rem 0.3rem 0.3rem #aeaec0;
+          box-shadow: -0.1rem -0.1rem 0.3rem #fff, 0.3rem 0.3rem 0.3rem #aeaec0;
   display: inline-block;
   width: 4rem;
   height: 3rem;
