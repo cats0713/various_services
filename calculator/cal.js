@@ -81,7 +81,7 @@
                   let resultInput = document.querySelector('#printLCD');
                   UserComma.resultDot(eval(resultInput.value));
                   //return eval(resultInput.value);
-                  //resultInput.value += '=' + eval(resultInput.value);
+                  resultInput.value += '=' + eval(resultInput.value);
                   break;
                 default: UserLCD.printValue(keyValue[j]); break;
               }

@@ -1,18 +1,26 @@
 /* matrtix_calculator  by ahyeon*/
-let AAA = document.querySelector(".matirxArr>fieldset");
-let BBB = document.querySelector(".matirxArr");
-function ArrInputBox(arrX,arrY,arrIdName){
-  this.arrX = arrX;
-  this.arrY = arrY;
-  this.arrIdName = arrIdName;
-  this.arrInput = `<input id="${arrIdName}" class="${arrIdName}" type="number"></input>`;
+
+let matirxArr = document.querySelector(".matirxArr");
+
+function ArrInputBox(arrXY,arrID){
+  this.arrXY = arrXY;
+  this.arrID = arrID;
+  this.arrInput = `<input class="${this.arrID}" type="number"></input>`;
   this.arrDisplayFunc = function(){
-    BBB.stlye.display = "block";
-    AAA.innerHTML = this.arrInput;
+    matirxArr.style.display = "block";
+    let i = 0;
+    while(i < arrXY*arrXY){
+      if(i / arrXY == 1){
+
+      }
+      matirxArr.innerHTML += this.arrInput;
+      i++;
+    }
+    
 
   };
 
 }
 
-let arrA = new ArrInputBox(2,2,'arrA');
+let arrA = new ArrInputBox(2,'arrA');
 arrA.arrDisplayFunc();
