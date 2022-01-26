@@ -5,9 +5,11 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>matrix calculator</title> 
+  <title>matrix calculator</title>
+  
+  
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
-
+  <script type="text/javascript" src="./matrix_calculator.js"></script>
   <style>
     /* style*/
     @import url("./matrix_calculator.css");
@@ -16,26 +18,19 @@
 
 <body>
   <div id="arrABox" class="arrABox">
-    <div id="arrAInputBox" class="arrAInputBox">
+    <div id="arrAInputBox" class="arrInputBox">
       <div id="plusABtn" class="inputArrBtn">+</div>
       <div id="minusABtn" class="inputArrBtn">-</div>
     </div>
-    
-    <form class="matirxArr" naem="matirxArr">
-      
-      <fieldset>
-        <legend></legend>
-          <!-- <input id="arrA1" class="arrA" type="number"></input>
-          <input id="arrA2" class="arrA" type="number"></input>
-          <input id="arrA3" class="arrA" type="number"></input><br>
-          <input id="arrA4" class="arrA" type="number"></input>
-          <input id="arrA5" class="arrA" type="number"></input>
-          <input id="arrA6" class="arrA" type="number"></input><br>
-          <input id="arrA7" class="arrA" type="number"></input>
-          <input id="arrA8" class="arrA" type="number"></input>
-          <input id="arrA9" class="arrA" type="number"></input> -->
-      </fieldset>
-    </form>
+    <form id="matirxArrA" class="matirxArrA" naem="matirxArr"></form>
+  </div>
+
+  <div id="arrBBox" class="arrBBox">
+    <div id="arrBInputBox" class="arrInputBox">
+      <div id="plusBBtn" class="inputArrBtn">+</div>
+      <div id="minusBBtn" class="inputArrBtn">-</div>
+    </div>
+    <form id="matirxArrB" class="matirxArrB" naem="matirxArr"></form>
   </div>
 
   <div class="btnBox">
@@ -45,7 +40,7 @@
   </div>
 
 
-  <script type="text/javascript" src="./matrix_calculator.js"></script>
+  
 </body>
 
 </html>

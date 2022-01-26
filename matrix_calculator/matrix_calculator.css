@@ -45,14 +45,14 @@ html, body {
 }
 
 .arrABox {
-  width: 35rem;
+  width: 40rem;
   text-align: center;
   position: absolute;
   top: 7%;
   left: 10%;
 }
 
-.arrAInputBox {
+.arrInputBox {
   background-color: #e9eaee;
   -webkit-box-shadow: -0.2rem -0.2rem 0.3rem #5b6679, 0.5rem 0.5rem 1.3rem #0c2034;
           box-shadow: -0.2rem -0.2rem 0.3rem #5b6679, 0.5rem 0.5rem 1.3rem #0c2034;
@@ -62,7 +62,7 @@ html, body {
   border-radius: 1rem;
 }
 
-.arrAInputBox div {
+.arrInputBox div {
   background-color: #e9eaee;
   -webkit-box-shadow: -0.1rem -0.1rem 0.3rem #fff, 0.3rem 0.3rem 0.3rem #aeaec0;
           box-shadow: -0.1rem -0.1rem 0.3rem #fff, 0.3rem 0.3rem 0.3rem #aeaec0;
@@ -79,30 +79,32 @@ html, body {
   line-height: 4rem;
 }
 
-.arrAInputBox div:hover {
+.arrInputBox div:hover {
   -webkit-box-shadow: inset 0.3rem 0.3rem 0.3rem #aeaec0, 0.3rem 0.3rem 0.3rem #fff;
           box-shadow: inset 0.3rem 0.3rem 0.3rem #aeaec0, 0.3rem 0.3rem 0.3rem #fff;
   cursor: pointer;
   color: #aeaec0;
 }
 
-.matirxArr {
-  display: none;
+.arrBBox {
+  width: 40rem;
+  text-align: center;
+  position: absolute;
+  top: 7%;
+  left: 50%;
+}
+
+.matirxArrA, .matirxArrB {
   background-color: #e9eaee;
   -webkit-box-shadow: -0.2rem -0.2rem 0.3rem #5b6679, 0.5rem 0.5rem 1.3rem #0c2034;
           box-shadow: -0.2rem -0.2rem 0.3rem #5b6679, 0.5rem 0.5rem 1.3rem #0c2034;
   text-align: center;
-  width: 35rem;
+  width: 30rem;
   border-radius: 1rem;
   margin-top: 2rem;
 }
 
-.matirxArr fieldset {
-  border: none;
-  width: 35rem;
-}
-
-.matirxArr .arrA {
+.matirxArrA .arrA, .matirxArrA .arrB, .matirxArrB .arrA, .matirxArrB .arrB {
   background-color: #e9eaee;
   -webkit-box-shadow: -0.1rem -0.1rem 0.3rem #fff, 0.3rem 0.3rem 0.3rem #aeaec0;
           box-shadow: -0.1rem -0.1rem 0.3rem #fff, 0.3rem 0.3rem 0.3rem #aeaec0;
@@ -118,12 +120,13 @@ html, body {
   text-align: center;
 }
 
-.matirxArr input::-webkit-outer-spin-button,
-.matirxArr input::-webkit-inner-spin-button {
+.matirxArrA input::-webkit-outer-spin-button,
+.matirxArrA input::-webkit-inner-spin-button, .matirxArrB input::-webkit-outer-spin-button,
+.matirxArrB input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 
-.matirxArr input[type=number] {
+.matirxArrA input[type=number], .matirxArrB input[type=number] {
   -moz-appearance: textfield;
 }
 /*# sourceMappingURL=matrix_calculator.css.map */
