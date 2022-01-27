@@ -1,15 +1,13 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
-@mixin fontSet {
-  color: #E89123;
-}
+
 @mixin itemShadow {
   background-color: $backColor;
   box-shadow: -0.1rem -0.1rem 0.3rem #fff, 0.3rem 0.3rem 0.3rem #aeaec0; 
 }
 @mixin boxShadow {
   background-color: $backColor;
-  box-shadow: -0.2rem -0.2rem 0.3rem #5b6679, 0.5rem 0.5rem 1.3rem #0c2034; 
+  box-shadow: -0.2rem -0.2rem 0.2rem #5b6679, 0.5rem 0.5rem 1.3rem #0c2034; 
 }
 @mixin itemClickShadow {
   box-shadow:inset 0.3rem 0.3rem 0.3rem #aeaec0, 0.3rem 0.3rem 0.3rem #fff;
@@ -51,8 +49,7 @@ html, body{
     text-align: center;
     font-size: 2rem;
     border-radius: 50%;
-
-}
+  }
   [class*="Btn"]:hover{
     @include itemClickShadow();
   }
@@ -60,21 +57,32 @@ html, body{
 
 // 행렬 css
 
-.arrABox{
-  width: 40rem;
-  text-align: center;
-  position: absolute;
-  top: 7%;
-  left: 10%;
-}
 
-.arrInputBox{
+  .arrABox{
+    width: 40rem;
+    position: absolute;
+    top: 18%;
+    left: 20%;
+  }
+  .arrBBox{
+    width: 40rem;
+    position: absolute;
+    top: 18%;
+    right: 20%;
+  }
+
+
+
+.arrBtnBox{
   @include boxShadow();
-  text-align: center;
   width: 20rem;
   height: 7rem;
   border-radius: 1rem;
-
+  text-align: center;
+  position: absolute;
+  top: 7%;
+  left: 50%;
+  margin-left: -10rem;
   
   div{
     @include itemShadow();
@@ -94,24 +102,18 @@ html, body{
     @include itemClickShadow();
     color: #aeaec0;
   }
-
-}
-.arrBBox{
-  width: 40rem;
-  text-align: center;
-  position: absolute;
-  top: 7%;
-  left: 50%;
 }
 
-.matirxArrA,.matirxArrB{
+
+
+.matirxArrA, .matirxArrB {
   @include boxShadow();
   text-align: center;
-  width: 30rem;
+  width: 40rem;
   border-radius: 1rem;
   margin-top: 2rem;
 
-  .arrA, .arrB{
+  .arrA, .arrB {
     @include itemShadow();
     display: inline-block;
     width: 4rem;
@@ -130,8 +132,54 @@ html, body{
   -webkit-appearance: none;}
   input[type=number] { //input:number 화살표 없애기 파이어폭스
     -moz-appearance: textfield;}
-
 }
 
+.resultBox{
+  display: none;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.5);
+
+  .xBtn{
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    top: 15%;
+    left: 25%;
+    border-radius: 1rem;
+    font-size: 2rem;
+    text-align: center;
+    @include boxShadow();
+  }
+  .xBtn:hover{
+    color: #aeaec0;
+  }
+  .matirxArrR{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    margin-left: -30rem;
+    @include boxShadow();
+    text-align: center;
+    width: 60rem;
+    border-radius: 1rem;
+    margin-top: 2rem;
+
+    .arrRS{
+      @include itemShadow();
+      display: inline-block;
+      width: 6rem;
+      height: 4rem; 
+      font-size: 1.3rem;
+      margin: 1rem;
+      border-radius: 1rem;
+      outline: none;
+      border: none;
+      font-family: 'Orbitron', sans-serif;
+      text-align: right;
+    }
+  }
+}
 
 

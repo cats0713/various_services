@@ -6,42 +6,43 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>matrix calculator</title>
-  
-  
+
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+  <link rel="stylesheet" href="./matrix_calculator.css">
   <script type="text/javascript" src="./matrix_calculator.js"></script>
-  <style>
-    /* style*/
-    @import url("./matrix_calculator.css");
-  </style>
+
 </head>
 
 <body>
+
+  <div class="arrBtnBox">
+    <div id="plusBtn" class="inputArrBtn">+</div>
+    <div id="minusBtn" class="inputArrBtn">-</div>
+  </div>
+
+
   <div id="arrABox" class="arrABox">
-    <div id="arrAInputBox" class="arrInputBox">
-      <div id="plusABtn" class="inputArrBtn">+</div>
-      <div id="minusABtn" class="inputArrBtn">-</div>
-    </div>
     <form id="matirxArrA" class="matirxArrA" naem="matirxArr"></form>
   </div>
 
   <div id="arrBBox" class="arrBBox">
-    <div id="arrBInputBox" class="arrInputBox">
-      <div id="plusBBtn" class="inputArrBtn">+</div>
-      <div id="minusBBtn" class="inputArrBtn">-</div>
-    </div>
     <form id="matirxArrB" class="matirxArrB" naem="matirxArr"></form>
   </div>
+
+
+
 
   <div class="btnBox">
     <i id="addBtn" class="addBtn xi-plus"></i>
     <i id="miusBtn" class="miusBtn xi-minus"></i>
-    <i id="mulBtn" class="mulBtn xi-close"></i> 
+    <i id="mulBtn" class="mulBtn xi-close"></i>
   </div>
 
+  <div id="resultBox" class="resultBox">
+    <div class="xBtn">x</div>
+    <div id="matirxArrR" class="matirxArrR"></div>
+  </div>
 
-  
 </body>
 
 </html>
-

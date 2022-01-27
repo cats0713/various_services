@@ -12,8 +12,8 @@ html, body {
 
 .btnBox {
   background-color: #e9eaee;
-  -webkit-box-shadow: -0.2rem -0.2rem 0.3rem #5b6679, 0.5rem 0.5rem 1.3rem #0c2034;
-          box-shadow: -0.2rem -0.2rem 0.3rem #5b6679, 0.5rem 0.5rem 1.3rem #0c2034;
+  -webkit-box-shadow: -0.2rem -0.2rem 0.2rem #5b6679, 0.5rem 0.5rem 1.3rem #0c2034;
+          box-shadow: -0.2rem -0.2rem 0.2rem #5b6679, 0.5rem 0.5rem 1.3rem #0c2034;
   width: 25rem;
   height: 7rem;
   border-radius: 2rem;
@@ -46,23 +46,33 @@ html, body {
 
 .arrABox {
   width: 40rem;
-  text-align: center;
   position: absolute;
-  top: 7%;
-  left: 10%;
+  top: 18%;
+  left: 20%;
 }
 
-.arrInputBox {
+.arrBBox {
+  width: 40rem;
+  position: absolute;
+  top: 18%;
+  right: 20%;
+}
+
+.arrBtnBox {
   background-color: #e9eaee;
-  -webkit-box-shadow: -0.2rem -0.2rem 0.3rem #5b6679, 0.5rem 0.5rem 1.3rem #0c2034;
-          box-shadow: -0.2rem -0.2rem 0.3rem #5b6679, 0.5rem 0.5rem 1.3rem #0c2034;
-  text-align: center;
+  -webkit-box-shadow: -0.2rem -0.2rem 0.2rem #5b6679, 0.5rem 0.5rem 1.3rem #0c2034;
+          box-shadow: -0.2rem -0.2rem 0.2rem #5b6679, 0.5rem 0.5rem 1.3rem #0c2034;
   width: 20rem;
   height: 7rem;
   border-radius: 1rem;
+  text-align: center;
+  position: absolute;
+  top: 7%;
+  left: 50%;
+  margin-left: -10rem;
 }
 
-.arrInputBox div {
+.arrBtnBox div {
   background-color: #e9eaee;
   -webkit-box-shadow: -0.1rem -0.1rem 0.3rem #fff, 0.3rem 0.3rem 0.3rem #aeaec0;
           box-shadow: -0.1rem -0.1rem 0.3rem #fff, 0.3rem 0.3rem 0.3rem #aeaec0;
@@ -79,27 +89,19 @@ html, body {
   line-height: 4rem;
 }
 
-.arrInputBox div:hover {
+.arrBtnBox div:hover {
   -webkit-box-shadow: inset 0.3rem 0.3rem 0.3rem #aeaec0, 0.3rem 0.3rem 0.3rem #fff;
           box-shadow: inset 0.3rem 0.3rem 0.3rem #aeaec0, 0.3rem 0.3rem 0.3rem #fff;
   cursor: pointer;
   color: #aeaec0;
 }
 
-.arrBBox {
-  width: 40rem;
-  text-align: center;
-  position: absolute;
-  top: 7%;
-  left: 50%;
-}
-
 .matirxArrA, .matirxArrB {
   background-color: #e9eaee;
-  -webkit-box-shadow: -0.2rem -0.2rem 0.3rem #5b6679, 0.5rem 0.5rem 1.3rem #0c2034;
-          box-shadow: -0.2rem -0.2rem 0.3rem #5b6679, 0.5rem 0.5rem 1.3rem #0c2034;
+  -webkit-box-shadow: -0.2rem -0.2rem 0.2rem #5b6679, 0.5rem 0.5rem 1.3rem #0c2034;
+          box-shadow: -0.2rem -0.2rem 0.2rem #5b6679, 0.5rem 0.5rem 1.3rem #0c2034;
   text-align: center;
-  width: 30rem;
+  width: 40rem;
   border-radius: 1rem;
   margin-top: 2rem;
 }
@@ -128,5 +130,61 @@ html, body {
 
 .matirxArrA input[type=number], .matirxArrB input[type=number] {
   -moz-appearance: textfield;
+}
+
+.resultBox {
+  display: none;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.resultBox .xBtn {
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  top: 15%;
+  left: 25%;
+  border-radius: 1rem;
+  font-size: 2rem;
+  text-align: center;
+  background-color: #e9eaee;
+  -webkit-box-shadow: -0.2rem -0.2rem 0.2rem #5b6679, 0.5rem 0.5rem 1.3rem #0c2034;
+          box-shadow: -0.2rem -0.2rem 0.2rem #5b6679, 0.5rem 0.5rem 1.3rem #0c2034;
+}
+
+.resultBox .xBtn:hover {
+  color: #aeaec0;
+}
+
+.resultBox .matirxArrR {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  margin-left: -30rem;
+  background-color: #e9eaee;
+  -webkit-box-shadow: -0.2rem -0.2rem 0.2rem #5b6679, 0.5rem 0.5rem 1.3rem #0c2034;
+          box-shadow: -0.2rem -0.2rem 0.2rem #5b6679, 0.5rem 0.5rem 1.3rem #0c2034;
+  text-align: center;
+  width: 60rem;
+  border-radius: 1rem;
+  margin-top: 2rem;
+}
+
+.resultBox .matirxArrR .arrRS {
+  background-color: #e9eaee;
+  -webkit-box-shadow: -0.1rem -0.1rem 0.3rem #fff, 0.3rem 0.3rem 0.3rem #aeaec0;
+          box-shadow: -0.1rem -0.1rem 0.3rem #fff, 0.3rem 0.3rem 0.3rem #aeaec0;
+  display: inline-block;
+  width: 6rem;
+  height: 4rem;
+  font-size: 1.3rem;
+  margin: 1rem;
+  border-radius: 1rem;
+  outline: none;
+  border: none;
+  font-family: 'Orbitron', sans-serif;
+  text-align: right;
 }
 /*# sourceMappingURL=matrix_calculator.css.map */
