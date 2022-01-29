@@ -112,10 +112,20 @@ window.onload = function () {
     let arrAV = document.querySelectorAll(".arrA");
     let arrBV = document.querySelectorAll(".arrB");
     let arrResult = [];
+    let i = 0, j = 0;
 
-    arrAV.forEach((element,i) => {
-      arrResult[i] = Number(arrAV[i].value) * Number(arrBV[i].value); 
-    });
+    while(i < arrAV.length){
+      while(j < arrBV.length){
+        let contMulNumber = 0;
+
+        j++;
+      }
+      i++;
+    }
+
+    // arrAV.forEach((element,i) => {
+    //   arrResult[i] = Number(arrAV[i].value) * Number(arrBV[i].value); 
+    // });
 
     return arrResult;
   }

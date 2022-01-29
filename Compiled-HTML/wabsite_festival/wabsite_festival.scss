@@ -1,0 +1,128 @@
+@charset "utf-8";
+
+*{
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+}
+html, body{
+  width: 120rem;
+  background-color: #27324C;
+}
+
+.iceLeft{
+  position: fixed;
+  bottom: 0;
+  left: -6rem;
+  width: 40rem;
+  height: 30rem;
+  background-size: 40rem;
+  background-image: url("./left.png");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  z-index: 1000;
+}
+.iceRigth{
+  position: fixed;
+  bottom: 0;
+  right: -18rem;
+  width: 40rem;
+  height: 30rem;
+  background-size: 45rem;
+  background-image: url("./rigth.png");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  z-index: 1000;
+}
+//화면 꾸밈
+.titleText{
+  width: 100%;
+  height: 5rem;
+  color: white;
+  font-size: 2.5rem;
+}
+.mainImg{
+  width: 100%;
+  height: 65rem;
+  margin-top: 3rem;
+  background-color: brown;
+}
+.topVar{
+  width: 100%;
+  height: 18rem;
+  margin-top: 15rem;
+  background-color: cornflowerblue;
+}
+
+.videoBox{
+  margin-top: 8rem;
+  margin-left: 20%;
+  width: 60%;
+  height: 40rem;
+  background-color: cornsilk;
+}
+
+.inturodusFestivalBox{
+  width: 100%;
+  height: 100rem;
+  margin-top: 10rem;
+
+  .inturodusFestivalText{
+    display: inline-block;
+    width: 40%;
+    height: 100rem;
+    background-color: darkcyan;
+  }
+  .inturodusFestivalImgBox{
+    display: inline-block;
+    width: 60%;
+    height: 100rem;
+    background-color: red; 
+  }
+}
+
+.inturodusPlayBox{
+  width: 100%;
+  height: 100rem;
+  margin-top: 10rem;
+  
+  .inturodusPlayText{
+    display: inline-block;
+    width: 40%;
+    height: 100rem;
+    background-color: darkcyan;
+  }
+  .inturodusPlayImgBox{
+    display: inline-block;
+    width: 60%;
+    height: 100rem;
+    background-color: red; 
+  }
+  
+}
+
+.inturodusFoodBox{
+  width: 100%;
+  height: 70rem;
+  margin-top: 10rem;
+  background-color: darkcyan;
+}
+
+.inturodusPriceBox{
+  width: 100%;
+  height: 70rem;
+  margin-top: 10rem;
+  background-color: red;
+}
+.inturodusNotice{
+  width: 100%;
+  height: 70rem;
+  margin-top: 10rem;
+  background-color: darkcyan; 
+}
+.inturodusMap{
+  width: 100%;
+  height: 70rem;
+  margin-top: 10rem;
+  background-color: red;
+}
