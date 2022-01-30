@@ -1,5 +1,5 @@
 @charset "utf-8";
-
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
 *{
   margin: 0;
   padding: 0;
@@ -7,29 +7,36 @@
 }
 html, body{
   width: 120rem;
-  background-color: #27324C;
+  height: 100%;
+  background: linear-gradient(#27324c, #7e88a7);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'Nanum Gothic', sans-serif;
 }
-
+::selection{
+  background-color: #27324c;
+}
 .iceLeft{
   position: fixed;
   bottom: 0;
   left: -6rem;
   width: 40rem;
   height: 30rem;
-  background-size: 40rem;
-  background-image: url("./left.png");
+  background-size: 30rem;
+  background-image: url("./Img/left.png");
   background-repeat: no-repeat;
   background-position: bottom;
   z-index: 1000;
 }
+
 .iceRigth{
   position: fixed;
   bottom: 0;
   right: -18rem;
   width: 40rem;
   height: 30rem;
-  background-size: 45rem;
-  background-image: url("./rigth.png");
+  background-size: 35rem;
+  background-image: url("./Img/rigth.png");
   background-repeat: no-repeat;
   background-position: bottom;
   z-index: 1000;
@@ -39,27 +46,93 @@ html, body{
   width: 100%;
   height: 5rem;
   color: white;
+  text-align: right;
   font-size: 2.5rem;
 }
 .mainImg{
+  position: relative;
   width: 100%;
   height: 65rem;
-  margin-top: 3rem;
-  background-color: brown;
+
+  h1{
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 40rem;
+    margin-top: -10rem;
+    color: white;
+    font-size: 5rem;
+    text-align: center;
+  }
+  .blackImg{
+    width: 100%;
+    height: 65rem;
+    position: absolute;
+    top: 0; 
+    background-color: rgba($color: #000000, $alpha: 0.5);
+  }
+  .carousel-item{
+    width: 100%;
+    height: 65rem;
+  }
 }
-.topVar{
+.topVarBackImg{
   width: 100%;
-  height: 18rem;
+  height: 20rem;
   margin-top: 15rem;
-  background-color: cornflowerblue;
+  background-image: url("./Img/topImg.jpeg");
+  background-repeat: no-repeat;
+  background-size: 110%;
+  position: relative;
+
+  .blackImg{
+    width: 100%;
+    height: 20rem; 
+    background-color: rgba($color: #000000, $alpha: 0.5);
+
+  }
+  .topTitle{ 
+    width: 30%;
+    position: absolute;
+    top: 6rem;
+    left: 10rem;
+    font-size: 4rem;
+    color: white;
+  }
+  .topText{
+    width: 60%;
+    position: absolute;
+    top: 5rem;
+    left: 35%;
+    font-size: 2rem;
+    color: white; 
+  }
 }
 
+
 .videoBox{
+  width: 100%;
   margin-top: 8rem;
-  margin-left: 20%;
-  width: 60%;
-  height: 40rem;
-  background-color: cornsilk;
+  position: relative;
+
+  .videoPlay{
+    margin-left: 20%;
+    width: 60%;
+    height: 40rem;
+    background-color: cornsilk;
+    text-align: center; 
+  }
+  .videoIce{
+    width: 20rem;
+    height: 20rem;
+    position: absolute;
+    top: 21rem;
+    left: 65%;
+    background-size: 20rem;
+    background-image: url("./Img/3.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
 }
 
 .inturodusFestivalBox{
@@ -68,13 +141,11 @@ html, body{
   margin-top: 10rem;
 
   .inturodusFestivalText{
-    display: inline-block;
     width: 40%;
     height: 100rem;
     background-color: darkcyan;
   }
   .inturodusFestivalImgBox{
-    display: inline-block;
     width: 60%;
     height: 100rem;
     background-color: red; 
@@ -87,13 +158,13 @@ html, body{
   margin-top: 10rem;
   
   .inturodusPlayText{
-    display: inline-block;
+
     width: 40%;
     height: 100rem;
     background-color: darkcyan;
   }
   .inturodusPlayImgBox{
-    display: inline-block;
+
     width: 60%;
     height: 100rem;
     background-color: red; 
