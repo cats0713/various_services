@@ -191,9 +191,26 @@ html, body {
 }
 
 .inturodusFestivalBox .inturodusFestivalImgBox {
+  position: relative;
   float: left;
   width: 60%;
   height: 100rem;
+}
+
+.inturodusFestivalBox .inturodusFestivalImgBox img {
+  width: 35rem;
+  height: 25rem;
+}
+
+.inturodusFestivalBox .inturodusFestivalImgBox .imgIce {
+  position: absolute;
+  top: 20rem;
+  left: 20rem;
+  width: 20rem;
+  height: 10rem;
+  background-image: url("./Img/5.png");
+  background-repeat: no-repeat;
+  background-size: 20rem;
 }
 
 .inturodusPlayBox {
