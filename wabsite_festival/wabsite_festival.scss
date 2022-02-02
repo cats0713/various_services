@@ -123,13 +123,23 @@ html, body{
     color: white;
   }
   .topText{
-    width: 60%;
+    width: 63%;
     position: absolute;
-    top: 5rem;
+    top: 3rem;
     left: 35%;
-    font-size: 2rem;
-    color: white; 
+    
+    .topTextKo{
+      color: white;
+      font-size: 2rem;
+    }
+    .topTextEn{
+      top: 3rem;
+      left: 35%;
+      font-size: 1.3rem;
+      color: lightgray;  
+    } 
   }
+
 }
 
 
@@ -167,9 +177,18 @@ html, body{
     float: left;
     width: 40%;
     height: 100%;
-
+    h1{
+      font-size: 4rem;
+      font-weight: bold;
+      color: white;
+    }
+    h2{
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: white; 
+    }
     p{
-      font-size: 2rem;
+      font-size: 1.7rem;
       color: white;
     }
   }
@@ -218,7 +237,15 @@ html, body{
     float: left;
     width: 40%;
     height: 100%;
-    background-color: darkcyan;
+    h1{
+      font-size: 4rem;
+      font-weight: bold;
+      color: white;
+    }
+    p{
+      font-size: 1.7rem;
+      color: white;
+    } 
   }
   .inturodusPlayImgBox{
     float: left;

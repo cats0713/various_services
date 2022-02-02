@@ -139,12 +139,22 @@ html, body {
 }
 
 .topVarBackImg .topText {
-  width: 60%;
+  width: 63%;
   position: absolute;
-  top: 5rem;
+  top: 3rem;
   left: 35%;
-  font-size: 2rem;
+}
+
+.topVarBackImg .topText .topTextKo {
   color: white;
+  font-size: 2rem;
+}
+
+.topVarBackImg .topText .topTextEn {
+  top: 3rem;
+  left: 35%;
+  font-size: 1.3rem;
+  color: lightgray;
 }
 
 .videoBox {
@@ -185,8 +195,20 @@ html, body {
   height: 100%;
 }
 
+.inturodusFestivalBox .inturodusFestivalText h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  color: white;
+}
+
+.inturodusFestivalBox .inturodusFestivalText h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+}
+
 .inturodusFestivalBox .inturodusFestivalText p {
-  font-size: 2rem;
+  font-size: 1.7rem;
   color: white;
 }
 
@@ -240,7 +262,17 @@ html, body {
   float: left;
   width: 40%;
   height: 100%;
-  background-color: darkcyan;
+}
+
+.inturodusPlayBox .inturodusPlayText h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  color: white;
+}
+
+.inturodusPlayBox .inturodusPlayText p {
+  font-size: 1.7rem;
+  color: white;
 }
 
 .inturodusPlayBox .inturodusPlayImgBox {
