@@ -160,13 +160,13 @@ html, body{
 
 .inturodusFestivalBox{
   width: 100%;
-  height: 100rem;
+  height: 80rem;
   margin-top: 10rem;
 
   .inturodusFestivalText{
     float: left;
     width: 40%;
-    height: 100rem;
+    height: 100%;
 
     p{
       font-size: 2rem;
@@ -174,43 +174,85 @@ html, body{
     }
   }
   .inturodusFestivalImgBox{
-    position: relative;
-    float: left;
     width: 60%;
-    height: 100rem;
-    img{
-      width: 35rem;
+    height: 100%;
+    float: left;
+
+    [class ^= inturodusFestivalImg]{
+      position: relative;
+      width: 30rem;
       height: 25rem;
+      img{
+        width: 100%;
+        height: 20rem;
+      }
+      .imgIce{
+        position: absolute;
+        top: 16rem;
+        left: 20rem;
+        width: 15rem;
+        height: 10rem;
+        background-image: url("./Img/5.png");
+        background-repeat: no-repeat;
+        background-size: 15rem;
+      }
     }
-    .imgIce{
-      position: absolute;
-      top: 20rem;
-      left: 20rem;
-      width: 20rem;
-      height: 10rem;
-      background-image: url("./Img/5.png");
-      background-repeat: no-repeat;
-      background-size: 20rem;
+    .inturodusFestivalImg1{
+      margin-left: 15rem;
+    }
+    .inturodusFestivalImg2{
+      margin-left: 30rem;
+    }
+    .inturodusFestivalImg3{
+      margin-left: 5rem;
     }
   }
 }
 
 .inturodusPlayBox{
   width: 100%;
-  height: 100rem;
-  margin-top: 10rem;
+  height: 80rem;
+  margin-top: 5rem;
   
   .inturodusPlayText{
     float: left;
     width: 40%;
-    height: 100rem;
+    height: 100%;
     background-color: darkcyan;
   }
   .inturodusPlayImgBox{
     float: left;
     width: 60%;
-    height: 100rem;
-    background-color: red; 
+    height: 100%;
+
+    [class ^= inturodusPlayImg]{
+      position: relative;
+      width: 30rem;
+      height: 25rem;
+      img{
+        width: 100%;
+        height: 20rem;
+      }
+      .imgIce{
+        position: absolute;
+        top: 16rem;
+        left: 20rem;
+        width: 15rem;
+        height: 10rem;
+        background-image: url("./Img/5.png");
+        background-repeat: no-repeat;
+        background-size: 15rem;
+      }
+    }
+    .inturodusPlayImg1{
+      margin-left: 27rem;
+    }
+    .inturodusPlayImg2{
+      margin-left: 5rem;
+    }
+    .inturodusPlayImg3{
+      margin-left: 25rem;
+    } 
   }
   
 }

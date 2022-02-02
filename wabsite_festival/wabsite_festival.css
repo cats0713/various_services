@@ -175,14 +175,14 @@ html, body {
 
 .inturodusFestivalBox {
   width: 100%;
-  height: 100rem;
+  height: 80rem;
   margin-top: 10rem;
 }
 
 .inturodusFestivalBox .inturodusFestivalText {
   float: left;
   width: 40%;
-  height: 100rem;
+  height: 100%;
 }
 
 .inturodusFestivalBox .inturodusFestivalText p {
@@ -191,46 +191,96 @@ html, body {
 }
 
 .inturodusFestivalBox .inturodusFestivalImgBox {
-  position: relative;
-  float: left;
   width: 60%;
-  height: 100rem;
+  height: 100%;
+  float: left;
 }
 
-.inturodusFestivalBox .inturodusFestivalImgBox img {
-  width: 35rem;
+.inturodusFestivalBox .inturodusFestivalImgBox [class^=inturodusFestivalImg] {
+  position: relative;
+  width: 30rem;
   height: 25rem;
 }
 
-.inturodusFestivalBox .inturodusFestivalImgBox .imgIce {
+.inturodusFestivalBox .inturodusFestivalImgBox [class^=inturodusFestivalImg] img {
+  width: 100%;
+  height: 20rem;
+}
+
+.inturodusFestivalBox .inturodusFestivalImgBox [class^=inturodusFestivalImg] .imgIce {
   position: absolute;
-  top: 20rem;
+  top: 16rem;
   left: 20rem;
-  width: 20rem;
+  width: 15rem;
   height: 10rem;
   background-image: url("./Img/5.png");
   background-repeat: no-repeat;
-  background-size: 20rem;
+  background-size: 15rem;
+}
+
+.inturodusFestivalBox .inturodusFestivalImgBox .inturodusFestivalImg1 {
+  margin-left: 15rem;
+}
+
+.inturodusFestivalBox .inturodusFestivalImgBox .inturodusFestivalImg2 {
+  margin-left: 30rem;
+}
+
+.inturodusFestivalBox .inturodusFestivalImgBox .inturodusFestivalImg3 {
+  margin-left: 5rem;
 }
 
 .inturodusPlayBox {
   width: 100%;
-  height: 100rem;
-  margin-top: 10rem;
+  height: 80rem;
+  margin-top: 5rem;
 }
 
 .inturodusPlayBox .inturodusPlayText {
   float: left;
   width: 40%;
-  height: 100rem;
+  height: 100%;
   background-color: darkcyan;
 }
 
 .inturodusPlayBox .inturodusPlayImgBox {
   float: left;
   width: 60%;
-  height: 100rem;
-  background-color: red;
+  height: 100%;
+}
+
+.inturodusPlayBox .inturodusPlayImgBox [class^=inturodusPlayImg] {
+  position: relative;
+  width: 30rem;
+  height: 25rem;
+}
+
+.inturodusPlayBox .inturodusPlayImgBox [class^=inturodusPlayImg] img {
+  width: 100%;
+  height: 20rem;
+}
+
+.inturodusPlayBox .inturodusPlayImgBox [class^=inturodusPlayImg] .imgIce {
+  position: absolute;
+  top: 16rem;
+  left: 20rem;
+  width: 15rem;
+  height: 10rem;
+  background-image: url("./Img/5.png");
+  background-repeat: no-repeat;
+  background-size: 15rem;
+}
+
+.inturodusPlayBox .inturodusPlayImgBox .inturodusPlayImg1 {
+  margin-left: 27rem;
+}
+
+.inturodusPlayBox .inturodusPlayImgBox .inturodusPlayImg2 {
+  margin-left: 5rem;
+}
+
+.inturodusPlayBox .inturodusPlayImgBox .inturodusPlayImg3 {
+  margin-left: 25rem;
 }
 
 .inturodusFoodBox {
