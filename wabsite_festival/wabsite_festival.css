@@ -82,6 +82,12 @@ html, body {
   height: 65rem;
 }
 
+.mainImg .mantBtn {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+}
+
 .mainImg h1 {
   position: absolute;
   top: 50%;
