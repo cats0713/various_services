@@ -1,17 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Nanum+Gothic&display=swap");
 * {
   margin: 0;
   padding: 0;
   font-size: 10px;
+  font-family: 'Nanum Gothic', sans-serif;
 }
 
-html, body {
+body {
   width: 120rem;
-  background: -webkit-gradient(linear, left top, left bottom, from(#27324c), to(#7e88a7));
-  background: linear-gradient(#27324c, #7e88a7);
+  background: #2D466B;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  font-family: 'Nanum Gothic', sans-serif;
+  scroll-behavior: smooth;
 }
 
 ::-moz-selection {
@@ -22,10 +22,15 @@ html, body {
   background-color: #27324c;
 }
 
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+}
+
 .iceLeft {
   position: fixed;
   bottom: 0;
-  left: -6rem;
+  left: -8rem;
   width: 40rem;
   height: 30rem;
   background-size: 30rem;
@@ -58,6 +63,30 @@ html, body {
 
 .sideVarStyle {
   background-color: #e3f2fd;
+}
+
+.sideVarStyle a {
+  width: 10rem;
+  height: 5rem;
+  font-size: 2rem;
+  display: block;
+  text-decoration: none;
+}
+
+.sideVarStyle a:link {
+  color: black;
+}
+
+.sideVarStyle a:visited {
+  color: black;
+}
+
+.sideVarStyle a:hover {
+  color: black;
+}
+
+.sideVarStyle a:active {
+  color: black;
 }
 
 .headerBtn {
@@ -95,15 +124,12 @@ html, body {
   height: 40rem;
   margin-top: -10rem;
   color: white;
-  font-size: 4rem;
+  font-size: 5.5rem;
   text-align: center;
   word-spacing: 0.1rem;
   letter-spacing: 0.4rem;
   line-height: 6.5rem;
-}
-
-.mainImg h1 strong {
-  font-size: 4rem;
+  font-family: 'Nanum Brush Script', cursive;
 }
 
 .mainImg .blackImg {
@@ -177,22 +203,27 @@ html, body {
   text-align: center;
 }
 
-.videoBox .videoIce {
-  width: 20rem;
-  height: 20rem;
+.banner1 {
+  margin-top: 10rem;
+}
+
+.banner1 img {
   position: absolute;
-  top: 21rem;
-  left: 65%;
-  background-size: 20rem;
-  background-image: url("./Img/3.png");
-  background-repeat: no-repeat;
-  background-position: bottom;
+}
+
+.inturodusBox {
+  width: 100%;
+  background-color: #EFEEEC;
+}
+
+.inturodusBox .banner2 {
+  margin-top: 45rem;
+  height: 30rem;
 }
 
 .inturodusFestivalBox {
   width: 100%;
   height: 80rem;
-  margin-top: 10rem;
 }
 
 .inturodusFestivalBox .inturodusFestivalText {
@@ -204,18 +235,18 @@ html, body {
 .inturodusFestivalBox .inturodusFestivalText h1 {
   font-size: 4rem;
   font-weight: bold;
-  color: white;
+  color: #040404;
 }
 
 .inturodusFestivalBox .inturodusFestivalText h2 {
   font-size: 2.5rem;
   font-weight: bold;
-  color: white;
+  color: #040404;
 }
 
 .inturodusFestivalBox .inturodusFestivalText p {
   font-size: 1.7rem;
-  color: white;
+  color: #040404;
 }
 
 .inturodusFestivalBox .inturodusFestivalImgBox {
@@ -273,12 +304,12 @@ html, body {
 .inturodusPlayBox .inturodusPlayText h1 {
   font-size: 4rem;
   font-weight: bold;
-  color: white;
+  color: #040404;
 }
 
 .inturodusPlayBox .inturodusPlayText p {
   font-size: 1.7rem;
-  color: white;
+  color: #040404;
 }
 
 .inturodusPlayBox .inturodusPlayImgBox {
@@ -335,7 +366,7 @@ html, body {
 .inturodusFoodBox .inturodusFoodText h1 {
   display: inline-block;
   height: 100%;
-  color: white;
+  color: #040404;
   font-size: 5rem;
   text-align: center;
   line-height: 20rem;
@@ -345,7 +376,7 @@ html, body {
 .inturodusFoodBox .inturodusFoodText p {
   display: inline-block;
   height: 100%;
-  color: white;
+  color: #040404;
   font-size: 3rem;
   line-height: 20rem;
   margin-left: 2rem;
@@ -374,6 +405,16 @@ html, body {
 .inturodusFoodBox .foodText {
   width: 100%;
   height: 55%;
+}
+
+.inturodusFoodBox .foodText p {
+  color: #040404;
+  width: 100;
+}
+
+.inturodusFoodBox img {
+  width: 100%;
+  height: 100%;
 }
 
 .inturodusPriceBox {

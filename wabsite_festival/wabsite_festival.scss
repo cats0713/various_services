@@ -1,24 +1,29 @@
 @charset "utf-8";
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Nanum+Gothic&display=swap');
 *{
   margin: 0;
   padding: 0;
   font-size: 10px;
+  font-family: 'Nanum Gothic', sans-serif;
 }
-html, body{
+  body{
   width: 120rem;
-  background: linear-gradient(#27324c, #7e88a7);
+  background: #2D466B;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  font-family: 'Nanum Gothic', sans-serif;
+  scroll-behavior: smooth;
 }
 ::selection{
   background-color: #27324c;
 }
+.wrapper{
+  width: 100vw;
+  height: 100vh;
+}
 .iceLeft{
   position: fixed;
   bottom: 0;
-  left: -6rem;
+  left: -8rem;
   width: 40rem;
   height: 30rem;
   background-size: 30rem;
@@ -40,6 +45,7 @@ html, body{
   background-position: bottom;
   z-index: 1000;
 }
+
 //화면 꾸밈
 .titleText{
   width: 100%;
@@ -50,6 +56,26 @@ html, body{
 }
 .sideVarStyle{
   background-color: #e3f2fd;
+  a{
+    width: 10rem;
+    height: 5rem;
+    font-size: 2rem;
+    display: block;
+    text-decoration: none;
+  }
+  a:link { 
+    color: black;
+  } 
+  a:visited {
+    color: black;
+  } 
+
+  a:hover {
+    color: black;
+  }
+  a:active {
+    color: black;
+  } 
 }
 .headerBtn{
   width: 4rem;
@@ -82,14 +108,13 @@ html, body{
     height: 40rem;
     margin-top: -10rem;
     color: white;
-    font-size: 4rem;
+    font-size: 5.5rem;
     text-align: center;
     word-spacing: 0.1rem;
     letter-spacing: 0.4rem;
     line-height: 6.5rem;
-    strong{
-      font-size: 4rem;
-    }
+    font-family: 'Nanum Brush Script', cursive;
+  
   }
   .blackImg{
     width: 100%;
@@ -159,23 +184,28 @@ html, body{
     background-color: cornsilk;
     text-align: center; 
   }
-  .videoIce{
-    width: 20rem;
-    height: 20rem;
+}
+
+.banner1{
+  margin-top: 10rem;
+  img{
     position: absolute;
-    top: 21rem;
-    left: 65%;
-    background-size: 20rem;
-    background-image: url("./Img/3.png");
-    background-repeat: no-repeat;
-    background-position: bottom;
+  }
+}
+
+.inturodusBox{
+  width: 100%;
+  background-color: #EFEEEC;
+  .banner2{
+  margin-top: 45rem;
+  height: 30rem;
   }
 }
 
 .inturodusFestivalBox{
   width: 100%;
   height: 80rem;
-  margin-top: 10rem;
+
 
   .inturodusFestivalText{
     float: left;
@@ -184,16 +214,16 @@ html, body{
     h1{
       font-size: 4rem;
       font-weight: bold;
-      color: white;
+      color: #040404;
     }
     h2{
       font-size: 2.5rem;
       font-weight: bold;
-      color: white; 
+      color: #040404; 
     }
     p{
       font-size: 1.7rem;
-      color: white;
+      color: #040404;
     }
   }
   .inturodusFestivalImgBox{
@@ -244,11 +274,11 @@ html, body{
     h1{
       font-size: 4rem;
       font-weight: bold;
-      color: white;
+      color: #040404;
     }
     p{
       font-size: 1.7rem;
-      color: white;
+      color: #040404;
     } 
   }
   .inturodusPlayImgBox{
@@ -298,7 +328,7 @@ html, body{
     h1{
       display: inline-block;
       height: 100%;
-      color: white;
+      color: #040404;
       font-size: 5rem;
       text-align: center;
       line-height: 20rem;
@@ -307,7 +337,7 @@ html, body{
     p{
       display: inline-block;
       height: 100%;
-      color: white;
+      color: #040404;
       font-size: 3rem;
       line-height: 20rem;
       margin-left: 2rem;
@@ -343,6 +373,14 @@ html, body{
   .foodText{
     width: 100%;
     height: 55%;
+    p{
+      color: #040404;
+      width: 100;
+    }
+  }
+  img{
+    width: 100%;
+    height: 100%;
   }
 }
 
