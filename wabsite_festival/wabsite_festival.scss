@@ -16,10 +16,7 @@
 ::selection{
   background-color: #27324c;
 }
-.wrapper{
-  width: 100vw;
-  height: 100vh;
-}
+
 .iceLeft{
   position: fixed;
   bottom: 0;
@@ -86,7 +83,7 @@
   text-align: center;
   z-index: 1000;
   border-radius: 50%;
-  background-color: yellow;
+  background-image: url(./Img/side_logo.jpg);
 }
 .headerBtn:hover{
   cursor: pointer;
@@ -211,18 +208,22 @@
     float: left;
     width: 40%;
     height: 100%;
+    div{
+      margin-top: 10rem;
+      margin-left: 8rem;
+    }
     h1{
-      font-size: 4rem;
+      font-size: 3rem;
       font-weight: bold;
       color: #040404;
     }
     h2{
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: bold;
       color: #040404; 
     }
     p{
-      font-size: 1.7rem;
+      font-size: 1.5rem;
       color: #040404;
     }
   }

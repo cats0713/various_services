@@ -22,11 +22,6 @@ body {
   background-color: #27324c;
 }
 
-.wrapper {
-  width: 100vw;
-  height: 100vh;
-}
-
 .iceLeft {
   position: fixed;
   bottom: 0;
@@ -98,7 +93,7 @@ body {
   text-align: center;
   z-index: 1000;
   border-radius: 50%;
-  background-color: yellow;
+  background-image: url(./Img/side_logo.jpg);
 }
 
 .headerBtn:hover {
@@ -232,20 +227,25 @@ body {
   height: 100%;
 }
 
+.inturodusFestivalBox .inturodusFestivalText div {
+  margin-top: 10rem;
+  margin-left: 8rem;
+}
+
 .inturodusFestivalBox .inturodusFestivalText h1 {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: bold;
   color: #040404;
 }
 
 .inturodusFestivalBox .inturodusFestivalText h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: bold;
   color: #040404;
 }
 
 .inturodusFestivalBox .inturodusFestivalText p {
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   color: #040404;
 }
 
