@@ -9,6 +9,7 @@
 body {
   width: 120rem;
   background: #2D466B;
+  background-image: url(./Img/back_1.png);
   background-repeat: no-repeat;
   background-attachment: fixed;
   scroll-behavior: smooth;
@@ -26,8 +27,9 @@ body {
   position: fixed;
   bottom: 0;
   left: -8rem;
-  width: 40rem;
-  height: 30rem;
+  width: 35rem;
+  height: 19rem;
+  border-top-right-radius: 70%;
   background-size: 30rem;
   background-image: url("./Img/left.png");
   background-repeat: no-repeat;
@@ -39,8 +41,9 @@ body {
   position: fixed;
   bottom: 0;
   right: -18rem;
-  width: 40rem;
-  height: 30rem;
+  width: 35rem;
+  height: 22rem;
+  border-top-left-radius: 10rem;
   background-size: 35rem;
   background-image: url("./Img/rigth.png");
   background-repeat: no-repeat;
@@ -57,7 +60,7 @@ body {
 }
 
 .sideVarStyle {
-  background-color: #e3f2fd;
+  background-color: #F5F5F5;
 }
 
 .sideVarStyle a {
@@ -77,11 +80,16 @@ body {
 }
 
 .sideVarStyle a:hover {
-  color: black;
+  color: #c2c2c2;
 }
 
 .sideVarStyle a:active {
-  color: black;
+  color: #c2c2c2;
+}
+
+.sideVarStyle img {
+  width: 10rem;
+  height: 4rem;
 }
 
 .headerBtn {
@@ -103,7 +111,7 @@ body {
 .mainImg {
   position: relative;
   width: 100%;
-  height: 65rem;
+  height: 100vh;
 }
 
 .mainImg .mantBtn {
@@ -129,7 +137,7 @@ body {
 
 .mainImg .blackImg {
   width: 100%;
-  height: 65rem;
+  height: 100%;
   position: absolute;
   top: 0;
   background-color: rgba(0, 0, 0, 0.5);
@@ -137,7 +145,7 @@ body {
 
 .mainImg .carousel-item {
   width: 100%;
-  height: 65rem;
+  height: 100vh;
 }
 
 .topVarBackImg {
@@ -196,6 +204,11 @@ body {
   height: 40rem;
   background-color: cornsilk;
   text-align: center;
+}
+
+.videoBox .videoPlay iframe {
+  width: 100%;
+  height: 100%;
 }
 
 .banner1 {
@@ -264,6 +277,8 @@ body {
 .inturodusFestivalBox .inturodusFestivalImgBox [class^=inturodusFestivalImg] img {
   width: 100%;
   height: 20rem;
+  -webkit-box-shadow: 0.3rem 0.3rem 0.5rem gray;
+          box-shadow: 0.3rem 0.3rem 0.5rem gray;
 }
 
 .inturodusFestivalBox .inturodusFestivalImgBox [class^=inturodusFestivalImg] .imgIce {
@@ -277,16 +292,59 @@ body {
   background-size: 15rem;
 }
 
+.inturodusFestivalBox .inturodusFestivalImgBox [class^=inturodusFestivalImg] .imgIce p {
+  display: none;
+}
+
 .inturodusFestivalBox .inturodusFestivalImgBox .inturodusFestivalImg1 {
   margin-left: 15rem;
+}
+
+.inturodusFestivalBox .inturodusFestivalImgBox .inturodusFestivalImg1:hover {
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  -webkit-transform: perspective(50rem) translateZ(13rem);
+          transform: perspective(50rem) translateZ(13rem);
+}
+
+.inturodusFestivalBox .inturodusFestivalImgBox .inturodusFestivalImg1:hover p {
+  line-height: 4rem;
+  text-align: center;
+  display: block;
 }
 
 .inturodusFestivalBox .inturodusFestivalImgBox .inturodusFestivalImg2 {
   margin-left: 30rem;
 }
 
+.inturodusFestivalBox .inturodusFestivalImgBox .inturodusFestivalImg2:hover {
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  -webkit-transform: perspective(50rem) translateZ(13rem);
+          transform: perspective(50rem) translateZ(13rem);
+}
+
+.inturodusFestivalBox .inturodusFestivalImgBox .inturodusFestivalImg2:hover p {
+  line-height: 4rem;
+  text-align: center;
+  display: block;
+}
+
 .inturodusFestivalBox .inturodusFestivalImgBox .inturodusFestivalImg3 {
   margin-left: 5rem;
+}
+
+.inturodusFestivalBox .inturodusFestivalImgBox .inturodusFestivalImg3:hover {
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  -webkit-transform: perspective(50rem) translateZ(13rem);
+          transform: perspective(50rem) translateZ(13rem);
+}
+
+.inturodusFestivalBox .inturodusFestivalImgBox .inturodusFestivalImg3:hover p {
+  line-height: 4rem;
+  text-align: center;
+  display: block;
 }
 
 .inturodusPlayBox {
@@ -327,6 +385,8 @@ body {
 .inturodusPlayBox .inturodusPlayImgBox [class^=inturodusPlayImg] img {
   width: 100%;
   height: 20rem;
+  -webkit-box-shadow: 0.3rem 0.3rem 0.5rem gray;
+          box-shadow: 0.3rem 0.3rem 0.5rem gray;
 }
 
 .inturodusPlayBox .inturodusPlayImgBox [class^=inturodusPlayImg] .imgIce {
@@ -340,16 +400,59 @@ body {
   background-size: 15rem;
 }
 
+.inturodusPlayBox .inturodusPlayImgBox [class^=inturodusPlayImg] .imgIce p {
+  display: none;
+}
+
 .inturodusPlayBox .inturodusPlayImgBox .inturodusPlayImg1 {
   margin-left: 27rem;
 }
 
+.inturodusPlayBox .inturodusPlayImgBox .inturodusPlayImg1:hover {
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  -webkit-transform: perspective(50rem) translateZ(13rem);
+          transform: perspective(50rem) translateZ(13rem);
+}
+
+.inturodusPlayBox .inturodusPlayImgBox .inturodusPlayImg1:hover p {
+  line-height: 4rem;
+  text-align: center;
+  display: block;
+}
+
 .inturodusPlayBox .inturodusPlayImgBox .inturodusPlayImg2 {
-  margin-left: 5rem;
+  margin-left: 7rem;
+}
+
+.inturodusPlayBox .inturodusPlayImgBox .inturodusPlayImg2:hover {
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  -webkit-transform: perspective(50rem) translateZ(13rem);
+          transform: perspective(50rem) translateZ(13rem);
+}
+
+.inturodusPlayBox .inturodusPlayImgBox .inturodusPlayImg2:hover p {
+  line-height: 4rem;
+  text-align: center;
+  display: block;
 }
 
 .inturodusPlayBox .inturodusPlayImgBox .inturodusPlayImg3 {
   margin-left: 25rem;
+}
+
+.inturodusPlayBox .inturodusPlayImgBox .inturodusPlayImg3:hover {
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  -webkit-transform: perspective(50rem) translateZ(13rem);
+          transform: perspective(50rem) translateZ(13rem);
+}
+
+.inturodusPlayBox .inturodusPlayImgBox .inturodusPlayImg3:hover p {
+  line-height: 4rem;
+  text-align: center;
+  display: block;
 }
 
 .inturodusFoodBox {
@@ -390,16 +493,39 @@ body {
   margin-left: 2rem;
 }
 
-.inturodusFoodBox .foodBox4 .carousel-item {
-  width: 100%;
-  height: 100%;
-}
-
 .inturodusFoodBox .foodImg {
   width: 100%;
   height: 45%;
   background-size: 40rem;
   background-repeat: no-repeat;
+}
+
+.inturodusFoodBox .foodBox1:hover {
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  -webkit-transform: perspective(50rem) translateZ(13rem) translate(5rem, 5rem);
+          transform: perspective(50rem) translateZ(13rem) translate(5rem, 5rem);
+}
+
+.inturodusFoodBox .foodBox2:hover {
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  -webkit-transform: perspective(50rem) translateZ(13rem) translate(0, 5rem);
+          transform: perspective(50rem) translateZ(13rem) translate(0, 5rem);
+}
+
+.inturodusFoodBox .foodBox3:hover {
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  -webkit-transform: perspective(50rem) translateZ(13rem) translate(0, 5rem);
+          transform: perspective(50rem) translateZ(13rem) translate(0, 5rem);
+}
+
+.inturodusFoodBox .foodBox4:hover {
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  -webkit-transform: perspective(50rem) translateZ(13rem) translate(-5rem, 5rem);
+          transform: perspective(50rem) translateZ(13rem) translate(-5rem, 5rem);
 }
 
 .inturodusFoodBox .foodText {
@@ -421,7 +547,22 @@ body {
   width: 100%;
   height: 70rem;
   margin-top: 10rem;
-  background-color: red;
+}
+
+.inturodusPriceBox .inturodusPriceTitle {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.inturodusPriceBox .inturodusPriceTitle h1 {
+  font-size: 2rem;
+  line-height: 4rem;
+  margin-left: 30%;
+}
+
+.inturodusPriceBox .inturodusPriceImg {
+  margin-top: 2rem;
+  text-align: center;
 }
 
 .inturodusNotice {
@@ -433,8 +574,19 @@ body {
 
 .inturodusMap {
   width: 100%;
-  height: 70rem;
+  height: 80rem;
   margin-top: 10rem;
   background-color: red;
+}
+
+.footer {
+  width: 100%;
+  height: 25rem;
+  background-color: white;
+  text-align: center;
+}
+
+.footer img {
+  text-decoration: none;
 }
 /*# sourceMappingURL=wabsite_festival.css.map */
