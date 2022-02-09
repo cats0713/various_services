@@ -18,6 +18,10 @@
   font-size: 10px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   text-align: center;
   background-color: #F1FAEE;
@@ -26,10 +30,12 @@ body {
 
 ::-moz-selection {
   background-color: #34672f;
+  color: wheat;
 }
 
 ::selection {
   background-color: #34672f;
+  color: wheat;
 }
 
 nav .blackBackgruond {
@@ -47,16 +53,15 @@ nav .navBtn {
   height: 7rem;
   float: left;
   border-radius: 50%;
-  background-color: #91C788;
-  -webkit-box-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.5);
-          box-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.5);
   border: 0;
   position: fixed;
   top: 2.5rem;
   right: 3rem;
   overflow: hidden;
+  background-color: rgba(0, 0, 0, 0);
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
+  z-index: 999;
 }
 
 nav .navBtn .waveOne {
@@ -66,9 +71,10 @@ nav .navBtn .waveOne {
   top: 0.5rem;
   left: 0.5rem;
   border-radius: 45%;
-  background: rgba(79, 122, 47, 0.8);
-  -webkit-animation: move 4s infinite linear;
-          animation: move 4s infinite linear;
+  background-size: cover;
+  background-image: url(./img/navBtn.png);
+  -webkit-animation: move 10s infinite linear;
+          animation: move 10s infinite linear;
 }
 
 nav .navBtn:hover {
@@ -92,7 +98,7 @@ nav .navListBtn button {
   height: 2rem;
   color: white;
   position: fixed;
-  background-color: #52734D;
+  background-color: #91C788;
   top: 2.5rem;
   right: 25rem;
   border: 0;
@@ -142,8 +148,8 @@ nav .navListBtn a:active {
 
 .mainImgBox {
   width: 70%;
-  height: 44rem;
-  margin-top: 25rem;
+  height: 50rem;
+  padding-top: 25rem;
 }
 
 .mainImgBox img {
@@ -195,6 +201,80 @@ nav .navListBtn a:active {
 }
 
 .mainBox {
+  width: 120rem;
   display: inline-block;
+}
+
+.introductionTitle {
+  width: 100%;
+  height: 80rem;
+}
+
+.introductionTitle .mainTitle {
+  width: 100%;
+  height: 10rem;
+  color: #4F7A47;
+  font-size: 5rem;
+  font-weight: bold;
+  letter-spacing: 0.6rem;
+  word-spacing: 0.5;
+  line-height: 6.5rem;
+  text-align: center;
+  font-family: 'Nanum Gothic Coding', monospace;
+  -webkit-transform: translateY(30rem);
+          transform: translateY(30rem);
+  position: relative;
+}
+
+.introductionTitle .mainTitle .decoTitle {
+  width: 50rem;
+  height: 30rem;
+  position: absolute;
+  top: 1rem;
+  right: 0;
+  background-image: url(./img/water2.png);
+  background-size: 42rem;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+.introductionTitle .mainTitle .decoTitle2 {
+  width: 30rem;
+  height: 20rem;
+  position: absolute;
+  top: -20rem;
+  left: 9rem;
+  background-image: url(./img/water.png);
+  background-size: 20rem;
+  background-repeat: no-repeat;
+}
+
+.introductionvideo {
+  width: 100%;
+  height: 80rem;
+  text-align: center;
+}
+
+.introductionvideo .videoBox {
+  display: inline-block;
+  width: 80rem;
+  height: 45rem;
+  border-top-left-radius: 3rem;
+  border-bottom-right-radius: 3rem;
+  overflow: hidden;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5);
+          box-shadow: rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.introductionvideo .videoBox iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.introductionvideo .videoDeco {
+  width: 20rem;
+  height: 10rem;
+  background-image: url(./img/water2.png);
 }
 /*# sourceMappingURL=main.css.map */
