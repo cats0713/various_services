@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Nanum+Gothic+Coding:wght@400;700&family=Noto+Sans+KR:wght@100;700&display=swap");
+@-webkit-keyframes move {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes move {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+}
+
+body {
+  text-align: center;
+  background-color: #F1FAEE;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+::-moz-selection {
+  background-color: #34672f;
+}
+
+::selection {
+  background-color: #34672f;
+}
+
+nav .blackBackgruond {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+nav .navBtn {
+  width: 7rem;
+  height: 7rem;
+  float: left;
+  border-radius: 50%;
+  background-color: #91C788;
+  -webkit-box-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.5);
+          box-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.5);
+  border: 0;
+  position: fixed;
+  top: 2.5rem;
+  right: 3rem;
+  overflow: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+nav .navBtn .waveOne {
+  width: 6rem;
+  height: 6rem;
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  border-radius: 45%;
+  background: rgba(79, 122, 47, 0.8);
+  -webkit-animation: move 4s infinite linear;
+          animation: move 4s infinite linear;
+}
+
+nav .navBtn:hover {
+  cursor: pointer;
+}
+
+nav .navListBtn {
+  display: none;
+  width: 30rem;
+  height: 100vh;
+  padding-top: 15rem;
+  background-color: #91C788;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1001;
+}
+
+nav .navListBtn button {
+  width: 2rem;
+  height: 2rem;
+  color: white;
+  position: fixed;
+  background-color: #52734D;
+  top: 2.5rem;
+  right: 25rem;
+  border: 0;
+}
+
+nav .navListBtn button i {
+  font-size: 2rem;
+}
+
+nav .navListBtn button:hover {
+  cursor: pointer;
+}
+
+nav .navListBtn h1 {
+  font-size: 2rem;
+  text-align: right;
+  position: absolute;
+  top: 5rem;
+  right: 5rem;
+}
+
+nav .navListBtn a {
+  width: 10rem;
+  height: 5rem;
+  font-size: 2rem;
+  display: block;
+  text-decoration: none;
+  text-align: right;
+  margin-left: 15rem;
+}
+
+nav .navListBtn a:link {
+  color: black;
+}
+
+nav .navListBtn a:visited {
+  color: black;
+}
+
+nav .navListBtn a:hover {
+  color: #52734D;
+}
+
+nav .navListBtn a:active {
+  color: #52734D;
+}
+
+.mainImgBox {
+  width: 70%;
+  height: 44rem;
+  margin-top: 25rem;
+}
+
+.mainImgBox img {
+  width: 100%;
+  height: 100%;
+}
+
+.mainTextBox {
+  width: 100%;
+  height: 50rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  top: 30rem;
+}
+
+.mainTextBox h1 {
+  color: #4F7A47;
+  font-size: 5rem;
+  font-weight: bold;
+  letter-spacing: 0.6rem;
+  word-spacing: 0.5;
+  line-height: 6.5rem;
+  text-align: right;
+  font-family: 'Nanum Gothic Coding', monospace;
+  text-shadow: 0.1rem 0.1rem 0.1rem #F1FAEE;
+}
+
+.wave {
+  width: 40rem;
+  height: 15rem;
+  margin-left: -3rem;
+  overflow: hidden;
+  position: relative;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+.wave .waveOne {
+  width: 60rem;
+  height: 60rem;
+  position: absolute;
+  top: -47rem;
+  left: -17rem;
+  border-radius: 45%;
+  background: rgba(79, 122, 47, 0.8);
+  -webkit-animation: move 4s infinite linear;
+          animation: move 4s infinite linear;
+}
+
+.mainBox {
+  display: inline-block;
+}
+/*# sourceMappingURL=main.css.map */

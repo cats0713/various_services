@@ -6,15 +6,23 @@
   font-size: 10px;
 
 }
-  body{
+body{
+  background-color: #2D466B;
+  text-align: center;
+}
+
+.websiteBody{
   width: 120rem;
-  background: #2D466B;
+  display: inline-block;
+  text-align: left;
   background-image: url(./Img/back_1.png);
   background-repeat: no-repeat;
   background-attachment: fixed;
   scroll-behavior: smooth;
   font-family: 'Jua', sans-serif;
+  background-color: #2D466B;
 }
+
 ::selection{
   background-color: #27324c;
 }
@@ -57,6 +65,7 @@
 }
 .sideVarStyle{
   background-color: #F5F5F5;
+  text-align: left;
   a{
     width: 10rem;
     height: 5rem;
@@ -219,9 +228,11 @@
 }
 
 .banner1{
+  position: relative;
   margin-top: 10rem;
   img{
     position: absolute;
+    left: 0;
   }
 }
 
@@ -244,7 +255,7 @@
     width: 40%;
     height: 100%;
     div{
-      margin-top: 10rem;
+      margin-top: 50%;
       margin-left: 8rem;
     }
     h1{
@@ -340,7 +351,7 @@
   .inturodusPlayText{
     float: left;
     width: 40%;
-    height: 100%;
+    margin-top: 30rem;
     h1{
       font-size: 4rem;
       font-weight: bold;
@@ -513,7 +524,6 @@
 
   .inturodusPriceTitle{
     width: 100%;
-
     h1{
       font-size: 2rem;
       line-height: 4rem;
@@ -521,24 +531,19 @@
     }
   }
   .inturodusPriceImg{
-    width: 50%;
-    height: 50%;
-    display: inline-block;
-    background-color: red;
+    width: 60%;
+    height: 70rem;
+    margin-left: 28rem;
     img{
       width: 100%;
-      
     }
   }
-  .inturodusMap{
-    width: 50%;
-    height: 70%;
-    float: left;
-    display: inline-block;
-    margin-top: 2rem;
-    text-align: center;
-    background-color: violet;
-  }
+  // .inturodusMap{
+  //   width: 50%;
+  //   height: 70rem;
+
+  // }
+
 }
 
 
