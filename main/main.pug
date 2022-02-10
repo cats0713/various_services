@@ -16,14 +16,14 @@ html(lang="ko")
       button#navBtn.navBtn
         .waveOne
       .navListBtn#navListBtn
-      
+        h1 알프스 마을
         button#navXBtn
           i.xi-close
-        h1 알프스 마을
         a(href="#wave") home
         a(href="#introductionTitle") 축제소개
-        a(href="#mainBox") 먹거리
-        a(href="#mainBox") 안내사항
+        a(href="#introductionFood") 먹거리
+        a(href="#introductionNoti") 안내사항
+        p 포트폴리오 입니다
       .blackBackgruond#blackBackgruond
     .wave#wave
       .waveOne
@@ -38,7 +38,55 @@ html(lang="ko")
           .decoTitle
           .decoTitle2
       .introductionvideo
+        .videoDeco
         .videoBox
           iframe( width="560" height="315" src="https://www.youtube-nocookie.com/embed/p7PANmL4SHY?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen) 
-      .introductionFestivalas
+      .introductionFestivalas#introductionFestivalas
+        .FestivalasBox
+          .imgBox
+            img#festivalasImg(src="./img/main_1.jpeg", alt="얼음 축제")
+          .textBox
+            h1 알프스 얼음분수축제 
+            p 커다란 얼음분수가 만들어놓은 알프스 겨울왕국! <br> 짜릿한 썰매장과 매년 달라지는 얼음조각, 눈조각<br>다양한 체험까지 할 수 있는 알프스마을 대표 축제입니다. 
+            h2 대표운영 프로그램 
+            p 알프스마을의 명물 얼음분수 <br> 새하얀 눈으로 조각한, 거대한 눈조각 <br>얼음성을 방불케 하는 얼음조각등이 있습니다.
 
+      .introductionPlay#introductionPlay
+        .playBox
+          .textBox
+            h1 놀거리
+            p 눈 썰매장, 빙판썰매, 봅슬레이등 많은 놀거리가 있습니다.
+            p 그 외에도 빙어 낚시 짚 트랙 등 다양한 체험이 있습니다.
+            button MORE
+          .imgBox
+            img(src="./img/main_1.jpeg", alt="얼음 축제")
+      .introductionFood#introductionFood
+        .foodBox
+          .imgBox
+            img(src="./img/main_1.jpeg", alt="얼음 축제")
+          .textBox
+            h1 먹거리
+            p 군고구마, 군밤, 빙어튀김, 구운 옥수수, 어묵탕, 닭꼬치 등등
+            p 그 외에 다양한 먹거리가 많이 있습니다.
+            button MORE
+      .introductionNoti#introductionNoti
+        .NotiBox
+          .notiText
+            h1 알프스 안내사항
+            p 커다란 얼음분수가 만들어놓은 알프스 겨울왕국! <br> 짜릿한 썰매장과 매년 달라지는 얼음조각, 눈조각<br>다양한 체험까지 할 수 있는 알프스마을 대표 축제입니다. 
+            h2 대표운영 프로그램 
+            p 알프스마을의 명물 얼음분수 <br> 새하얀 눈으로 조각한, 거대한 눈조각 <br>얼음성을 방불케 하는 얼음조각등이 있습니다.
+            button MORE
+          .notiMap
+            iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12843.884214318345!2d126.90511383494702!3d36.40989563049127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357a9835a795013b%3A0xc1c6746411eaac7e!2z7LKt7JaR6rWwIOyVjO2UhOyKpOuniOydhA!5e0!3m2!1sko!2skr!4v1644407827929!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy")
+    footer
+      .footerImg
+      aside
+        a(href="./a") 이용약관 
+        a(href="./a") 개인정보처리방침
+        a(href="./a") 이메일주소무단수집거부
+      p 기업명알프스마을 주소 : 33349 충남 청양군 정산면 천장리 164-1  사업자등록번호 310-81-24776 
+      p 대표자명 황준환 이메일 
+        a(href="./") junhwan0907@hanmail.net
+      p 전화번호 
+        a(href="./") 041-942-0797~8
