@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Nanum+Gothic+Coding:wght@400;700&family=Noto+Sans+KR:wght@100;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+}
+
+.introBox {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.introBox img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.introBox .moreBtn {
+  width: 15rem;
+  height: 5rem;
+  position: fixed;
+  bottom: 10%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-color: #2A4359;
+  color: white;
+  border: none;
+  font-size: 3rem;
+  -webkit-box-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.5);
+          box-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.5);
+  border-radius: 3rem;
+}
+
+.introBox .moreBtn:hover {
+  cursor: pointer;
+  background-color: #193140;
+}
+
+.mainBox {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+
+.mainBox::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+/*# sourceMappingURL=iceFestival.css.map */
