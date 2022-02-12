@@ -5,11 +5,19 @@
   font-size: 10px;
 }
 
+body {
+  background-color: #155a83;
+  font-family: 'Noto Sans KR', sans-serif;
+  text-align: center;
+}
+
 .introBox {
+  display: none;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  z-index: -1;
+  position: absolute;
+  z-index: 1000;
 }
 
 .introBox img {
@@ -20,38 +28,178 @@
 }
 
 .introBox .moreBtn {
-  width: 15rem;
-  height: 5rem;
-  position: fixed;
+  position: absolute;
   bottom: 10%;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  background-color: #2A4359;
-  color: white;
-  border: none;
+  margin-left: -10rem;
+  width: 20rem;
+  height: 7rem;
+  border: 0;
+  background-color: rgba(0, 0, 0, 0.5);
   font-size: 3rem;
-  -webkit-box-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.5);
-          box-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.5);
+  color: white;
   border-radius: 3rem;
 }
 
 .introBox .moreBtn:hover {
   cursor: pointer;
-  background-color: #193140;
+  color: #155a83;
 }
 
 .mainBox {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.mainBox .mapBox {
+  position: relative;
+  display: inline-block;
+  margin-top: 10rem;
+  width: 100rem;
+  height: 60rem;
+  background-image: url(./IMG/background.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.mainBox .mapBox .sleighBtn {
+  position: absolute;
+  top: -3rem;
+  left: 20rem;
+  width: 30rem;
+  height: 20rem;
+  background-image: url(./IMG/icon1.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.mainBox .mapBox .sleighBtn:hover {
+  cursor: pointer;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  -webkit-transform: perspective(50rem) translateZ(10rem);
+          transform: perspective(50rem) translateZ(10rem);
+}
+
+.mainBox .mapBox .IceFountain {
+  position: absolute;
+  top: 10rem;
+  left: 3rem;
+  width: 16rem;
+  height: 20rem;
+  background-image: url(./IMG/icon5.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.mainBox .mapBox .IceFountain:hover {
+  cursor: pointer;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  -webkit-transform: perspective(50rem) translateZ(10rem);
+          transform: perspective(50rem) translateZ(10rem);
+}
+
+.mainBox .mapBox .IglooBtn {
+  position: absolute;
+  top: 16rem;
+  right: 10rem;
+  width: 22rem;
+  height: 20rem;
+  background-image: url(./IMG/icon3.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.mainBox .mapBox .IglooBtn:hover {
+  cursor: pointer;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  -webkit-transform: perspective(50rem) translateZ(10rem);
+          transform: perspective(50rem) translateZ(10rem);
+}
+
+.mainBox .displayBox {
+  display: none;
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-.mainBox::before {
-  content: '';
+.mainBox .displayBox .popUpBox {
+  display: inline-block;
+  width: 100rem;
+  height: 50rem;
+  background-color: #f8fbfc;
+  margin-top: 15rem;
+}
+
+.mainBox .displayBox .closeBtn {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  margin-top: 2rem;
+  margin-left: 2rem;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.mainBox .displayBox .closeBtn i {
+  font-size: 2rem;
+  color: #1e1f1f;
+}
+
+.mainBox .displayBox .closeBtn:hover {
+  cursor: pointer;
+}
+
+.mainBox .displayBox .closeBtn:hover i {
+  color: #a5a5a5;
+}
+
+.mainBox .displayBox .imgBox {
+  display: inline-block;
+  float: left;
+  width: 55rem;
+  height: 38rem;
+  background-color: red;
+  margin-top: 3rem;
+}
+
+.mainBox .displayBox .imgBox img {
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.5);
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.mainBox .displayBox .textBox {
+  display: inline-block;
+  float: left;
+  text-align: left;
+  width: 43rem;
+  margin-left: 2rem;
+  margin-top: 15rem;
+  color: #1e1f1f;
+}
+
+.mainBox .displayBox .textBox h1 {
+  font-size: 2.3rem;
+  font-weight: bold;
+  letter-spacing: 0.3rem;
+  word-spacing: 0.3rem;
+  line-height: 5rem;
+  font-family: 'Nanum Gothic Coding', monospace;
+}
+
+.mainBox .displayBox .textBox p {
+  font-size: 1.3rem;
+  letter-spacing: 0.2rem;
+  word-spacing: 0.1rem;
+  line-height: 2.5rem;
 }
 /*# sourceMappingURL=iceFestival.css.map */

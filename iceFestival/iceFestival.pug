@@ -5,15 +5,31 @@ html(lang="ko")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title 알프스 얼음 축제
+    link(rel="stylesheet", href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css")
     link(rel="stylesheet", href="./iceFestival.css")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js")
     script(src="./iceFestival.js") 
+
   body
-    .introBox
+    .introBox#introBox
       img(src="./IMG/main_1.png", alt="얼음분수")
-      button.moreBtn MORE
-    .mainBox
+      button.moreBtn#moreBtn MORE
+    .mainBox#mainBox
       .mapBox
-        img(src="./IMG/map.png", alt="지도")
+        .sleighBtn#sleighBtn
+        .IceFountain#IceFountain
+        .IglooBtn#IglooBtn
+      .displayBox#displayBox
+        .popUpBox
+          button.closeBtn#closeBtn
+            i.xi-angle-left
+          .imgBox
+            img#imgBox(src="./IMG/ice1.jpeg", alt="눈 썰매장")
+          .textBox
+
+
+
+
     
 
 
