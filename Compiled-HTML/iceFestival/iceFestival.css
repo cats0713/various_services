@@ -12,7 +12,6 @@ body {
 }
 
 .introBox {
-  display: none;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
@@ -68,9 +67,9 @@ body {
   position: absolute;
   top: -3rem;
   left: 20rem;
-  width: 30rem;
-  height: 20rem;
-  background-image: url(./IMG/icon1.png);
+  width: 22rem;
+  height: 15rem;
+  background-image: url(./IMG/btn/sleighBtn.png);
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -83,18 +82,18 @@ body {
           transform: perspective(50rem) translateZ(10rem);
 }
 
-.mainBox .mapBox .IceFountain {
+.mainBox .mapBox .iceFountainBtn {
   position: absolute;
   top: 10rem;
   left: 3rem;
   width: 16rem;
   height: 20rem;
-  background-image: url(./IMG/icon5.png);
+  background-image: url(./IMG/btn/iceFountainBtn.png);
   background-size: contain;
   background-repeat: no-repeat;
 }
 
-.mainBox .mapBox .IceFountain:hover {
+.mainBox .mapBox .iceFountainBtn:hover {
   cursor: pointer;
   -webkit-transition-duration: 0.2s;
           transition-duration: 0.2s;
@@ -102,18 +101,94 @@ body {
           transform: perspective(50rem) translateZ(10rem);
 }
 
-.mainBox .mapBox .IglooBtn {
+.mainBox .mapBox .iglooBtn {
   position: absolute;
   top: 16rem;
-  right: 10rem;
+  right: 3rem;
   width: 22rem;
   height: 20rem;
-  background-image: url(./IMG/icon3.png);
+  background-image: url(./IMG/btn/iglooBtn.png);
   background-size: contain;
   background-repeat: no-repeat;
 }
 
-.mainBox .mapBox .IglooBtn:hover {
+.mainBox .mapBox .iglooBtn:hover {
+  cursor: pointer;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  -webkit-transform: perspective(50rem) translateZ(10rem);
+          transform: perspective(50rem) translateZ(10rem);
+}
+
+.mainBox .mapBox .caveBtn {
+  position: absolute;
+  bottom: 10rem;
+  right: 24rem;
+  width: 17rem;
+  height: 14rem;
+  background-image: url(./IMG/btn/caveBtn.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.mainBox .mapBox .caveBtn:hover {
+  cursor: pointer;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  -webkit-transform: perspective(50rem) translateZ(10rem);
+          transform: perspective(50rem) translateZ(10rem);
+}
+
+.mainBox .mapBox .foodBtn {
+  position: absolute;
+  top: -6rem;
+  right: 20rem;
+  width: 20rem;
+  height: 20rem;
+  background-image: url(./IMG/btn/foodBtn.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.mainBox .mapBox .foodBtn:hover {
+  cursor: pointer;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  -webkit-transform: perspective(50rem) translateZ(10rem);
+          transform: perspective(50rem) translateZ(10rem);
+}
+
+.mainBox .mapBox .palaceBtn {
+  position: absolute;
+  top: 30rem;
+  left: 20rem;
+  width: 18rem;
+  height: 20rem;
+  background-image: url(./IMG/btn/palaceBtn.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.mainBox .mapBox .palaceBtn:hover {
+  cursor: pointer;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  -webkit-transform: perspective(50rem) translateZ(10rem);
+          transform: perspective(50rem) translateZ(10rem);
+}
+
+.mainBox .mapBox .snowmenBtn {
+  position: absolute;
+  top: 5rem;
+  left: 45rem;
+  width: 18rem;
+  height: 20rem;
+  background-image: url(./IMG/btn/snowmenBtn.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.mainBox .mapBox .snowmenBtn:hover {
   cursor: pointer;
   -webkit-transition-duration: 0.2s;
           transition-duration: 0.2s;

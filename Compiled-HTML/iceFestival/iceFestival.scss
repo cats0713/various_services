@@ -14,7 +14,7 @@ body{
 }
 
 .introBox{
-  display: none;
+  //display: none;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
@@ -59,52 +59,121 @@ body{
     background-image: url(./IMG/background.png);
     background-size: contain;
     background-repeat: no-repeat;
+    
     .sleighBtn{
       position: absolute;
       top: -3rem;
       left: 20rem;
-      width: 30rem;
-      height: 20rem;
-      background-image: url(./IMG/icon1.png);
+      width: 22rem;
+      height: 15rem;
+      background-image: url(./IMG/btn/sleighBtn.png);
       background-size: contain;
       background-repeat: no-repeat; 
+
     }
     .sleighBtn:hover{
       cursor: pointer;
       transition-duration: 0.2s;
       transform: perspective(50rem) translateZ(10rem);
     }
-    .IceFountain{
+
+    .iceFountainBtn{
       position: absolute;
       top: 10rem;
       left: 3rem;
       width: 16rem;
       height: 20rem;
-      background-image: url(./IMG/icon5.png);
+      background-image: url(./IMG/btn/iceFountainBtn.png);
       background-size: contain;
       background-repeat: no-repeat;  
+
     }
-    .IceFountain:hover{
-      cursor: pointer;
-      transition-duration: 0.2s;
-      transform: perspective(50rem) translateZ(10rem);
-    }
-    .IglooBtn{
-      position: absolute;
-      top: 16rem;
-      right: 10rem;
-      width: 22rem;
-      height: 20rem;
-      background-image: url(./IMG/icon3.png);
-      background-size: contain;
-      background-repeat: no-repeat;  
-    }
-    .IglooBtn:hover{
+    .iceFountainBtn:hover{
       cursor: pointer;
       transition-duration: 0.2s;
       transform: perspective(50rem) translateZ(10rem);
     }
 
+    .iglooBtn{
+      position: absolute;
+      top: 16rem;
+      right: 3rem;
+      width: 22rem;
+      height: 20rem;
+      background-image: url(./IMG/btn/iglooBtn.png);
+      background-size: contain;
+      background-repeat: no-repeat;  
+
+    }
+    .iglooBtn:hover{
+      cursor: pointer;
+      transition-duration: 0.2s;
+      transform: perspective(50rem) translateZ(10rem);
+    }
+
+    .caveBtn{
+      position: absolute;
+      bottom: 10rem;
+      right: 24rem;
+      width: 17rem;
+      height: 14rem;
+      background-image: url(./IMG/btn/caveBtn.png);
+      background-size: contain;
+      background-repeat: no-repeat;  
+
+    }
+    .caveBtn:hover{
+      cursor: pointer;
+      transition-duration: 0.2s;
+      transform: perspective(50rem) translateZ(10rem);
+    } 
+
+    .foodBtn{
+      position: absolute;
+      top: -6rem;
+      right: 20rem;
+      width: 20rem;
+      height: 20rem;
+      background-image: url(./IMG/btn/foodBtn.png);
+      background-size: contain;
+      background-repeat: no-repeat;  
+    }
+    .foodBtn:hover{
+      cursor: pointer;
+      transition-duration: 0.2s;
+      transform: perspective(50rem) translateZ(10rem);
+    } 
+
+    .palaceBtn{
+      position: absolute;
+      top: 30rem;
+      left: 20rem;
+      width: 18rem;
+      height: 20rem;
+      background-image: url(./IMG/btn/palaceBtn.png);
+      background-size: contain;
+      background-repeat: no-repeat;  
+    }
+    .palaceBtn:hover{
+      cursor: pointer;
+      transition-duration: 0.2s;
+      transform: perspective(50rem) translateZ(10rem);
+    } 
+    .snowmenBtn{
+      position: absolute;
+      top: 5rem;
+      left: 45rem;
+      width: 18rem;
+      height: 20rem;
+      background-image: url(./IMG/btn/snowmenBtn.png);
+      background-size: contain;
+      background-repeat: no-repeat;  
+    }
+    .snowmenBtn:hover{
+      cursor: pointer;
+      transition-duration: 0.2s;
+      transform: perspective(50rem) translateZ(10rem);
+    } 
 
   }//mapBox
   .displayBox{
