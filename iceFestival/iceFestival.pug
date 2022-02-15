@@ -11,10 +11,15 @@ html(lang="ko")
     script(src="./iceFestival.js") 
 
   body
+    .snowBox#snowBox
     .introBox#introBox
       img(src="./IMG/mainimg/main_1.png", alt="얼음분수")
       button.moreBtn#moreBtn MORE
-    .mainBox#mainBox
+    .mainBox#mainBox 
+      button.notiBtn
+      .penguinBox
+        .penguinTextBox#penguinTextBox
+          h3 버튼을 클릭해 보세요~
       .mapBox
         .sleighBtn#sleighBtn
         .iceFountainBtn#iceFountainBtn
@@ -25,14 +30,15 @@ html(lang="ko")
         .snowmenBtn#snowmenBtn
 
 
-
       .displayBox#displayBox
         .popUpBox
           button.closeBtn#closeBtn
             i.xi-angle-left
           .imgBox
-            img#imgBox(src="", alt="눈 썰매장")
+            img#imgBox(src="", alt="")
           .textBox
+        .popUpdec1
+        .popUpdec2
 
 
 

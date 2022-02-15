@@ -6,14 +6,138 @@
 }
 
 body {
-  background-color: #155a83;
+  background: radial-gradient(ellipse at bottom, #89f7fe 0%, #6f86d6 100%);
   font-family: 'Noto Sans KR', sans-serif;
   text-align: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.snowBox .snow {
+  opacity: 0;
+  width: 1rem;
+  height: 1rem;
+  background-color: white;
+  border-radius: 50%;
+  -webkit-animation: snowA 20s linear infinite;
+          animation: snowA 20s linear infinite;
+  position: absolute;
+}
+
+.snowBox .snow:nth-of-type(2n) {
+  width: 0.7rem;
+  height: 0.7rem;
+  -webkit-animation-duration: 7s;
+          animation-duration: 7s;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.snowBox .snow:nth-of-type(2n+1) {
+  width: 1.2rem;
+  height: 1.2rem;
+  -webkit-animation-duration: 8s;
+          animation-duration: 8s;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+
+.snowBox .snow:nth-of-type(3n) {
+  width: 0.9rem;
+  height: 0.9rem;
+  -webkit-animation-duration: 8s;
+          animation-duration: 8s;
+  -webkit-animation-delay: 8s;
+          animation-delay: 8s;
+}
+
+.snowBox .snow:nth-of-type(7n) {
+  width: 0.5rem;
+  height: 0.5rem;
+  -webkit-animation-duration: 15s;
+          animation-duration: 15s;
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+}
+
+.snowBox .snow:nth-of-type(5n) {
+  width: 0.6rem;
+  height: 0.6rem;
+  -webkit-animation-duration: 12s;
+          animation-duration: 12s;
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s;
+}
+
+.snowBox .snow:nth-of-type(9n) {
+  -webkit-animation-duration: 9s;
+          animation-duration: 9s;
+  -webkit-animation-delay: 6s;
+          animation-delay: 6s;
+}
+
+@-webkit-keyframes snowA {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  20% {
+    opacity: 1;
+    -webkit-transform: translate(-1.5rem, 20vh);
+            transform: translate(-1.5rem, 20vh);
+  }
+  40% {
+    -webkit-transform: translate(1.5rem, 40vh);
+            transform: translate(1.5rem, 40vh);
+  }
+  60% {
+    -webkit-transform: translate(-1.5rem, 60vh);
+            transform: translate(-1.5rem, 60vh);
+  }
+  80% {
+    -webkit-transform: translate(1.5rem, 80vh);
+            transform: translate(1.5rem, 80vh);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(100vh);
+            transform: translateY(100vh);
+  }
+}
+
+@keyframes snowA {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  20% {
+    opacity: 1;
+    -webkit-transform: translate(-1.5rem, 20vh);
+            transform: translate(-1.5rem, 20vh);
+  }
+  40% {
+    -webkit-transform: translate(1.5rem, 40vh);
+            transform: translate(1.5rem, 40vh);
+  }
+  60% {
+    -webkit-transform: translate(-1.5rem, 60vh);
+            transform: translate(-1.5rem, 60vh);
+  }
+  80% {
+    -webkit-transform: translate(1.5rem, 80vh);
+            transform: translate(1.5rem, 80vh);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(100vh);
+            transform: translateY(100vh);
+  }
 }
 
 .introBox {
-  width: 100vw;
-  height: 100vh;
+  display: none;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
   position: absolute;
   z-index: 1000;
@@ -52,12 +176,73 @@ body {
   text-align: center;
 }
 
+.mainBox .notiBtn {
+  position: fixed;
+  right: 1rem;
+  top: 1rem;
+  width: 16rem;
+  height: 16rem;
+  background-image: url(./IMG/btn/sideBtn.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  border-radius: 50%;
+  z-index: 100;
+  -webkit-animation: bingle 10s linear infinite;
+          animation: bingle 10s linear infinite;
+}
+
+@-webkit-keyframes bingle {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes bingle {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.mainBox .notiBtn:hover {
+  cursor: pointer;
+}
+
+.mainBox .penguinBox {
+  width: 50rem;
+  height: 30rem;
+  background-image: url(./IMG/Penguin.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  bottom: 0;
+  right: 1rem;
+  z-index: 100;
+}
+
+.mainBox .penguinBox .penguinTextBox {
+  margin-top: -5rem;
+  width: 25rem;
+  height: 5rem;
+  border-radius: 3rem;
+  background-color: #f8fbfc;
+}
+
+.mainBox .penguinBox .penguinTextBox h3 {
+  font-size: 2rem;
+  color: #1e1f1f;
+  line-height: 5rem;
+}
+
 .mainBox .mapBox {
   position: relative;
   display: inline-block;
-  margin-top: 10rem;
-  width: 100rem;
-  height: 60rem;
+  margin-top: 5%;
+  width: 140rem;
+  height: 80rem;
   background-image: url(./IMG/background.png);
   background-size: contain;
   background-repeat: no-repeat;
@@ -65,10 +250,10 @@ body {
 
 .mainBox .mapBox .sleighBtn {
   position: absolute;
-  top: -3rem;
-  left: 20rem;
-  width: 22rem;
-  height: 15rem;
+  top: 10rem;
+  left: 38rem;
+  width: 28rem;
+  height: 22rem;
   background-image: url(./IMG/btn/sleighBtn.png);
   background-size: contain;
   background-repeat: no-repeat;
@@ -84,10 +269,10 @@ body {
 
 .mainBox .mapBox .iceFountainBtn {
   position: absolute;
-  top: 10rem;
+  top: 30rem;
   left: 3rem;
-  width: 16rem;
-  height: 20rem;
+  width: 25rem;
+  height: 30rem;
   background-image: url(./IMG/btn/iceFountainBtn.png);
   background-size: contain;
   background-repeat: no-repeat;
@@ -103,9 +288,9 @@ body {
 
 .mainBox .mapBox .iglooBtn {
   position: absolute;
-  top: 16rem;
-  right: 3rem;
-  width: 22rem;
+  top: 24rem;
+  right: 10rem;
+  width: 20rem;
   height: 20rem;
   background-image: url(./IMG/btn/iglooBtn.png);
   background-size: contain;
@@ -122,10 +307,10 @@ body {
 
 .mainBox .mapBox .caveBtn {
   position: absolute;
-  bottom: 10rem;
-  right: 24rem;
-  width: 17rem;
-  height: 14rem;
+  bottom: 40rem;
+  right: 30rem;
+  width: 23rem;
+  height: 15rem;
   background-image: url(./IMG/btn/caveBtn.png);
   background-size: contain;
   background-repeat: no-repeat;
@@ -141,10 +326,10 @@ body {
 
 .mainBox .mapBox .foodBtn {
   position: absolute;
-  top: -6rem;
-  right: 20rem;
-  width: 20rem;
-  height: 20rem;
+  top: 1rem;
+  right: 30rem;
+  width: 23rem;
+  height: 23rem;
   background-image: url(./IMG/btn/foodBtn.png);
   background-size: contain;
   background-repeat: no-repeat;
@@ -160,10 +345,10 @@ body {
 
 .mainBox .mapBox .palaceBtn {
   position: absolute;
-  top: 30rem;
-  left: 20rem;
-  width: 18rem;
-  height: 20rem;
+  top: 2rem;
+  left: 13rem;
+  width: 20rem;
+  height: 23rem;
   background-image: url(./IMG/btn/palaceBtn.png);
   background-size: contain;
   background-repeat: no-repeat;
@@ -179,10 +364,10 @@ body {
 
 .mainBox .mapBox .snowmenBtn {
   position: absolute;
-  top: 5rem;
-  left: 45rem;
+  top: 15rem;
+  left: 68rem;
   width: 18rem;
-  height: 20rem;
+  height: 27rem;
   background-image: url(./IMG/btn/snowmenBtn.png);
   background-size: contain;
   background-repeat: no-repeat;
@@ -211,9 +396,10 @@ body {
   height: 50rem;
   background-color: #f8fbfc;
   margin-top: 15rem;
+  border-radius: 3rem;
 }
 
-.mainBox .displayBox .closeBtn {
+.mainBox .displayBox .popUpBox .closeBtn {
   display: block;
   width: 2rem;
   height: 2rem;
@@ -223,20 +409,20 @@ body {
   background-color: rgba(0, 0, 0, 0);
 }
 
-.mainBox .displayBox .closeBtn i {
+.mainBox .displayBox .popUpBox .closeBtn i {
   font-size: 2rem;
   color: #1e1f1f;
 }
 
-.mainBox .displayBox .closeBtn:hover {
+.mainBox .displayBox .popUpBox .closeBtn:hover {
   cursor: pointer;
 }
 
-.mainBox .displayBox .closeBtn:hover i {
+.mainBox .displayBox .popUpBox .closeBtn:hover i {
   color: #a5a5a5;
 }
 
-.mainBox .displayBox .imgBox {
+.mainBox .displayBox .popUpBox .imgBox {
   display: inline-block;
   float: left;
   width: 55rem;
@@ -245,14 +431,14 @@ body {
   margin-top: 3rem;
 }
 
-.mainBox .displayBox .imgBox img {
+.mainBox .displayBox .popUpBox .imgBox img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-.mainBox .displayBox .textBox {
+.mainBox .displayBox .popUpBox .textBox {
   display: inline-block;
   float: left;
   text-align: left;
@@ -262,7 +448,7 @@ body {
   color: #1e1f1f;
 }
 
-.mainBox .displayBox .textBox h1 {
+.mainBox .displayBox .popUpBox .textBox h1 {
   font-size: 2.3rem;
   font-weight: bold;
   letter-spacing: 0.3rem;
@@ -271,10 +457,27 @@ body {
   font-family: 'Nanum Gothic Coding', monospace;
 }
 
-.mainBox .displayBox .textBox p {
+.mainBox .displayBox .popUpBox .textBox p {
   font-size: 1.3rem;
   letter-spacing: 0.2rem;
   word-spacing: 0.1rem;
   line-height: 2.5rem;
+}
+
+.mainBox .displayBox .popUpdec1 {
+  display: inline-block;
+  width: 60rem;
+  height: 10rem;
+  opacity: 0;
+}
+
+.mainBox .displayBox .popUpdec2 {
+  width: 0;
+  height: 0;
+  display: inline-block;
+  border-bottom: 5rem solid transparent;
+  border-top: 5rem solid #f9fbfd;
+  border-left: 5rem solid transparent;
+  border-right: 5rem solid transparent;
 }
 /*# sourceMappingURL=iceFestival.css.map */
