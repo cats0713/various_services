@@ -32,7 +32,7 @@ window.onload = () => {
 
   //썰매 버튼
   $('#sleighBtn').on("click", function () {
-    $('')
+    $('#penguinBox').slideToggle('slow');
     $('#displayBox').fadeIn('slow');
     $('#imgBox').attr("src", "./IMG/displaybox/sleigh.jpeg");
     $('#imgBox').attr("alt", "알프스 눈 썰매");
@@ -42,7 +42,7 @@ window.onload = () => {
 
   //얼음분수 버튼
   $('#iceFountainBtn').on("click", function () {
-    $('#penguinTextBox').fadeOut('slow'); 
+    $('#penguinBox').slideToggle('slow');
     $('#displayBox').fadeIn('slow');
     $('#imgBox').attr("src", "./IMG/displaybox/iceFountain.png");
     $('#imgBox').attr("alt", "알프스 얼음 분수");
@@ -61,6 +61,7 @@ window.onload = () => {
 
   //동굴 버튼
   $('#caveBtn').on("click", function () {
+    $('#penguinBox').slideToggle('slow');
     $('#displayBox').fadeIn('slow');
     $('#imgBox').attr("src", "./IMG/displaybox/icecave.png");
     $('#imgBox').attr("alt", "야간 동굴 봅슬레이");
@@ -70,6 +71,7 @@ window.onload = () => {
 
   //음식 버튼
   $('#foodBtn').on("click", function () {
+    $('#penguinBox').slideToggle('slow');
     $('#displayBox').fadeIn('slow');
     $('#imgBox').attr("src", "./IMG/displaybox/food.jpeg");
     $('#imgBox').attr("alt", "군밤등등 음식 사진");
@@ -79,6 +81,7 @@ window.onload = () => {
 
   //얼음성 버튼
   $('#palaceBtn').on("click", function () {
+    $('#penguinBox').slideToggle('slow');
     $('#displayBox').fadeIn('slow');
     $('#imgBox').attr("src", "./IMG/displaybox/palace.png");
     $('#imgBox').attr("alt", "얼음 조각사진");
@@ -88,6 +91,7 @@ window.onload = () => {
 
   //눈사람 버튼
   $('#snowmenBtn').on("click", function () {
+    $('#penguinBox').slideToggle('slow');
     $('#displayBox').fadeIn('slow');
     $('#imgBox').attr("src", "./IMG/displaybox/snowmen.jpeg");
     $('#imgBox').attr("alt", "눈 조각사진");
@@ -99,7 +103,7 @@ window.onload = () => {
   //닫힘 버튼
   $('#closeBtn').on("click", function () {
     $('#displayBox').fadeOut('slow');
-    $('#penguinTextBox').fadeIn('slow');
+    $('#penguinBox').slideToggle('slow');
   });
 
 }
