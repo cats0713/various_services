@@ -31,7 +31,7 @@ window.onload = () => {
 
   //지도 열기
   $('#moreBtn').on("click", function () {
-    $('#introBox').fadeOut("slow");
+    $('#introBox').slideUp("slow");
   });
 
   //썰매 버튼
