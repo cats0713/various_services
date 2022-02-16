@@ -2,7 +2,8 @@ window.onload = () => {
   let introBoxImg = document.querySelector("#introBox img");
   const mainArray = ['./IMG/mainimg/main_1.png','./IMG/mainimg/main_2.jpeg','./IMG/mainimg/main_3.png']; 
   const snowBox = document.querySelector("#snowBox");
-  let i = 0;
+  const snowBox2 = document.querySelector("#snowBox2");
+  let i = 0,j = 0;
 
   //메인 화면 체인지 하는 거
   let changeImg = () => {
@@ -20,14 +21,20 @@ window.onload = () => {
     while(i < 100){
       let randomW = Math.floor(Math.random() * window.innerWidth);
       let randomH = Math.floor(Math.random() * window.innerHeight);
-      
       snowBox.innerHTML += `<div class="snow" style="margin-top: ${randomH}px; margin-left: ${randomW}px"></div>`;
       i++;
     }
-    
+  }
+  let createSnowIntro = () => {
+    while(j < 100){
+      let randomW = Math.floor(Math.random() * window.innerWidth);
+      let randomH = Math.floor(Math.random() * window.innerHeight);
+      snowBox2.innerHTML += `<div class="snow" style="margin-top: ${randomH}px; margin-left: ${randomW}px"></div>`;
+      j++;
+    }
   }
   createSnow();
-
+  createSnowIntro();
 
   //지도 열기
   $('#moreBtn').on("click", function () {
