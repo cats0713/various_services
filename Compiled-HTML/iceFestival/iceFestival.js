@@ -26,7 +26,7 @@ window.onload = () => {
     }
   }
   let createSnowIntro = () => {
-    while(j < 100){
+    while(j < 300){
       let randomW = Math.floor(Math.random() * window.innerWidth);
       let randomH = Math.floor(Math.random() * window.innerHeight);
       snowBox2.innerHTML += `<div class="snow" style="margin-top: ${randomH}px; margin-left: ${randomW}px"></div>`;
