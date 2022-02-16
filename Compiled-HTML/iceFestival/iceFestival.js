@@ -18,7 +18,7 @@ window.onload = () => {
 
   //배경화면 눈 내리게 하는거
   let createSnow = () => {
-    while(i < 100){
+    while(i < 400){
       let randomW = Math.floor(Math.random() * window.innerWidth);
       let randomH = Math.floor(Math.random() * window.innerHeight);
       snowBox.innerHTML += `<div class="snow" style="margin-top: ${randomH}px; margin-left: ${randomW}px"></div>`;
