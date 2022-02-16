@@ -6,10 +6,14 @@ window.onload = () => {
 
   //메인 화면 체인지 하는 거
   let changeImg = () => {
-    mainArray.push(mainArray.shift());
-    introBoxImg.setAttribute("src",mainArray[0]); 
+    setTimeout(function(){
+      mainArray.push(mainArray.shift());
+      introBoxImg.setAttribute("src",mainArray[0]);
+      changeImg();
+    }, 3000);
+    
   } 
-  setInterval(changeImg, 3000);
+  changeImg();
 
   //배경화면 눈 내리게 하는거
   let createSnow = () => {
@@ -53,6 +57,7 @@ window.onload = () => {
   //이글루 버튼
   $('#iglooBtn').on("click", function () {
     $('#displayBox').fadeIn('slow');
+    $('#penguinBox').slideToggle('slow');
     $('#imgBox').attr("src", "./IMG/displaybox/Igloo.jpeg");
     $('#imgBox').attr("alt", "야간 이글루 사진");
     $('.textBox').html(`<h1>이글루</h1>
