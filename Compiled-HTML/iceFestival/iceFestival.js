@@ -1,17 +1,21 @@
 window.onload = () => {
   let introBoxImg = document.querySelector("#introBox img");
   const mainArray = ['./IMG/mainimg/main_1.png','./IMG/mainimg/main_2.jpeg','./IMG/mainimg/main_3.png']; 
+  const mainTextArr = [`알프스 겨울왕국의<br>크고 아름다운 얼음분수`,`짜릿하고 즐거운 썰매로<br>즐거운 추억을 남겨보세요`,`겨울에만 볼수있는 장관<br>아름다운 얼음 조각`]
   const snowBox = document.querySelector("#snowBox");
   const snowBox2 = document.querySelector("#snowBox2");
+  const mainText = document.querySelector("#mainText");
   let i = 0,j = 0;
 
   //메인 화면 체인지 하는 거
   let changeImg = () => {
     setTimeout(function(){
+      mainTextArr.push(mainTextArr.shift());
+      mainText.innerHTML = mainTextArr[0];
       mainArray.push(mainArray.shift());
       introBoxImg.setAttribute("src",mainArray[0]);
       changeImg();
-    }, 3000);
+    }, 5000);
     
   } 
   changeImg();
