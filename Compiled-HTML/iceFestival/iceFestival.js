@@ -6,8 +6,8 @@ window.onload = () => {
 
   //메인 화면 체인지 하는 거
   let changeImg = () => {
-    const mainImgArray = ['./IMG/mainimg/main_1.png','./IMG/mainimg/main_2.jpeg','./IMG/mainimg/main_3.png']; 
-    const mainTextArray = [`알프스 겨울왕국의<br>크고 아름다운 얼음분수`,`짜릿하고 즐거운 썰매로<br>즐거운 추억을 남겨보세요`,`겨울에만 볼수있는 장관<br>아름다운 얼음 조각`];
+    const mainImgArray = ['./IMG/mainimg/main_1.png','./IMG/mainimg/main_2.png','./IMG/mainimg/main_3.png']; 
+    const mainTextArray = [`알프스 겨울왕국의<br>크고 아름다운 <p>얼음분수</p>`,`짜릿하고 즐거운 썰매로<br><p>즐거운 추억</p>을 남겨보세요`,`겨울에만 볼수있는 장관<br>아름다운 <p>얼음 조각</p>`];
     function setTimeImg(){
       setTimeout(function(){
         mainTextArray.push(mainTextArray.shift());
