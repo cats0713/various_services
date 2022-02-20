@@ -13,6 +13,9 @@ body{
   height: 100vh;
   overflow: hidden;
 }
+::selection{
+  background-color: #c2e9fb;
+}
 .snowBox{
   .snow{
     opacity: 0;
@@ -84,7 +87,7 @@ body{
 }
 
 .introBox{
-  display: none;
+  // display: none;
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -192,37 +195,37 @@ body{
     }
   }
 }
+.notiBtn{
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  width: 16rem;
+  height: 16rem;
+  background-image: url(./IMG/btn/sideBtn.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: rgba($color: #000000, $alpha: 0);
+  border: none;
+  border-radius: 50%;
+  z-index: 100;
+  animation: bingle 10s linear infinite;
+}
+@keyframes bingle {
+  100%{
+    transform: rotate(360deg);
+  }
+}
+.notiBtn:hover{
+  cursor: pointer;
+
+}
 
 .mainBox{
   display: inline-block;
   width: 100%;
   height: 100%;
   text-align: center;
-  .notiBtn{
-    position: fixed;
-    right: 1rem;
-    top: 1rem;
-    width: 16rem;
-    height: 16rem;
-    background-image: url(./IMG/btn/sideBtn.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-color: rgba($color: #000000, $alpha: 0);
-    border: none;
-    border-radius: 50%;
-    z-index: 100;
-    animation: bingle 10s linear infinite;
-  }
-  @keyframes bingle {
-    100%{
-      transform: rotate(360deg);
-    }
-  }
-  .notiBtn:hover{
-    cursor: pointer;
-
-  }
-
+  
   .penguinBox{
     display: none;
     width: 30rem;
@@ -254,10 +257,11 @@ body{
     position: relative;
     width: 90%;
     height: 95%;
+    margin-top: 3%;
     background-image: url(./IMG/background.png);
     background-size: contain;
     background-repeat: no-repeat;
-    background-color: blue;
+    // background-color: blue;
     
     .sleighBtn{
       position: absolute;
@@ -268,7 +272,7 @@ body{
       background-image: url(./IMG/btn/sleighBtn.png);
       background-size: contain;
       background-repeat: no-repeat; 
-      background-color: #155a83;
+      // background-color: #155a83;
 
     }
     .sleighBtn:hover{
@@ -280,14 +284,14 @@ body{
 
     .iceFountainBtn{
       position: absolute;
-      top: 24rem;
-      left: 3rem;
-      width: 15rem;
-      height: 18rem;
+      bottom: 25%;
+      left: 5%;
+      width: 15%;
+      height: 32%;
       background-image: url(./IMG/btn/iceFountainBtn.png);
       background-size: contain;
       background-repeat: no-repeat;  
-      //background-color: red;
+      // background-color: red;
       
     }
     .iceFountainBtn:hover{
@@ -305,7 +309,7 @@ body{
       background-image: url(./IMG/btn/IgloooBtn.png);
       background-size: contain;
       background-repeat: no-repeat;  
-      background-color: red;
+      // background-color: red;
     }
     .iglooBtn:hover{
       cursor: pointer;
@@ -323,7 +327,7 @@ body{
       background-image: url(./IMG/btn/caveBtn.png);
       background-size: contain;
       background-repeat: no-repeat;  
-      background-color: red;
+      // background-color: red;
     }
     .caveBtn:hover{
       cursor: pointer;
@@ -340,7 +344,7 @@ body{
       background-image: url(./IMG/btn/foodBtn.png);
       background-size: contain;
       background-repeat: no-repeat;  
-      background-color: red;
+      // background-color: red;
     }
     .foodBtn:hover{
       cursor: pointer;
@@ -357,7 +361,7 @@ body{
       background-image: url(./IMG/btn/palaceBtn.png);
       background-size: contain;
       background-repeat: no-repeat; 
-      background-color: red;
+      // background-color: red;
     }
     .palaceBtn:hover{
       cursor: pointer;
@@ -373,7 +377,7 @@ body{
       background-image: url(./IMG/btn/snowmenBtn.png);
       background-size: contain;
       background-repeat: no-repeat;  
-      background-color: red;
+      // background-color: red;
     }
     .snowmenBtn:hover{
       cursor: pointer;
@@ -382,14 +386,14 @@ body{
     } 
     .ziptrack{
       position: absolute;
-      bottom: 10rem;
-      left: 25rem;
-      width: 16rem;
-      height: 16rem;
+      bottom: 18%;
+      left: 30%;
+      width: 17%;
+      height: 27%;
       background-image: url(./IMG/btn/ziptrackBtn.png);
       background-size: contain;
       background-repeat: no-repeat;  
-      //background-color: red;
+      // background-color: red;
     }
     .ziptrack:hover{
       cursor: pointer;
@@ -402,16 +406,16 @@ body{
     display: none;
     width: 100%;
     height: 100%;
-
     position: absolute;
     top: 0;
     background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
     .popUpBox{
       display: inline-block;
       width: 100rem;
       height: 50rem;
       background-color: #f8fbfc;
-      margin-top: 15rem;
+      margin-top: 5%;
       border-radius: 3rem;
       .closeBtn{
         display: block;
