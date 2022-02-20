@@ -252,11 +252,8 @@ body{
   .mapBox{
     display: inline-block;
     position: relative;
-    max-width: 200rem;
-    min-width: 100rem;
-    min-height: 60rem;
-    max-height: 120rem;
-
+    width: 90%;
+    height: 95%;
     background-image: url(./IMG/background.png);
     background-size: contain;
     background-repeat: no-repeat;
