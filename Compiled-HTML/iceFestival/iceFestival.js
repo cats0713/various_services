@@ -50,6 +50,10 @@ window.onload = () => {
     $('#penguinBox').slideToggle('slow');
   });
 
+  $('#notiBtn').on("click", function () {
+    $('#sideBox').slideToggle("slow");
+  }); 
+
   //썰매 버튼
   $('#sleighBtn').on("click", function () {
     $('#penguinBox').slideToggle('slow');

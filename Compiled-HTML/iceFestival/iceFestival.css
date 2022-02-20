@@ -314,6 +314,38 @@ body {
   cursor: pointer;
 }
 
+.sideBox {
+  display: none;
+  position: absolute;
+  top: 0;
+  z-index: 99;
+  width: 100vw;
+  height: 100vh;
+  background-color: #155a83;
+}
+
+.sideBox .mapBox {
+  display: inline-block;
+  float: left;
+  overflow: hidden;
+  margin: 2rem;
+  width: 40%;
+  height: 70%;
+  margin-top: 5%;
+  text-align: center;
+  border: 0.1rem solid #f6f6f6;
+  border-radius: 3rem;
+  background-color: red;
+}
+
+.sideBox .mapTextBox {
+  float: left;
+  display: inline-block;
+  width: 50%;
+  margin-left: 1rem;
+  background-color: red;
+}
+
 .mainBox {
   display: inline-block;
   width: 100%;
@@ -331,7 +363,7 @@ body {
   position: fixed;
   bottom: 0;
   right: 1rem;
-  z-index: 100;
+  z-index: 10;
 }
 
 .mainBox .penguinBox .penguinTextBox {
@@ -560,7 +592,7 @@ body {
   float: left;
   width: 55rem;
   height: 38rem;
-  background-color: red;
+  background-color: #155a83;
   margin-top: 3rem;
 }
 

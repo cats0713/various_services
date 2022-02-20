@@ -208,7 +208,7 @@ body{
   border: none;
   border-radius: 50%;
   z-index: 100;
-  animation: bingle 10s linear infinite;
+  animation: bingle 10s linear infinite; 
 }
 @keyframes bingle {
   100%{
@@ -217,8 +217,39 @@ body{
 }
 .notiBtn:hover{
   cursor: pointer;
-
 }
+.sideBox{
+  display: none;
+  position: absolute;
+  top: 0;
+  z-index: 99;
+  width: 100vw;
+  height: 100vh;
+  background-color: #155a83;
+  .mapBox{
+    display: inline-block;
+    float: left;
+    overflow: hidden;
+    margin: 2rem;
+    width: 40%;
+    height: 70%;
+    margin-top: 5%;
+    text-align: center;
+    border: 0.1rem solid #f6f6f6;
+    border-radius: 3rem;
+    background-color: red;
+  }
+  .mapTextBox{
+    float: left;
+    display: inline-block;
+    width: 50%;
+    margin-left: 1rem;
+    background-color: red;
+  }
+}
+
+
+
 
 .mainBox{
   display: inline-block;
@@ -236,7 +267,7 @@ body{
     position: fixed;
     bottom: 0;
     right: 1rem;
-    z-index: 100;
+    z-index: 10;
 
     .penguinTextBox{
       margin-top: -5rem;
@@ -443,7 +474,7 @@ body{
         float: left;
         width: 55rem;
         height: 38rem;
-        background-color: red;
+        background-color: #155a83;
         margin-top: 3rem;
         .imgLBtn{
           position: absolute;
