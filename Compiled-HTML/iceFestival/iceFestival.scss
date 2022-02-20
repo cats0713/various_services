@@ -250,18 +250,21 @@ body{
     }
   }
   .mapBox{
-    position: relative;
     display: inline-block;
-    margin-top: 5%;
-    width: 90%;
-    height: 90%;
+    position: relative;
+    max-width: 200rem;
+    min-width: 100rem;
+    min-height: 60rem;
+    max-height: 120rem;
+
     background-image: url(./IMG/background.png);
     background-size: contain;
     background-repeat: no-repeat;
+    background-color: blue;
     
     .sleighBtn{
       position: absolute;
-      top: 20%;
+      top: 10rem;
       left: 20%;
       width: 17%;
       height: 23%;
