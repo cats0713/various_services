@@ -26,15 +26,19 @@ html, body{
   font-family: 'Orbitron', sans-serif;
   background-color: #313C4D;
 }
-
+.mainBox{
+  position: relative;
+  min-width: 102rem;
+  height: 100vh;
+}
 //버튼 css
 .btnBox{
   @include boxShadow();
   width: 25rem;
   height: 7rem;
   border-radius: 2rem;
-  position: fixed;
-  top: 80%;
+  position: absolute;
+  bottom: 10%;
   left: 50%;
   margin-left: -15rem;
   text-align: center;
@@ -61,14 +65,14 @@ html, body{
   .arrABox{
     width: 40rem;
     position: absolute;
-    top: 18%;
-    left: 20%;
+    top: 20%;
+    left: 10%;
   }
   .arrBBox{
     width: 40rem;
     position: absolute;
-    top: 18%;
-    right: 20%;
+    top: 20%;
+    right: 10%;
   }
 
 

@@ -10,6 +10,12 @@ html, body {
   background-color: #313C4D;
 }
 
+.mainBox {
+  position: relative;
+  min-width: 102rem;
+  height: 100vh;
+}
+
 .btnBox {
   background-color: #e9eaee;
   -webkit-box-shadow: -0.2rem -0.2rem 0.2rem #5b6679, 0.5rem 0.5rem 1.3rem #0c2034;
@@ -17,8 +23,8 @@ html, body {
   width: 25rem;
   height: 7rem;
   border-radius: 2rem;
-  position: fixed;
-  top: 80%;
+  position: absolute;
+  bottom: 10%;
   left: 50%;
   margin-left: -15rem;
   text-align: center;
@@ -47,15 +53,15 @@ html, body {
 .arrABox {
   width: 40rem;
   position: absolute;
-  top: 18%;
-  left: 20%;
+  top: 20%;
+  left: 10%;
 }
 
 .arrBBox {
   width: 40rem;
   position: absolute;
-  top: 18%;
-  right: 20%;
+  top: 20%;
+  right: 10%;
 }
 
 .arrBtnBox {

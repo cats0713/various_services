@@ -343,7 +343,17 @@ body {
   display: inline-block;
   width: 50%;
   margin-left: 1rem;
-  background-color: red;
+  margin-top: 10%;
+  text-align: left;
+  color: #f6f6f6;
+}
+
+.sideBox .mapTextBox h1 {
+  font-size: 3rem;
+}
+
+.sideBox .mapTextBox p {
+  font-size: 2rem;
 }
 
 .mainBox {
