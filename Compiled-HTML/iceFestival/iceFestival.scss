@@ -225,16 +225,15 @@ body{
   z-index: 99;
   width: 100vw;
   height: 100vh;
-  background-color: #155a83;
+  background: radial-gradient(ellipse at bottom, #48c6ef 0%, #6f86d6 100%);
   .mapBox{
     display: inline-block;
     float: left;
     overflow: hidden;
+    width: 60rem;
+    height: 45rem;
     margin: 2rem;
-    width: 40%;
-    height: 70%;
-    margin-top: 5%;
-    text-align: center;
+    margin-top: 10%;
     border: 0.1rem solid #f6f6f6;
     border-radius: 3rem;
     background-color: red;
@@ -251,8 +250,11 @@ body{
     h1{
       font-size: 3rem;
     }
-    p{
+    li{
       font-size: 2rem;
+    }
+    .priceBtn{
+      
     }
   }
 }
@@ -332,7 +334,13 @@ body{
       background-size: contain;
       background-repeat: no-repeat;  
       // background-color: red;
-      
+      P{
+        height: 3rem;
+        background-color: #f6f6f6;
+        color: #1e1f1f;
+        font-size: 1.4rem;
+        border-radius: 1rem;
+      }
     }
     .iceFountainBtn:hover{
       cursor: pointer;
