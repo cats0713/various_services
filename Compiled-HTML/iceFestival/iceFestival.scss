@@ -459,11 +459,15 @@ body{
     background-color: rgba(0,0,0,0.5);
     z-index: 1000;
     .popUpBox{
+      position: absolute;
+      top: 50%;
+      left: 50%;
       display: inline-block;
       width: 100rem;
       height: 50rem;
       background-color: #f8fbfc;
-      margin-top: 5%;
+      margin-top: -25rem;
+      margin-left: -50rem;
       border-radius: 3rem;
       .closeBtn{
         display: block;

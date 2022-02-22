@@ -572,11 +572,15 @@ body {
 }
 
 .mainBox .displayBox .popUpBox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
   display: inline-block;
   width: 100rem;
   height: 50rem;
   background-color: #f8fbfc;
-  margin-top: 5%;
+  margin-top: -25rem;
+  margin-left: -50rem;
   border-radius: 3rem;
 }
 
