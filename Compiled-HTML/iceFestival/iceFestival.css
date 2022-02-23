@@ -324,34 +324,46 @@ body {
   background: radial-gradient(ellipse at bottom, #48c6ef 0%, #6f86d6 100%);
 }
 
-.sideBox .mapBox {
+.sideBox .snowBox {
+  height: 20%;
+  width: 100%;
+  background-image: url(./IMG/sideBack.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.sideBox .contentBox {
+  width: 100%;
+  height: 80%;
+  background-color: #f6f6f6;
+}
+
+.sideBox .contentBox .mapBox {
   display: inline-block;
   float: left;
   overflow: hidden;
   width: 60rem;
   height: 45rem;
   margin: 2rem;
-  margin-top: 10%;
   border: 0.1rem solid #f6f6f6;
   border-radius: 3rem;
   background-color: red;
 }
 
-.sideBox .mapTextBox {
+.sideBox .contentBox .mapTextBox {
   float: left;
   display: inline-block;
   width: 50%;
   margin-left: 1rem;
-  margin-top: 10%;
   text-align: left;
-  color: #f6f6f6;
+  color: #000000;
 }
 
-.sideBox .mapTextBox h1 {
+.sideBox .contentBox .mapTextBox h1 {
   font-size: 3rem;
 }
 
-.sideBox .mapTextBox li {
+.sideBox .contentBox .mapTextBox li {
   font-size: 2rem;
 }
 
