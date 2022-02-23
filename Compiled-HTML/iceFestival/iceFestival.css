@@ -385,6 +385,7 @@ body {
   bottom: 0;
   right: 1rem;
   z-index: 10;
+  text-align: center;
 }
 
 .mainBox .penguinBox .penguinTextBox {
@@ -407,7 +408,7 @@ body {
   position: relative;
   width: 80%;
   height: 80%;
-  margin-top: 8%;
+  margin-top: 5%;
   margin-left: 5%;
   background-image: url(./IMG/background.png);
   background-size: contain;
