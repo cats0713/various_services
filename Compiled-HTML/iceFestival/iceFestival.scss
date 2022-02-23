@@ -297,9 +297,9 @@ body{
   .mapBox{
     display: inline-block;
     position: relative;
-    width: 90%;
-    height: 95%;
-    margin-top: 3%;
+    width: 80%;
+    height: 90%;
+    margin-top: 5%;
     background-image: url(./IMG/background.png);
     background-size: contain;
     background-repeat: no-repeat;
@@ -334,13 +334,6 @@ body{
       background-size: contain;
       background-repeat: no-repeat;  
       // background-color: red;
-      P{
-        height: 3rem;
-        background-color: #f6f6f6;
-        color: #1e1f1f;
-        font-size: 1.4rem;
-        border-radius: 1rem;
-      }
     }
     .iceFountainBtn:hover{
       cursor: pointer;
@@ -354,7 +347,7 @@ body{
       right: 8%;
       width: 17%;
       height: 28%;
-      background-image: url(./IMG/btn/IgloooBtn.png);
+      background-image: url(./IMG/btn/IglooBtn.png);
       background-size: contain;
       background-repeat: no-repeat;  
       // background-color: red;
