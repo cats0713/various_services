@@ -406,8 +406,9 @@ body {
   display: inline-block;
   position: relative;
   width: 80%;
-  height: 90%;
-  margin-top: 5%;
+  height: 80%;
+  margin-top: 8%;
+  margin-left: 5%;
   background-image: url(./IMG/background.png);
   background-size: contain;
   background-repeat: no-repeat;
