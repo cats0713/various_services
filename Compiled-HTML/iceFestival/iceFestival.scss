@@ -197,7 +197,7 @@ body{
 }
 .notiBtn{
   position: absolute;
-  right: 1rem;
+  left: 1rem;
   top: 1rem;
   width: 16rem;
   height: 16rem;
@@ -374,6 +374,7 @@ body{
   .potText{
     font-size: 2rem;
     color: white;
+    font-family: 'Jua', sans-serif;
   }
   .penguinBox{
     display: none;
@@ -637,6 +638,7 @@ body{
           letter-spacing: 0.2rem;
           word-spacing: 0.1rem;
           line-height: 2.5rem;
+
         }
       }
     } 

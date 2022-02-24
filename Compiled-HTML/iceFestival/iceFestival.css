@@ -281,7 +281,7 @@ body {
 
 .notiBtn {
   position: absolute;
-  right: 1rem;
+  left: 1rem;
   top: 1rem;
   width: 16rem;
   height: 16rem;
@@ -488,6 +488,7 @@ body {
 .mainBox .potText {
   font-size: 2rem;
   color: white;
+  font-family: 'Jua', sans-serif;
 }
 
 .mainBox .penguinBox {
