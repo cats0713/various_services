@@ -385,7 +385,7 @@ body{
     background-size: cover;
     position: fixed;
     bottom: 0;
-    right: 1rem;
+    right: 5rem;
     z-index: 10;
     text-align: center;
     .penguinTextBox{
@@ -544,7 +544,9 @@ body{
       border-radius: 3rem;
       box-shadow: rgba($color: #000, $alpha: 0.7);
       .closeBtn{
-        display: block;
+        position: absolute;
+        top: 1rem;
+        right: 3rem;
         width: 2rem;
         height: 2rem;
         margin-top: 2rem;
@@ -562,15 +564,26 @@ body{
           color: #a5a5a5;
         }
       }
-  
+      .titleBox{
+        display: block;
+        width: 100%;
+        height: 3rem;
+        margin-top: 2rem;
+        h1{
+          font-size: 3rem;
+        }
+      }
       .imgBox{
         display: inline-block;
         position: relative;
+        overflow: hidden;
         float: left;
-        width: 55rem;
+        width: 50rem;
         height: 38rem;
         background-color: #155a83;
-        margin-top: 3rem;
+        margin: 2.5rem;
+        margin-top: 4rem;
+        border-radius: 3rem;
         .imgLBtn{
           position: absolute;
           top: 50%;
@@ -622,7 +635,7 @@ body{
         float: left;
         text-align: left;
         width: 43rem;
-        margin-left: 2rem;
+        margin-left: 1rem;
         margin-top: 15rem;
         color: #1e1f1f;
   

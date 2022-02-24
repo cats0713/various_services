@@ -109,8 +109,8 @@ window.onload = () => {
     $('#displayBox').fadeIn('slow');
     $('#imgBox').attr("src", "./IMG/displaybox/sleigh.jpeg");
     $('#imgBox').attr("alt", "알프스 눈 썰매");
-    $('.textBox').html(`<h1>눈썰매</h1><br>
-    <p>눈 썰매장, 빙판썰매, 봅슬레이등 많은 놀거리가 있습니다. <br>
+    $('#titleBox').html(`<h1>눈썰매</h1>`);
+    $('.textBox').html(`<p>눈 썰매장, 빙판썰매, 봅슬레이등 많은 놀거리가 있습니다. <br>
     안전하고 즐겁게 놀 수 있는 눈썰매장 지금 즐겨보세요~</p>`);
   });
 
@@ -120,8 +120,8 @@ window.onload = () => {
     $('#displayBox').fadeIn('slow');
     $('#imgBox').attr("src", "./IMG/displaybox/iceFountain.png");
     $('#imgBox').attr("alt", "알프스 얼음 분수");
-    $('.textBox').html(`<h1>얼음분수</h1><br>
-    <p>커다란 얼음분수가 만들어놓은 알프스의 명물<br>
+    $('#titleBox').html(`<h1>얼음분수</h1>`);
+    $('.textBox').html(`<p>커다란 얼음분수가 만들어놓은 알프스의 명물<br>
     얼음분수가 만들어 놓은 환상적인 겨울의 모습을 구경해 보세요~
     </p>`);
   });
@@ -132,8 +132,8 @@ window.onload = () => {
     $('#penguinBox').slideToggle('slow');
     $('#imgBox').attr("src", "./IMG/displaybox/Igloo.jpeg");
     $('#imgBox').attr("alt", "야간 이글루 사진");
-    $('.textBox').html(`<h1>이글루</h1><br>
-    <p>흔치 않은 겨울의 이글루~<br>
+    $('#titleBox').html(`<h1>이글루</h1>`);
+    $('.textBox').html(`<p>흔치 않은 겨울의 이글루~<br>
     이글루의 환상적인 분위기와 따듯함을 느껴보세요</p>`);
   });
 
@@ -143,8 +143,8 @@ window.onload = () => {
     $('#displayBox').fadeIn('slow');
     $('#imgBox').attr("src", "./IMG/displaybox/icecave.png");
     $('#imgBox').attr("alt", "야간 동굴 봅슬레이");
-    $('.textBox').html(`<h1>동굴</h1><br>
-    <p>낮에도 찾아온 알프스의 밤!<br>
+    $('#titleBox').html(`<h1>동굴</h1>`);
+    $('.textBox').html(`<p>낮에도 찾아온 알프스의 밤!<br>
     전구로 장식된 동굴에서 다양한 놀이를 즐겨보세요~</p>`);
   });
 
@@ -154,8 +154,8 @@ window.onload = () => {
     $('#displayBox').fadeIn('slow');
     $('#imgBox').attr("src", "./IMG/displaybox/food1.jpg");
     $('#imgBox').attr("alt", "군밤등등 음식 사진");
-    $('.textBox').html(`<h1>음식</h1><br>
-      <p>야외에서 추운 몸을 녹여줄 다양하고 맛있는 간식<br>
+    $('#titleBox').html(`<h1>음식</h1>`);
+    $('.textBox').html(`<p>야외에서 추운 몸을 녹여줄 다양하고 맛있는 간식<br>
       든든하게 배를 채워줄 맛있는 음식들까지~</p>`);
   });
 
@@ -165,8 +165,8 @@ window.onload = () => {
     $('#displayBox').fadeIn('slow');
     $('#imgBox').attr("src", "./IMG/displaybox/palace.png");
     $('#imgBox').attr("alt", "얼음 조각사진");
-    $('.textBox').html(`<h1>얼음조각</h1><br>
-      <p>투명한 얼음 조각으로 마음까지 시원해지는 볼거리<br>
+    $('#titleBox').html(`<h1>얼음조각</h1>`);
+    $('.textBox').html(`<p>투명한 얼음 조각으로 마음까지 시원해지는 볼거리<br>
       매년 달라지는 얼음 조각, 환상적인 분위기를 느껴보세요</p>`);
   });
 
@@ -176,8 +176,8 @@ window.onload = () => {
     $('#displayBox').fadeIn('slow');
     $('#imgBox').attr("src", "./IMG/displaybox/snowmen2.png");
     $('#imgBox').attr("alt", "눈 조각");
-    $('.textBox').html(`<h1>눈조각</h1><br>
-      <p>새하얀 눈으로 다양한 모양을 조각합니다.<br>
+    $('#titleBox').html(`<h1>눈조각</h1>`);
+    $('.textBox').html(`<p>새하얀 눈으로 다양한 모양을 조각합니다.<br>
       매년 새로운 눈 조각으로 매번 새로운 즐거움을 느껴 보세요!</p>`);
   });
   //짚트랙
@@ -186,8 +186,8 @@ window.onload = () => {
     $('#displayBox').fadeIn('slow');
     $('#imgBox').attr("src", "./IMG/displaybox/ziptrack.jpeg");
     $('#imgBox').attr("alt", "짚트랙");
-    $('.textBox').html(`<h1>짚트랙</h1><br>
-    <p>알프스의 마을을 가로 지르는 짚트랙<br>
+    $('#titleBox').html(`<h1>짚트랙</h1>`);
+    $('.textBox').html(`<p>알프스의 마을을 가로 지르는 짚트랙<br>
     환상적인 겨울왕국의 공중을 짜릿하게 즐겨보세요~</p>`);
   });
 
@@ -208,7 +208,7 @@ window.onload = () => {
     
     //img right 버튼 
     $('#imgRBtn').on('click',function(){
-      const nowBox = $('#textBox h1').html();
+      const nowBox = $('#titleBox h1').html();
       switch(nowBox){
         case '짚트랙':
           ziptrackImgArray.push(ziptrackImgArray.shift());
@@ -239,7 +239,7 @@ window.onload = () => {
     });
 
     $('#imgLBtn').on('click',function(){
-      const nowBox = $('#textBox h1').html();
+      const nowBox = $('#titleBox h1').html();
       switch(nowBox){
         case '짚트랙':
           ziptrackImgArray.unshift(ziptrackImgArray.pop());
