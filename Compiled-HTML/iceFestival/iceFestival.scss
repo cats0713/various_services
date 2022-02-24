@@ -197,8 +197,8 @@ body{
 }
 .notiBtn{
   position: absolute;
-  left: 1rem;
-  top: 1rem;
+  left: 5rem;
+  top: 5rem;
   width: 16rem;
   height: 16rem;
   background-image: url(./IMG/btn/sideBtn.png);
@@ -390,15 +390,16 @@ body{
     text-align: center;
     .penguinTextBox{
       margin-top: -5rem;
-      width: 20rem;
-      height: 3rem;
+      width: 30rem;
+      height: 4rem;
       border-radius: 1.5rem;
       background-color: #f8fbfc;
       font-family: 'Jua', sans-serif;
       h3{
-        font-size: 1.5rem;
+        font-size: 3rem;
         color: #1e1f1f;
-        line-height: 3rem;
+        line-height: 4.3rem;
+
       }
     }
   }
@@ -508,7 +509,7 @@ body{
       // background-color: red;
     }
     
-    .ziptrack{
+    .ziptrackBtn{
       position: absolute;
       bottom: 18%;
       left: 30%;
@@ -626,7 +627,7 @@ body{
         color: #1e1f1f;
   
         h1{
-          font-size: 2.3rem;
+          font-size: 3rem;
           font-weight: bold;
           letter-spacing: 0.3rem;
           word-spacing: 0.3rem;
@@ -634,7 +635,7 @@ body{
           font-family: 'Nanum Gothic Coding', monospace;
         }
         p{
-          font-size: 1.3rem;
+          font-size: 1.8rem;
           letter-spacing: 0.2rem;
           word-spacing: 0.1rem;
           line-height: 2.5rem;
