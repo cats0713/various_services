@@ -61,6 +61,7 @@ window.onload = () => {
   //오시는 길 열기
   $('#mapBtn').on("click", function () {
     $('.mapTag').fadeIn('fast');
+    $('#contentImg').attr('src','./IMG/mapBack.png');
     $('#contentTextBox').html(`<ul>
     <h1>오시는 길 <P>충남 청양군 정산면 천장호길 223-35 알프스마을</p></h1>
     

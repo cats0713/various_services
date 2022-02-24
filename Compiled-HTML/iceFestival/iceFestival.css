@@ -395,10 +395,12 @@ body {
 .sideBox .contentBox .contentImgBox .mapTag {
   display: none;
   position: absolute;
-  top: 1%;
-  left: 0;
+  top: 50%;
+  left: 50%;
   width: 60rem;
   height: 45rem;
+  margin-top: -22.5rem;
+  margin-left: -30rem;
   border-radius: 3rem;
 }
 
