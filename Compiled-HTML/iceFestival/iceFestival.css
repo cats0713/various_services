@@ -327,9 +327,51 @@ body {
 .sideBox .snowBox {
   height: 25%;
   width: 100%;
-  background-image: url(./IMG/sideBack.png);
+  background-image: url("./IMG/sideBack.png");
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.sideBox .snowBox .mapBtn {
+  display: inline-block;
+  width: 15%;
+  height: 90%;
+  background-image: url("./IMG/btn/mapBtn.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-left: 5%;
+}
+
+.sideBox .snowBox .anneBtn {
+  display: inline-block;
+  width: 12%;
+  height: 90%;
+  background-image: url("./IMG/btn/anneBtn.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-left: 5%;
+}
+
+.sideBox .snowBox .priceBtn {
+  display: inline-block;
+  width: 12%;
+  height: 90%;
+  background-image: url("./IMG/btn/priceBtn.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-left: 5%;
+}
+
+.sideBox .snowBox [class*='Btn'] {
+  margin-top: 2%;
+}
+
+.sideBox .snowBox [class*='Btn']:hover {
+  cursor: pointer;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  -webkit-transform: perspective(50rem) translateZ(10rem);
+          transform: perspective(50rem) translateZ(10rem);
 }
 
 .sideBox .contentBox {
@@ -338,24 +380,41 @@ body {
   background-color: #f6f6f6;
 }
 
-.sideBox .contentBox .mapBox {
+.sideBox .contentBox .contentImgBox {
+  position: relative;
   display: inline-block;
   float: left;
   overflow: hidden;
-  width: 60rem;
-  height: 45rem;
-  margin: 5rem;
+  width: 40%;
+  height: 80%;
+  margin: 2%;
   border: 0.1rem solid #f6f6f6;
   border-radius: 3rem;
-  background-color: red;
 }
 
-.sideBox .contentBox .mapTextBox {
+.sideBox .contentBox .contentImgBox .mapTag {
+  display: none;
+  position: absolute;
+  top: 1%;
+  left: 0;
+  width: 60rem;
+  height: 45rem;
+  border-radius: 3rem;
+}
+
+.sideBox .contentBox .contentImgBox img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.sideBox .contentBox .contentTextBox {
   float: left;
   display: inline-block;
-  min-width: 50%;
+  width: 55%;
   height: 90%;
-  margin-top: 5rem;
+  margin-top: 2%;
   background-image: url("./IMG/textBox.png");
   background-repeat: no-repeat;
   background-size: contain;
@@ -363,18 +422,58 @@ body {
   color: #000000;
 }
 
-.sideBox .contentBox .mapTextBox ul {
+.sideBox .contentBox .contentTextBox ul {
   list-style: none;
   margin-top: 10%;
   margin-left: 10%;
 }
 
-.sideBox .contentBox .mapTextBox ul h1 {
-  font-size: 3rem;
+.sideBox .contentBox .contentTextBox h1 {
+  font-size: 1.8rem;
+  letter-spacing: 0.2rem;
+  word-spacing: 0.1rem;
+  line-height: 2rem;
+  margin-bottom: 5%;
 }
 
-.sideBox .contentBox .mapTextBox ul li {
-  font-size: 2rem;
+.sideBox .contentBox .contentTextBox h2 {
+  font-size: 1.5rem;
+  letter-spacing: 0.2rem;
+  word-spacing: 0.1rem;
+  line-height: 2rem;
+}
+
+.sideBox .contentBox .contentTextBox i {
+  font-size: 1.8rem;
+}
+
+.sideBox .contentBox .contentTextBox li, .sideBox .contentBox .contentTextBox p {
+  margin-top: 0.7rem;
+  font-size: 1.4rem;
+  letter-spacing: 0.2rem;
+  word-spacing: 0.1rem;
+  line-height: 2rem;
+}
+
+.sideBox .contentBox .contentTextBox .mapBtn {
+  width: 15rem;
+  height: 6rem;
+  outline: none;
+  border: none;
+  font-size: 1.5rem;
+  margin-top: 3%;
+  margin-left: 10%;
+  background-image: url("./IMG/btn/mapBtn.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.sideBox .contentBox .contentTextBox .mapBtn:hover {
+  cursor: pointer;
+  background-image: url("./IMG/btn/mapBtn_h.png");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .mainBox {
@@ -382,6 +481,11 @@ body {
   width: 100%;
   height: 100%;
   text-align: center;
+}
+
+.mainBox .potText {
+  font-size: 2rem;
+  color: white;
 }
 
 .mainBox .penguinBox {
@@ -436,14 +540,6 @@ body {
   background-repeat: no-repeat;
 }
 
-.mainBox .mapBox .sleighBtn:hover {
-  cursor: pointer;
-  -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
-  -webkit-transform: perspective(50rem) translateZ(10rem);
-          transform: perspective(50rem) translateZ(10rem);
-}
-
 .mainBox .mapBox .iceFountainBtn {
   position: absolute;
   bottom: 25%;
@@ -453,14 +549,6 @@ body {
   background-image: url(./IMG/btn/iceFountainBtn.png);
   background-size: contain;
   background-repeat: no-repeat;
-}
-
-.mainBox .mapBox .iceFountainBtn:hover {
-  cursor: pointer;
-  -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
-  -webkit-transform: perspective(50rem) translateZ(10rem);
-          transform: perspective(50rem) translateZ(10rem);
 }
 
 .mainBox .mapBox .iglooBtn {
@@ -474,14 +562,6 @@ body {
   background-repeat: no-repeat;
 }
 
-.mainBox .mapBox .iglooBtn:hover {
-  cursor: pointer;
-  -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
-  -webkit-transform: perspective(50rem) translateZ(10rem);
-          transform: perspective(50rem) translateZ(10rem);
-}
-
 .mainBox .mapBox .caveBtn {
   position: absolute;
   top: 30%;
@@ -491,14 +571,6 @@ body {
   background-image: url(./IMG/btn/caveBtn.png);
   background-size: contain;
   background-repeat: no-repeat;
-}
-
-.mainBox .mapBox .caveBtn:hover {
-  cursor: pointer;
-  -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
-  -webkit-transform: perspective(50rem) translateZ(10rem);
-          transform: perspective(50rem) translateZ(10rem);
 }
 
 .mainBox .mapBox .foodBtn {
@@ -512,7 +584,7 @@ body {
   background-repeat: no-repeat;
 }
 
-.mainBox .mapBox .foodBtn:hover {
+.mainBox .mapBox [class*='Btn']:hover {
   cursor: pointer;
   -webkit-transition-duration: 0.2s;
           transition-duration: 0.2s;
@@ -531,14 +603,6 @@ body {
   background-repeat: no-repeat;
 }
 
-.mainBox .mapBox .palaceBtn:hover {
-  cursor: pointer;
-  -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
-  -webkit-transform: perspective(50rem) translateZ(10rem);
-          transform: perspective(50rem) translateZ(10rem);
-}
-
 .mainBox .mapBox .snowmenBtn {
   position: absolute;
   top: 10%;
@@ -550,14 +614,6 @@ body {
   background-repeat: no-repeat;
 }
 
-.mainBox .mapBox .snowmenBtn:hover {
-  cursor: pointer;
-  -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
-  -webkit-transform: perspective(50rem) translateZ(10rem);
-          transform: perspective(50rem) translateZ(10rem);
-}
-
 .mainBox .mapBox .ziptrack {
   position: absolute;
   bottom: 18%;
@@ -567,14 +623,6 @@ body {
   background-image: url(./IMG/btn/ziptrackBtn.png);
   background-size: contain;
   background-repeat: no-repeat;
-}
-
-.mainBox .mapBox .ziptrack:hover {
-  cursor: pointer;
-  -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
-  -webkit-transform: perspective(50rem) translateZ(10rem);
-          transform: perspective(50rem) translateZ(10rem);
 }
 
 .mainBox .displayBox {
@@ -598,6 +646,8 @@ body {
   margin-top: -25rem;
   margin-left: -50rem;
   border-radius: 3rem;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.7);
+          box-shadow: rgba(0, 0, 0, 0.7);
 }
 
 .mainBox .displayBox .popUpBox .closeBtn {

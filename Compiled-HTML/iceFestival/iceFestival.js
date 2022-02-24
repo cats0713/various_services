@@ -44,12 +44,60 @@ window.onload = () => {
   createSnow(snowBox);
   createSnowIntro(snowBox2);
 
+  //안내 열기
+  $('#anneBtn').on("click", function () {
+    $('#contentImg').attr('src','./IMG/anne.png');
+    $('.mapTag').fadeOut('fast');
+    $('#contentTextBox').html(` <ul>
+    <h1>주의사항</h1>
+    <li><i class="xi-angle-down-min"></i>개인 썰매 반입금지(썰매 이용권 구매 후 썰매 이용 가능)</li>
+    <li><i class="xi-angle-down-min"></i>음식물 반입 금지, 애완동물 반입 금지</li>
+    <li><i class="xi-angle-down-min"></i>눈 으로만 구경 가능 (얼음 조각, 눈조각, 얼음 분수등)</li>
+    <li><i class="xi-angle-down-min"></i>바닥이 미끄러우니 조심하시고, 놀이시설 이용시 안전에 유의 바랍니다.</li>
+    <li><i class="xi-angle-down-min"></i>주간개장을 이용 할 시 오후 5시에 일괄 퇴장 합니다.</li>
+    <li><i class="xi-angle-down-min"></i>주말 버스 출입금지</li>
+  </ul>`);
+  }); 
+  //오시는 길 열기
+  $('#mapBtn').on("click", function () {
+    $('.mapTag').fadeIn('fast');
+    $('#contentTextBox').html(`<ul>
+    <h1>오시는 길 <P>충남 청양군 정산면 천장호길 223-35 알프스마을</p></h1>
+    
+    <li><h2><i class="xi-car"></i>자가용 이용시</h2>
+    <p>서울 (소요시간 : 약 3시간) | 인천 (소요시간 : 약 3시간)</p></li>
+    <li><h2><i class="xi-bus"></i>버스 이용시</h2>
+    <p>정산터미널에 하차하여 알프스마을까지 택시이용</p></li>
+    <li><h2><i class="xi-train"></i>기차(KTX, SRT) 이용시</h2>
+    <p>공주역에서 하차 후 시내버스 이용하여 공주종합버스터미널로 이동 <br>▹ 정산시외버스터미널 ▹ 알프스마을까지 택시이용</p></li>
+    
+    </ul>`);
+  }); 
+  //비용안내 열기
+  $('#priceBtn').on("click", function () {
+    $('#contentImg').attr('src','./IMG/price.png');
+    $('#contentTextBox').html(`<ul>
+    <h1>알프스마을 겨울왕국 눈썰매장 이용요금</h1>
+    <li><h2><i class="xi-calendar"></i>기간</h2>
+    <p><i class="xi-angle-down-min"></i> 일         자 : 2022년 01월 01일 ~ 2022년 02월 13일</p>
+    <p><i class="xi-angle-down-min"></i> 관람시간 : (주중) 09:00 ~  20:00,  (주말) 09:00 ~  21:00</p> 
+    <p><i class="xi-angle-down-min"></i> 매표마감 : (주중) 19:00 / (주말) 20:00</p></li>
+    <br>
+    <li><h2><i class="xi-coupon"></i>현장할인</h2>
+    <p><i class="xi-angle-down-min"></i> 청양군민, 경로(65세이상), 장애인 - 입장료 5,000원 할인 (신분증, 장애인 등록증 확인)</p>
+    <p><i class="xi-angle-down-min"></i> 4세(36개월)미만 입장 무료 (증빙서류 확인)</p></li>
+    <li></li>
+    </ul>`);
+    $('.mapTag').fadeOut('fast');
+  }); 
+
   //지도 열기
   $('#moreBtn').on("click", function () {
     $('#introBox').slideUp("slow");
     $('#penguinBox').slideToggle('slow');
   });
 
+  //사이드 메뉴 버튼
   $('#notiBtn').on("click", function () {
     $('#sideBox').slideToggle("slow");
   }); 
@@ -148,6 +196,8 @@ window.onload = () => {
     $('#penguinBox').slideToggle('slow');
   });
 
+
+  //popup에서 화살표를 선택했을때
   let imgBtn = () => {
     const ziptrackImgArray = ['./IMG/displaybox/ziptrack.jpeg','./IMG/displaybox/ziptrack2.jpeg','./IMG/displaybox/ziptrack3.png'];
     const foodImgArray = ['./IMG/displaybox/food1.jpg','./IMG/displaybox/food2.jpeg','./IMG/displaybox/food3.jpeg'];

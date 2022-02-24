@@ -226,34 +226,86 @@ body{
   width: 100vw;
   height: 100vh;
   background: radial-gradient(ellipse at bottom, #48c6ef 0%, #6f86d6 100%);
+
   .snowBox {
     height: 25%;
     width: 100%;
-    background-image: url(./IMG/sideBack.png);
+    background-image: url("./IMG/sideBack.png");
     background-repeat: no-repeat;
     background-size: cover;
+    
+    .mapBtn{
+      display: inline-block;
+      width: 15%;
+      height: 90%;
+      background-image: url("./IMG/btn/mapBtn.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      margin-left: 5%;
+    }
+    .anneBtn{
+      display: inline-block;
+      width: 12%;
+      height: 90%;
+      background-image: url("./IMG/btn/anneBtn.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      margin-left: 5%;
+    }
+    .priceBtn{
+      display: inline-block;
+      width: 12%;
+      height: 90%;
+      background-image: url("./IMG/btn/priceBtn.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      margin-left: 5%;
+    }
+    [class *= 'Btn']{
+      margin-top: 2%;
+    }
+    [class *= 'Btn']:hover{
+      cursor: pointer;
+      transition-duration: 0.2s;
+      transform: perspective(50rem) translateZ(10rem);
+    }
   }
   .contentBox{
     width: 100%;
     height: 75%; 
     background-color: #f6f6f6;
-    .mapBox{
+    .contentImgBox{
+      position: relative;
       display: inline-block;
       float: left;
       overflow: hidden;
-      width: 60rem;
-      height: 45rem;
-      margin: 5rem;
+      width: 40%;
+      height: 80%;
+      margin: 2%;
       border: 0.1rem solid #f6f6f6;
       border-radius: 3rem;
-      background-color: red;
+   
+      .mapTag{
+        display: none;
+        position: absolute;
+        top: 1%;
+        left: 0;
+        width: 60rem;
+        height: 45rem;
+        border-radius: 3rem;
+      }
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
     }
-    .mapTextBox{
+    .contentTextBox{
       float: left;
       display: inline-block;
-      min-width: 50%;
+      width: 55%;
       height: 90%;
-      margin-top: 5rem;
+      margin-top: 2%;
       background-image: url("./IMG/textBox.png");
       background-repeat: no-repeat;
       background-size: contain;
@@ -263,15 +315,48 @@ body{
         list-style: none;
         margin-top: 10%;
         margin-left: 10%;
-        h1{
-          font-size: 3rem;
-        }
-        li{
-          font-size: 2rem;
-        }
       }
-      .priceBtn{
-        
+      h1{
+        font-size: 1.8rem;
+        letter-spacing: 0.2rem;
+        word-spacing: 0.1rem;
+        line-height: 2rem;
+        margin-bottom: 5%;
+      }
+      h2{
+        font-size: 1.5rem;
+        letter-spacing: 0.2rem;
+        word-spacing: 0.1rem;
+        line-height: 2rem;
+      }
+      i{
+        font-size: 1.8rem;
+      }
+      li, p{
+        margin-top: 0.7rem;
+        font-size: 1.4rem;
+        letter-spacing: 0.2rem;
+        word-spacing: 0.1rem;
+        line-height: 2rem;
+      }
+      .mapBtn{
+        width: 15rem;
+        height: 6rem;
+        outline: none;
+        border: none;
+        font-size: 1.5rem;
+        margin-top: 3%;
+        margin-left: 10%;
+        background-image: url('./IMG/btn/mapBtn.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: rgba($color: #000000, $alpha: 0);
+      }
+      .mapBtn:hover{
+        cursor: pointer;
+        background-image: url('./IMG/btn/mapBtn_h.png');
+        background-repeat: no-repeat;
+        background-size: contain;
       }
     }
   }
@@ -285,7 +370,10 @@ body{
   width: 100%;
   height: 100%;
   text-align: center;
-  
+  .potText{
+    font-size: 2rem;
+    color: white;
+  }
   .penguinBox{
     display: none;
     width: 30rem;
@@ -336,12 +424,6 @@ body{
       // background-color: #155a83;
 
     }
-    .sleighBtn:hover{
-      cursor: pointer;
-      transition-duration: 0.2s;
-      transform: perspective(50rem) translateZ(10rem);
-      
-    }
 
     .iceFountainBtn{
       position: absolute;
@@ -354,11 +436,7 @@ body{
       background-repeat: no-repeat;  
       // background-color: red;
     }
-    .iceFountainBtn:hover{
-      cursor: pointer;
-      transition-duration: 0.2s;
-      transform: perspective(50rem) translateZ(10rem);
-    }
+    
 
     .iglooBtn{
       position: absolute;
@@ -371,11 +449,7 @@ body{
       background-repeat: no-repeat;  
       // background-color: red;
     }
-    .iglooBtn:hover{
-      cursor: pointer;
-      transition-duration: 0.2s;
-      transform: perspective(50rem) translateZ(10rem);
-    }
+    
 
 
     .caveBtn{
@@ -389,11 +463,7 @@ body{
       background-repeat: no-repeat;  
       // background-color: red;
     }
-    .caveBtn:hover{
-      cursor: pointer;
-      transition-duration: 0.2s;
-      transform: perspective(50rem) translateZ(10rem);
-    } 
+    
 
     .foodBtn{
       position: absolute;
@@ -406,11 +476,11 @@ body{
       background-repeat: no-repeat;  
       // background-color: red;
     }
-    .foodBtn:hover{
+    [class *= 'Btn']:hover{
       cursor: pointer;
       transition-duration: 0.2s;
       transform: perspective(50rem) translateZ(10rem);
-    } 
+    }
 
     .palaceBtn{
       position: absolute;
@@ -423,11 +493,7 @@ body{
       background-repeat: no-repeat; 
       // background-color: red;
     }
-    .palaceBtn:hover{
-      cursor: pointer;
-      transition-duration: 0.2s;
-      transform: perspective(50rem) translateZ(10rem);
-    } 
+   
     .snowmenBtn{
       position: absolute;
       top: 10%;
@@ -439,11 +505,7 @@ body{
       background-repeat: no-repeat;  
       // background-color: red;
     }
-    .snowmenBtn:hover{
-      cursor: pointer;
-      transition-duration: 0.2s;
-      transform: perspective(50rem) translateZ(10rem);
-    } 
+    
     .ziptrack{
       position: absolute;
       bottom: 18%;
@@ -455,11 +517,7 @@ body{
       background-repeat: no-repeat;  
       // background-color: red;
     }
-    .ziptrack:hover{
-      cursor: pointer;
-      transition-duration: 0.2s;
-      transform: perspective(50rem) translateZ(10rem);
-    }
+    
 
   }//mapBox
   .displayBox{
@@ -481,6 +539,7 @@ body{
       margin-top: -25rem;
       margin-left: -50rem;
       border-radius: 3rem;
+      box-shadow: rgba($color: #000, $alpha: 0.7);
       .closeBtn{
         display: block;
         width: 2rem;
