@@ -444,13 +444,13 @@ body{
     .iglooBtn{
       position: absolute;
       top: 29%;
-      right: 8%;
-      width: 17%;
-      height: 28%;
+      right: 13%;
+      width: 13%;
+      height: 27%;
       background-image: url(./IMG/btn/IglooBtn.png);
       background-size: contain;
       background-repeat: no-repeat;  
-      // background-color: red;
+      //background-color: red;
     }
     
 
@@ -458,9 +458,9 @@ body{
     .caveBtn{
       position: absolute;
       top: 30%;
-      right: 27%;
-      width: 20%;
-      height: 23%;
+      right: 32%;
+      width: 15%;
+      height: 18%;
       background-image: url(./IMG/btn/caveBtn.png);
       background-size: contain;
       background-repeat: no-repeat;  
@@ -472,12 +472,12 @@ body{
       position: absolute;
       top: -8%;
       right: 20%;
-      width: 18%;
-      height: 35%;
+      width: 16%;
+      height: 33%;
       background-image: url(./IMG/btn/foodBtn.png);
       background-size: contain;
       background-repeat: no-repeat;  
-      // background-color: red;
+      //background-color: red;
     }
     [class *= 'Btn']:hover{
       cursor: pointer;
@@ -494,31 +494,31 @@ body{
       background-image: url(./IMG/btn/palaceBtn.png);
       background-size: contain;
       background-repeat: no-repeat; 
-      // background-color: red;
+      //background-color: red;
     }
    
     .snowmenBtn{
       position: absolute;
       top: 10%;
       left: 38%;
-      width: 14%;
-      height: 38%;
+      width: 12%;
+      height: 33%;
       background-image: url(./IMG/btn/snowmenBtn.png);
       background-size: contain;
       background-repeat: no-repeat;  
-      // background-color: red;
+      //background-color: red;
     }
     
     .ziptrackBtn{
       position: absolute;
       bottom: 18%;
-      left: 30%;
+      left: 28%;
       width: 17%;
-      height: 27%;
+      height: 29%;
       background-image: url(./IMG/btn/ziptrackBtn.png);
       background-size: contain;
       background-repeat: no-repeat;  
-      // background-color: red;
+      //background-color: red;
     }
     
 
@@ -636,7 +636,7 @@ body{
         text-align: left;
         width: 43rem;
         margin-left: 1rem;
-        margin-top: 15rem;
+        margin-top: 20rem;
         color: #1e1f1f;
   
         h1{
