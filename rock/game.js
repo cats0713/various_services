@@ -41,6 +41,14 @@ window.onload = () => {
       }
 
     }
+    
+    $(".hov-anim").mouseover(function() {
+      $(this).attr("src", $(this).data("animated"))
+    }),
+    $(".hov-anim").mouseout(function() {
+      $(this).attr("src", $(this).data("static"))
+    });
+    
     // button을 눌렀을때
     userRock.onclick = function () { 
       let comGameResult = comVsUser();
