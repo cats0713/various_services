@@ -115,17 +115,20 @@ window.onload = function () {
     let arrResult = [];
 
     let i = 0;
-    while(i < arrAV.length){ //0~4
+
+
+    while(i < arrAV.length){
       let j = 0;
-      let sumNum = i;
+      let k = 0;
       while(j < arrcont){
-        arrResult[i] += arrAV[i+j] * arrBV[i/arrcont+sumNum];
-        sumNum += arrcont;
-        j++;
+        arrResult[i] = Number(arrAV[j+k]);
       }
-      i += arrcont;
+      i++;
     }
 
+
+
+    
     return arrResult;
   }
 
