@@ -65,7 +65,7 @@ window.onload = function () {
   let arrayRS = new ArrResultBox('arrRS', matirxArrR); //새로운 결과 객체 생성
   arrayRS.arrDisplayFunc(arrcont);
 
-
+  //행렬 더하기 버튼
   plusBtn.addEventListener("click", function () {
     if (arrcont == 6) {
     } else {
@@ -75,6 +75,7 @@ window.onload = function () {
     }
   });
 
+  //행렬 빼기 버튼
   minusBtn.addEventListener("click", function () {
     if (arrcont == 1) {
     } else {
@@ -101,7 +102,7 @@ window.onload = function () {
     let arrBV = document.querySelectorAll(".arrB");
     let arrResult = [];
 
-    arrAV.forEach((element,i) => {
+    arrAV.forEach((element , i) => {
       arrResult[i] = Number(arrAV[i].value) - Number(arrBV[i].value); 
     });
 
@@ -112,20 +113,18 @@ window.onload = function () {
     let arrAV = document.querySelectorAll(".arrA");
     let arrBV = document.querySelectorAll(".arrB");
     let arrResult = [];
-    let i = 0, j = 0;
 
-    while(i < arrAV.length){
-      while(j < arrBV.length){
-        let contMulNumber = 0;
-
+    let i = 0;
+    while(i < arrAV.length){ //0~4
+      let j = 0;
+      let sumNum = i;
+      while(j < arrcont){
+        arrResult[i] += arrAV[i+j] * arrBV[i/arrcont+sumNum];
+        sumNum += arrcont;
         j++;
       }
-      i++;
+      i += arrcont;
     }
-
-    // arrAV.forEach((element,i) => {
-    //   arrResult[i] = Number(arrAV[i].value) * Number(arrBV[i].value); 
-    // });
 
     return arrResult;
   }
@@ -159,6 +158,7 @@ window.onload = function () {
       arrRS[index].value = element; 
     });
   });
+
   //하단 곱하기 버튼을 누르면
   mulBtn.addEventListener("click",function(){
     let arrRS = document.querySelectorAll("#arrRS");
