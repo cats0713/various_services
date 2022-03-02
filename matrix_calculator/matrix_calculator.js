@@ -115,13 +115,14 @@ window.onload = function () {
     let arrResult = [];
 
     let i = 0;
-
-
+    let k = 0;
     while(i < arrAV.length){
       let j = 0;
-      let k = 0;
+      if(i % arrcont == 0){
+        k += arrcont; 
+      }
       while(j < arrcont){
-        arrResult[i] = Number(arrAV[j+k]);
+        arrResult[i] += Number(arrAV[k+j]) *  Number(arrBV[k/arrcont]);
       }
       i++;
     }
