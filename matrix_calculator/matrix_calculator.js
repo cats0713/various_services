@@ -120,6 +120,9 @@ window.onload = function () {
       arrBR[i] = new Array(arrcont);
     }
 
+    for(let i = 0; i < arrcont;i++){
+      arrResult[0] += arrAR[0][i] * arrBR[i][0]; 
+    }
     //배열 b 쪼개기
     for(let i=0; i<arrBV.length; i++){
     
