@@ -113,21 +113,17 @@ window.onload = function () {
     let arrAV = document.querySelectorAll(".arrA");
     let arrBV = document.querySelectorAll(".arrB");
     let arrResult = [];
+    let arrBR = new array(arrcont);
+    let arrAR = new array(arrcont);
 
-    let i = 0;
-    let k = 0;
-    while(i < arrAV.length){
-      let j = 0;
-      if(i % arrcont == 0){
-        k += arrcont; 
-      }
-      while(j < arrcont){
-        arrResult[i] += Number(arrAV[k+j]) *  Number(arrBV[k/arrcont]);
-      }
-      i++;
+    for (let i = 0; i < arrBR.length; i++) {
+      arrBR[i] = new Array(arrcont);
     }
 
-
+    //배열 b 쪼개기
+    for(let i=0; i<arrBV.length; i++){
+    
+    }
 
     
     return arrResult;
