@@ -11,37 +11,62 @@
   <link rel="stylesheet" href="./matrix_calculator.css">
   <script type="text/javascript" src="./matrix_calculator.js"></script>
 
+  <link rel="apple-touch-icon" sizes="57x57" href="./favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="./favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="./favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="./favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="./favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="./favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="./favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="./favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="./favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
 </head>
 
 <body>
 
   <div class="mainBox">
-    <div class="arrBtnBox">
-      <div id="plusBtn" class="inputArrBtn">+</div>
-      <div id="minusBtn" class="inputArrBtn">-</div>
+    
+    <div class="arrBoxA">
+      <div class="arrABtnBox">
+        <div class="inputArrBtn"><input id="inputARow" type="number" min="1" max="5" value="3"></div>
+        <i  class="xi-close iIcon"></i>
+        <div class="inputArrBtn"><input id="inputAColumns" type="number" min="1" max="5" value="3"></div>
+        <div id="okABtn" class="inputArrBtn"><i class="xi-check"></i></div>
+        <div id="ramdomABtn" class="inputArrBtn">ramdom</div>
+      </div> 
+      <div id="arrABoxcom" class="arrABox">
+        <form id="matirxArrA" class="matirxArrA" naem="matirxArr"></form>
+      </div>
     </div>
-  
-  
-    <div id="arrABox" class="arrABox">
-      <form id="matirxArrA" class="matirxArrA" naem="matirxArr"></form>
-    </div>
-  
-    <div id="arrBBox" class="arrBBox">
-      <form id="matirxArrB" class="matirxArrB" naem="matirxArr"></form>
-    </div>
-  
-  
-  
+
+    <div class="arrBoxB">
+      <div class="arrBBtnBox">
+        <div class="inputArrBtn"><input id="inputBRow" type="number" min="1" max="5" value="3"></div>
+        <i class="xi-close iIcon"></i>
+        <div class="inputArrBtn"><input id="inputBColumns" type="number" min="1" max="5" value="3"></div>
+        <div id="okBBtn" class="inputArrBtn"><i class="xi-check"></i></div>
+        <div id="ramdomBBtn" class="inputArrBtn">ramdom</div>
+      </div> 
+      <div id="arrBBox" class="arrBBox">
+        <form id="matirxArrB" class="matirxArrB" naem="matirxArr"></form>
+      </div>
+    </div> 
+    
+    <div id="matirxArrR" class="matirxArrR"></div>
+
     <div class="btnBox">
       <i id="addBtn" class="addBtn xi-plus"></i>
       <i id="miusBtn" class="miusBtn xi-minus"></i>
       <i id="mulBtn" class="mulBtn xi-close"></i>
     </div>
-  
-    <div id="resultBox" class="resultBox">
-      <div class="xBtn">x</div>
-      <div id="matirxArrR" class="matirxArrR"></div>
+    <div class="blackBox btnBox">
+      <p>더하기와 빼기는 행과 열이 같아야 계산이 가능합니다.</p>
     </div>
+    <footer></footer>
   </div>
 
 </body>

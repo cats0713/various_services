@@ -8,25 +8,25 @@
 html, body {
   font-family: 'Orbitron', sans-serif;
   background-color: #313C4D;
+  text-align: center;
 }
 
 .mainBox {
-  position: relative;
-  min-width: 102rem;
-  height: 100vh;
+  display: inline-block;
+  width: 120rem;
 }
 
 .btnBox {
   background-color: #e9eaee;
   -webkit-box-shadow: -0.2rem -0.2rem 0.2rem #5b6679, 0.5rem 0.5rem 1.3rem #0c2034;
           box-shadow: -0.2rem -0.2rem 0.2rem #5b6679, 0.5rem 0.5rem 1.3rem #0c2034;
-  width: 25rem;
-  height: 7rem;
+  width: 7rem;
+  height: 25rem;
   border-radius: 2rem;
-  position: absolute;
-  bottom: 10%;
-  left: 50%;
-  margin-left: -15rem;
+  position: fixed;
+  top: 50%;
+  right: 3%;
+  margin-top: -12.5rem;
   text-align: center;
 }
 
@@ -44,48 +44,59 @@ html, body {
   border-radius: 50%;
 }
 
+.btnBox [class*="Btn"]:first-child {
+  margin-top: 3rem;
+}
+
 .btnBox [class*="Btn"]:hover {
   -webkit-box-shadow: inset 0.3rem 0.3rem 0.3rem #aeaec0, 0.3rem 0.3rem 0.3rem #fff;
           box-shadow: inset 0.3rem 0.3rem 0.3rem #aeaec0, 0.3rem 0.3rem 0.3rem #fff;
   cursor: pointer;
 }
 
-.arrABox {
-  width: 40rem;
-  position: absolute;
-  top: 20%;
-  left: 10%;
+.arrBoxA {
+  display: inline-block;
+  width: 50%;
+  float: left;
+  text-align: center;
+  margin-top: 10%;
 }
 
-.arrBBox {
-  width: 40rem;
-  position: absolute;
-  top: 20%;
-  right: 10%;
-}
-
-.arrBtnBox {
+.arrBoxA .arrABtnBox {
+  display: inline-block;
   background-color: #e9eaee;
   -webkit-box-shadow: -0.2rem -0.2rem 0.2rem #5b6679, 0.5rem 0.5rem 1.3rem #0c2034;
           box-shadow: -0.2rem -0.2rem 0.2rem #5b6679, 0.5rem 0.5rem 1.3rem #0c2034;
-  width: 20rem;
+  width: 45rem;
   height: 7rem;
   border-radius: 1rem;
   text-align: center;
-  position: absolute;
-  top: 7%;
-  left: 50%;
-  margin-left: -10rem;
+  margin-bottom: 5%;
 }
 
-.arrBtnBox div {
+.arrBoxA .arrABtnBox .iIcon {
+  font-size: 2rem;
+}
+
+.arrBoxA .arrABtnBox input {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: none;
+  text-align: right;
+  padding-right: 0.5rem;
+  font-size: 2rem;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.arrBoxA .arrABtnBox div {
   background-color: #e9eaee;
   -webkit-box-shadow: -0.1rem -0.1rem 0.3rem #fff, 0.3rem 0.3rem 0.3rem #aeaec0;
           box-shadow: -0.1rem -0.1rem 0.3rem #fff, 0.3rem 0.3rem 0.3rem #aeaec0;
   display: inline-block;
   width: 6rem;
   height: 4rem;
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin: 1.5rem;
   border-radius: 1rem;
   outline: none;
@@ -93,13 +104,103 @@ html, body {
   font-family: 'Orbitron', sans-serif;
   text-align: center;
   line-height: 4rem;
+  overflow: hidden;
 }
 
-.arrBtnBox div:hover {
+.arrBoxA .arrABtnBox div i {
+  font-size: 1.5rem;
+  line-height: 4rem;
+}
+
+.arrBoxA .arrABtnBox div:hover {
   -webkit-box-shadow: inset 0.3rem 0.3rem 0.3rem #aeaec0, 0.3rem 0.3rem 0.3rem #fff;
           box-shadow: inset 0.3rem 0.3rem 0.3rem #aeaec0, 0.3rem 0.3rem 0.3rem #fff;
   cursor: pointer;
   color: #aeaec0;
+}
+
+.arrBoxA .arrABox {
+  width: 40rem;
+  display: inline-block;
+}
+
+.arrBoxA .arrABox input:first-child {
+  margin-top: 2rem;
+}
+
+.arrBoxB {
+  display: inline-block;
+  width: 50%;
+  float: left;
+  text-align: center;
+  margin-top: 10%;
+}
+
+.arrBoxB .arrBBtnBox {
+  display: inline-block;
+  background-color: #e9eaee;
+  -webkit-box-shadow: -0.2rem -0.2rem 0.2rem #5b6679, 0.5rem 0.5rem 1.3rem #0c2034;
+          box-shadow: -0.2rem -0.2rem 0.2rem #5b6679, 0.5rem 0.5rem 1.3rem #0c2034;
+  width: 45rem;
+  height: 7rem;
+  border-radius: 1rem;
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+.arrBoxB .arrBBtnBox .iIcon {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+.arrBoxB .arrBBtnBox input {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: none;
+  text-align: right;
+  padding-right: 0.5rem;
+  font-size: 2rem;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.arrBoxB .arrBBtnBox div {
+  background-color: #e9eaee;
+  -webkit-box-shadow: -0.1rem -0.1rem 0.3rem #fff, 0.3rem 0.3rem 0.3rem #aeaec0;
+          box-shadow: -0.1rem -0.1rem 0.3rem #fff, 0.3rem 0.3rem 0.3rem #aeaec0;
+  display: inline-block;
+  width: 6rem;
+  height: 4rem;
+  font-size: 1rem;
+  margin: 1.5rem;
+  border-radius: 1rem;
+  outline: none;
+  border: none;
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
+  line-height: 4rem;
+  overflow: hidden;
+}
+
+.arrBoxB .arrBBtnBox div i {
+  font-size: 1.5rem;
+  line-height: 4rem;
+}
+
+.arrBoxB .arrBBtnBox div:hover {
+  -webkit-box-shadow: inset 0.3rem 0.3rem 0.3rem #aeaec0, 0.3rem 0.3rem 0.3rem #fff;
+          box-shadow: inset 0.3rem 0.3rem 0.3rem #aeaec0, 0.3rem 0.3rem 0.3rem #fff;
+  cursor: pointer;
+  color: #aeaec0;
+}
+
+.arrBoxB .arrBBox {
+  width: 40rem;
+  display: inline-block;
+}
+
+.arrBoxB .arrBBox input:first-child {
+  margin-top: 2rem;
 }
 
 .matirxArrA, .matirxArrB {
@@ -126,6 +227,7 @@ html, body {
   border: none;
   font-family: 'Orbitron', sans-serif;
   text-align: center;
+  margin-bottom: 2rem;
 }
 
 .matirxArrA input::-webkit-outer-spin-button,
@@ -138,47 +240,23 @@ html, body {
   -moz-appearance: textfield;
 }
 
-.resultBox {
+.matirxArrR {
   display: none;
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.resultBox .xBtn {
-  width: 3rem;
-  height: 3rem;
-  position: absolute;
-  top: 15%;
-  left: 25%;
-  border-radius: 1rem;
-  font-size: 2rem;
-  text-align: center;
-  background-color: #e9eaee;
-  -webkit-box-shadow: -0.2rem -0.2rem 0.2rem #5b6679, 0.5rem 0.5rem 1.3rem #0c2034;
-          box-shadow: -0.2rem -0.2rem 0.2rem #5b6679, 0.5rem 0.5rem 1.3rem #0c2034;
-}
-
-.resultBox .xBtn:hover {
-  color: #aeaec0;
-}
-
-.resultBox .matirxArrR {
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  margin-left: -30rem;
   background-color: #e9eaee;
   -webkit-box-shadow: -0.2rem -0.2rem 0.2rem #5b6679, 0.5rem 0.5rem 1.3rem #0c2034;
           box-shadow: -0.2rem -0.2rem 0.2rem #5b6679, 0.5rem 0.5rem 1.3rem #0c2034;
   text-align: center;
   width: 60rem;
   border-radius: 1rem;
+  margin-top: 5%;
+  margin-bottom: 2rem;
+}
+
+.matirxArrR input:first-child {
   margin-top: 2rem;
 }
 
-.resultBox .matirxArrR .arrRS {
+.matirxArrR .arrRS {
   background-color: #e9eaee;
   -webkit-box-shadow: -0.1rem -0.1rem 0.3rem #fff, 0.3rem 0.3rem 0.3rem #aeaec0;
           box-shadow: -0.1rem -0.1rem 0.3rem #fff, 0.3rem 0.3rem 0.3rem #aeaec0;
@@ -192,5 +270,22 @@ html, body {
   border: none;
   font-family: 'Orbitron', sans-serif;
   text-align: right;
+  margin-bottom: 2rem;
+}
+
+.blackBox {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50rem;
+  height: 7rem;
+  margin-top: -3.5rem;
+  margin-left: -25rem;
+}
+
+.blackBox p {
+  font-size: 2rem;
+  line-height: 7rem;
 }
 /*# sourceMappingURL=matrix_calculator.css.map */
