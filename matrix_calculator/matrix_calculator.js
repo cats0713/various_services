@@ -127,6 +127,7 @@ window.onload = function () {
     let conutNum = 0;
 
     let arrResult = [];
+    let arrResultSumNum = 0;
     let arrAR = Array.from(Array(inputARow), ()=> Array(inputAColumns).fill(0));
     let arrBR = Array.from(Array(inputBRow), ()=> Array(inputBColumns).fill(0));
 
@@ -138,6 +139,7 @@ window.onload = function () {
     //   });
     // });
 
+    //1차원 배열 2차원으로 쪼개기
     conutNum = 0;
     for(let i = 0; i<arrAR.length; i++){
       for(let j=0; j<arrAR[i].length;j++ ){
@@ -153,16 +155,22 @@ window.onload = function () {
       }
     }
 
-    console.log(arrAR);
+    // console.log(arrAR);
     // console.log(arrBR);
     
     conutNum = 0;
-    for(let i = 0; i < inputARow; i++){
-      for(let j = 0; j < inputBColumns; j++){
+    for(let i = 0; i < inputAColumns; i++){
+      for(let j = 0; j < inputBRow; j++){
         for(let k = 0; k < inputAColumns; k++){
-          arrResult[conutNum] += arrAR[i][k] * arrBR[k][j];
-          console.log(arrResult[conutNum]);
+          arrResultSumNum += Number(arrAR[i][k]) * Number(arrBR[k][j]);
+          // console.log(arrResultSumNum);
+          console.log(i,j,k);
+          console.log(inputARow,inputAColumns,inputBRow,inputBColumns);
+          
         }
+        arrResult[conutNum] = arrResultSumNum;
+        console.log(`arrResult[${conutNum}] = ${arrResultSumNum}`);
+        arrResultSumNum = 0;
         conutNum++;
       }
     }
