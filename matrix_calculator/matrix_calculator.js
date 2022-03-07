@@ -70,17 +70,35 @@ window.onload = function () {
   okABtn.addEventListener("click",()=>{
     let inputARow = document.querySelector("#inputARow").value;
     let inputAColumns = document.querySelector("#inputAColumns").value;
-    matirxArrR.style.display = 'none';
-    arrayRS.arrDisplayFunc(inputARow,inputAColumns);
-    // console.log(inputARow);
-    arrA.arrDisplayFunc(inputARow,inputAColumns);
+    if(inputARow > 0 && inputARow < 5 && inputAColumns > 0 && inputAColumns < 5){
+      matirxArrR.style.display = 'none';
+      arrayRS.arrDisplayFunc(inputARow,inputAColumns);
+      // console.log(inputARow);
+      arrA.arrDisplayFunc(inputARow,inputAColumns);
+
+    }else{
+      blackBox.innerHTML = "<p>행렬의 크기는 1이상 5이하 가능합니다.</p>";
+      blackBox.style.display = "block";
+      setTimeout(function(){
+        blackBox.style.display = "none"; 
+      },2000);
+    }
+    
   });
   okBBtn.addEventListener("click",()=>{
     let inputBRow = document.querySelector("#inputBRow").value;
     let inputBColumns = document.querySelector("#inputBColumns").value;
+    if(inputBRow > 0 && inputBRow < 5 && inputBColumns > 0 && inputBColumns < 5){ 
     matirxArrR.style.display = 'none';
     // console.log(inputBRow);
     arrB.arrDisplayFunc(inputBRow,inputBColumns);
+    }else{
+      blackBox.innerHTML = "<p>행렬의 크기는 1이상 5이하 가능합니다.</p>";
+      blackBox.style.display = "block";
+      setTimeout(function(){
+        blackBox.style.display = "none"; 
+      },2000);
+    } 
   });
   //행렬 랜덤 버튼
   ramdomABtn.addEventListener("click",()=>{
@@ -101,9 +119,15 @@ window.onload = function () {
     let arrAV = document.querySelectorAll(".arrA");
     let arrBV = document.querySelectorAll(".arrB");
     let arrResult = [];
+    let sumNumber = 0;
+    let myRegExp = /e/;
 
     arrAV.forEach((element,i) => {
-      arrResult[i] = Number(arrAV[i].value) + Number(arrBV[i].value); 
+      if(myRegExp.test(element)){ 
+        console.log("a");
+      }
+      sumNumber = 0;
+      sumNumber = Number(arrAV[i].value) + Number(arrBV[i].value);
     });
     return arrResult;
   }
@@ -187,11 +211,11 @@ window.onload = function () {
     let inputAColumns = document.querySelector("#inputAColumns").value;
     let inputBRow = document.querySelector("#inputBRow").value;
     let inputBColumns = document.querySelector("#inputBColumns").value;
-    
+
     if(inputARow == inputBRow && inputAColumns == inputBColumns){
       let arrRS = document.querySelectorAll("#arrRS");
       let resultValue = addMatirxFunc();
-  
+
       matirxArrR.style.display = 'inline-block';
   
       resultValue.forEach((element, index) => { 
