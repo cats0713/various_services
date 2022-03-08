@@ -218,7 +218,7 @@ html, body{
   display: none;
   @include boxShadow();
   text-align: center;
-  width: 60rem;
+  width: 100rem;
   border-radius: 1rem;
   margin-top: 5%;
   margin-bottom: 2rem;
@@ -231,7 +231,7 @@ html, body{
   .arrRS{
     @include itemShadow();
     display: inline-block;
-    width: 6rem;
+    width: 17rem;
     height: 4rem; 
     font-size: 1.3rem;
     margin: 1rem;

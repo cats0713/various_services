@@ -70,10 +70,10 @@ window.onload = function () {
   okABtn.addEventListener("click",()=>{
     let inputARow = document.querySelector("#inputARow").value;
     let inputAColumns = document.querySelector("#inputAColumns").value;
-    if(inputARow > 0 && inputARow < 5 && inputAColumns > 0 && inputAColumns < 5){
+    if(inputARow > 0 && inputARow < 6 && inputAColumns > 0 && inputAColumns < 6){
       matirxArrR.style.display = 'none';
-      arrayRS.arrDisplayFunc(inputARow,inputAColumns);
       // console.log(inputARow);
+      arrayRS.arrDisplayFunc(inputARow,inputAColumns);
       arrA.arrDisplayFunc(inputARow,inputAColumns);
 
     }else{
@@ -88,7 +88,7 @@ window.onload = function () {
   okBBtn.addEventListener("click",()=>{
     let inputBRow = document.querySelector("#inputBRow").value;
     let inputBColumns = document.querySelector("#inputBColumns").value;
-    if(inputBRow > 0 && inputBRow < 5 && inputBColumns > 0 && inputBColumns < 5){ 
+    if(inputBRow > 0 && inputBRow < 6 && inputBColumns > 0 && inputBColumns < 6){ 
     matirxArrR.style.display = 'none';
     // console.log(inputBRow);
     arrB.arrDisplayFunc(inputBRow,inputBColumns);
@@ -123,11 +123,7 @@ window.onload = function () {
     let myRegExp = /e/;
 
     arrAV.forEach((element,i) => {
-      if(myRegExp.test(element)){ 
-        console.log("a");
-      }
-      sumNumber = 0;
-      sumNumber = Number(arrAV[i].value) + Number(arrBV[i].value);
+      arrResult[i] = Number(arrAV[i].value) + Number(arrBV[i].value); 
     });
     return arrResult;
   }
@@ -152,9 +148,9 @@ window.onload = function () {
 
     let arrResult = [];
     let arrResultSumNum = 0;
-    let arrAR = Array.from(Array(inputARow), ()=> Array(inputAColumns).fill(0));
-    let arrBR = Array.from(Array(inputBRow), ()=> Array(inputBColumns).fill(0));
-
+    let arrAR = Array.from(Array(inputAColumns), ()=> Array(inputARow).fill(0));
+    let arrBR = Array.from(Array(inputBColumns), ()=> Array(inputBRow).fill(0));
+    const myRegExp = /e/;
 
     // arrAR.forEach((e,i,a)=>{ //[] 배열을 복사하여 사용하는것이라 값이 변화가 일어나지  x
     //   a.forEach((e2,i2,a2)=>{ //[[]]
@@ -179,21 +175,20 @@ window.onload = function () {
       }
     }
 
-    // console.log(arrAR);
-    // console.log(arrBR);
+    console.log(arrAR);
+    console.log(arrBR);
     
     conutNum = 0;
-    for(let i = 0; i < inputAColumns; i++){
-      for(let j = 0; j < inputBRow; j++){
-        for(let k = 0; k < inputAColumns; k++){
+    for(let i = 0; i < inputAColumns; i++){ 
+      for(let j = 0; j < inputBRow; j++){ 
+        for(let k = 0; k < inputARow; k++){ 
+
           arrResultSumNum += Number(arrAR[i][k]) * Number(arrBR[k][j]);
-          // console.log(arrResultSumNum);
-          console.log(i,j,k);
-          console.log(inputARow,inputAColumns,inputBRow,inputBColumns);
-          
+          // console.log(i,k,k,j);
+          // console.log(conutNum);
         }
         arrResult[conutNum] = arrResultSumNum;
-        console.log(`arrResult[${conutNum}] = ${arrResultSumNum}`);
+        // console.log(`arrResult[${conutNum}] = ${arrResultSumNum}`);
         arrResultSumNum = 0;
         conutNum++;
       }
@@ -212,17 +207,33 @@ window.onload = function () {
     let inputBRow = document.querySelector("#inputBRow").value;
     let inputBColumns = document.querySelector("#inputBColumns").value;
 
-    if(inputARow == inputBRow && inputAColumns == inputBColumns){
-      let arrRS = document.querySelectorAll("#arrRS");
-      let resultValue = addMatirxFunc();
-
-      matirxArrR.style.display = 'inline-block';
+    let arrAxy = document.querySelectorAll("#arrA").length;
+    let arrBxy = document.querySelectorAll("#arrB").length;  
+    //배열이 제대로 생성 되었는지 확인
+    if(arrAxy == inputARow * inputAColumns && arrBxy == inputBRow * inputBColumns){
+      if(inputARow == inputBRow && inputAColumns == inputBColumns){
+        let arrRS = document.querySelectorAll("#arrRS");
+        let resultValue = addMatirxFunc();
   
-      resultValue.forEach((element, index) => { 
-        arrRS[index].value = element; 
-      });
+        matirxArrR.style.display = 'inline-block';
+        
+        //1억이 넘으면 지수 e로 표현하기
+        resultValue.forEach((element, index) => { 
+          if(element>100000000){
+            arrRS[index].value = element.toExponential(); 
+          }else{
+            arrRS[index].value = element; 
+          }
+        });
+      }else{
+        blackBox.innerHTML = "<p>더하기는 행과 열이 같아야 계산이 가능합니다.</p>";
+        blackBox.style.display = "block";
+        setTimeout(function(){
+          blackBox.style.display = "none"; 
+        },2000);
+      }
     }else{
-      blackBox.innerHTML = "<p>더하기는 행과 열이 같아야 계산이 가능합니다.</p>";
+      blackBox.innerHTML = "<p>행렬의 확인버튼을 눌러주세요.</p>";
       blackBox.style.display = "block";
       setTimeout(function(){
         blackBox.style.display = "none"; 
@@ -231,6 +242,7 @@ window.onload = function () {
     
   });
 
+  
   //사이드 뺴기 버튼을 누르면
   miusBtn.addEventListener("click", function () {
     let inputARow = document.querySelector("#inputARow").value;
@@ -238,18 +250,35 @@ window.onload = function () {
     let inputBRow = document.querySelector("#inputBRow").value;
     let inputBColumns = document.querySelector("#inputBColumns").value;
     
-    if(inputARow == inputBRow && inputAColumns == inputBColumns){
-      let arrRS = document.querySelectorAll("#arrRS");
-      let resultValue = miusMatirxFunc();
-      let i = 0;
-  
-      matirxArrR.style.display = 'inline-block';
-  
-      resultValue.forEach((element, index) => { 
-        arrRS[index].value = element; 
-      });
+    let arrAxy = document.querySelectorAll("#arrA").length;
+    let arrBxy = document.querySelectorAll("#arrB").length; 
+
+    //배열이 제대로 생성 되었는지 확인
+    if(arrAxy == inputARow * inputAColumns && arrBxy == inputBRow * inputBColumns){
+      if(inputARow == inputBRow && inputAColumns == inputBColumns){
+        let arrRS = document.querySelectorAll("#arrRS");
+        let resultValue = miusMatirxFunc();
+        let i = 0;
+    
+        matirxArrR.style.display = 'inline-block';
+    
+        //1억이 넘으면 지수 e로 표현하기
+        resultValue.forEach((element, index) => {  
+          if(element>100000000){
+            arrRS[index].value = element.toExponential(); 
+          }else{
+            arrRS[index].value = element; 
+          }
+        });
+      }else{
+        blackBox.innerHTML = "<p>빼기는 행과 열이 같아야 계산이 가능합니다.</p>";
+        blackBox.style.display = "block";
+        setTimeout(function(){
+          blackBox.style.display = "none"; 
+        },2000);
+      }
     }else{
-      blackBox.innerHTML = "<p>빼기는 행과 열이 같아야 계산이 가능합니다.</p>";
+      blackBox.innerHTML = "<p>행렬의 확인버튼을 눌러주세요.</p>";
       blackBox.style.display = "block";
       setTimeout(function(){
         blackBox.style.display = "none"; 
@@ -263,25 +292,42 @@ window.onload = function () {
     let inputAColumns = Number(document.querySelector("#inputAColumns").value);
     let inputBRow = Number(document.querySelector("#inputBRow").value);
     let inputBColumns = Number(document.querySelector("#inputBColumns").value);
-    
-    arrayRS.arrDisplayFunc(inputBRow,inputAColumns);
-    if(inputARow == inputBColumns){
+    let arrAxy = document.querySelectorAll("#arrA").length;
+    let arrBxy = document.querySelectorAll("#arrB").length; 
 
-      let arrRS = document.querySelectorAll("#arrRS");
-      let resultValue = mulMatirxFunc(inputARow,inputAColumns,inputBRow,inputBColumns);
-
-      matirxArrR.style.display = 'inline-block';
-
-      resultValue.forEach((element, index) => { 
-        arrRS[index].value = element; 
-      });
+    //배열이 제대로 생성 되었는지 확인
+    if(arrAxy == inputARow * inputAColumns && arrBxy == inputBRow * inputBColumns){
+      if(inputARow == inputBColumns){
+        arrayRS.arrDisplayFunc(inputBRow,inputAColumns);
+        let arrRS = document.querySelectorAll("#arrRS");
+        let resultValue = mulMatirxFunc(inputARow,inputAColumns,inputBRow,inputBColumns);
+        
+        matirxArrR.style.display = 'inline-block';
+        //1억이 넘으면 지수 e로 표현하기
+        resultValue.forEach((element, index) => {
+          if(element>100000000){
+            arrRS[index].value = element.toExponential(); 
+          }else{
+            arrRS[index].value = element; 
+          }
+          
+        });
+      }else{
+        blackBox.innerHTML = "<p>곱하기는 앞행 = 뒷열이 같아야 계산이 가능합니다.</p>";
+        blackBox.style.display = "block";
+        setTimeout(function(){
+          blackBox.style.display = "none"; 
+        },2000);
+      }
     }else{
-      blackBox.innerHTML = "<p>곱하기는 앞행 = 뒷열이 같아야 계산이 가능합니다.</p>";
+      blackBox.innerHTML = "<p>행렬의 확인버튼을 눌러주세요.</p>";
       blackBox.style.display = "block";
       setTimeout(function(){
         blackBox.style.display = "none"; 
       },2000);
     }
+
+    
   });
 
 }
