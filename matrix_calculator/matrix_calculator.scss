@@ -115,7 +115,7 @@ html, body{
 
   }
   .arrABox{
-    width: 40rem;
+    width: 50rem;
     display: inline-block;
     input:first-child{
       margin-top: 2rem;
@@ -176,7 +176,7 @@ html, body{
     }
   }
   .arrBBox{
-    width: 40rem;
+    width: 50rem;
     display: inline-block;
     input:first-child{
       margin-top: 2rem;
@@ -188,14 +188,14 @@ html, body{
 .matirxArrA, .matirxArrB {
   @include boxShadow();
   text-align: center;
-  width: 40rem;
+  width: 50rem;
   border-radius: 1rem;
   margin-top: 2rem;
 
   .arrA, .arrB {
     @include itemShadow();
     display: inline-block;
-    width: 4rem;
+    width: 7rem;
     height: 3rem; 
     font-size: 1rem;
     margin: 1rem;
