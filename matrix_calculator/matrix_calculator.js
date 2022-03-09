@@ -23,8 +23,8 @@ window.onload = function () {
   let inputBRow = document.querySelector("#inputBRow");
 
   inputAColumns.addEventListener("keyup",function(e){
-    let stringTest = /[ㄱ-ㅎㅏ-ㅣ가-힣a-zA-Z]/;
-
+    let stringTest = /^[ㄱ-ㅎㅏ-ㅣ가-힣a-zA-Z]$/;
+    console.log(e.key);
     if(stringTest.test(e.key)){
       inputAColumns.value = 3;
       blackBox.innerHTML = "<p>문자는 넣을 수 없습니다.</p>";
@@ -36,8 +36,8 @@ window.onload = function () {
   });
 
   inputARow.addEventListener("keyup",function(e){
-    let stringTest = /[ㄱ-ㅎㅏ-ㅣ가-힣a-zA-Z]/;
-
+    let stringTest = /^[ㄱ-ㅎㅏ-ㅣ가-힣a-zA-Z]$/;
+    console.log(e.key);
     if(stringTest.test(e.key)){
       inputARow.value = 3;
       blackBox.innerHTML = "<p>문자는 넣을 수 없습니다.</p>";
@@ -48,7 +48,7 @@ window.onload = function () {
     }
   });
   inputBColumns.addEventListener("keyup",function(e){
-    let stringTest = /[ㄱ-ㅎㅏ-ㅣ가-힣a-zA-Z]/;
+    let stringTest = /^[ㄱ-ㅎㅏ-ㅣ가-힣a-zA-Z]$/;
 
     if(stringTest.test(e.key)){
       inputBColumns.value = 3;
@@ -60,8 +60,8 @@ window.onload = function () {
     }
   });
   inputBRow.addEventListener("keyup",function(e){
-    let stringTest = /[ㄱ-ㅎㅏ-ㅣ가-힣a-zA-Z]/;
-
+    let stringTest = /^[ㄱ-ㅎㅏ-ㅣa-zA-Z]$/;
+    console.log(e);
     if(stringTest.test(e.key)){
       inputBRow.value = 3;
       blackBox.innerHTML = "<p>문자는 넣을 수 없습니다.</p>";
