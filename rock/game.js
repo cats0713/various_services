@@ -36,17 +36,21 @@ window.onload = () => {
     } else if (gameR == 1) {
       coincount--;
       $("#userHeart").html(`x ${coincount}`);
-      if (coincount <= 0) {
-        $("#winOrLose").attr("src", './IMG/star.png');
+        winOrLose.setAttribute('src', './IMG/lose.png');
+        winOrLose.setAttribute('alt', '사용자가 졌다');
+        
+      if (coincount == 0) {
+        $("#winOrLose").attr("src", './IMG/gameover.png');
+        $("#comHand").attr('src', './IMG/blank.png');
       }
-      // winOrLose.setAttribute('src', './IMG/lose.png');
-      // winOrLose.setAttribute('alt', '사용자가 졌다');
+
     } else {
       winOrLose.setAttribute('src', './IMG/tie.png');
       winOrLose.setAttribute('alt', '비겼다');
     }
   }
 
+  //comimg
   let comResultImg = (comGameResult) => {
     if (comGameResult == 'rock') {
       comHand.setAttribute('src', './IMG/rock.png');
@@ -60,41 +64,47 @@ window.onload = () => {
 
   // button을 눌렀을때
   userRock.addEventListener("click", function () {
-    let comGameResult = comVsUser();
-    if (comGameResult == 'rock') {
-      gameResult(3);
-    } else if (comGameResult == 'paper') {
-      gameResult(1);
-    } else {
-      gameResult(0);
+    if(coincount > 0){
+      let comGameResult = comVsUser();
+      comResultImg(comGameResult);
+      if (comGameResult == 'rock') {
+        gameResult(3);
+      } else if (comGameResult == 'paper') {
+        gameResult(1);
+      } else {
+        gameResult(0);
+      }
+      
     }
-    comResultImg(comGameResult);
-
   });
 
   userPaper.addEventListener("click", function () {
-    let comGameResult = comVsUser();
-    console.log("a");
-    if (comGameResult == 'rock') {
-      gameResult(0);
-    } else if (comGameResult == 'paper') {
-      gameResult(3);
-    } else {
-      gameResult(1);
+    if(coincount > 0){
+      let comGameResult = comVsUser();
+      console.log("a");
+      if (comGameResult == 'rock') {
+        gameResult(0);
+      } else if (comGameResult == 'paper') {
+        gameResult(3);
+      } else {
+        gameResult(1);
+      }
+      comResultImg(comGameResult);
     }
-    comResultImg(comGameResult);
   });
 
   userScissors.addEventListener("click", function () {
-    let comGameResult = comVsUser();
-    if (comGameResult == 'rock') {
-      gameResult(1);
-    } else if (comGameResult == 'paper') {
-      gameResult(0);
-    } else {
-      gameResult(3);
+    if(coincount > 0){ 
+      let comGameResult = comVsUser();
+      if (comGameResult == 'rock') {
+        gameResult(1);
+      } else if (comGameResult == 'paper') {
+        gameResult(0);
+      } else {
+        gameResult(3);
+      }
+      comResultImg(comGameResult);
     }
-    comResultImg(comGameResult);
   });
   
 }
