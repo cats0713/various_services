@@ -194,7 +194,7 @@ window.onload = function () {
       }
     }
 
-    console.log(arrResult);
+    // console.log(arrResult);
 
     return arrResult;
   }
