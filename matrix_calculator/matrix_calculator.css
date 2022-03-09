@@ -259,14 +259,23 @@ html, body {
   display: inline-block;
   width: 17rem;
   height: 4rem;
-  font-size: 1.3rem;
   margin: 1rem;
   border-radius: 1rem;
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.matirxArrR .arrRS .arrRinput {
+  width: 15rem;
+  height: 100%;
   outline: none;
   border: none;
-  font-family: 'Orbitron', sans-serif;
+  font-size: 1.3rem;
   text-align: right;
-  margin-bottom: 2rem;
+  margin-top: 0;
+  margin-left: -1rem;
+  font-family: 'Orbitron', sans-serif;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .blackBox {

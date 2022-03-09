@@ -46,10 +46,10 @@ window.onload = function () {
 
       while (i < arrX * arrY) {
         if ((i + 1) % arrX == 0) {
-          matirxArr.innerHTML += `<input id="${arrID}" class="${arrID}"  type="number" value="0" readonly></input>`;
+          matirxArr.innerHTML += `<div class="${arrID}"><input id="${arrID}" class="arrRinput"  type="text" value="0" readonly></input></div>`;
           matirxArr.innerHTML += `<br>`;
         } else {
-          matirxArr.innerHTML += `<input id="${arrID}" class="${arrID}"  type="number" value="0" readonly></input>`;
+          matirxArr.innerHTML += `<div class="${arrID}"><input id="${arrID}" class="arrRinput"  type="text" value="0" readonly></input></div>`;
         }
         i++;
       }
@@ -222,7 +222,8 @@ window.onload = function () {
           if(element>100000000){
             arrRS[index].value = element.toExponential(); 
           }else{
-            arrRS[index].value = element; 
+            // console.log(typeof(element));
+            arrRS[index].value = element.toLocaleString();
           }
         });
       }else{
@@ -267,7 +268,7 @@ window.onload = function () {
           if(element>100000000){
             arrRS[index].value = element.toExponential(); 
           }else{
-            arrRS[index].value = element; 
+            arrRS[index].value = element.toLocaleString();
           }
         });
       }else{
@@ -308,7 +309,7 @@ window.onload = function () {
           if(element>100000000){
             arrRS[index].value = element.toExponential(); 
           }else{
-            arrRS[index].value = element; 
+            arrRS[index].value = element.toLocaleString();
           }
           
         });
