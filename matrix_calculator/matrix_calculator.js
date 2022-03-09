@@ -15,9 +15,63 @@ window.onload = function () {
   let mulBtn = document.querySelector("#mulBtn");
 
   let blackBox = document.querySelector(".blackBox");
-  let arrcont = 3; //closure 로 바꾸기
+  let arrcont = 3; 
 
+  let inputAColumns = document.querySelector("#inputAColumns");
+  let inputARow = document.querySelector("#inputARow");
+  let inputBColumns = document.querySelector("#inputBColumns");
+  let inputBRow = document.querySelector("#inputBRow");
 
+  inputAColumns.addEventListener("keyup",function(e){
+    let stringTest = /[ㄱ-ㅎㅏ-ㅣ가-힣a-zA-Z]/;
+
+    if(stringTest.test(e.key)){
+      inputAColumns.value = 3;
+      blackBox.innerHTML = "<p>문자는 넣을 수 없습니다.</p>";
+      blackBox.style.display = "block";
+      setTimeout(function(){
+        blackBox.style.display = "none"; 
+      },2000); 
+    }
+  });
+
+  inputARow.addEventListener("keyup",function(e){
+    let stringTest = /[ㄱ-ㅎㅏ-ㅣ가-힣a-zA-Z]/;
+
+    if(stringTest.test(e.key)){
+      inputARow.value = 3;
+      blackBox.innerHTML = "<p>문자는 넣을 수 없습니다.</p>";
+      blackBox.style.display = "block";
+      setTimeout(function(){
+        blackBox.style.display = "none"; 
+      },2000); 
+    }
+  });
+  inputBColumns.addEventListener("keyup",function(e){
+    let stringTest = /[ㄱ-ㅎㅏ-ㅣ가-힣a-zA-Z]/;
+
+    if(stringTest.test(e.key)){
+      inputBColumns.value = 3;
+      blackBox.innerHTML = "<p>문자는 넣을 수 없습니다.</p>";
+      blackBox.style.display = "block";
+      setTimeout(function(){
+        blackBox.style.display = "none"; 
+      },2000); 
+    }
+  });
+  inputBRow.addEventListener("keyup",function(e){
+    let stringTest = /[ㄱ-ㅎㅏ-ㅣ가-힣a-zA-Z]/;
+
+    if(stringTest.test(e.key)){
+      inputBRow.value = 3;
+      blackBox.innerHTML = "<p>문자는 넣을 수 없습니다.</p>";
+      blackBox.style.display = "block";
+      setTimeout(function(){
+        blackBox.style.display = "none"; 
+      },2000); 
+    }
+  });
+  
 
   //행렬을 생성하는 class
   function ArrInputBox(arrID, matirxArr, arrTapNumber) {
