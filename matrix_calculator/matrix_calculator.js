@@ -22,6 +22,7 @@ window.onload = function () {
   let inputBColumns = document.querySelector("#inputBColumns");
   let inputBRow = document.querySelector("#inputBRow");
 
+  //input칸에 문자가 입력됐을때 방지 코드
   inputAColumns.addEventListener("keyup",function(e){
     let stringTest = /^[ㄱ-ㅎㅏ-ㅣ가-힣a-zA-Z]$/;
 
@@ -34,7 +35,6 @@ window.onload = function () {
       },2000); 
     }
   });
-
   inputARow.addEventListener("keyup",function(e){
     let stringTest = /^[ㄱ-ㅎㅏ-ㅣ가-힣a-zA-Z]$/;
 
