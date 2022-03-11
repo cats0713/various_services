@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -242,7 +243,7 @@ html, body {
   -webkit-box-shadow: -0.2rem -0.2rem 0.2rem #5b6679, 0.5rem 0.5rem 1.3rem #0c2034;
           box-shadow: -0.2rem -0.2rem 0.2rem #5b6679, 0.5rem 0.5rem 1.3rem #0c2034;
   text-align: center;
-  width: 100rem;
+  width: 120rem;
   border-radius: 1rem;
   margin-top: 5%;
   margin-bottom: 2rem;
@@ -257,7 +258,7 @@ html, body {
   -webkit-box-shadow: -0.1rem -0.1rem 0.3rem #fff, 0.3rem 0.3rem 0.3rem #aeaec0;
           box-shadow: -0.1rem -0.1rem 0.3rem #fff, 0.3rem 0.3rem 0.3rem #aeaec0;
   display: inline-block;
-  width: 17rem;
+  width: 22rem;
   height: 4rem;
   margin: 1rem;
   margin-top: 2rem;
@@ -267,7 +268,7 @@ html, body {
 }
 
 .matirxArrR .arrRS .arrRinput {
-  width: 15rem;
+  width: 20rem;
   height: 100%;
   outline: none;
   border: none;
@@ -293,5 +294,6 @@ html, body {
 .blackBox p {
   font-size: 2rem;
   line-height: 7rem;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 /*# sourceMappingURL=matrix_calculator.css.map */
