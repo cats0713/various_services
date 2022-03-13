@@ -273,7 +273,7 @@ window.onload = function () {
         
         //1억이 넘으면 지수 e로 표현하기
         resultValue.forEach((element, index) => { 
-          if(element>100000000){
+          if(element>100000000 || element < -100000000){
             arrRS[index].value = element.toExponential(); 
           }else{
             // console.log(typeof(element));
@@ -319,7 +319,7 @@ window.onload = function () {
     
         //1억이 넘으면 지수 e로 표현하기
         resultValue.forEach((element, index) => {  
-          if(element>100000000){
+          if(element > 100000000 || element < -100000000){
             arrRS[index].value = element.toExponential(); 
           }else{
             arrRS[index].value = element.toLocaleString();
@@ -360,7 +360,7 @@ window.onload = function () {
         matirxArrR.style.display = 'inline-block';
         //1억이 넘으면 지수 e로 표현하기
         resultValue.forEach((element, index) => {
-          if(element>100000000){
+          if(element>100000000 || element < -100000000){
             arrRS[index].value = element.toExponential(); 
           }else{
             arrRS[index].value = element.toLocaleString();
