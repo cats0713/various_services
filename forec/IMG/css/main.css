@@ -1,0 +1,17 @@
+*{
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+header{
+  display: inline-block;
+  width: 720px;
+  height: 455px;
+  background-color: red;
+}
+main{
+  display: inline-block;
+  width: 720px;
+  height: 900px;
+  background-color: aqua;
+}
