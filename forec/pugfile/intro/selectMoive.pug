@@ -8,4 +8,9 @@ html(lang="ko")
     link(rel="stylesheet", href="./css/main.css")
   body 
     include ../header.pug
-    include main.pug
+    if page === undefined
+      include ./main.pug
+    if page == "1"
+      include ../2.pug
+    if page == "2"
+      include ./main.pug
