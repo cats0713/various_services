@@ -206,12 +206,6 @@ window.onload = function () {
     let arrBR = Array.from(Array(inputBColumns), ()=> Array(inputBRow).fill(0));
     const myRegExp = /e/;
 
-    // arrAR.forEach((e,i,a)=>{ //[] 배열을 복사하여 사용하는것이라 값이 변화가 일어나지  x
-    //   a.forEach((e2,i2,a2)=>{ //[[]]
-    //     e2 = arrAV[conutNum].value;
-    //     conutNum++;
-    //   });
-    // });
 
     //1차원 배열 2차원으로 쪼개기
     conutNum = 0;
