@@ -1,19 +1,69 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>intro</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../css/intro.css">
+  <script src="../js/intro.js"></script>
+  <title>FOREC</title>
 </head>
+
 <body>
-  intro
-  <button id="btn">ok</button>
-  <script>
-    let btn = document.querySelector("#btn");
-    btn.addEventListener("click",function(){
-      location.href="./forec/select";
-    });
-  </script>
+  <section class="moviewapper">
+    <header id="playerarea">
+      <div class="head__infor">
+        <span id="logoimg">FOREC</span>
+      </div>
+    </header>
+
+    <section class="mainBox">
+      <section class="main__body">
+        <div class="timeBox">
+          <h1 id="dayTime" class="dayTime"></h1>
+          <h2 id="time" class="time">00:00</h2>
+        </div>
+        <section>
+          <div class="btnBigBox" id="printTicketBtn">
+            <div class="btnBox">
+              <div class="circleing circleing1"></div>
+              <div class="circleing circleing2"></div>
+              <div class="leftBox">
+                <div>
+                  <h1>티켓출력하기</h1>
+                  <h2>print ticket</h2>
+                </div>
+              </div>
+              <div class="rigthBox"></div>
+            </div>
+          </div>
+  
+          <div class="btnBigBox" id="reservationBtn">
+            <div class="btnBox">
+              <div class="circleing circleing1"></div>
+              <div class="circleing circleing2"></div>
+              <div class="leftBox">
+                <div>
+                  <h1>예약하기</h1>
+                  <h2>make a reservation</h2>
+                </div>
+              </div>
+              <div class="rigthBox"></div>
+            </div>
+          </div>
+        </section>
+       
+        <img src="./unchartedPoster.jpeg" alt="unchartedPoster">
+      </section>
+    </section>
+
+
 </body>
+
 </html>

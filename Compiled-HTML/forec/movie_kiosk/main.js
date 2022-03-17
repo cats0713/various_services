@@ -20,25 +20,23 @@ init = () => {
 };
 init();
 
-// 영화상영정보 배열
-const slideinfo = document.querySelector('.slide__info');
-
 // 동작들 제이쿼리
 $(document).on({
 	click: (e) => {
-
-		switch (e.target.id) {
-			case 'seat':
+		switch (e.target.className) {
+			case 'movie_li_time':
 				$('.modalwapper').toggleClass('opacityscroll');
 				break;
-			case 'modalclosebtn':
+			case 'fa-solid fa-x modalclosebtn':
 				$('.modalwapper').toggleClass('opacityscroll');
 				break;
-		}
-	},
-	scroll: (e) => {
-		
-	}
+			case 'goselectPerson':
+				$('.modalwapper').toggleClass('opacityscroll');
+				$('.countermodalwapper').toggleClass('opacityscroll');
+				break;
+			}
+	}, 
+	scroll: (e) => {},
 });
 $('#testposter').on({
 	mouseenter: (e) => {
@@ -57,3 +55,5 @@ $('#testposter').on({
 		});
 	},
 });
+
+//인원선택창 카운터//

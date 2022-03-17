@@ -162,11 +162,7 @@ html, body {
   font-family: 'Orbitron', sans-serif;
 }
 
-.arrBoxB .arrBBtnBox button {
-  float: right;
-}
-
-.arrBoxB .arrBBtnBox div, .arrBoxB .arrBBtnBox button {
+.arrBoxB .arrBBtnBox div {
   background-color: #e9eaee;
   -webkit-box-shadow: -0.1rem -0.1rem 0.3rem #fff, 0.3rem 0.3rem 0.3rem #aeaec0;
           box-shadow: -0.1rem -0.1rem 0.3rem #fff, 0.3rem 0.3rem 0.3rem #aeaec0;
@@ -184,7 +180,7 @@ html, body {
   overflow: hidden;
 }
 
-.arrBoxB .arrBBtnBox div i, .arrBoxB .arrBBtnBox button i {
+.arrBoxB .arrBBtnBox div i {
   font-size: 1.5rem;
   line-height: 4rem;
 }

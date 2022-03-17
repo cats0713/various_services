@@ -1,0 +1,282 @@
+@font-face {
+  font-family: 'LeferiPoint-WhiteA';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-WhiteA.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GmarketSansLight';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'YUniverse-L';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_yuniverse@1.0/YUniverse-L.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@-webkit-keyframes colorchange {
+  0% {
+    text-shadow: 0;
+  }
+  50% {
+    text-shadow: 0rem 0rem 0.8rem #ffba00;
+  }
+  100% {
+    text-shadow: 0;
+  }
+}
+
+@keyframes colorchange {
+  0% {
+    text-shadow: 0;
+  }
+  50% {
+    text-shadow: 0rem 0rem 0.8rem #ffba00;
+  }
+  100% {
+    text-shadow: 0;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body,
+html {
+  font-family: 'YUniverse-L';
+  width: 100%;
+  font-size: 10px;
+  background: #1a1f33;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(10%, #1a1f33), color-stop(30%, #384c84), to(#f3b4d8));
+  background: linear-gradient(180deg, #1a1f33 10%, #384c84 30%, #f3b4d8 100%);
+  color: #3d3a54;
+}
+
+body button,
+html button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+.moviewapper {
+  width: 72rem;
+  height: 100rem;
+  margin: auto;
+  -webkit-box-shadow: 0rem 0rem 0.8rem #16142b;
+          box-shadow: 0rem 0rem 0.8rem #16142b;
+}
+
+.moviewapper #playerarea {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  z-index: 10;
+}
+
+.moviewapper #playerarea .head__infor {
+  background: #1a1f33;
+  -webkit-box-shadow: 0rem 2rem 3rem #16142b62;
+          box-shadow: 0rem 2rem 3rem #16142b62;
+  height: 7rem;
+  width: 100%;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.moviewapper #playerarea .head__infor span {
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  line-height: 6.8rem;
+  display: block;
+  float: left;
+  text-shadow: 0rem 2rem 3rem #16142b62;
+  color: #f3b4d8;
+}
+
+.moviewapper .mainBox::-webkit-scrollbar {
+  width: none;
+  display: none;
+}
+
+.moviewapper .mainBox {
+  width: 100%;
+  overflow-y: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 93rem;
+  background: #3d3a54;
+}
+
+.moviewapper .mainBox .main__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+}
+
+.moviewapper .mainBox .main__body .timeBox {
+  margin: auto;
+}
+
+.moviewapper .mainBox .main__body .timeBox .time {
+  display: block;
+  font-size: 7rem;
+  color: white;
+  text-align: center;
+}
+
+.moviewapper .mainBox .main__body .timeBox .dayTime {
+  display: block;
+  font-size: 5rem;
+  color: white;
+  text-align: center;
+}
+
+.moviewapper .btnBigBox {
+  float: left;
+  display: inline-block;
+  width: 29rem;
+  height: 18rem;
+  margin: 3rem;
+}
+
+.moviewapper .btnBigBox .btnBox {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: 1s;
+  transition: 1s;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.moviewapper .btnBigBox .btnBox .circleing {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: #3d3a54;
+  z-index: 1;
+  position: absolute;
+}
+
+.moviewapper .btnBigBox .btnBox .circleing1 {
+  position: absolute;
+  top: -1.2rem;
+  right: 5.5rem;
+}
+
+.moviewapper .btnBigBox .btnBox .circleing2 {
+  position: absolute;
+  bottom: -1.2rem;
+  right: 5.5rem;
+}
+
+.moviewapper .btnBigBox .btnBox .leftBox {
+  float: left;
+  width: 22rem;
+  height: 100%;
+  background-color: white;
+  border-right: 0.3rem dashed #3d3a54;
+}
+
+.moviewapper .btnBigBox .btnBox .leftBox div {
+  margin-top: 6rem;
+}
+
+.moviewapper .btnBigBox .btnBox .leftBox div h1 {
+  display: inline-block;
+  font-size: 3rem;
+}
+
+.moviewapper .btnBigBox .btnBox .leftBox div h2 {
+  display: inline-block;
+  font-size: 2rem;
+}
+
+.moviewapper .btnBigBox .btnBox .rigthBox {
+  float: left;
+  width: 6.7rem;
+  height: 100%;
+  background-color: white;
+}
+
+.moviewapper .btnBigBox .btnBox:hover {
+  -webkit-box-shadow: 0.1rem 0.1rem 0.5rem black;
+          box-shadow: 0.1rem 0.1rem 0.5rem black;
+  cursor: pointer;
+}
+
+.moviewapper footer {
+  background: #1a1f33;
+  width: 100%;
+  height: 10rem;
+  display: inline-block;
+  text-align: center;
+  -webkit-box-shadow: 0rem -2rem 3rem #16142b62;
+          box-shadow: 0rem -2rem 3rem #16142b62;
+}
+
+.moviewapper footer a {
+  text-decoration: none;
+}
+
+.moviewapper footer i {
+  color: #655777;
+  line-height: 9.8rem;
+  font-size: 4rem;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.moviewapper footer i:hover {
+  color: #ffe277;
+  text-shadow: 0.2rem 0.8rem 3rem #ffbb0065;
+}
+
+.moviewapper footer i:nth-child(1) {
+  -webkit-transform: translate(-28rem);
+          transform: translate(-28rem);
+}
+
+.moviewapper footer i:nth-child(2) {
+  -webkit-transform: translate(28rem);
+          transform: translate(28rem);
+}
+
+.opacityscroll {
+  visibility: hidden;
+  opacity: 0;
+}
+/*# sourceMappingURL=intro.css.map */

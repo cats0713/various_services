@@ -91,6 +91,7 @@ window.onload = function () {
       }
     };
   }
+  
   //결과창 행렬 class
   function ArrResultBox(arrID, matirxArr) {
     this.arrID = arrID;
