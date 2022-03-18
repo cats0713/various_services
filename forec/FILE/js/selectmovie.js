@@ -27,7 +27,7 @@ window.onload = () => {
 		click: (e) => {
 			console.log(e.target.className);
 			switch (e.target.className) {
-				case 'movie_li_time':
+				case 'movietimebox':
 					$('.modalwapper').toggleClass('opacityscroll');
 					break;
 				case 'fa-solid fa-x modalclosebtn':
@@ -62,7 +62,7 @@ window.onload = () => {
 		location.href = `/forec?page=10`;
 	});
 	$("#previousBtn").on("click", function () {
-		location.href = `/forec?page=20`;
+		location.href = `/forec?page=10`;
 	});
 	//인원선택창 카운터//
 

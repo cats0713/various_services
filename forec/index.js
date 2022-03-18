@@ -143,22 +143,15 @@ app.get('/forec', (req, res) => {
 					<div class="infor__container">
 						<h3 class="movietitle">${rows[i]['name']}</h3>
 						<div class="movietimebox">
-							<ul class="movie_li_time">
-								10:00~13:00
-								<li>000/000</li>
-							</ul>
-							<ul class="movie_li_time">
-								13:30~16:30
-								<li>000/000</li>
-							</ul>
-							<ul class="movie_li_time">
-								17:00~20:00
-								<li>000/000</li>
-							</ul>
-							<ul class="movie_li_time">
-								20:30~23:30
-								<li>000/000</li>
-							</ul>
+
+            <button>
+            <ul class="movie_li_time">
+              10:00~13:00
+              <li>000/000</li>
+            </ul>
+            </button>
+            
+
 						</div>
 					</div>
 					<div class="infor__tail">

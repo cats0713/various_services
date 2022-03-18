@@ -550,12 +550,18 @@ html button {
           transform: translate(1rem);
 }
 
+.moviewapper .mainBox .slide__info .movietimebox button {
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  text-align: center;
+}
+
 .moviewapper .mainBox .slide__info .movietimebox ul,
 .moviewapper .mainBox .slide__info .movietimebox li {
+  display: block;
   list-style: none;
   padding: 0.5rem;
   margin-right: 1rem;
-  text-align: left;
   font-weight: bold;
 }
 
