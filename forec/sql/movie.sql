@@ -4,7 +4,7 @@ create table `movie`(
   `genre` varchar(100) not null,
   `time` int(4) not null,
   `age` char(3) not null,
-  `star` float(10,1)not null,
+  `star` float(2,1)not null,
   `img` char(100) not null, 
   primary key (`no`)
 )auto_increment = 5;

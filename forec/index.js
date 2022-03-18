@@ -1,7 +1,8 @@
 const express = require("express");
 const app = express();
-const cookieParser = require('cookie-parser');
+
 const mysql = require('mysql');
+const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 
 
@@ -14,7 +15,12 @@ app.use(cookieParser());
 
 
 app.get('/forec', (req, res) => {
-
+  let no1_movie_time = ['6:40 ~ 8:40','11:20 ~ 13:20','16:00 ~ 18:00','20:40 ~ 22:40'];
+  let no2_movie_time = ['9:00 ~ 11:00','13:40 ~ 15:40','18:20 ~ 20:20','23:00 ~ 1:00'];
+  let no3_movie_time = ['6:40 ~ 8:40','11:20 ~ 13:20','16:00 ~ 18:00','20:40 ~ 22:40'];
+  let no4_movie_time = ['9:00 ~ 11:00','13:40 ~ 15:40','18:20 ~ 20:20','23:00 ~ 1:00'];
+  // let time = ['6:40 ~ 8:40', '9:00 ~ 11:00','11:20 ~ 13:20','13:40 ~ 15:40','16:00 ~ 18:00','18:20 ~ 20:20','20:40 ~ 22:40','23:00 ~ 1:00'];
+  
   let page = req.query.page;
   if (page == undefined) {
     res.sendFile(__dirname + '/FILE/html/intro_intro.html');
