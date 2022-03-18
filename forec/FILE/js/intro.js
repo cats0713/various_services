@@ -65,7 +65,7 @@ init();
 	});
 
 	$("#reservationBtn").on("click",function(){
-		location.href = `/forec?page=1`;
+		location.href = `/forec?page=20`;
 	});
 	$("#printTicketBtn").on("click",function(){
 		location.href = `/forec?page=10`;

@@ -1,0 +1,158 @@
+@charset "utf-8";
+// maincolor1
+
+$subcolor_1: #fff;
+
+// maincolor2
+$main2_black: #08030a;
+$main2_black2: #3d3a54;
+$main2_green: #1a1f33;
+$main2_pink: #ffba00;
+$main2_fff2: #f3b4d8;
+$main2_white: #655777;
+
+//maincolor3
+$main_1: #1a1f33;
+$main_4: #465fa4;
+$main_2: #f3b4d8;
+$main_3: #ea85b4;
+
+@mixin center {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+@font-face {
+	font-family: 'LeferiPoint-WhiteA';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-WhiteA.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'GmarketSansLight';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'YUniverse-L';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_yuniverse@1.0/YUniverse-L.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+@keyframes big {
+	0% {
+		transform: perspective(50rem) translateZ(0);
+	}
+	50% {
+		transform: perspective(50rem) translateZ(5rem);
+	}
+	100% {
+		transform: perspective(50rem) translateZ(0rem);
+	}
+}
+@keyframes colorchange {
+	0% {
+		text-shadow: 0;
+	}
+	50% {
+		text-shadow: 0rem 0rem 0.8rem $main2_pink;
+	}
+	100% {
+		text-shadow: 0;
+	}
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body,
+html {
+	font-family: 'YUniverse-L';
+	// scroll-behavior: auto;
+	width: 100%;
+	font-size: 10px;
+	background: $main_1;
+	background: linear-gradient(180deg, $main_1 10%, #384c84 30%, $main_2 100%);
+	// background: $main2_black;
+	color: $main2_black2;
+	button {
+		appearance: none;
+	}
+}
+
+
+// 전체 감싸는 모달 // 
+.moviewapper {
+	position: relative;
+	width: 72rem;
+	height: 100rem;
+	margin: auto;
+	box-shadow: 0rem 0rem 0.8rem #16142b;
+  .imgBox1{
+		position: absolute;
+		top: 0;
+		left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+	.imgBox2{
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+	.nextBtn{
+		display: inline-block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border: none;
+		background-color: rgba($color: #000000, $alpha: 0);
+		section{
+			width: 100%;
+			height: 50%;
+			.textBox{
+				width: 100%;
+				margin-top: 10%;
+				h1{
+					display: inline-block;
+					font-size: 3rem;
+					color: white;
+					text-shadow: 0.1rem 0.1rem 0.3rem black;
+				}
+				div{
+					width: 10rem;
+					height: 10rem;
+					display: inline-block;
+					.mouseIcon{
+						font-size: 6rem;
+						color: #fff;
+						text-shadow: 0.1rem 0.1rem 0.3rem black;
+						animation: big 1s ease infinite;
+					}
+				}
+			}
+		}
+	}
+	.nextBtn:hover{
+		cursor: pointer;
+	}
+}
+.opacityscroll {
+	visibility: hidden;
+	opacity: 0;
+}

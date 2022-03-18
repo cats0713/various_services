@@ -1,0 +1,724 @@
+@font-face {
+  font-family: 'LeferiPoint-WhiteA';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-WhiteA.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GmarketSansLight';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'YUniverse-L';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_yuniverse@1.0/YUniverse-L.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@-webkit-keyframes colorchange {
+  0% {
+    text-shadow: 0;
+  }
+  50% {
+    text-shadow: 0rem 0rem 0.8rem #ffba00;
+  }
+  100% {
+    text-shadow: 0;
+  }
+}
+
+@keyframes colorchange {
+  0% {
+    text-shadow: 0;
+  }
+  50% {
+    text-shadow: 0rem 0rem 0.8rem #ffba00;
+  }
+  100% {
+    text-shadow: 0;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body,
+html {
+  font-family: 'YUniverse-L';
+  width: 100%;
+  font-size: 10px;
+  background: #1a1f33;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(10%, #1a1f33), color-stop(30%, #384c84), to(#f3b4d8));
+  background: linear-gradient(180deg, #1a1f33 10%, #384c84 30%, #f3b4d8 100%);
+  color: #3d3a54;
+}
+
+body button,
+html button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+.countermodalwapper {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 20;
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-backdrop-filter: blur(1rem);
+          backdrop-filter: blur(1rem);
+}
+
+.countermodalwapper .count_title {
+  font-size: 2.5rem;
+  letter-spacing: 0.4rem;
+  -webkit-transform: translate(1rem);
+          transform: translate(1rem);
+  color: #fff1bc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  animation: colorchange 4s linear infinite reverse;
+  -webkit-transform: translateY(2rem);
+          transform: translateY(2rem);
+}
+
+.countermodalwapper .countPersonsection {
+  width: 62rem;
+  height: 60rem;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: #fff;
+  background: #3d3a54;
+  text-align: center;
+  -webkit-box-shadow: 0.2rem 0.8rem 3rem #16142b;
+          box-shadow: 0.2rem 0.8rem 3rem #16142b;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 1rem;
+  position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.countermodalwapper .countPersonsection .counterresult {
+  width: 62rem;
+  height: 20%;
+}
+
+.countermodalwapper .countPersonsection .counterresult #submitperson {
+  font-family: 'YUniverse-L';
+  font-weight: 900;
+  border: none;
+  width: 15rem;
+  outline: none;
+  padding: 1rem;
+  -webkit-transform: translateY(2rem);
+          transform: translateY(2rem);
+  -webkit-box-shadow: 0.2rem 0.8rem 3rem #15192432;
+          box-shadow: 0.2rem 0.8rem 3rem #15192432;
+  font-size: 2.5rem;
+  background: #16142b89;
+  color: #f3b4d8;
+  border-radius: 3rem;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.countermodalwapper .countPersonsection .counterresult #submitperson:active,
+.countermodalwapper .countPersonsection .counterresult #submitperson:hover,
+.countermodalwapper .countPersonsection .counterresult #submitperson:focus {
+  background: #ffe277;
+  color: #ffba00;
+  -webkit-box-shadow: 0.2rem 0.8rem 3rem #ffbb0065;
+          box-shadow: 0.2rem 0.8rem 3rem #ffbb0065;
+}
+
+.countermodalwapper .countPersonsection .counterresult h1,
+.countermodalwapper .countPersonsection .counterresult i {
+  font-size: 3rem;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.countermodalwapper .countPersonsection .counterresult i {
+  cursor: pointer;
+}
+
+.countermodalwapper .countPersonsection .counterresult i:hover {
+  color: #ea85b4;
+}
+
+.countermodalwapper .countPersonsection .countprice {
+  height: 15rem;
+  width: 100%;
+  background: #16142b;
+}
+
+.countermodalwapper .countPersonsection .Adult,
+.countermodalwapper .countPersonsection .junior,
+.countermodalwapper .countPersonsection .disabled,
+.countermodalwapper .countPersonsection .old {
+  -webkit-transform: translate(6rem);
+          transform: translate(6rem);
+  letter-spacing: 0.2rem;
+  margin: 0.5rem;
+  color: #f3b4d8;
+  text-align: center;
+  text-shadow: 0rem 0rem 0.8rem #1a1f33;
+}
+
+.countermodalwapper .countPersonsection .Adult i,
+.countermodalwapper .countPersonsection .junior i,
+.countermodalwapper .countPersonsection .disabled i,
+.countermodalwapper .countPersonsection .old i {
+  cursor: pointer;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.countermodalwapper .countPersonsection .Adult i:hover,
+.countermodalwapper .countPersonsection .junior i:hover,
+.countermodalwapper .countPersonsection .disabled i:hover,
+.countermodalwapper .countPersonsection .old i:hover {
+  color: #ea85b4;
+}
+
+.countermodalwapper .countPersonsection .Adult h2,
+.countermodalwapper .countPersonsection .junior h2,
+.countermodalwapper .countPersonsection .disabled h2,
+.countermodalwapper .countPersonsection .old h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  background: transparent;
+  -webkit-transform: translate(-11rem, 1rem);
+          transform: translate(-11rem, 1rem);
+  width: 10rem;
+  text-align: center;
+  position: absolute;
+  height: 4rem;
+  line-height: 4rem;
+  border-radius: 2rem;
+}
+
+.countermodalwapper .countPersonsection .countmodalheader {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 62rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 7rem;
+}
+
+.countermodalwapper .countPersonsection button {
+  cursor: pointer;
+}
+
+.countermodalwapper .countPersonsection .cutbtn {
+  border: none;
+  font-family: 'YUniverse-L';
+  margin: 0.4rem;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  padding: 1rem;
+  font-size: 2rem;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  color: #f3b4d8;
+  border-radius: 1rem;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.countermodalwapper .countPersonsection .cutbtn:visited,
+.countermodalwapper .countPersonsection .cutbtn:hover,
+.countermodalwapper .countPersonsection .cutbtn:active {
+  background: #ffe277;
+  color: #ffba00;
+  -webkit-box-shadow: 0.2rem 0.8rem 3rem #ffbb0065;
+          box-shadow: 0.2rem 0.8rem 3rem #ffbb0065;
+}
+
+.modalwapper {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 20;
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-backdrop-filter: blur(1rem);
+          backdrop-filter: blur(1rem);
+}
+
+.modalwapper .modal__header {
+  text-align: center;
+  border-bottom: 0.3rem dashed #1a1f33;
+  height: 10rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  line-height: 9rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.modalwapper .modal__header h1 {
+  font-size: 3rem;
+  padding: 1rem;
+  letter-spacing: 0.4rem;
+}
+
+.modalwapper .modal__header h1::before {
+  content: '\f00c';
+  color: #f3b4d8;
+  font-family: 'Font Awesome 6 free';
+  font-weight: 900;
+  padding-right: 1rem;
+}
+
+.modalwapper .modal__header i {
+  cursor: pointer;
+  color: #f3b4d8;
+  font-size: 3rem;
+  line-height: 10rem;
+  -webkit-transform: translate(10rem);
+          transform: translate(10rem);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.modalwapper .modal__header i:hover {
+  color: #655777;
+}
+
+.modalwapper .modal_body {
+  width: 60rem;
+  height: 50rem;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: #1a1f33;
+  background: #fff;
+  border-radius: 1.5rem;
+  text-align: center;
+  -webkit-box-shadow: 0.2rem 0.8rem 3rem #16142b;
+          box-shadow: 0.2rem 0.8rem 3rem #16142b;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.modalwapper .modal_body button {
+  font-family: 'YUniverse-L';
+  font-weight: 900;
+  border: none;
+  width: 15rem;
+  outline: none;
+  padding: 1rem;
+  -webkit-box-shadow: 0.2rem 0.8rem 3rem #15192432;
+          box-shadow: 0.2rem 0.8rem 3rem #15192432;
+  font-size: 2.5rem;
+  background: #465fa4;
+  color: #f3b4d8;
+  border-radius: 3rem;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.modalwapper .modal_body .modalinfo {
+  padding-top: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 30rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.modalwapper .modal_body .modalinfo h2 {
+  font-size: 2rem;
+  padding: 1rem;
+}
+
+.modalwapper .modal_body .modalinfo h2::before {
+  content: '\f00c';
+  color: #f3b4d8;
+  font-family: 'Font Awesome 6 free';
+  font-weight: 900;
+  padding-right: 1rem;
+}
+
+.modalwapper .modal_body .modalinfo p {
+  font-size: 1.5rem;
+  letter-spacing: 0.2rem;
+  line-height: 2rem;
+}
+
+.moviewapper {
+  width: 72rem;
+  height: 100rem;
+  margin: auto;
+  -webkit-box-shadow: 0rem 0rem 0.8rem #16142b;
+          box-shadow: 0rem 0rem 0.8rem #16142b;
+}
+
+.moviewapper #playerarea {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.moviewapper #playerarea .head__infor {
+  background: #1a1f33;
+  z-index: 100;
+  height: 7rem;
+  width: 100%;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-shadow: 0rem 2rem 3rem #16142b62;
+          box-shadow: 0rem 2rem 3rem #16142b62;
+}
+
+.moviewapper #playerarea .head__infor span {
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  line-height: 6.8rem;
+  text-shadow: 0rem 2rem 3rem #16142b62;
+  color: #f3b4d8;
+}
+
+.moviewapper .mainBox::-webkit-scrollbar {
+  width: none;
+  display: none;
+}
+
+.moviewapper .mainBox {
+  width: 100%;
+  overflow-y: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 83rem;
+  background-size: cover;
+  background: #3d3a54;
+  background: linear-gradient(299deg, #3d3a54 0%, #1a1f33 33%, #655777 99%);
+}
+
+.moviewapper .mainBox .main__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 110rem;
+}
+
+.moviewapper .mainBox .main__body h1 {
+  color: #655777;
+  font-size: 3rem;
+  margin: auto;
+}
+
+.moviewapper .mainBox .main__body .timeSection {
+  width: 100%;
+  height: 70%;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transform: translateY(-3rem);
+          transform: translateY(-3rem);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.moviewapper .mainBox .main__body .head__infor {
+  width: 100%;
+  height: 10rem;
+  background: #ffba00;
+}
+
+.moviewapper .mainBox .slide__info {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 98%;
+  -webkit-transition: 1s;
+  transition: 1s;
+  padding: 1rem;
+  height: 25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.moviewapper .mainBox .slide__info .circleing {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #1a1f33;
+  z-index: 1;
+  position: absolute;
+}
+
+.moviewapper .mainBox .slide__info .circleing:nth-child(2) {
+  -webkit-transform: translate(23rem, -11rem);
+          transform: translate(23rem, -11rem);
+}
+
+.moviewapper .mainBox .slide__info .circleing:nth-child(3) {
+  -webkit-transform: translate(23rem, 13rem);
+          transform: translate(23rem, 13rem);
+}
+
+.moviewapper .mainBox .slide__info .circleing:nth-child(1) {
+  -webkit-transform: translate(23rem, 13rem);
+          transform: translate(23rem, 13rem);
+}
+
+.moviewapper .mainBox .slide__info .movietimebox {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transform: translate(1rem);
+          transform: translate(1rem);
+}
+
+.moviewapper .mainBox .slide__info .movietimebox ul,
+.moviewapper .mainBox .slide__info .movietimebox li {
+  list-style: none;
+  padding: 0.5rem;
+  margin-right: 1rem;
+  text-align: left;
+  font-weight: bold;
+}
+
+.moviewapper .mainBox .slide__info .movietimebox ul {
+  font-size: 1.5rem;
+  cursor: pointer;
+  -webkit-transform: translate(1rem);
+          transform: translate(1rem);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  color: #655777;
+}
+
+.moviewapper .mainBox .slide__info .movietimebox ul:hover {
+  color: #f3b4d8;
+}
+
+.moviewapper .mainBox .slide__info .sliderimgs {
+  height: 23rem;
+  -webkit-box-shadow: 0rem 0rem 0.8rem #16142b;
+          box-shadow: 0rem 0rem 0.8rem #16142b;
+  z-index: 1;
+}
+
+.moviewapper .mainBox .slide__info .infor__container {
+  overflow: hidden;
+  -webkit-box-shadow: 0rem 0rem 0.8rem #16142b3e;
+          box-shadow: 0rem 0rem 0.8rem #16142b3e;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  width: 40rem;
+  height: 23rem;
+  background: #fff;
+  z-index: 0;
+  -webkit-transform: translateY(1rem);
+          transform: translateY(1rem);
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  z-index: 0;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-right: 0.2rem dashed #3d3a54;
+}
+
+.moviewapper .mainBox .slide__info .infor__container h3 {
+  font-size: 3rem;
+  -webkit-transform: translate(10rem, 1rem);
+          transform: translate(10rem, 1rem);
+  color: #1a1f33;
+  display: inline-block;
+}
+
+.moviewapper .mainBox .slide__info .infor__container h3::before {
+  content: '';
+  color: #655777;
+  padding-right: 1rem;
+  font-size: 3rem;
+}
+
+.moviewapper .mainBox .slide__info .infor__tail {
+  overflow: hidden;
+  -webkit-transform: translateY(1rem);
+          transform: translateY(1rem);
+  width: 10rem;
+  background: #fff;
+  -webkit-box-shadow: 1rem 0rem 0.8rem #16142b3e;
+          box-shadow: 1rem 0rem 0.8rem #16142b3e;
+  height: 23rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-left: 0.2rem dashed #3d3a54;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.moviewapper .mainBox .slide__info .infor__tail ul,
+.moviewapper .mainBox .slide__info .infor__tail li {
+  list-style: none;
+  font-weight: bold;
+}
+
+.moviewapper .mainBox .slide__info .infor__tail ul {
+  font-size: 2rem;
+}
+
+.moviewapper .mainBox .slide__info .infor__tail li {
+  color: #686481;
+  font-size: 1.5rem;
+}
+
+.moviewapper .mainBox .slide__info .infor__tail .wathingage {
+  -webkit-transform: translateY(2rem);
+          transform: translateY(2rem);
+  display: inline-block;
+  width: 5rem;
+  height: 5rem;
+  background: transparent;
+  border-radius: 50%;
+  border: 0.1rem solid #f3b4d8;
+}
+
+.moviewapper .mainBox .slide__info .infor__tail .wathingage p {
+  font-size: 2rem;
+  line-height: 4.9rem;
+  color: #f3b4d8;
+}
+
+.moviewapper footer {
+  background: #1a1f33;
+  width: 100%;
+  height: 10rem;
+  display: inline-block;
+  text-align: center;
+}
+
+.moviewapper footer a {
+  text-decoration: none;
+}
+
+.moviewapper footer i {
+  color: #655777;
+  line-height: 9.8rem;
+  font-size: 4rem;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.moviewapper footer i:hover {
+  color: #ffe277;
+  text-shadow: 0.2rem 0.8rem 3rem #ffbb0065;
+}
+
+.moviewapper footer i:nth-child(1) {
+  -webkit-transform: translate(-28rem);
+          transform: translate(-28rem);
+}
+
+.moviewapper footer i:nth-child(2) {
+  -webkit-transform: translate(28rem);
+          transform: translate(28rem);
+}
+
+.opacityscroll {
+  visibility: hidden;
+  opacity: 0;
+}
+/*# sourceMappingURL=selectmovie.css.map */
