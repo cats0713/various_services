@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
 		integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
 		crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<title>FOREC</title>
+	<title>movieselect</title>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
 		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="../css/selectmovie.css" />
@@ -16,46 +16,52 @@
 </head>
 
 <body>
-
 	<section class="countermodalwapper opacityscroll">
-		<form class="countPersonsection" action="" name="personcount" method="get" target="">
+		<section class="countPersonsection">
 			<header class="countmodalheader">
 				<h1 class="count_title">인원선택</h1>
 			</header>
 			<div class="Adult">
 				<h2>성인</h2>
-				<button class="adultpeoplecounter cutbtn" value="1">1</button><button class="adultpeoplecounter cutbtn"
-					value="2">2</button><button class="adultpeoplecounter cutbtn" value="3">3</button><button
-					class="adultpeoplecounter cutbtn" value="4">4</button><button class="adultpeoplecounter cutbtn"
-					value="5">5</button><button class="adultpeoplecounter cutbtn" value="6">6</button>
+				<button class="adultpeoplecounter cutbtn" id="cutBtn" value="10000">1</button>
+				<button class="adultpeoplecounter cutbtn" id="cutBtn" value="20000">2</button>
+				<button class="adultpeoplecounter cutbtn" id="cutBtn" value="30000">3</button>
+				<button class="adultpeoplecounter cutbtn" id="cutBtn" value="40000">4</button>
+				<button class="adultpeoplecounter cutbtn" id="cutBtn" value="50000">5</button>
+				<button class="adultpeoplecounter cutbtn" id="cutBtn" value="60000">6</button>
 			</div>
 			<div class="junior">
 				<h2>청소년</h2>
-				<button class="joniorpeplecounter cutbtn" value="1">1</button><button class="joniorpeplecounter cutbtn"
-					value="2">2</button><button class="joniorpeplecounter cutbtn" value="3">3</button><button
-					class="joniorpeplecounter cutbtn" value="4">4</button><button class="joniorpeplecounter cutbtn"
-					value="5">5</button><button class="joniorpeplecounter cutbtn" value="6">6</button>
+				<button class="joniorpeplecounter cutbtn" id="cutBtn" value="7000">1</button>
+				<button class="joniorpeplecounter cutbtn" id="cutBtn" value="14000">2</button>
+				<button class="joniorpeplecounter cutbtn" id="cutBtn" value="21000">3</button>
+				<button class="joniorpeplecounter cutbtn" id="cutBtn" value="28000">4</button>
+				<button class="joniorpeplecounter cutbtn" id="cutBtn" value="35000">5</button>
+				<button class="joniorpeplecounter cutbtn" id="cutBtn" value="42000">6</button>
 			</div>
 			<div class="disabled">
 				<h2>장애인</h2>
-				<button class="Disabledpeplecounter cutbtn" value="1">1</button><button class="Disabledpeplecounter cutbtn"
-					value="2">2</button><button class="Disabledpeplecounter cutbtn" value="3">3</button><button
-					class="Disabledpeplecounter cutbtn" value="4">4</button><button class="Disabledpeplecounter cutbtn"
-					value="5">5</button><button class="Disabledpeplecounter cutbtn" value="6">6</button>
+				<button class="Disabledpeplecounter cutbtn" id="cutBtn" value="7000">1</button>
+				<button class="Disabledpeplecounter cutbtn" id="cutBtn" value="14000">2</button>
+				<button class="Disabledpeplecounter cutbtn" id="cutBtn" value="21000">3</button>
+				<button class="Disabledpeplecounter cutbtn" id="cutBtn" value="28000">4</button>
+				<button class="Disabledpeplecounter cutbtn" id="cutBtn" value="35000">5</button>
+				<button class="Disabledpeplecounter cutbtn" id="cutBtn" value="42000">6</button>
 			</div>
 			<div class="old">
 				<h2>노약자</h2>
-				<button class="oldplecounter cutbtn" value="1">1</button><button class="oldplecounter cutbtn"
-					value="2">2</button><button class="oldplecounter cutbtn" value="3">3</button><button
-					class="oldplecounter cutbtn" value="4">4</button><button class="oldplecounter cutbtn"
-					value="5">5</button><button class="oldplecounter cutbtn" value="6">6</button>
+				<button class="oldplecounter cutbtn" id="cutBtn" value="6000">1</button>
+				<button class="oldplecounter cutbtn" id="cutBtn" value="12000">2</button>
+				<button class="oldplecounter cutbtn" id="cutBtn" value="19000">3</button>
+				<button class="oldplecounter cutbtn" id="cutBtn" value="26000">4</button>
+				<button class="oldplecounter cutbtn" id="cutBtn" value="32000">5</button>
+				<button class="oldplecounter cutbtn" id="cutBtn" value="38000">6</button>
 			</div>
 			<div class="counterresult"><button id="submitperson">확인</button></div>
-		</form>
-		<!--인원선택 모달-->
+			</div>
+			<!--일반문구 모달-->
+		</section>
 	</section>
-
-
 	<section class="modalwapper opacityscroll">
 		<section class="modal_body">
 			<header class="modal__header">
@@ -79,54 +85,33 @@
 			<!--여기가  본체// -->
 		</section>
 	</section>
-	<!-- 안내 모달 -->
-
 	<section class="moviewapper">
 		<header id="playerarea">
+			<!--  동영상이 들어갑니다. -->
+			<!--  시간과 로고가 표시되는 header -->
 			<div class="head__infor">
-				<span id="logoimg">logo</span><span id="menutitle">상영영화</span><span id="time">00:00</span>
+				<span id="time">00:00</span>
+				<span id="logoimg">120 초</span>
 			</div>
 		</header>
 		<!--  영화셀렉트하는 영역 시작 -->
 		<section class="mainBox">
 			<!--  slide될 영역 , 이미지를 누르면 시간과 남은좌석이 떠야함 -->
-			<section class="main__body" id="mainBody">
-
-				<div class="slide__info" id="no_movie">
-					<img class="sliderimgs" id="sl__1" src="../IMG/selectmovie/no_movie.jpg" alt="${rows[i]['name']} 포스터" />
+			<section class="main__body">
+				<!--  시간표 -->
+				<div class="slide__info">
+					<img class="sliderimgs" id="sl__1" src="./img/testimg2.png" alt="testimg1" />
+					<!-- <div class="circleing"></div>
+						<div class="circleing"></div> -->
 					<div class="infor__container">
-						<h3 class="movietitle"></h3>
+						<div class="movietitmeCon">
+							<h3 class="movietitle">타오르는 여인의 초상</h3>
+							<p class="title_info">드라마 프랑스 121분</p>
+						</div>
 						<div class="movietimebox">
-
-							<button>
-								<ul class="movie_li_time">
-									10:00~13:00
-									<li>000/000</li>
-								</ul>
-							</button>
-							<button>
-								<ul class="movie_li_time">
-									10:00~13:00
-									<li>000/000</li>
-								</ul>
-							</button>
-							<button>
-								<ul class="movie_li_time">
-									10:00~13:00
-									<li>000/000</li>
-								</ul>
-							</button>
-							<button>
-								<ul class="movie_li_time">
-									10:00~13:00
-									<li>000/000</li>
-								</ul>
-							</button>
-							<button>
-								<ul class="movie_li_time">
-									10:00~13:00
-									<li>000/000</li>
-								</ul>
+							<button class="movieUlLicontainer" id="morning">
+								00 : 00 ~ 00 : 00<br>
+								100/100
 							</button>
 
 						</div>
@@ -134,24 +119,22 @@
 					<div class="infor__tail">
 						<ul class="runingtime">
 							상영시간
-							<li class="runingtime_li">분</li>
+							<li class="runingtime_li">00분</li>
 						</ul>
 						<div class="wathingage">
-							<p></p>
+							<p>12</p>
 						</div>
 					</div>
 				</div>
 
-
 			</section>
+			<!--  footer영역 일단 회사마크같은것만 넣 -->
 		</section>
-
-		<!-- 하단바 -->
 		<footer clas="moviefooter">
-			<i id="previousBtn" class="fa-solid fa-angles-left"></i><i id="homeBtn" class="fa-brands fa-fort-awesome"></i>
+			<i class="fa-solid fa-angles-left"><a href=""> </a></i><i class="fa-brands fa-fort-awesome"><a href=""> </a></i>
 		</footer>
-
 	</section>
+
 </body>
 
 </html>

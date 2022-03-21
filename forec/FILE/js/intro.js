@@ -1,7 +1,8 @@
 window.onload = ()=>{
 	const clock = document.querySelector('#dayTime');
 	const clocktitle = document.querySelector('#time');
-	console.log(clocktitle);
+
+	// console.log(clocktitle);
 
 	getTime = () => {
 		const date = new Date();
@@ -45,30 +46,12 @@ window.onload = ()=>{
 	};
 init();
 
-	// 동작들 제이쿼리
-	$(document).on({
-		click: (e) => {
-			switch (e.target.className) {
-				case 'movie_li_time':
-					$('.modalwapper').toggleClass('opacityscroll');
-					break;
-				case 'fa-solid fa-x modalclosebtn':
-					$('.modalwapper').toggleClass('opacityscroll');
-					break;
-				case 'goselectPerson':
-					$('.modalwapper').toggleClass('opacityscroll');
-					$('.countermodalwapper').toggleClass('opacityscroll');
-					break;
-				}
-		}, 
-		scroll: (e) => {},
-	});
 
 	$("#reservationBtn").on("click",function(){
 		location.href = `/forec?page=20`;
 	});
 	$("#printTicketBtn").on("click",function(){
-		location.href = `/forec?page=10`;
+		location.href = `/forec?page=100`;
 	});
 
 }

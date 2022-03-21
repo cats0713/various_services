@@ -3,69 +3,86 @@ window.onload = () => {
 	const clockContainer = document.querySelector('.head__infor');
 	// 시간 들어갈 wapper
 	let clocktitle = document.querySelector('#time');
-	//찐으로 들어갈 곳
+	
+	let userDataArray = []; 
 
 
-
-	getTime = () => {
+	let getTime = () => {
 		const date = new Date();
 		const minutes = date.getMinutes();
 		const hours = date.getHours();
 		const seconds = date.getSeconds();
-		clocktitle.innerHTML = `${hours < 10 ? `0${hours}` : hours} :${minutes < 10 ? `0${minutes}` : minutes}: ${seconds < 10 ? `0${seconds}` : seconds
-			}`;
+		clocktitle.innerHTML = `${hours < 10 ? `0${hours}` : hours} :${minutes < 10 ? `0${minutes}` : minutes}: ${seconds < 10 ? `0${seconds}` : seconds}`;
 	};
-
 	init = () => {
 		getTime();
 		setInterval(getTime, 1000);
 	};
 	init();
 
+	// 규식이형. 받아온 입력시 받은 값을 넘겨줄때 적용해줘야함
+	// priceToString = (price) => {
+	// 	return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+	// };
+
+	let parseData = (userData) =>{
+		if(typeof(userData) == 'string'){
+			//영화 시간, 영화관 선택
+			//userDataArray[0] = userData.split();
+			userDataArray = [];
+			userDataArray = userData.split('<br>');
+		}else{
+			
+		}
+	}
 	// 동작들 제이쿼리
 	$(document).on({
 		click: (e) => {
-			console.log(e.target.className);
-			switch (e.target.className) {
-				case 'movietimebox':
-					$('.modalwapper').toggleClass('opacityscroll');
+			switch (e.target.id){
+				case 'cutbtn':
+					console.log(e.target.value);
+					console.log(e.target.innerHTML);
 					break;
-				case 'fa-solid fa-x modalclosebtn':
+			}
+			console.log(e.target);
+
+			switch (e.target.className) {
+				case 'movieUlLicontainer':
 					$('.modalwapper').toggleClass('opacityscroll');
+					parseData(e.target.innerHTML);
 					break;
 				case 'goselectPerson':
 					$('.modalwapper').toggleClass('opacityscroll');
 					$('.countermodalwapper').toggleClass('opacityscroll');
 					break;
 			}
-		},
-		scroll: (e) => { },
+		}
 	});
-	$('#testposter').on({
-		mouseenter: (e) => {
-			$(e.target).css({ transform: 'translate(-15rem)' });
-			$('.posterinfo').css({
-				opacity: '1',
-				visibility: 'visible',
-				transform: 'translate(42rem,-42.8rem)',
-			});
-		},
-		mouseleave: (e) => {
-			$(e.target).css({ transform: 'translate(0rem)' });
-			$('.posterinfo').css({
-				opacity: '0',
-				visibility: 'hidden',
-			});
-		},
+	const cutbtn = document.querySelectorAll('.cutbtn');
+
+	cutbtn.forEach((value, index, array) => {
+		value.addEventListener('click', (e) => {
+			e.target.classList.toggle('check');
+			e.target.classList.toggle('backColor');
+		});
 	});
+	// resultNum = (mybtnValue) => {
+	// 	console.log(mybtnValue);
+	// 	const pricetitle = document.querySelector('#Pricetitle');
+	// 	pricetitle.innerHTML = mybtnValue;
+	// };
+
+
 	$("#homeBtn").on("click", function () {
 		location.href = `/forec?page=10`;
 	});
+
 	$("#previousBtn").on("click", function () {
 		location.href = `/forec?page=10`;
 	});
-	//인원선택창 카운터//
-
+	$("#submitperson").on("click", function () {
+		location.href = `/forec?page=30`;
+	});
 
 
 }

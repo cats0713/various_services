@@ -69,7 +69,7 @@ html {
 	width: 100%;
 	font-size: 10px;
 	background: $main_1;
-	background: linear-gradient(180deg, $main_1 10%, #384c84 30%, $main_2 100%);
+	background: linear-gradient(200deg, $main_4 10%, #657bb8 30%, $main_2 100%);
 	// background: $main2_black;
 	color: $main2_black2;
 	button {
@@ -149,7 +149,7 @@ html {
 		display: inline-block;
 		width: 29rem;
 		height: 18rem;
-		margin: 3rem;
+		margin: 3.5rem;
 		.btnBox{
 			align-items: center;
 			width: 100%;
@@ -206,8 +206,10 @@ html {
 			}
 		}
 		.btnBox:hover{
-			box-shadow: 0.1rem 0.1rem 0.5rem black;
+			box-shadow: 0.5rem 0.5rem 0.1rem rgba($color: #000000, $alpha: 0.6);
 			cursor: pointer;
+			transition: all;
+			transform: rotate(-3deg);
 		}
 	}
 	

@@ -70,24 +70,28 @@ $main_3: #ea85b4;
 
 body,
 html {
+	ul,
+	li {
+		list-style-type: none;
+	}
 	font-family: 'GmarketSansMedium';
 	// scroll-behavior: auto;
 	width: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
 	font-size: 10px;
-	height: 140vh;
-	background: linear-gradient(200deg, $main_4 10%, #657bb8 30%, $main_2 100%);
+	background: $main_1;
+	background: linear-gradient(180deg, $main_1 10%, #384c84 40%, $main_2 100%);
+	// background: $main2_black;
 	color: $main2_black2;
 	button {
 		appearance: none;
-		font-family: 'GmarketSansMedium';
 	}
 }
 // 인원수 입력하는 모달 //
 .countermodalwapper {
-	width: 72rem;
-	height: 100rem;
-	@include center;
-	background: #16142b71;
+	width: 100%;
+	height: 100%;
 	position: fixed;
 	z-index: 20;
 	transition: 1s;
@@ -112,7 +116,7 @@ html {
 		color: #fff;
 		background: $main2_black2;
 		text-align: center;
-		box-shadow: 0.2rem 0.8rem 8rem #16142b92;
+		box-shadow: 0.2rem 0.8rem 3rem #16142b;
 		transition: 0.5s;
 		display: flex;
 		border-radius: 1rem;
@@ -123,19 +127,15 @@ html {
 		.counterresult {
 			width: 62rem;
 			height: 20%;
-			display: flex;
-			flex-direction: row;
-			justify-content: space-evenly;
-			align-items: center;
 
-			#submitperson,
-			#resetPerson {
+			#submitperson {
 				font-family: 'GmarketSansMedium';
 				font-weight: 900;
 				border: none;
 				width: 15rem;
 				outline: none;
 				padding: 1rem;
+				transform: translateY(2rem);
 				box-shadow: 0.2rem 0.8rem 3rem #15192432;
 				font-size: 2.5rem;
 				background: #16142b89;
@@ -149,7 +149,6 @@ html {
 			#submitperson:focus {
 				background: #ffe277;
 				color: $main2_pink;
-
 				box-shadow: 0.2rem 0.8rem 3rem #ffbb0065;
 			}
 
@@ -158,7 +157,7 @@ html {
 				font-size: 3rem;
 				transition: 0.4s;
 			}
-			i {
+			fj i {
 				cursor: pointer;
 			}
 			i:hover {
@@ -204,7 +203,7 @@ html {
 
 		.countmodalheader {
 			align-items: center;
-			justify-content: center;
+			justify-content: space-around;
 			width: 62rem;
 			display: flex;
 			height: 7rem;
@@ -215,36 +214,33 @@ html {
 
 		.cutbtn {
 			border: none;
-			font-family: 'GmarketSansMedium';
+			font-family: 'YUniverse-L';
 			margin: 0.4rem;
 			width: 5rem;
 			height: 5rem;
+			border-radius: 50%;
 			padding: 1rem;
 			font-size: 2rem;
 			transition: 0.4s;
 			color: $main_2;
 			border-radius: 1rem;
-			cursor: pointer;	
-		}
-		.backColor{
-			background-color: $main2_black2;
+			cursor: pointer;
+			background-color: transparent;
 		}
 
+		.cutbtn:visited,
 		.cutbtn:hover,
 		.cutbtn:active {
-			background-color: #ffe277;
+			background: #ffe277;
 			color: $main2_pink;
-			border-radius: 50%;
-			box-shadow: 0rem 0rem 2rem #ffbb0065;
+			box-shadow: 0.2rem 0.8rem 3rem #ffbb0065;
 		}
 	}
 }
 // 경고 모달 //
 .modalwapper {
-	width: 72rem;
-	height: 100rem;
-	@include center;
-background: #16142b71;
+	width: 100%;
+	height: 100%;
 	position: fixed;
 	z-index: 20;
 	transition: 1s;
@@ -293,7 +289,7 @@ background: #16142b71;
 		background: #fff;
 		border-radius: 1.5rem;
 		text-align: center;
-		box-shadow: 0.2rem 2rem 8rem #16142b9c;
+		box-shadow: 0.2rem 0.8rem 3rem #16142b;
 		transition: 0.5s;
 
 		button {
@@ -345,8 +341,7 @@ background: #16142b71;
 	width: 72rem;
 	height: 100rem;
 	margin: auto;
-	background: linear-gradient(220deg, rgba(61, 58, 84, 1) 0%, #1a1f33e3 20%, rgba(101, 87, 119, 1) 100%);
-	box-shadow: 2rem 0.1rem 6rem #494662d3;
+	box-shadow: 0rem 0rem 0.8rem #16142b;
 	// 헤더
 	#playerarea {
 		width: 100%;
@@ -355,20 +350,20 @@ background: #16142b71;
 		flex-direction: column;
 
 		.head__infor {
-			box-shadow: 0rem 3rem 8rem #2e2f4873;
 			background: $main2_green;
-			z-index: 1;
-			height: 10rem;
-			border-radius: 0rem 0rem 3rem 3rem;
+			z-index: 100;
+			height: 7rem;
 			width: 100%;
 			text-align: center;
 			display: flex;
 			justify-content: space-around;
+			box-shadow: 0rem 2rem 3rem #16142b62;
 
 			span {
 				font-size: 2rem;
 				letter-spacing: 0.2rem;
-				line-height: 9.8rem;
+				line-height: 6.8rem;
+
 				text-shadow: 0rem 2rem 3rem #16142b62;
 				color: $main2_fff2;
 			}
@@ -381,14 +376,16 @@ background: #16142b71;
 	}
 	.mainBox {
 		width: 100%;
-		overflow-y: auto;
+		// overflow-y: auto;
 		box-sizing: border-box;
-		height: 80rem;
+		height: 83rem;
+		background: $main2_green;
 		background-size: cover;
+
 		.main__body {
 			display: flex;
 			flex-direction: column;
-			height: 110rem;
+			height: 100%;
 
 			h1 {
 				color: $main2_white;
@@ -410,167 +407,302 @@ background: #16142b71;
 				background: $main2_pink;
 			}
 		}
-		// 영화티켓들
-		.slide__info {
+		//좌석선택창
+		.choseseat {
+			width: 100%;
+			height: 100%;
+			backdrop-filter: blur(1rem);
+			flex-direction: column;
+			justify-content: space-around;
 			align-items: center;
-			width: 98%;
-			transition: 1s;
-			padding: 1rem;
-			height: 25rem;
+			margin: auto;
 			display: flex;
+			border-radius: 0.2rem;
 
-			text-align: center;
-			justify-content: center;
-			position: relative;
-			overflow: hidden;
-			.movietimebox::-webkit-scrollbar {
-				height: 1rem;
-				width: 0.5rem;
+			.seatcontainer::-webkit-scrollbar {
+				width: none;
+				display: none;
 			}
-			.movietimebox::-webkit-scrollbar-thumb {
-				background-color: $main2_fff2;
+
+			.seatcontainer {
+				// border: 0.1rem solid $main2_black2;
+				width: 98%;
+				height: 60%;
+				outline: none;
 				border-radius: 1rem;
-			}
-			.movietimebox::-webkit-scrollbar-track {
-				border-radius: 1rem;
-				background: $main2_black2;
-			}
-			.movietimebox {
-				scrollbar-width: thin;
-				border-radius: 0.5rem;
-				background: whitesmoke;
-				flex-wrap: wrap;
-				padding: 1rem;
-				flex-direction: column;
-				display: flex;
-				height: 7.5rem;
 
-				width: 35rem;
-				overflow-x: scroll;
-				transform: translate(1rem) translateY(-2rem);
+				box-shadow: 0rem 0rem 3rem #16142b;
+				.seatcon {
+					background: radial-gradient(circle, $main2_white 0%, $main2_black2 10%, $main_1 70%, $main_1 100%);
+					width: 100%;
+					height: 100%;
+					perspective: 50rem;
 
-				// 영화시간
-				.movieUlLicontainer {
-					font-size: 'GmarketSansLight';
-					padding: 0.8rem;
-					font-size: 1.4rem;
-					text-align: left;
-					color: $main_1;
-					border: none;
-					border-right: 0.3rem solid white;
-					cursor: pointer;
-					letter-spacing: 0.03rem;
-					transition: 0.3s;
-					line-height: 2.3rem;
-					background: transparent;
-
-					.movieUlLicontainer:hover {
-						color: $main2_fff2;
+					.Screen {
+						width: 50%;
+						height: 15rem;
+						margin: auto;
+						background: #ffe277;
+						box-shadow: 0rem 8rem 15rem #fde16362;
+						border-radius: 0.2rem;
+						transform: rotateX(-90deg) translate(1rem, -3rem);
 					}
-				}
-			}
-			//  background: rgba(255, 255, 255, 0.43);
-			.sliderimgs {
-				height: 23rem;
-				box-shadow: 0rem 0rem 0.8rem #16142b;
-				z-index: 1;
-			}
-			.infor__container {
-				overflow: hidden;
-				box-shadow: 0rem 0rem 0.8rem #16142b3e;
-				display: flex;
-				position: relative;
-				width: 40rem;
-				height: 23rem;
-				background: #fff;
-				z-index: 0;
-				justify-content: flex-start;
-				transform: translateY(1rem);
-				flex-direction: row;
-				z-index: 0;
+					.seatbox {
+						transform: translateY(-1rem);
+						display: flex;
+						flex-direction: column;
+						width: 100%;
+						height: 50%;
 
-				flex-wrap: wrap;
-				align-content: space-between;
-				border-right: 0.2rem dashed $main2_black2;
-				.movietitmeCon  {
-					align-self: flex-start;
-					padding-left: 2rem;
-					text-align: left;
-				}
-				.movietitle{
-					
-					font-size: 3rem;
-					margin-top: 1.5rem;
-					color: $main2_green;
-					display: block;
-				}
-				h3::before {
-					content: '';
-					color: $main2_white;
-
-					padding-right: 1rem;
-					font-size: 3rem;
-				}
-				.title_info {
-					margin-left: 1rem;
-					display: block;
-					font-size: 1.5rem;
-
-				}
-			}
-			.infor__tail {
-				overflow: hidden;
-				transform: translateY(1rem);
-				width: 10rem;
-				background: $subcolor_1;
-				box-shadow: 1rem 0rem 0.8rem #16142b3e;
-				height: 23rem;
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				border-left: 0.2rem dashed $main2_black2;
-				transition: 0.4s;
-				align-items: center;
-				ul,
-				li {
-					list-style: none;
-					font-weight: bold;
-				}
-				ul {
-					font-size: 2rem;
-				}
-				li {
-					color: #686481;
-					font-size: 1.5rem;
-				}
-				.wathingage {
-					transform: translateY(2rem);
-					display: inline-block;
-					width: 5rem;
-					height: 5rem;
-					background: transparent;
-					border-radius: 50%;
-					border: 0.1rem solid $main2_fff2;
-
-					p {
-						font-size: 2rem;
-						line-height: 4.9rem;
-						color: #f3b4d8;
+						.row:nth-child(6) {
+							margin-top: 2rem;
+							p {
+								color: $main_3;
+							}
+							.seat {
+								width: 7%;
+							}
+						}
+						.row {
+							transform: translate(-1.5rem, -2rem);
+							padding: 0.7rem;
+							width: 70%;
+							height: 10%;
+							margin: auto;
+							display: flex;
+							justify-content: space-between;
+							text-align: center;
+							p {
+								font-size: 2.5rem;
+								transform: translate(-1rem, -0.5rem);
+								color: #655777;
+								font-weight: bold;
+							}
+							.seat {
+								color: transparent;
+								transition: 0.4s;
+								width: 5%;
+								height: 80%;
+								border-radius: 0.8rem 0.8rem 0.1rem 0.1rem;
+								background: $subcolor_1;
+								cursor: pointer;
+								box-shadow: 0rem 0.8rem 2rem $main2_green;
+							}
+							.seat:visited,
+							.seat:hover,
+							.seat:active {
+								background: #ffe277;
+								color: $main2_pink;
+								box-shadow: 0.2rem 0.8rem 3rem #ffbb0065;
+							}
+							.leftseat {
+								border-top-left-radius: 1.2rem;
+								border-top-right-radius: 0.4rem;
+							}
+							.rightseat {
+								border-top-right-radius: 1.2rem;
+							}
+							.backward {
+								margin-top: 1rem;
+							}
+							.occupied {
+								background: $main2_black2;
+							}
+							.selected {
+								background: #ffe277;
+								color: $main2_pink;
+								box-shadow: 0.2rem 0.8rem 3rem #ffbb0065;
+							}
+						}
 					}
 				}
 			}
 		}
 	}
+	.resultprice {
+		width: 95%;
+
+		height: 36%;
+		border-radius: 0.6rem;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		align-items: center;
+		#movieinfo {
+			width: 17rem;
+			height: 24.4rem;
+			background: url('./img/testimg2.png');
+			background-size: cover;
+			border-radius: 1rem;
+			box-shadow: 1rem 2rem 6rem $main2_green;
+			z-index: 1;
+			overflow: hidden;
+
+			#MovieInfo {
+				padding: 1rem;
+				box-sizing: border-box;
+				height: 100%;
+				width: 100%;
+				margin: auto;
+				word-break:keep-all;
+				letter-spacing: 0.5rem;
+				line-height: 3rem;
+				background: #1a1f33c9;
+				#Movieinfo_title {
+					font-size: 2.5rem;
+					color: #fff;
+					float: right;
+				}
+			}
+		}
+		.personlist {
+			padding: 1rem;
+			width: 45rem;
+			display: flex;
+			height: 75%;
+			border-radius: 2rem;
+
+			flex-direction: column;
+			li {
+				color: #fff;
+			}
+			.totalprice {
+				height: 30%;
+				transform: translateY(2rem);
+				display: flex;
+				justify-content: space-between;
+				flex-direction: row;
+			}
+			.ToTalprice {
+				width: 50%;
+				height: 80%;
+				transform: translateY(1rem);
+				border-radius: 5rem;
+				text-align: center;
+				line-height: 10rem;
+				letter-spacing: 0.5rem;
+			}
+			.totalpersonList::-webkit-scrollbar {
+				width: 1rem;
+			}
+			.totalpersonList::-webkit-scrollbar-thumb {
+				height: 1rem;
+				background-color: $main2_fff2;
+				border-radius: 1rem;
+			}
+			.totalpersonList::-webkit-scrollbar-track {
+				background: $main2_black2;
+			}
+			.totalpersonList {
+				transform: translateY(-1rem);
+
+				height: 65%;
+				width: 100%;
+				flex-direction: row;
+				border-radius: 1rem;
+				display: flex;
+				overflow-y: scroll;
+				justify-content: space-evenly;
+
+				.selectCart {
+					padding: 1rem;
+					width: 100%;
+				}
+				.cartList {
+					margin: auto;
+					border: 0.1rem solid $main2_fff2;
+					border-radius: 3rem;
+					margin-bottom: 1rem;
+					width: 90%;
+					height: 4rem;
+					text-align: left;
+					line-height: 4rem;
+					padding: 1rem;
+
+					span {
+						margin-left: 1rem;
+						color: #fff;
+						font-size: 1.5rem;
+						letter-spacing: 0.2rem;
+					}
+					i {
+						margin-left: 1rem;
+						color: $main2_fff2;
+						cursor: pointer;
+						transform: translateY(0.2rem);
+						font-size: 2rem;
+					}
+					.oneofprice {
+						float: right;
+						color: $main2_fff2;
+						margin-right: 1rem;
+					}
+				}
+			}
+
+			.totalPricePreview {
+				border-radius: 1rem;
+				width: 20rem;
+
+				height: 5rem;
+				padding: 2rem;
+				align-self: center;
+
+				.Pricetitle {
+					letter-spacing: 0.2rem;
+					color: white;
+					font-weight: bold;
+					font-size: 2.5rem;
+					float: right;
+					line-height: 4.9rem;
+				}
+			}
+			.geticket {
+				align-self: center;
+				border: 0;
+
+				transform: translate(-1rem);
+
+				background: $main2_fff2;
+
+				background: linear-gradient(160deg, #fff0bcfb 3%, $main_3 50%, #ea76ac 60%, $main2_white 100%);
+
+				font-family: 'GmarketSansMedium';
+				font-weight: bold;
+
+				border: none;
+
+				width: 20rem;
+
+				height: 7rem;
+
+				outline: none;
+
+				padding: 1rem;
+
+				box-shadow: 0.2rem 0.8rem 3rem #7e87d859;
+
+				transition: 0.4s;
+				font-size: 2.5rem;
+				color: $subcolor_1;
+				text-shadow: 0rem 0rem 1rem #ea76ac;
+
+				letter-spacing: 0.2rem;
+
+				cursor: pointer;
+
+				border-radius: 3rem;
+				transition: 0.7s;
+			}
+		}
+	}
 	// footer
-	footer {
+	.moviefooter {
 		background: $main_1;
 		width: 100%;
-		height: 12rem;
+		height: 10rem;
 		display: inline-block;
 		text-align: center;
-		text-align: center;
-		box-shadow: 0rem -3rem 8rem #2e2f4873;
-		border-radius: 3rem 3rem 0rem 0rem;
 
 		a {
 			text-decoration: none;
@@ -578,7 +710,7 @@ background: #16142b71;
 
 		i {
 			color: $main2_white;
-			line-height: 11.8rem;
+			line-height: 9.8rem;
 			font-size: 4rem;
 			cursor: pointer;
 			transition: 0.3s;
@@ -599,9 +731,60 @@ background: #16142b71;
 	visibility: hidden;
 	opacity: 0;
 }
-.check {
-	border-radius: 50%;
-	background-color: #ffe277;
-	color: $main2_pink;
-	box-shadow: 0rem 0rem 1.5rem #ffbb0065;
+.visibiliySeat {
+	visibility: hidden;
+}
+.aboutseat {
+	transform: translate(2rem);
+	width: 90%;
+	height: 10%;
+	bottom: 0;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	#Seatreset {
+		float: right;
+		font-size: 5rem;
+		cursor: pointer;
+		color: $main2_white;
+	}
+	.showcase {
+		width: 50rem;
+
+		p {
+			margin-top: 1rem;
+
+			letter-spacing: 0.1rem;
+		}
+	}
+
+	li {
+		margin-left: 1rem;
+	}
+	.NA {
+		background: $main_4;
+	}
+	.selected {
+		background: #fff;
+	}
+	.occupied {
+		background: #ffe277;
+	}
+
+	ul,
+	li {
+		display: inline-block;
+		list-style-type: none;
+		font-size: 1.3rem;
+		color: #fff;
+	}
+	.wheel {
+		font-size: 2rem;
+		color: #ea76ac;
+	}
+
+	.seat {
+		border-radius: 10%;
+		width: 2rem;
+		height: 2rem;
+	}
 }
