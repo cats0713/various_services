@@ -23,6 +23,14 @@ $main_3: #ea85b4;
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
+@mixin modal {
+}
+@font-face {
+	font-family: 'S-CoreDream-4Regular';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
 @font-face {
 	font-family: 'GmarketSansMedium';
 	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
@@ -47,6 +55,7 @@ $main_3: #ea85b4;
 	font-weight: normal;
 	font-style: normal;
 }
+
 @keyframes colorchange {
 	0% {
 		text-shadow: 0;
@@ -72,11 +81,15 @@ body,
 html {
 	font-family: 'GmarketSansMedium';
 	// scroll-behavior: auto;
+	background: url('../../../img/film-strip-svgrepo-com.svg');
 	width: 100%;
 	font-size: 10px;
-	height: 140vh;
-	background: linear-gradient(200deg, $main_4 10%, #657bb8 30%, $main_2 100%);
+	background: whitesmoke;
+	height: 100vh;
 	color: $main2_black2;
+	background: $main_1;
+	background: linear-gradient(200deg, $main_4 10%, #657bb8 30%, $main_2 100%);
+
 	button {
 		appearance: none;
 		font-family: 'GmarketSansMedium';
@@ -84,10 +97,8 @@ html {
 }
 // 인원수 입력하는 모달 //
 .countermodalwapper {
-	width: 72rem;
-	height: 100rem;
-	@include center;
-	background: #16142b71;
+	width: 100%;
+	height: 100%;
 	position: fixed;
 	z-index: 20;
 	transition: 1s;
@@ -112,7 +123,7 @@ html {
 		color: #fff;
 		background: $main2_black2;
 		text-align: center;
-		box-shadow: 0.2rem 0.8rem 8rem #16142b92;
+		box-shadow: 0.2rem 0.8rem 3rem #16142b;
 		transition: 0.5s;
 		display: flex;
 		border-radius: 1rem;
@@ -123,19 +134,15 @@ html {
 		.counterresult {
 			width: 62rem;
 			height: 20%;
-			display: flex;
-			flex-direction: row;
-			justify-content: space-evenly;
-			align-items: center;
 
-			#submitperson,
-			#resetPerson {
+			#submitperson {
 				font-family: 'GmarketSansMedium';
 				font-weight: 900;
 				border: none;
 				width: 15rem;
 				outline: none;
 				padding: 1rem;
+				transform: translateY(2rem);
 				box-shadow: 0.2rem 0.8rem 3rem #15192432;
 				font-size: 2.5rem;
 				background: #16142b89;
@@ -149,7 +156,6 @@ html {
 			#submitperson:focus {
 				background: #ffe277;
 				color: $main2_pink;
-
 				box-shadow: 0.2rem 0.8rem 3rem #ffbb0065;
 			}
 
@@ -204,7 +210,7 @@ html {
 
 		.countmodalheader {
 			align-items: center;
-			justify-content: center;
+			justify-content: space-around;
 			width: 62rem;
 			display: flex;
 			height: 7rem;
@@ -219,32 +225,28 @@ html {
 			margin: 0.4rem;
 			width: 5rem;
 			height: 5rem;
+			border-radius: 50%;
 			padding: 1rem;
 			font-size: 2rem;
 			transition: 0.4s;
 			color: $main_2;
 			border-radius: 1rem;
-			cursor: pointer;	
-		}
-		.backColor{
-			background-color: $main2_black2;
+			cursor: pointer;
+			background-color: transparent;
 		}
 
 		.cutbtn:hover,
 		.cutbtn:active {
-			background-color: #ffe277;
+			background: #ffe277;
 			color: $main2_pink;
-			border-radius: 50%;
-			box-shadow: 0rem 0rem 2rem #ffbb0065;
+			box-shadow: 0.2rem 0.8rem 3rem #ffbb0065;
 		}
 	}
 }
-// 경고 모달 //
+
 .modalwapper {
-	width: 72rem;
-	height: 100rem;
-	@include center;
-background: #16142b71;
+	width: 100%;
+	height: 100%;
 	position: fixed;
 	z-index: 20;
 	transition: 1s;
@@ -293,7 +295,7 @@ background: #16142b71;
 		background: #fff;
 		border-radius: 1.5rem;
 		text-align: center;
-		box-shadow: 0.2rem 2rem 8rem #16142b9c;
+		box-shadow: 0.2rem 0.8rem 3rem #16142b;
 		transition: 0.5s;
 
 		button {
@@ -342,10 +344,12 @@ background: #16142b71;
 }
 
 .moviewapper {
+	backdrop-filter: blur(0.5rem);
 	width: 72rem;
 	height: 100rem;
 	margin: auto;
 	background: linear-gradient(220deg, rgba(61, 58, 84, 1) 0%, #1a1f33e3 20%, rgba(101, 87, 119, 1) 100%);
+
 	// 헤더
 	#playerarea {
 		width: 100%;
@@ -354,7 +358,6 @@ background: #16142b71;
 		flex-direction: column;
 
 		.head__infor {
-			box-shadow: 0rem 3rem 8rem #2e2f4873;
 			background: $main2_green;
 			z-index: 1;
 			height: 10rem;
@@ -383,11 +386,11 @@ background: #16142b71;
 		overflow-y: auto;
 		box-sizing: border-box;
 		height: 80rem;
-		background-size: cover;
+
 		.main__body {
 			display: flex;
 			flex-direction: column;
-			height: 110rem;
+			height: 100%;
 
 			h1 {
 				color: $main2_white;
@@ -402,11 +405,6 @@ background: #16142b71;
 				transform: translateY(-3rem);
 				display: flex;
 				position: relative;
-			}
-			.head__infor {
-				width: 100%;
-				height: 10rem;
-				background: $main2_pink;
 			}
 		}
 		// 영화티켓들
@@ -443,11 +441,9 @@ background: #16142b71;
 				flex-direction: column;
 				display: flex;
 				height: 7.5rem;
-
 				width: 35rem;
 				overflow-x: scroll;
 				transform: translate(1rem) translateY(-2rem);
-
 				// 영화시간
 				.movieUlLicontainer {
 					font-size: 'GmarketSansLight';
@@ -491,30 +487,20 @@ background: #16142b71;
 				flex-wrap: wrap;
 				align-content: space-between;
 				border-right: 0.2rem dashed $main2_black2;
-				.movietitmeCon  {
-					align-self: flex-start;
-					padding-left: 2rem;
-					text-align: left;
-				}
-				.movietitle{
-					
+
+				h3 {
 					font-size: 3rem;
 					margin-top: 1.5rem;
+
 					color: $main2_green;
-					display: block;
+					display: inline-block;
 				}
-				h3::before {
+				ㄹ h3::before {
 					content: '';
 					color: $main2_white;
 
 					padding-right: 1rem;
 					font-size: 3rem;
-				}
-				.title_info {
-					margin-left: 1rem;
-					display: block;
-					font-size: 1.5rem;
-
 				}
 			}
 			.infor__tail {
@@ -565,10 +551,10 @@ background: #16142b71;
 		background: $main_1;
 		width: 100%;
 		height: 12rem;
+		transform: translateY(-2rem);
 		display: inline-block;
 		text-align: center;
 		text-align: center;
-		box-shadow: 0rem -3rem 8rem #2e2f4873;
 		border-radius: 3rem 3rem 0rem 0rem;
 
 		a {
@@ -599,8 +585,221 @@ background: #16142b71;
 	opacity: 0;
 }
 .check {
-	border-radius: 50%;
-	background-color: #ffe277;
+	background: #ffe277;
 	color: $main2_pink;
-	box-shadow: 0rem 0rem 1.5rem #ffbb0065;
+	box-shadow: 0.2rem 0.8rem 3rem #ffbb0065;
+}
+
+//point
+
+.membershipBox {
+	width: 95%;
+	height: 80%;
+	outline: none;
+	border-radius: 1rem;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	.membershipkeybord {
+		z-index: 1;
+		padding: 1rem;
+		border-radius: 8rem 8rem 1rem 1rem;
+		height: 50%;
+		margin: auto;
+		
+		width: 95%;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+		background: linear-gradient(200deg, $main2_green, transparent);
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		justify-content: flex-end;
+		align-items: center;
+		align-content: center;
+		flex-wrap: wrap;
+		.mkeybord {
+			background: transparent;
+			border: none;
+			font-family: 'GmarketSansMedium';
+			margin: 0.5rem;
+			width: 8rem;
+			line-height: 5.5rem;
+			height: 8rem;
+			padding: 1.5rem;
+			text-shadow: 0rem 1rem 3rem $main2_green;
+			transform: translateY(-1rem);
+			font-size: 4rem;
+			transition: 0.5s;
+			color: $main_2;
+			border-radius: 1rem;
+			cursor: pointer;
+		}
+		.mkeybord:hover {
+			border-radius: 50%;
+			background: #ffe277;
+			color: $main2_pink;
+			text-shadow: none;
+			box-shadow: 0.2rem 0.8rem 3rem #ffbb0065;
+		}
+	}
+
+	.membershipnumberviewer {
+		background: transparent;
+		margin: auto;
+		width: 95%;
+		height: 100%;
+
+		.Num010 {
+			font-size: 3rem;
+		}
+	}
+}
+.buttonBox {
+	text-align: center;
+	width: 95%;
+	margin: auto;
+	height: 20%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	transform: translateY(-1rem);
+	.Mbtn {
+		align-self: center;
+		border: 0;
+		background:$main2_black2;
+		font-family: 'GmarketSansMedium';
+		font-weight: bold;
+		border: none;
+		width: 21rem;
+		height: 9rem;
+		outline: none;
+		padding: 1rem;
+		box-shadow: 0rem 2rem 5rem #181b3650;
+		transition: 0.4s;
+		font-size: 3rem;
+		color: $main2_fff2;
+		letter-spacing: 0.5rem;
+		cursor: pointer;
+		border-radius: 2rem;
+		transition: 0.7s;
+	}
+	.Mbtn:hover {
+		transform: translateY(-1rem);
+		box-shadow: 0rem 0rem 3rem #6069bd8f;
+	}
+	.Mbtn:active {
+		transform: scale(90%);
+	}
+}
+.Mbtn:nth-child(1) {
+	background: white;
+
+	color:$main_4;
+}
+.Mbtn:nth-child(2) {
+	background: $main2_fff2;
+;
+	color:$main2_black2;
+}
+.Mbtn:nth-child(3) {
+	background:$main_1;
+
+}
+.intromembership {
+	font-size: 3rem;
+	text-align: center;
+	background: #fff;
+	color: $main2_green;
+	padding: 3rem;
+	box-shadow: 0.2rem 0.8rem 3rem #7e87d859;
+	border-radius: 0rem 0rem 3rem 3rem;
+	letter-spacing: 0.5rem;
+}
+.numberviewr {
+	text-align: left;
+	transform: translateY(5rem);
+	width: 80%;
+	margin: auto;
+
+	.NumNum {
+		font-size: 4rem;
+		letter-spacing: 1rem;
+		color: $main2_white;
+		text-shadow: 0.2rem 0.8rem 3rem #16142b88;
+	}
+	.Numresult {
+		font-size: 5rem;
+		letter-spacing: 1rem;
+		color: #fff;
+		text-shadow: 0.2rem 0.8rem 3rem #16142b88;
+		transform: translate(9rem);
+	}
+}
+.membershipModal {
+	@include center;
+	position: fixed;
+	width: 40rem;
+	transition: .5s;
+
+	z-index: 100;
+	height: 60rem;
+	box-shadow: 2rem 0rem 10rem #23222db2;
+	border-radius: 3rem;
+	padding: 2rem;
+	flex-direction: column;
+
+	background: rgb(255, 255, 255);
+	display: flex;
+	.membershipmodalheader {
+		height: 20%;
+		border-bottom: 0.1rem dashed $main2_black2;
+		width: 100%;
+		text-align: center;
+		.enterkey::after {
+			content: '\f005';
+			color: $main2_pink;
+			font-family: 'Font Awesome 6 Free';
+			margin-left: 1rem;
+		}
+		.membershipmodalheadertitle {
+			font-size: 3rem;
+			letter-spacing: 0.3rem;
+			line-height: 5rem;
+		}
+	}
+	.modalinfomation {
+		height: 70%;
+		text-align: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		#modal_point {
+			display: inline-block;
+			transition: 0.5s;
+			font-size: 14rem;
+			color: $main2_pink;
+			animation: identifier 4s infinite ;
+		}
+		@keyframes identifier {
+			100% {
+				transform: rotate(360deg);
+			}
+		}
+		.modalinfomation_inner {
+			font-size: 2rem;
+			text-align: center;
+			padding: 2rem;
+			border-radius: 5rem;
+			border: 0.15rem solid $main2_fff2;
+			transform: translateY(10rem);
+			.cunnum {
+				font-size: 2rem;
+				text-align: center;
+			}
+		}
+	}
 }

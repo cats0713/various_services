@@ -10,6 +10,6 @@ window.onload=()=>{
   chageImg();
   
   $("#nextBtn").on("click",function(){
-    location.href = '/forec?page=10';
+    location.href = `${window.location.pathname}?page=10`;
   });
 }

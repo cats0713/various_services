@@ -68,9 +68,8 @@ html {
   background-size: cover;
   background-repeat: no-repeat;
   font-size: 10px;
-  background: #1a1f33;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(10%, #1a1f33), color-stop(40%, #384c84), to(#f3b4d8));
-  background: linear-gradient(180deg, #1a1f33 10%, #384c84 40%, #f3b4d8 100%);
+  height: 140vh;
+  background: linear-gradient(200deg, #465fa4 10%, #657bb8 30%, #f3b4d8 100%);
   color: #3d3a54;
 }
 
@@ -263,7 +262,7 @@ html button {
 
 .countermodalwapper .countPersonsection .cutbtn {
   border: none;
-  font-family: 'YUniverse-L';
+  font-family: 'GmarketSansMedium';
   margin: 0.4rem;
   width: 5rem;
   height: 5rem;
@@ -275,7 +274,6 @@ html button {
   color: #f3b4d8;
   border-radius: 1rem;
   cursor: pointer;
-  background-color: transparent;
 }
 
 .countermodalwapper .countPersonsection .cutbtn:visited,
@@ -416,8 +414,9 @@ html button {
   width: 72rem;
   height: 100rem;
   margin: auto;
-  -webkit-box-shadow: 0rem 0rem 0.8rem #16142b;
-          box-shadow: 0rem 0rem 0.8rem #16142b;
+  background: linear-gradient(220deg, #3d3a54 0%, #1a1f33e3 20%, #655777 100%);
+  -webkit-box-shadow: 2rem .1rem 6rem #494662d3;
+          box-shadow: 2rem .1rem 6rem #494662d3;
 }
 
 .moviewapper #playerarea {
@@ -434,8 +433,8 @@ html button {
 
 .moviewapper #playerarea .head__infor {
   background: #1a1f33;
-  z-index: 100;
-  height: 7rem;
+  z-index: 1;
+  height: 10rem;
   width: 100%;
   text-align: center;
   display: -webkit-box;
@@ -443,14 +442,12 @@ html button {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  -webkit-box-shadow: 0rem 2rem 3rem #16142b62;
-          box-shadow: 0rem 2rem 3rem #16142b62;
 }
 
 .moviewapper #playerarea .head__infor span {
   font-size: 2rem;
   letter-spacing: 0.2rem;
-  line-height: 6.8rem;
+  line-height: 9.8rem;
   text-shadow: 0rem 2rem 3rem #16142b62;
   color: #f3b4d8;
 }
@@ -464,8 +461,7 @@ html button {
   width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  height: 83rem;
-  background: #1a1f33;
+  height: 80rem;
   background-size: cover;
 }
 
@@ -541,16 +537,17 @@ html button {
   height: 60%;
   outline: none;
   border-radius: 1rem;
-  -webkit-box-shadow: 0rem 0rem 3rem #16142b;
-          box-shadow: 0rem 0rem 3rem #16142b;
 }
 
 .moviewapper .mainBox .choseseat .seatcontainer .seatcon {
   background: radial-gradient(circle, #655777 0%, #3d3a54 10%, #1a1f33 70%, #1a1f33 100%);
-  width: 100%;
-  height: 100%;
+  width: 72rem;
+  height: 50rem;
+  -webkit-transform: translate(-0.75rem, -2rem);
+          transform: translate(-0.75rem, -2rem);
   -webkit-perspective: 50rem;
           perspective: 50rem;
+  border-radius: 0rem 0rem 3rem 3rem;
 }
 
 .moviewapper .mainBox .choseseat .seatcontainer .seatcon .Screen {
@@ -621,9 +618,9 @@ html button {
   transition: 0.4s;
   width: 5%;
   height: 80%;
-  border-radius: 0.8rem 0.8rem 0.1rem 0.1rem;
   background: #fff;
   cursor: pointer;
+  border-radius: .4rem;
   -webkit-box-shadow: 0rem 0.8rem 2rem #1a1f33;
           box-shadow: 0rem 0.8rem 2rem #1a1f33;
 }
@@ -635,15 +632,6 @@ html button {
   color: #ffba00;
   -webkit-box-shadow: 0.2rem 0.8rem 3rem #ffbb0065;
           box-shadow: 0.2rem 0.8rem 3rem #ffbb0065;
-}
-
-.moviewapper .mainBox .choseseat .seatcontainer .seatcon .seatbox .row .leftseat {
-  border-top-left-radius: 1.2rem;
-  border-top-right-radius: 0.4rem;
-}
-
-.moviewapper .mainBox .choseseat .seatcontainer .seatcon .seatbox .row .rightseat {
-  border-top-right-radius: 1.2rem;
 }
 
 .moviewapper .mainBox .choseseat .seatcontainer .seatcon .seatbox .row .backward {
@@ -681,18 +669,22 @@ html button {
 }
 
 .moviewapper .resultprice #movieinfo {
+  position: relative;
   width: 17rem;
   height: 24.4rem;
   background: url("./img/testimg2.png");
   background-size: cover;
-  border-radius: 1rem;
-  -webkit-box-shadow: 1rem 2rem 6rem #1a1f33;
-          box-shadow: 1rem 2rem 6rem #1a1f33;
+  border-radius: .5rem;
+  -webkit-box-shadow: 1rem 2rem 6rem #1a1f33ab;
+          box-shadow: 1rem 2rem 6rem #1a1f33ab;
   z-index: 1;
   overflow: hidden;
 }
 
 .moviewapper .resultprice #movieinfo #MovieInfo {
+  position: absolute;
+  top: 0;
+  left: 0;
   padding: 1rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -706,6 +698,9 @@ html button {
 }
 
 .moviewapper .resultprice #movieinfo #MovieInfo #Movieinfo_title {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
   font-size: 2.5rem;
   color: #fff;
   float: right;
@@ -813,13 +808,19 @@ html button {
   letter-spacing: 0.2rem;
 }
 
-.moviewapper .resultprice .personlist .totalpersonList .cartList i {
+.moviewapper .resultprice .personlist .totalpersonList .cartList #removeselectseat {
   margin-left: 1rem;
   color: #f3b4d8;
   cursor: pointer;
   -webkit-transform: translateY(0.2rem);
           transform: translateY(0.2rem);
   font-size: 2rem;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.moviewapper .resultprice .personlist .totalpersonList .cartList #removeselectseat:hover {
+  color: #ea85b4;
 }
 
 .moviewapper .resultprice .personlist .totalpersonList .cartList .oneofprice {
@@ -852,37 +853,40 @@ html button {
       -ms-grid-row-align: center;
       align-self: center;
   border: 0;
-  -webkit-transform: translate(-1rem);
-          transform: translate(-1rem);
   background: #f3b4d8;
-  background: linear-gradient(160deg, #fff0bcfb 3%, #ea85b4 50%, #ea76ac 60%, #655777 100%);
   font-family: 'GmarketSansMedium';
   font-weight: bold;
   border: none;
   width: 20rem;
-  height: 7rem;
+  height: 8rem;
+  color: #1a1f33;
   outline: none;
   padding: 1rem;
-  -webkit-box-shadow: 0.2rem 0.8rem 3rem #7e87d859;
-          box-shadow: 0.2rem 0.8rem 3rem #7e87d859;
+  -webkit-box-shadow: 0.2rem 0.8rem 3rem #1d224e59;
+          box-shadow: 0.2rem 0.8rem 3rem #1d224e59;
   -webkit-transition: 0.4s;
   transition: 0.4s;
   font-size: 2.5rem;
-  color: #fff;
-  text-shadow: 0rem 0rem 1rem #ea76ac;
   letter-spacing: 0.2rem;
   cursor: pointer;
-  border-radius: 3rem;
+  border-radius: 2rem;
   -webkit-transition: 0.7s;
   transition: 0.7s;
+}
+
+.moviewapper .resultprice .personlist .geticket:hover {
+  -webkit-box-shadow: 0.2rem 0.8rem 3rem #7e87d859;
+          box-shadow: 0.2rem 0.8rem 3rem #7e87d859;
 }
 
 .moviewapper .moviefooter {
   background: #1a1f33;
   width: 100%;
-  height: 10rem;
+  height: 12rem;
   display: inline-block;
   text-align: center;
+  text-align: center;
+  border-radius: 3rem 3rem 0rem 0rem;
 }
 
 .moviewapper .moviefooter a {
@@ -891,7 +895,7 @@ html button {
 
 .moviewapper .moviefooter i {
   color: #655777;
-  line-height: 9.8rem;
+  line-height: 11.8rem;
   font-size: 4rem;
   cursor: pointer;
   -webkit-transition: 0.3s;
@@ -935,8 +939,16 @@ html button {
 .aboutseat #Seatreset {
   float: right;
   font-size: 5rem;
+  -webkit-transition: .5s;
+  transition: .5s;
   cursor: pointer;
   color: #655777;
+}
+
+.aboutseat #Seatreset:hover {
+  color: #f3b4d8;
+  -webkit-transform: rotate(-70deg);
+          transform: rotate(-70deg);
 }
 
 .aboutseat .showcase {
@@ -974,7 +986,7 @@ html button {
 
 .aboutseat .wheel {
   font-size: 2rem;
-  color: #ea76ac;
+  color: #ea85b4;
 }
 
 .aboutseat .seat {
@@ -982,3 +994,19 @@ html button {
   width: 2rem;
   height: 2rem;
 }
+
+[class*=check] {
+  border-radius: 50%;
+  background-color: #ffe277;
+  color: #ffba00;
+  -webkit-box-shadow: 0rem 0rem 1.5rem #ffbb0065;
+          box-shadow: 0rem 0rem 1.5rem #ffbb0065;
+}
+
+.posterImg {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+/*# sourceMappingURL=seat.css.map */

@@ -48,10 +48,10 @@ init();
 
 
 	$("#reservationBtn").on("click",function(){
-		location.href = `/forec?page=20`;
+		location.href = `${window.location.pathname}?page=20`;
 	});
 	$("#printTicketBtn").on("click",function(){
-		location.href = `/forec?page=100`;
+		location.href = `${window.location.pathname}?page=100`;
 	});
 
 }

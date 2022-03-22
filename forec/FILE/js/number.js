@@ -23,10 +23,10 @@ window.onload = () => {
 
   //하단 버튼 조작
   $("#homeBtn").on("click", function () {
-    location.href = `/forec?page=10`;
+    location.href = `${window.location.pathname}?page=10`;
   });
   $("#previousBtn").on("click", function () {
-    location.href = `/forec?page=10`;
+    location.href = `${window.location.pathname}?page=10`;
   });
 };
 

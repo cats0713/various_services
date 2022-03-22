@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="chorme" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+			integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<title>receipt</title>
+		<script
+			src="https://code.jquery.com/jquery-3.6.0.min.js"
+			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+			crossorigin="anonymous"
+		></script>
+		<link rel="shortcut icon" href="../force.ico/favicon.ico" type="image/x-icon" />
+		<link rel="icon" href="../force.ico/favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" href="../css/receipt.css" />
+		<script src="../js/receipt.js"></script>
+	</head>
+	<body>
+		<section class="moviewapper">
+			<header id="playerarea">
+				<!--  동영상이 들어갑니다. --><!--  시간과 로고가 표시되는 header -->
+				<div class="head__infor">
+					<div class="timewapper"><span id="time">00:00</span></div>
+					<div class="timewapper"><span id="logoimg">120</span></div>
+				</div>
+			</header>
+			<!--  영화셀렉트하는 영역 시작 -->
+			<section class="mainBox">
+				<section class="main__body">
+					<section class="reCeiptBody">
+						<header class="reCeipheader">
+							<figure class="receipinfoheader">
+								<figcaption class="forceLogo">FORCE CINEMA</figcaption>
+								<figcaption class="receipinfointro">예매 내역을 확인해주세요.</figcaption>
+								<figcaption class="receipinfoheadertitle">타오르는 여인의 초상</figcaption>
+							</figure>
+							<div class="holesleft"></div>
+							<div class="holesright"></div>
+						</header>
+						<figure class="reCeipinfo">
+							<figcaption class="receipinfoperson rcifo">
+								<h3 class="rcifotitle">인원</h3>
+								<p id="moviePersonnelText" class="rcifomation"></p>
+							</figcaption>
+							<figcaption class="selectSeatNum rcifo">
+								<h3 class="rcifotitle">좌석</h3>
+								<p id="movieSeatText" class="rcifomation">A3 A4 A6</p>
+							</figcaption>
+							<figcaption class="selecttheater rcifo">
+								<h3 class="rcifotitle">상영관</h3>
+								<p id="movieTheaterText" class="rcifomation">A</p>
+							</figcaption>
+							<figcaption class="movieruningtime rcifo">
+								<h3 class="rcifotitle">상영시간</h3>
+								<p id="showtimeText" class="rcifomation">10:20 - 12:40</p>
+							</figcaption>
+							<figcaption class="totalAmount rcifo">
+								<h3 id="totalPriceText" class="rcifotitle">총 30,000</h3>
+							</figcaption>
+						</figure>
+						<footer class="reCeipfooter">
+							<button class="receiptBtn">결제하기</button>
+						</footer>
+					</section>
+				</section>
+			</section>
+			<footer class="moviefooter">
+				<i id="previousBtn" class="fa-solid fa-angles-left"></i>
+        <i id="homeBtn" class="fa-brands fa-fort-awesome"></i>
+			</footer>
+		</section>
+
+	</body>
+</html>

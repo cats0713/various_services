@@ -8,8 +8,6 @@ const e = require("express");
 
 
 app.locals.pretty = true;
-// app.set('view engine', 'pug');
-// app.set('views', './pugfile');
 app.use(express.static('FILE'));
 app.use(cookieParser());
 
@@ -18,7 +16,6 @@ app.get('/', (req, res) => {
 });
 
 app.get('/forec', (req, res) => {
-
   res.cookie('conutTime', 'conutTime', {
     maxAge: 120000
   });
@@ -50,17 +47,16 @@ app.get('/forec', (req, res) => {
     });
     //명령어 날리기
     db_handle.query("select * from movie", function (err, rows) {
-      console.log(rows);
       if (err) {
         console.error(err);
         db_handle.release();
         return;
       } else {//에러가 안났으면
         let movieTime = [
-          ['06:40 ~ 08:40<br>A관 46/50', '11:20 ~ 13:20<br>B관 46/50', '16:00 ~ 18:00<br>A관 46/50', '20:40 ~ 22:40<br>B관 46/50'],
-          ['09:00 ~ 11:00<br>A관 46/50', '13:40 ~ 15:40<br>B관 46/50', '18:20 ~ 20:20<br>A관 46/50', '23:00 ~ 01:00<br>B관 46/50'],
-          ['6:40 ~ 8:40<br>B관 46/50','11:20 ~ 13:20<br>A관 46/50','16:00 ~ 18:00<br>B관 46/50','20:40 ~ 22:40<br>A관 46/50'],
-          ['9:00 ~ 11:00<br>B관 46/50','13:40 ~ 15:40<br>A관 46/50','18:20 ~ 20:20<br>B관 46/50','23:00 ~ 1:00<br>A관 46/50']
+          ['06:40~08:40<br>A관 46/50', '11:20~13:20<br>B관 46/50', '16:00~18:00<br>A관 46/50', '20:40~22:40<br>B관 46/50'],
+          ['09:00~11:00<br>A관 46/50', '13:40~15:40<br>B관 46/50', '18:20~20:20<br>A관 46/50', '23:00~01:00<br>B관 46/50'],
+          ['6:40~8:40<br>B관 46/50', '11:20~13:20<br>A관 46/50', '16:00~18:00<br>B관 46/50', '20:40~22:40<br>A관 46/50'],
+          ['9:00~11:00<br>B관 46/50', '13:40~15:40<br>A관 46/50', '18:20~20:20<br>B관 46/50', '23:00~1:00<br>A관 46/50']
         ];
 
         let pageTag = `<!DOCTYPE html>
@@ -88,39 +84,39 @@ app.get('/forec', (req, res) => {
               </header>
               <div class="Adult">
                 <h2>성인</h2>
-                <button class="adultpeoplecounter cutbtn backColor" id="cutBtn" value="10000">1</button>
-                <button class="adultpeoplecounter cutbtn backColor" id="cutBtn" value="20000">2</button>
-                <button class="adultpeoplecounter cutbtn backColor" id="cutBtn" value="30000">3</button>
-                <button class="adultpeoplecounter cutbtn backColor" id="cutBtn" value="40000">4</button>
-                <button class="adultpeoplecounter cutbtn backColor" id="cutBtn" value="50000">5</button>
-                <button class="adultpeoplecounter cutbtn backColor" id="cutBtn" value="60000">6</button>
+                <button class="adultpeoplecounter cutbtn backColor" id="cutBtn">1</button>
+                <button class="adultpeoplecounter cutbtn backColor" id="cutBtn">2</button>
+                <button class="adultpeoplecounter cutbtn backColor" id="cutBtn">3</button>
+                <button class="adultpeoplecounter cutbtn backColor" id="cutBtn">4</button>
+                <button class="adultpeoplecounter cutbtn backColor" id="cutBtn">5</button>
+                <button class="adultpeoplecounter cutbtn backColor" id="cutBtn">6</button>
               </div>
               <div class="junior">
                 <h2>청소년</h2>
-                <button class="joniorpeplecounter cutbtn backColor" id="cutBtn" value="7000">1</button>
-                <button class="joniorpeplecounter cutbtn backColor" id="cutBtn" value="14000">2</button>
-                <button class="joniorpeplecounter cutbtn backColor" id="cutBtn" value="21000">3</button>
-                <button class="joniorpeplecounter cutbtn backColor" id="cutBtn" value="28000">4</button>
-                <button class="joniorpeplecounter cutbtn backColor" id="cutBtn" value="35000">5</button>
-                <button class="joniorpeplecounter cutbtn backColor" id="cutBtn" value="42000">6</button>
+                <button class="joniorpeplecounter cutbtn backColor" id="cutBtn"1</button>
+                <button class="joniorpeplecounter cutbtn backColor" id="cutBtn">2</button>
+                <button class="joniorpeplecounter cutbtn backColor" id="cutBtn">3</button>
+                <button class="joniorpeplecounter cutbtn backColor" id="cutBtn">4</button>
+                <button class="joniorpeplecounter cutbtn backColor" id="cutBtn">5</button>
+                <button class="joniorpeplecounter cutbtn backColor" id="cutBtn">6</button>
               </div>
               <div class="disabled">
                 <h2>장애인</h2>
-                <button class="Disabledpeplecounter cutbtn backColor" id="cutBtn" value="7000">1</button>
-                <button class="Disabledpeplecounter cutbtn backColor" id="cutBtn" value="14000">2</button>
-                <button class="Disabledpeplecounter cutbtn backColor" id="cutBtn" value="21000">3</button>
-                <button class="Disabledpeplecounter cutbtn backColor" id="cutBtn" value="28000">4</button>
-                <button class="Disabledpeplecounter cutbtn backColor" id="cutBtn" value="35000">5</button>
-                <button class="Disabledpeplecounter cutbtn backColor" id="cutBtn" value="42000">6</button>
+                <button class="Disabledpeplecounter cutbtn backColor" id="cutBtn"1</button>
+                <button class="Disabledpeplecounter cutbtn backColor" id="cutBtn">2</button>
+                <button class="Disabledpeplecounter cutbtn backColor" id="cutBtn">3</button>
+                <button class="Disabledpeplecounter cutbtn backColor" id="cutBtn">4</button>
+                <button class="Disabledpeplecounter cutbtn backColor" id="cutBtn">5</button>
+                <button class="Disabledpeplecounter cutbtn backColor" id="cutBtn">6</button>
               </div>
               <div class="old">
                 <h2>노약자</h2>
-                <button class="oldplecounter cutbtn backColor" id="cutBtn" value="6000">1</button>
-                <button class="oldplecounter cutbtn backColor" id="cutBtn" value="12000">2</button>
-                <button class="oldplecounter cutbtn backColor" id="cutBtn" value="19000">3</button>
-                <button class="oldplecounter cutbtn backColor" id="cutBtn" value="26000">4</button>
-                <button class="oldplecounter cutbtn backColor" id="cutBtn" value="32000">5</button>
-                <button class="oldplecounter cutbtn backColor" id="cutBtn" value="38000">6</button>
+                <button class="oldplecounter cutbtn backColor" id="cutBtn"1</button>
+                <button class="oldplecounter cutbtn backColor" id="cutBtn">2</button>
+                <button class="oldplecounter cutbtn backColor" id="cutBtn">3</button>
+                <button class="oldplecounter cutbtn backColor" id="cutBtn">4</button>
+                <button class="oldplecounter cutbtn backColor" id="cutBtn">5</button>
+                <button class="oldplecounter cutbtn backColor" id="cutBtn">6</button>
               </div>
               <div class="counterresult"><button id="submitperson">확인</button></div>
               </div>
@@ -174,7 +170,7 @@ app.get('/forec', (req, res) => {
 						<div class="movietimebox">`;
           for (let j in movieTime[i]) {
             pageTag += `
-              <button class="movieUlLicontainer">${movieTime[i][j]}</button>`;
+              <button class="movieUlLicontainer" value="${rows[i]['img']}">${movieTime[i][j]}</button>`;
           }
 
           pageTag += `
@@ -211,10 +207,210 @@ app.get('/forec', (req, res) => {
 
     db_handle.end(); // DB 접속 종료
 
-  } else if (page == 30) {
-    res.sendFile(__dirname + '/FILE/html/seat.html');
-  } else if (page == 40) {
-    res.sendFile(__dirname + '/FILE/html/.html');
+  } else if (page == 30) { //좌석선택 화면
+    //db연결정보
+    let db_handle = mysql.createConnection({
+      host: "127.0.0.1",
+      user: "c15st19",
+      password: "c15st19",
+      database: "c15st19"
+    });
+    //연결
+    db_handle.connect(function (err) {
+      if (err) {
+        console.log(err)
+      } else {
+        console.log("db연결 성공");
+      }
+    });
+    //명령어 날리기
+    db_handle.query(`select * from movie where img='${req.query.title}'`, function (err, rows) {
+      if (err) {
+        console.error(err);
+        db_handle.release();
+        return;
+      } else {//에러가 안났으면
+        // console.log(rows[0]['name']);
+        let pageTag = `<!DOCTYPE html>
+        <html lang="ko">
+        
+        <head>
+          <meta charset="UTF-8">
+          <meta http-equiv="X-UA-Compatible" content="chorme">
+          <meta name="viewport" content="width=device-width,initial-scale=1">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+            integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer">
+          <title>seatSelect</title>
+          <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+          <link rel="shortcut icon" href="./force.ico/favicon.ico" type="image/x-icon">
+          <link rel="icon" href="./force.ico/favicon.ico" type="image/x-icon">
+          <link rel="stylesheet" href="../css/seat.css">
+          <script src="../js/seat.js"></script>
+        </head>
+        
+        <body>
+          <section class="moviewapper">
+            <header id="playerarea">
+              <div class="head__infor">
+                <span id="time">00:00</span>
+                <span id="logoimg">120</span>
+              </div>
+            </header>
+            <section class="mainBox">
+              <section class="main__body">
+                <article class="choseseat">
+                  <div class="seatcontainer">
+                    <div class="seatcon">
+                      <div class="Screen"></div>
+                      <i class="fa-solid fa-person-walking-arrow-right"></i>
+                      <div class="seatbox">
+                        <div class="row Aline">
+                          <p>A</p>
+                          <div class="seat visibiliySeat aline"></div>
+                          <div class="seat visibiliySeat"></div>
+                          <div class="seat"></div>
+                          <div class="seat"></div>
+                          <div class="seat"></div>
+                          <div class="seat"></div>
+                          <div class="seat"></div>
+                          <div class="seat"></div>
+                          <div class="seat visibiliySeat"></div>
+                          <div class="seat visibiliySeat"></div>
+                        </div>
+                        <div class="row">
+                          <p>B</p>
+                          <div class="seat visibiliySeat"></div>
+                          <div class="seat"></div>
+                          <div class="seat"></div>
+                          <div class="seat"></div>
+                          <div class="seat"></div>
+                          <div class="seat"></div>
+                          <div class="seat"></div>
+                          <div class="seat"></div>
+                          <div class="seat"></div>
+                          <div class="seat visibiliySeat"></div>
+                        </div>
+                        <div class="row">
+                          <p>C</p>
+                          <div class="seat"></div>
+                          <div class="seat"></div>
+                          <div class="seat"></div>
+                          <div class="seat"></div>
+                          <div class="seat"></div>
+                          <div class="seat"></div>
+                          <div class="seat"></div>
+                          <div class="seat"></div>
+                          <div class="seat"></div>
+                          <div class="seat"></div>
+                        </div>
+                        <div class="row">
+                          <p>D</p>
+                          <div class="seat"></div>
+                          <div class="seat"></div>
+                          <div class="seat"></div>
+                          <div class="seat"></div>
+                          <div class="seat"></div>
+                          <div class="seat"></div>
+                          <div class="seat"></div>
+                          <div class="seat"></div>
+                          <div class="seat"></div>
+                          <div class="seat"></div>
+                        </div>
+                        <div class="row">
+                          <p>E</p>
+                          <div class="seat"></div>
+                          <div class="seat"></div>
+                          <div class="seat"></div>
+                          <div class="seat"></div>
+                          <div class="seat"></div>
+                          <div class="seat"></div>
+                          <div class="seat"></div>
+                          <div class="seat"></div>
+                          <div class="seat"></div>
+                          <div class="seat"></div>
+                        </div>
+                        <div class="row backward">
+                          <p>W</p>
+                          <div class="seat"></div>
+                          <div class="seat"></div>
+                          <div class="seat"></div>
+                          <div class="seat"></div>
+                          <div class="seat"></div>
+                          <div class="seat"></div>
+                          <div class="seat"></div>
+                          <div class="seat"></div>
+                        </div>
+                      </div>
+                      <footer class="aboutseat">
+                        <ul class="showcase">
+                          <li>
+                            <div class="seat NA"></div>
+                            <p>예매 완료</p>
+                          </li>
+                          <li>
+                            <div class="seat selected"></div>
+                            <p>선택 가능</p>
+                          </li>
+                          <li>
+                            <div class="seat occupied"></div>
+                            <p>선택 좌석</p>
+                          </li>
+                          <li>
+                            <div class="seat wheel">W</div>
+                            <p>휠체어 전용석</p>
+                          </li>
+                        </ul><i class="fa-solid fa-arrow-rotate-left" id="Seatreset"></i>
+                      </footer>
+                    </div>
+                  </div>`;
+        pageTag += `<section class="resultprice">
+        <div id="movieinfo">
+        <img class="posterImg" src="../IMG/selectmovie/${rows[0]['img']}.jpg" alt="${rows[0]['name']} 포스터">
+          <div id="MovieInfo">
+            <h id="Movieinfo_title">${rows[0]['name']}</h>
+          </div>
+        </div>
+        <div class="personlist">
+          <section class="totalpersonList">
+            <ul class="selectCart">`;
+
+        let repeatNum = Number(req.query.adult)+Number(req.query.jonior)+Number(req.query.Disabled)+Number(req.query.old);
+
+        pageTag += `</ul>
+        </section>
+        <div class="totalprice">
+          <div class="totalPricePreview">
+            <p class="Pricetitle">20000</p>
+          </div>
+          <button id="geticket" class="geticket">결제하기</button>
+        </div>
+      </div>
+    </section>
+  </article>
+</section>
+</section>
+<footer class="moviefooter">
+<i id="previousBtn" class="fa-solid fa-angles-left"></i>
+<i id="homeBtn" class="fa-brands fa-fort-awesome"></i>
+</footer>
+</section>
+</body>
+
+</html>`;
+
+
+        res.send(pageTag);
+      }
+    });
+
+    db_handle.end();
+
+  } else if (page == 40) { //영수증 화면
+    res.sendFile(__dirname + '/FILE/html/receipt.html');
+  } else if (page == 50) {
+    res.sendFile(__dirname + '/FILE/html/point.html');
   } else if (page == 100) {
     res.sendFile(__dirname + '/FILE/html/gettiket.html');
   }

@@ -80,9 +80,9 @@ html {
 	background-size: cover;
 	background-repeat: no-repeat;
 	font-size: 10px;
-	background: $main_1;
-	background: linear-gradient(180deg, $main_1 10%, #384c84 40%, $main_2 100%);
-	// background: $main2_black;
+	height: 140vh;
+	background: linear-gradient(200deg, $main_4 10%, #657bb8 30%, $main_2 100%);
+
 	color: $main2_black2;
 	button {
 		appearance: none;
@@ -214,7 +214,7 @@ html {
 
 		.cutbtn {
 			border: none;
-			font-family: 'YUniverse-L';
+			font-family: 'GmarketSansMedium';
 			margin: 0.4rem;
 			width: 5rem;
 			height: 5rem;
@@ -225,7 +225,6 @@ html {
 			color: $main_2;
 			border-radius: 1rem;
 			cursor: pointer;
-			background-color: transparent;
 		}
 
 		.cutbtn:visited,
@@ -341,7 +340,9 @@ html {
 	width: 72rem;
 	height: 100rem;
 	margin: auto;
-	box-shadow: 0rem 0rem 0.8rem #16142b;
+	background: linear-gradient(220deg, rgba(61, 58, 84, 1) 0%, #1a1f33e3 20%, rgba(101, 87, 119, 1) 100%);;
+	box-shadow: 2rem .1rem 6rem #494662d3;
+
 	// 헤더
 	#playerarea {
 		width: 100%;
@@ -351,19 +352,17 @@ html {
 
 		.head__infor {
 			background: $main2_green;
-			z-index: 100;
-			height: 7rem;
+			z-index: 1;
+			height: 10rem;
 			width: 100%;
 			text-align: center;
 			display: flex;
 			justify-content: space-around;
-			box-shadow: 0rem 2rem 3rem #16142b62;
 
 			span {
 				font-size: 2rem;
 				letter-spacing: 0.2rem;
-				line-height: 6.8rem;
-
+				line-height: 9.8rem;
 				text-shadow: 0rem 2rem 3rem #16142b62;
 				color: $main2_fff2;
 			}
@@ -378,8 +377,7 @@ html {
 		width: 100%;
 		// overflow-y: auto;
 		box-sizing: border-box;
-		height: 83rem;
-		background: $main2_green;
+		height: 80rem;
 		background-size: cover;
 
 		.main__body {
@@ -418,25 +416,24 @@ html {
 			margin: auto;
 			display: flex;
 			border-radius: 0.2rem;
-
 			.seatcontainer::-webkit-scrollbar {
 				width: none;
 				display: none;
 			}
 
 			.seatcontainer {
-				// border: 0.1rem solid $main2_black2;
 				width: 98%;
 				height: 60%;
 				outline: none;
 				border-radius: 1rem;
-
-				box-shadow: 0rem 0rem 3rem #16142b;
+			
 				.seatcon {
 					background: radial-gradient(circle, $main2_white 0%, $main2_black2 10%, $main_1 70%, $main_1 100%);
-					width: 100%;
-					height: 100%;
+					width: 72rem;
+					height: 50rem;
+					transform: translate(-.75rem,-2rem);
 					perspective: 50rem;
+					border-radius: 0rem 0rem 3rem 3rem;
 
 					.Screen {
 						width: 50%;
@@ -483,9 +480,10 @@ html {
 								transition: 0.4s;
 								width: 5%;
 								height: 80%;
-								border-radius: 0.8rem 0.8rem 0.1rem 0.1rem;
+
 								background: $subcolor_1;
 								cursor: pointer;
+								border-radius: .4rem;
 								box-shadow: 0rem 0.8rem 2rem $main2_green;
 							}
 							.seat:visited,
@@ -495,13 +493,7 @@ html {
 								color: $main2_pink;
 								box-shadow: 0.2rem 0.8rem 3rem #ffbb0065;
 							}
-							.leftseat {
-								border-top-left-radius: 1.2rem;
-								border-top-right-radius: 0.4rem;
-							}
-							.rightseat {
-								border-top-right-radius: 1.2rem;
-							}
+						
 							.backward {
 								margin-top: 1rem;
 							}
@@ -529,26 +521,33 @@ html {
 		justify-content: space-evenly;
 		align-items: center;
 		#movieinfo {
+			position: relative;
 			width: 17rem;
 			height: 24.4rem;
 			background: url('./img/testimg2.png');
 			background-size: cover;
-			border-radius: 1rem;
-			box-shadow: 1rem 2rem 6rem $main2_green;
+			border-radius: .5rem;
+			box-shadow: 1rem 2rem 6rem #1a1f33ab;
 			z-index: 1;
 			overflow: hidden;
 
 			#MovieInfo {
+				position: absolute;
+				top: 0;
+				left: 0;
 				padding: 1rem;
 				box-sizing: border-box;
 				height: 100%;
 				width: 100%;
 				margin: auto;
-				word-break:keep-all;
+				word-break: keep-all;
 				letter-spacing: 0.5rem;
 				line-height: 3rem;
 				background: #1a1f33c9;
 				#Movieinfo_title {
+					position: absolute;
+					top: 1rem;
+					left: 1rem;
 					font-size: 2.5rem;
 					color: #fff;
 					float: right;
@@ -595,7 +594,6 @@ html {
 			}
 			.totalpersonList {
 				transform: translateY(-1rem);
-
 				height: 65%;
 				width: 100%;
 				flex-direction: row;
@@ -603,7 +601,7 @@ html {
 				display: flex;
 				overflow-y: scroll;
 				justify-content: space-evenly;
-
+				
 				.selectCart {
 					padding: 1rem;
 					width: 100%;
@@ -618,19 +616,22 @@ html {
 					text-align: left;
 					line-height: 4rem;
 					padding: 1rem;
-
 					span {
 						margin-left: 1rem;
 						color: #fff;
 						font-size: 1.5rem;
 						letter-spacing: 0.2rem;
 					}
-					i {
+					#removeselectseat {
 						margin-left: 1rem;
 						color: $main2_fff2;
 						cursor: pointer;
 						transform: translateY(0.2rem);
 						font-size: 2rem;
+						transition: .4s;
+					}
+					#removeselectseat:hover {
+						color:$main_3;
 					}
 					.oneofprice {
 						float: right;
@@ -660,39 +661,25 @@ html {
 			.geticket {
 				align-self: center;
 				border: 0;
-
-				transform: translate(-1rem);
-
 				background: $main2_fff2;
-
-				background: linear-gradient(160deg, #fff0bcfb 3%, $main_3 50%, #ea76ac 60%, $main2_white 100%);
-
 				font-family: 'GmarketSansMedium';
 				font-weight: bold;
-
 				border: none;
-
 				width: 20rem;
-
-				height: 7rem;
-
+				height: 8rem;
+				color:$main2_green;
 				outline: none;
-
 				padding: 1rem;
-
-				box-shadow: 0.2rem 0.8rem 3rem #7e87d859;
-
+				box-shadow: 0.2rem 0.8rem 3rem #1d224e59;
 				transition: 0.4s;
 				font-size: 2.5rem;
-				color: $subcolor_1;
-				text-shadow: 0rem 0rem 1rem #ea76ac;
-
 				letter-spacing: 0.2rem;
-
 				cursor: pointer;
-
-				border-radius: 3rem;
+				border-radius: 2rem;
 				transition: 0.7s;
+			}
+			.geticket:hover {		
+					box-shadow: 0.2rem 0.8rem 3rem #7e87d859;
 			}
 		}
 	}
@@ -700,9 +687,11 @@ html {
 	.moviefooter {
 		background: $main_1;
 		width: 100%;
-		height: 10rem;
+		height: 12rem;
 		display: inline-block;
 		text-align: center;
+		text-align: center;
+		border-radius: 3rem 3rem 0rem 0rem;
 
 		a {
 			text-decoration: none;
@@ -710,7 +699,7 @@ html {
 
 		i {
 			color: $main2_white;
-			line-height: 9.8rem;
+			line-height: 11.8rem;
 			font-size: 4rem;
 			cursor: pointer;
 			transition: 0.3s;
@@ -744,8 +733,13 @@ html {
 	#Seatreset {
 		float: right;
 		font-size: 5rem;
+		transition: .5s;
 		cursor: pointer;
 		color: $main2_white;
+	}
+	#Seatreset:hover {
+		color: $main2_fff2;
+		transform: rotate(-70deg);
 	}
 	.showcase {
 		width: 50rem;
@@ -779,7 +773,7 @@ html {
 	}
 	.wheel {
 		font-size: 2rem;
-		color: #ea76ac;
+		color: $main_3;
 	}
 
 	.seat {
@@ -787,4 +781,17 @@ html {
 		width: 2rem;
 		height: 2rem;
 	}
+}
+
+[class *= check] {
+	border-radius: 50%;
+	background-color: #ffe277;
+	color: $main2_pink;
+	box-shadow: 0rem 0rem 1.5rem #ffbb0065;
+}
+
+.posterImg{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }

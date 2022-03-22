@@ -48,11 +48,11 @@ window.onload = () => {
 			userNum.innerHTML = "";
 		});
 		$("#homeBtn").on("click", function () {
-			location.href = `/forec?page=10`;
+			location.href = `${window.location.pathname}?page=10`;
 		});
 
 		$("#previousBtn").on("click", function () {
-			location.href = `/forec?page=10`;
+			location.href = `${window.location.pathname}?page=10`;
 		});
 	});
 

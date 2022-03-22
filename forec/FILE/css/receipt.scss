@@ -23,6 +23,14 @@ $main_3: #ea85b4;
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
+@mixin modal {
+}
+@font-face {
+	font-family: 'S-CoreDream-4Regular';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
 @font-face {
 	font-family: 'GmarketSansMedium';
 	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
@@ -47,6 +55,7 @@ $main_3: #ea85b4;
 	font-weight: normal;
 	font-style: normal;
 }
+
 @keyframes colorchange {
 	0% {
 		text-shadow: 0;
@@ -72,11 +81,15 @@ body,
 html {
 	font-family: 'GmarketSansMedium';
 	// scroll-behavior: auto;
+	background: url('../../../img/film-strip-svgrepo-com.svg');
 	width: 100%;
 	font-size: 10px;
-	height: 140vh;
-	background: linear-gradient(200deg, $main_4 10%, #657bb8 30%, $main_2 100%);
+	background: whitesmoke;
+	height: 100vh;
 	color: $main2_black2;
+	background: $main_1;
+	background: linear-gradient(200deg, $main_4 10%, #657bb8 30%, $main_2 100%);
+
 	button {
 		appearance: none;
 		font-family: 'GmarketSansMedium';
@@ -84,10 +97,8 @@ html {
 }
 // 인원수 입력하는 모달 //
 .countermodalwapper {
-	width: 72rem;
-	height: 100rem;
-	@include center;
-	background: #16142b71;
+	width: 100%;
+	height: 100%;
 	position: fixed;
 	z-index: 20;
 	transition: 1s;
@@ -112,7 +123,7 @@ html {
 		color: #fff;
 		background: $main2_black2;
 		text-align: center;
-		box-shadow: 0.2rem 0.8rem 8rem #16142b92;
+		box-shadow: 0.2rem 0.8rem 3rem #16142b;
 		transition: 0.5s;
 		display: flex;
 		border-radius: 1rem;
@@ -123,19 +134,15 @@ html {
 		.counterresult {
 			width: 62rem;
 			height: 20%;
-			display: flex;
-			flex-direction: row;
-			justify-content: space-evenly;
-			align-items: center;
 
-			#submitperson,
-			#resetPerson {
+			#submitperson {
 				font-family: 'GmarketSansMedium';
 				font-weight: 900;
 				border: none;
 				width: 15rem;
 				outline: none;
 				padding: 1rem;
+				transform: translateY(2rem);
 				box-shadow: 0.2rem 0.8rem 3rem #15192432;
 				font-size: 2.5rem;
 				background: #16142b89;
@@ -149,7 +156,6 @@ html {
 			#submitperson:focus {
 				background: #ffe277;
 				color: $main2_pink;
-
 				box-shadow: 0.2rem 0.8rem 3rem #ffbb0065;
 			}
 
@@ -204,7 +210,7 @@ html {
 
 		.countmodalheader {
 			align-items: center;
-			justify-content: center;
+			justify-content: space-around;
 			width: 62rem;
 			display: flex;
 			height: 7rem;
@@ -219,32 +225,28 @@ html {
 			margin: 0.4rem;
 			width: 5rem;
 			height: 5rem;
+			border-radius: 50%;
 			padding: 1rem;
 			font-size: 2rem;
 			transition: 0.4s;
 			color: $main_2;
 			border-radius: 1rem;
-			cursor: pointer;	
-		}
-		.backColor{
-			background-color: $main2_black2;
+			cursor: pointer;
+			background-color: transparent;
 		}
 
 		.cutbtn:hover,
 		.cutbtn:active {
-			background-color: #ffe277;
+			background: #ffe277;
 			color: $main2_pink;
-			border-radius: 50%;
-			box-shadow: 0rem 0rem 2rem #ffbb0065;
+			box-shadow: 0.2rem 0.8rem 3rem #ffbb0065;
 		}
 	}
 }
-// 경고 모달 //
+
 .modalwapper {
-	width: 72rem;
-	height: 100rem;
-	@include center;
-background: #16142b71;
+	width: 100%;
+	height: 100%;
 	position: fixed;
 	z-index: 20;
 	transition: 1s;
@@ -293,7 +295,7 @@ background: #16142b71;
 		background: #fff;
 		border-radius: 1.5rem;
 		text-align: center;
-		box-shadow: 0.2rem 2rem 8rem #16142b9c;
+		box-shadow: 0.2rem 0.8rem 3rem #16142b;
 		transition: 0.5s;
 
 		button {
@@ -342,10 +344,13 @@ background: #16142b71;
 }
 
 .moviewapper {
+	backdrop-filter: blur(0.5rem);
 	width: 72rem;
 	height: 100rem;
 	margin: auto;
+	background: $main2_green;
 	background: linear-gradient(220deg, rgba(61, 58, 84, 1) 0%, #1a1f33e3 20%, rgba(101, 87, 119, 1) 100%);
+
 	// 헤더
 	#playerarea {
 		width: 100%;
@@ -383,193 +388,30 @@ background: #16142b71;
 		overflow-y: auto;
 		box-sizing: border-box;
 		height: 80rem;
-		background-size: cover;
+
 		.main__body {
 			display: flex;
 			flex-direction: column;
-			height: 110rem;
+			height: 100%;
 
 			h1 {
 				color: $main2_white;
 				font-size: 3rem;
 				margin: auto;
 			}
-			.timeSection {
-				width: 100%;
-				height: 70%;
-				flex-direction: row;
-				align-items: center;
-				transform: translateY(-3rem);
-				display: flex;
-				position: relative;
-			}
-			.head__infor {
-				width: 100%;
-				height: 10rem;
-				background: $main2_pink;
-			}
-		}
-		// 영화티켓들
-		.slide__info {
-			align-items: center;
-			width: 98%;
-			transition: 1s;
-			padding: 1rem;
-			height: 25rem;
-			display: flex;
-
-			text-align: center;
-			justify-content: center;
-			position: relative;
-			overflow: hidden;
-			.movietimebox::-webkit-scrollbar {
-				height: 1rem;
-				width: 0.5rem;
-			}
-			.movietimebox::-webkit-scrollbar-thumb {
-				background-color: $main2_fff2;
-				border-radius: 1rem;
-			}
-			.movietimebox::-webkit-scrollbar-track {
-				border-radius: 1rem;
-				background: $main2_black2;
-			}
-			.movietimebox {
-				scrollbar-width: thin;
-				border-radius: 0.5rem;
-				background: whitesmoke;
-				flex-wrap: wrap;
-				padding: 1rem;
-				flex-direction: column;
-				display: flex;
-				height: 7.5rem;
-
-				width: 35rem;
-				overflow-x: scroll;
-				transform: translate(1rem) translateY(-2rem);
-
-				// 영화시간
-				.movieUlLicontainer {
-					font-size: 'GmarketSansLight';
-					padding: 0.8rem;
-					font-size: 1.4rem;
-					text-align: left;
-					color: $main_1;
-					border: none;
-					border-right: 0.3rem solid white;
-					cursor: pointer;
-					letter-spacing: 0.03rem;
-					transition: 0.3s;
-					line-height: 2.3rem;
-					background: transparent;
-
-					.movieUlLicontainer:hover {
-						color: $main2_fff2;
-					}
-				}
-			}
-			//  background: rgba(255, 255, 255, 0.43);
-			.sliderimgs {
-				height: 23rem;
-				box-shadow: 0rem 0rem 0.8rem #16142b;
-				z-index: 1;
-			}
-			.infor__container {
-				overflow: hidden;
-				box-shadow: 0rem 0rem 0.8rem #16142b3e;
-				display: flex;
-				position: relative;
-				width: 40rem;
-				height: 23rem;
-				background: #fff;
-				z-index: 0;
-				justify-content: flex-start;
-				transform: translateY(1rem);
-				flex-direction: row;
-				z-index: 0;
-
-				flex-wrap: wrap;
-				align-content: space-between;
-				border-right: 0.2rem dashed $main2_black2;
-				.movietitmeCon  {
-					align-self: flex-start;
-					padding-left: 2rem;
-					text-align: left;
-				}
-				.movietitle{
-					
-					font-size: 3rem;
-					margin-top: 1.5rem;
-					color: $main2_green;
-					display: block;
-				}
-				h3::before {
-					content: '';
-					color: $main2_white;
-
-					padding-right: 1rem;
-					font-size: 3rem;
-				}
-				.title_info {
-					margin-left: 1rem;
-					display: block;
-					font-size: 1.5rem;
-
-				}
-			}
-			.infor__tail {
-				overflow: hidden;
-				transform: translateY(1rem);
-				width: 10rem;
-				background: $subcolor_1;
-				box-shadow: 1rem 0rem 0.8rem #16142b3e;
-				height: 23rem;
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				border-left: 0.2rem dashed $main2_black2;
-				transition: 0.4s;
-				align-items: center;
-				ul,
-				li {
-					list-style: none;
-					font-weight: bold;
-				}
-				ul {
-					font-size: 2rem;
-				}
-				li {
-					color: #686481;
-					font-size: 1.5rem;
-				}
-				.wathingage {
-					transform: translateY(2rem);
-					display: inline-block;
-					width: 5rem;
-					height: 5rem;
-					background: transparent;
-					border-radius: 50%;
-					border: 0.1rem solid $main2_fff2;
-
-					p {
-						font-size: 2rem;
-						line-height: 4.9rem;
-						color: #f3b4d8;
-					}
-				}
-			}
 		}
 	}
 	// footer
-	footer {
+	.moviefooter {
 		background: $main_1;
 		width: 100%;
 		height: 12rem;
+		transform: translateY(-2rem);
 		display: inline-block;
 		text-align: center;
 		text-align: center;
-		box-shadow: 0rem -3rem 8rem #2e2f4873;
 		border-radius: 3rem 3rem 0rem 0rem;
+		box-shadow: 0rem -3rem 8rem #2e2f4873;
 
 		a {
 			text-decoration: none;
@@ -599,8 +441,130 @@ background: #16142b71;
 	opacity: 0;
 }
 .check {
-	border-radius: 50%;
-	background-color: #ffe277;
+	background: #ffe277;
 	color: $main2_pink;
-	box-shadow: 0rem 0rem 1.5rem #ffbb0065;
+	box-shadow: 0.2rem 0.8rem 3rem #ffbb0065;
+}
+
+//receipt
+
+.reCeiptBody {
+	@include center;
+	top: 40%;
+	width: 70%;
+	height: 100%;
+	overflow: hidden;
+	background: $main2_fff2;
+	background-image: url('../img/blob-haikei.svg');
+	background-size: 100%;
+	background-repeat: no-repeat;
+	box-shadow: 0rem 5rem 8rem #2e2f48;
+	border-bottom: 0.4rem dashed rgb(56, 55, 81);
+	.reCeipheader {
+		height: 40%;
+
+		width: 100%;
+		border-bottom: 0.3rem dashed $main2_green;
+		.receipinfoheader {
+			position: absolute;
+			box-sizing: border-box;
+			width: 100%;
+			transform: translateY(50%);
+			height: 25%;
+			text-align: center;
+			.receipinfointro {
+				font-size: 2rem;
+				transform: translateY(1rem);
+			}
+
+			.forceLogo {
+				font-size: 1.5rem;
+				color: #fff;
+				letter-spacing: 0.5rem;
+			}
+
+			.receipinfoheadertitle {
+				font-size: 5rem;
+
+				word-break: keep-all;
+				letter-spacing: 0.2rem;
+				color: $main2_black2;
+				padding: 2rem;
+			}
+		}
+
+		.holesleft,
+		.holesright {
+			width: 5rem;
+			height: 5rem;
+			background-color: #383751;
+			border-radius: 50%;
+			transform: translate(-3rem, 30rem);
+		}
+		.holesright {
+			transform: translate(48rem, 24.5rem);
+			background: #2e2f48;
+		}
+	}
+	.reCeipinfo {
+		height: 45%;
+
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		align-items: center;
+		flex-wrap: wrap;
+
+		.rcifo {
+			display: flex;
+			width: 78%;
+			height: 12%;
+			align-items: center;
+			justify-content: space-between;
+			text-align: center;
+			border-bottom: 0.1rem $main2_green;
+		}
+
+		.rcifotitle,
+		.rcifomation {
+			letter-spacing: 0.3rem;
+			color: $main2_green;
+		}
+		.rcifotitle {
+			font-size: 2rem;
+		}
+		.rcifomation {
+			font-size: 1.5rem;
+		}
+	}
+	.rcifo:nth-child(5) {
+		justify-content: flex-end;
+	}
+	.rcifo:nth-child(5) > h3 {
+		font-size: 3rem;
+	}
+	.reCeipfooter {
+		height: 15%;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-top: 0.3rem dashed $main2_green;
+	}
+
+	.receiptBtn {
+		border: none;
+		font-size: 3rem;
+		cursor: pointer;
+		background: transparent;
+		transition: 0.4s;
+		letter-spacing: 0.3rem;
+		width: 20rem;
+		height: 10rem;
+		color: $main2_black2;
+	}
+}
+.receiptBtn:hover {
+	color: #fff;
 }

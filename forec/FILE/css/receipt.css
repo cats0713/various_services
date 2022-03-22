@@ -1,4 +1,11 @@
 @font-face {
+  font-family: 'S-CoreDream-4Regular';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'GmarketSansMedium';
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff") format("woff");
   font-weight: normal;
@@ -64,11 +71,14 @@
 body,
 html {
   font-family: 'GmarketSansMedium';
+  background: url("../../../img/film-strip-svgrepo-com.svg");
   width: 100%;
   font-size: 10px;
-  height: 140vh;
-  background: linear-gradient(200deg, #465fa4 10%, #657bb8 30%, #f3b4d8 100%);
+  background: whitesmoke;
+  height: 100vh;
   color: #3d3a54;
+  background: #1a1f33;
+  background: linear-gradient(200deg, #465fa4 10%, #657bb8 30%, #f3b4d8 100%);
 }
 
 body button,
@@ -80,14 +90,8 @@ html button {
 }
 
 .countermodalwapper {
-  width: 72rem;
-  height: 100rem;
-  position: relative;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  background: #16142b71;
+  width: 100%;
+  height: 100%;
   position: fixed;
   z-index: 20;
   -webkit-transition: 1s;
@@ -119,8 +123,8 @@ html button {
   color: #fff;
   background: #3d3a54;
   text-align: center;
-  -webkit-box-shadow: 0.2rem 0.8rem 8rem #16142b92;
-          box-shadow: 0.2rem 0.8rem 8rem #16142b92;
+  -webkit-box-shadow: 0.2rem 0.8rem 3rem #16142b;
+          box-shadow: 0.2rem 0.8rem 3rem #16142b;
   -webkit-transition: 0.5s;
   transition: 0.5s;
   display: -webkit-box;
@@ -143,29 +147,17 @@ html button {
 .countermodalwapper .countPersonsection .counterresult {
   width: 62rem;
   height: 20%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
-.countermodalwapper .countPersonsection .counterresult #submitperson,
-.countermodalwapper .countPersonsection .counterresult #resetPerson {
+.countermodalwapper .countPersonsection .counterresult #submitperson {
   font-family: 'GmarketSansMedium';
   font-weight: 900;
   border: none;
   width: 15rem;
   outline: none;
   padding: 1rem;
+  -webkit-transform: translateY(2rem);
+          transform: translateY(2rem);
   -webkit-box-shadow: 0.2rem 0.8rem 3rem #15192432;
           box-shadow: 0.2rem 0.8rem 3rem #15192432;
   font-size: 2.5rem;
@@ -257,9 +249,8 @@ html button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   width: 62rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -277,6 +268,7 @@ html button {
   margin: 0.4rem;
   width: 5rem;
   height: 5rem;
+  border-radius: 50%;
   padding: 1rem;
   font-size: 2rem;
   -webkit-transition: 0.4s;
@@ -284,30 +276,20 @@ html button {
   color: #f3b4d8;
   border-radius: 1rem;
   cursor: pointer;
-}
-
-.countermodalwapper .countPersonsection .backColor {
-  background-color: #3d3a54;
+  background-color: transparent;
 }
 
 .countermodalwapper .countPersonsection .cutbtn:hover,
 .countermodalwapper .countPersonsection .cutbtn:active {
-  background-color: #ffe277;
+  background: #ffe277;
   color: #ffba00;
-  border-radius: 50%;
-  -webkit-box-shadow: 0rem 0rem 2rem #ffbb0065;
-          box-shadow: 0rem 0rem 2rem #ffbb0065;
+  -webkit-box-shadow: 0.2rem 0.8rem 3rem #ffbb0065;
+          box-shadow: 0.2rem 0.8rem 3rem #ffbb0065;
 }
 
 .modalwapper {
-  width: 72rem;
-  height: 100rem;
-  position: relative;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  background: #16142b71;
+  width: 100%;
+  height: 100%;
   position: fixed;
   z-index: 20;
   -webkit-transition: 1s;
@@ -370,8 +352,8 @@ html button {
   background: #fff;
   border-radius: 1.5rem;
   text-align: center;
-  -webkit-box-shadow: 0.2rem 2rem 8rem #16142b9c;
-          box-shadow: 0.2rem 2rem 8rem #16142b9c;
+  -webkit-box-shadow: 0.2rem 0.8rem 3rem #16142b;
+          box-shadow: 0.2rem 0.8rem 3rem #16142b;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
@@ -431,9 +413,12 @@ html button {
 }
 
 .moviewapper {
+  -webkit-backdrop-filter: blur(0.5rem);
+          backdrop-filter: blur(0.5rem);
   width: 72rem;
   height: 100rem;
   margin: auto;
+  background: #1a1f33;
   background: linear-gradient(220deg, #3d3a54 0%, #1a1f33e3 20%, #655777 100%);
 }
 
@@ -484,7 +469,6 @@ html button {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   height: 80rem;
-  background-size: cover;
 }
 
 .moviewapper .mainBox .main__body {
@@ -495,7 +479,7 @@ html button {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 110rem;
+  height: 100%;
 }
 
 .moviewapper .mainBox .main__body h1 {
@@ -504,245 +488,25 @@ html button {
   margin: auto;
 }
 
-.moviewapper .mainBox .main__body .timeSection {
-  width: 100%;
-  height: 70%;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-transform: translateY(-3rem);
-          transform: translateY(-3rem);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-}
-
-.moviewapper .mainBox .main__body .head__infor {
-  width: 100%;
-  height: 10rem;
-  background: #ffba00;
-}
-
-.moviewapper .mainBox .slide__info {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 98%;
-  -webkit-transition: 1s;
-  transition: 1s;
-  padding: 1rem;
-  height: 25rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  text-align: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.moviewapper .mainBox .slide__info .movietimebox::-webkit-scrollbar {
-  height: 1rem;
-  width: 0.5rem;
-}
-
-.moviewapper .mainBox .slide__info .movietimebox::-webkit-scrollbar-thumb {
-  background-color: #f3b4d8;
-  border-radius: 1rem;
-}
-
-.moviewapper .mainBox .slide__info .movietimebox::-webkit-scrollbar-track {
-  border-radius: 1rem;
-  background: #3d3a54;
-}
-
-.moviewapper .mainBox .slide__info .movietimebox {
-  scrollbar-width: thin;
-  border-radius: 0.5rem;
-  background: whitesmoke;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  padding: 1rem;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 7.5rem;
-  width: 35rem;
-  overflow-x: scroll;
-  -webkit-transform: translate(1rem) translateY(-2rem);
-          transform: translate(1rem) translateY(-2rem);
-}
-
-.moviewapper .mainBox .slide__info .movietimebox .movieUlLicontainer {
-  font-size: 'GmarketSansLight';
-  padding: 0.8rem;
-  font-size: 1.4rem;
-  text-align: left;
-  color: #1a1f33;
-  border: none;
-  border-right: 0.3rem solid white;
-  cursor: pointer;
-  letter-spacing: 0.03rem;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-  line-height: 2.3rem;
-  background: transparent;
-}
-
-.moviewapper .mainBox .slide__info .movietimebox .movieUlLicontainer .movieUlLicontainer:hover {
-  color: #f3b4d8;
-}
-
-.moviewapper .mainBox .slide__info .sliderimgs {
-  height: 23rem;
-  -webkit-box-shadow: 0rem 0rem 0.8rem #16142b;
-          box-shadow: 0rem 0rem 0.8rem #16142b;
-  z-index: 1;
-}
-
-.moviewapper .mainBox .slide__info .infor__container {
-  overflow: hidden;
-  -webkit-box-shadow: 0rem 0rem 0.8rem #16142b3e;
-          box-shadow: 0rem 0rem 0.8rem #16142b3e;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  width: 40rem;
-  height: 23rem;
-  background: #fff;
-  z-index: 0;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-transform: translateY(1rem);
-          transform: translateY(1rem);
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  z-index: 0;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-line-pack: justify;
-      align-content: space-between;
-  border-right: 0.2rem dashed #3d3a54;
-}
-
-.moviewapper .mainBox .slide__info .infor__container .movietitmeCon {
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-  padding-left: 2rem;
-  text-align: left;
-}
-
-.moviewapper .mainBox .slide__info .infor__container .movietitle {
-  font-size: 3rem;
-  margin-top: 1.5rem;
-  color: #1a1f33;
-  display: block;
-}
-
-.moviewapper .mainBox .slide__info .infor__container h3::before {
-  content: '';
-  color: #655777;
-  padding-right: 1rem;
-  font-size: 3rem;
-}
-
-.moviewapper .mainBox .slide__info .infor__container .title_info {
-  margin-left: 1rem;
-  display: block;
-  font-size: 1.5rem;
-}
-
-.moviewapper .mainBox .slide__info .infor__tail {
-  overflow: hidden;
-  -webkit-transform: translateY(1rem);
-          transform: translateY(1rem);
-  width: 10rem;
-  background: #fff;
-  -webkit-box-shadow: 1rem 0rem 0.8rem #16142b3e;
-          box-shadow: 1rem 0rem 0.8rem #16142b3e;
-  height: 23rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  border-left: 0.2rem dashed #3d3a54;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.moviewapper .mainBox .slide__info .infor__tail ul,
-.moviewapper .mainBox .slide__info .infor__tail li {
-  list-style: none;
-  font-weight: bold;
-}
-
-.moviewapper .mainBox .slide__info .infor__tail ul {
-  font-size: 2rem;
-}
-
-.moviewapper .mainBox .slide__info .infor__tail li {
-  color: #686481;
-  font-size: 1.5rem;
-}
-
-.moviewapper .mainBox .slide__info .infor__tail .wathingage {
-  -webkit-transform: translateY(2rem);
-          transform: translateY(2rem);
-  display: inline-block;
-  width: 5rem;
-  height: 5rem;
-  background: transparent;
-  border-radius: 50%;
-  border: 0.1rem solid #f3b4d8;
-}
-
-.moviewapper .mainBox .slide__info .infor__tail .wathingage p {
-  font-size: 2rem;
-  line-height: 4.9rem;
-  color: #f3b4d8;
-}
-
-.moviewapper footer {
+.moviewapper .moviefooter {
   background: #1a1f33;
   width: 100%;
   height: 12rem;
+  -webkit-transform: translateY(-2rem);
+          transform: translateY(-2rem);
   display: inline-block;
   text-align: center;
   text-align: center;
+  border-radius: 3rem 3rem 0rem 0rem;
   -webkit-box-shadow: 0rem -3rem 8rem #2e2f4873;
           box-shadow: 0rem -3rem 8rem #2e2f4873;
-  border-radius: 3rem 3rem 0rem 0rem;
 }
 
-.moviewapper footer a {
+.moviewapper .moviefooter a {
   text-decoration: none;
 }
 
-.moviewapper footer i {
+.moviewapper .moviefooter i {
   color: #655777;
   line-height: 11.8rem;
   font-size: 4rem;
@@ -751,17 +515,17 @@ html button {
   transition: 0.3s;
 }
 
-.moviewapper footer i:hover {
+.moviewapper .moviefooter i:hover {
   color: #ffe277;
   text-shadow: 0.2rem 0.8rem 3rem #ffbb0065;
 }
 
-.moviewapper footer i:nth-child(1) {
+.moviewapper .moviefooter i:nth-child(1) {
   -webkit-transform: translate(-28rem);
           transform: translate(-28rem);
 }
 
-.moviewapper footer i:nth-child(2) {
+.moviewapper .moviefooter i:nth-child(2) {
   -webkit-transform: translate(28rem);
           transform: translate(28rem);
 }
@@ -772,10 +536,171 @@ html button {
 }
 
 .check {
-  border-radius: 50%;
-  background-color: #ffe277;
+  background: #ffe277;
   color: #ffba00;
-  -webkit-box-shadow: 0rem 0rem 1.5rem #ffbb0065;
-          box-shadow: 0rem 0rem 1.5rem #ffbb0065;
+  -webkit-box-shadow: 0.2rem 0.8rem 3rem #ffbb0065;
+          box-shadow: 0.2rem 0.8rem 3rem #ffbb0065;
 }
-/*# sourceMappingURL=selectmovie.css.map */
+
+.reCeiptBody {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  top: 40%;
+  width: 70%;
+  height: 100%;
+  overflow: hidden;
+  background: #f3b4d8;
+  background-image: url("../img/blob-haikei.svg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  -webkit-box-shadow: 0rem 5rem 8rem #2e2f48;
+          box-shadow: 0rem 5rem 8rem #2e2f48;
+  border-bottom: 0.4rem dashed #383751;
+}
+
+.reCeiptBody .reCeipheader {
+  height: 40%;
+  width: 100%;
+  border-bottom: 0.3rem dashed #1a1f33;
+}
+
+.reCeiptBody .reCeipheader .receipinfoheader {
+  position: absolute;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+  height: 25%;
+  text-align: center;
+}
+
+.reCeiptBody .reCeipheader .receipinfoheader .receipinfointro {
+  font-size: 2rem;
+  -webkit-transform: translateY(1rem);
+          transform: translateY(1rem);
+}
+
+.reCeiptBody .reCeipheader .receipinfoheader .forceLogo {
+  font-size: 1.5rem;
+  color: #fff;
+  letter-spacing: 0.5rem;
+}
+
+.reCeiptBody .reCeipheader .receipinfoheader .receipinfoheadertitle {
+  font-size: 5rem;
+  word-break: keep-all;
+  letter-spacing: 0.2rem;
+  color: #3d3a54;
+  padding: 2rem;
+}
+
+.reCeiptBody .reCeipheader .holesleft,
+.reCeiptBody .reCeipheader .holesright {
+  width: 5rem;
+  height: 5rem;
+  background-color: #383751;
+  border-radius: 50%;
+  -webkit-transform: translate(-3rem, 30rem);
+          transform: translate(-3rem, 30rem);
+}
+
+.reCeiptBody .reCeipheader .holesright {
+  -webkit-transform: translate(48rem, 24.5rem);
+          transform: translate(48rem, 24.5rem);
+  background: #2e2f48;
+}
+
+.reCeiptBody .reCeipinfo {
+  height: 45%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.reCeiptBody .reCeipinfo .rcifo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 78%;
+  height: 12%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-align: center;
+  border-bottom: 0.1rem #1a1f33;
+}
+
+.reCeiptBody .reCeipinfo .rcifotitle,
+.reCeiptBody .reCeipinfo .rcifomation {
+  letter-spacing: 0.3rem;
+  color: #1a1f33;
+}
+
+.reCeiptBody .reCeipinfo .rcifotitle {
+  font-size: 2rem;
+}
+
+.reCeiptBody .reCeipinfo .rcifomation {
+  font-size: 1.5rem;
+}
+
+.reCeiptBody .rcifo:nth-child(5) {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.reCeiptBody .rcifo:nth-child(5) > h3 {
+  font-size: 3rem;
+}
+
+.reCeiptBody .reCeipfooter {
+  height: 15%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-top: 0.3rem dashed #1a1f33;
+}
+
+.reCeiptBody .receiptBtn {
+  border: none;
+  font-size: 3rem;
+  cursor: pointer;
+  background: transparent;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  letter-spacing: 0.3rem;
+  width: 20rem;
+  height: 10rem;
+  color: #3d3a54;
+}
+
+.receiptBtn:hover {
+  color: #fff;
+}
