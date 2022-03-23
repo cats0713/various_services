@@ -27,7 +27,7 @@ window.onload = () => {
 			usertime = userData.split('<br>');
 			userDataArray[1] = usertime[0];
 			userDataArray[2] = (usertime[1][0] == 'A') ? 'A' : 'B'
-			console.log(userDataArray);
+			// console.log(userDataArray);
 		}
 	}
 
@@ -42,20 +42,42 @@ window.onload = () => {
 	// 동작들 제이쿼리
 	$(document).on({
 		click: (e) => {
-			// console.log(e.target);
 			switch (e.target.id) {
 				case 'cutBtn':
 					if (true) {
 						const check = document.querySelectorAll('.check');
 						//최대 선택 갯수 확인
 						let checkNum = 0;
+						let conut_Num1 = 0;
+						let conut_Num2 = 0;
+						let conut_Num3 = 0;
+						let conut_Num4 = 0;
 						check.forEach((e, i, v) => {
 							checkNum += Number(e.innerHTML);
+							switch (e.classList[0]){
+								case 'adultpeoplecounter':
+									conut_Num1++;
+									break;
+								case 'joniorpeplecounter':
+									conut_Num2++;
+									break;
+								case 'Disabledpeplecounter':
+									conut_Num3++;
+									break;									
+								case 'oldplecounter':
+									conut_Num4++;
+									break;
+							}
 						});
 						if (checkNum > 6) {
 							e.target.classList.toggle('check');
 							e.target.classList.toggle('backColor');
 							console.log("초과되었습니다.");
+						}
+						if(conut_Num1 >= 2 || conut_Num2 >= 2 || conut_Num3 >= 2 || conut_Num4 >= 2){
+							e.target.classList.remove('check');
+							e.target.classList.add('backColor');
+							console.log("중복선택되었습니다.");
 						}
 					}
 					const check = document.querySelectorAll('.check');

@@ -1,4 +1,5 @@
 window.onload = () => {
+	const receiptBtn = document.querySelector("#receiptBtn");
 	// 시간띄우는 함수
 	const clockContainer = document.querySelector('.head__infor');
 	// 시간 들어갈 wapper
@@ -36,7 +37,7 @@ window.onload = () => {
 	let printReceipt = () => {
 		let totalprice = (Number(userDataArray[4]) * 13000) +
 											(Number(userDataArray[5]) * 10000) +
-											(Number(userDataArray[6]) * 10000) +
+											(Number(userDataArray[6]) * 13000) +
 											(Number(userDataArray[7]) * 9000);
 		if (userDataArray[4] != 0) {
 			moviePersonnelText.innerHTML += `성인${userDataArray[4]}명 `;
@@ -50,12 +51,16 @@ window.onload = () => {
 		if (userDataArray[7] != 0) {
 			moviePersonnelText.innerHTML += `노약자${userDataArray[7]}명 `;
 		}
+		movieSeatText.innerHTML = `${userDataArray[8]}`;
 		movieTheaterText.innerHTML = `${userDataArray[3]}관`;
 		showtimeText.innerHTML = `${userDataArray[2]}`; 
 		totalPriceText.innerHTML = `총 ${totalprice.toLocaleString()}`;
 	}
 	printReceipt();
 
+	receiptBtn.addEventListener("click",()=>{
+		location.href = `${window.location.pathname}?page=50`;
+	});
 
 	$("#homeBtn").on("click", function () {
 		location.href = `${window.location.pathname}?page=10`;

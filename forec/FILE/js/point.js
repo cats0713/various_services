@@ -18,6 +18,7 @@ window.onload = () => {
 	};
 	init();
 
+
 	//예매번호 조회 
 	$(function () {
 		let getHypen = (target_number) => {
@@ -26,42 +27,33 @@ window.onload = () => {
 			return target.replace(dot, "-");
 		};
 		let number = "";
-		let Numresult = document.querySelector('.Numresult');
+		let userNum = document.querySelector('.Numresult');
 		$(".mkeybord").on('click', function (e) {
-			if ( //숫자 버튼을 눌렀을때
+			if (
 				$('.Numresult').html().length < 9 &&
 				e.target.id != $('#resetMnum') &&
-				e.target.id != $('#backSpace') &&
 				e.target.innerHTML != "확인"
 			) {
 				number += e.target.innerHTML;
 				$(".Numresult").html(getHypen(number));
-			} else if ( 
+			} else if (
 				$(".Numresult").html().length < 9 &&
 				e.target.id == $('#resetMnum') &&
-				e.target.id != $('#backSpace') &&
-				e.target.innerHTML != "확인"
-			) {
-				Numresult.innerHTML = "";
+				e.target.innerHTML != "확인") {
+				userNum.innerHTML = "";
 			}
 		});
 		$("#resetMnum").on('click', function (e) {
 			number = "";
-			Numresult.innerHTML = "";
-		});
-		$("#backSpace").on("click", () => {
-			Numresult.innerHTML = Numresult.innerHTML.slice(0, -1);
-			number = Numresult.innerHTML;
-			console.log(Numresult);
-			console.log(number);
-		});
-		$("#homeBtn").on("click", function () {
-			location.href = `${window.location.pathname}?page=10`;
-		});
-
-		$("#previousBtn").on("click", function () {
-			location.href = `${window.location.pathname}?page=10`;
+			userNum.innerHTML = "";
 		});
 	});
 
+	$("#homeBtn").on("click", function () {
+		location.href = `${window.location.pathname}?page=10`;
+	});
+
+	$("#previousBtn").on("click", function () {
+		location.href = `${window.location.pathname}?page=20`;
+	});
 }

@@ -76,7 +76,7 @@ html {
   width: 100%;
   font-size: 10px;
   background: whitesmoke;
-  height: 140vh;
+  height: 100vh;
   color: #3d3a54;
   background: #1a1f33;
   background: linear-gradient(200deg, #465fa4 10%, #657bb8 30%, #f3b4d8 100%);
@@ -124,8 +124,6 @@ html button {
   color: #fff;
   background: #3d3a54;
   text-align: center;
-  -webkit-box-shadow: 0.2rem 0.8rem 3rem #16142b;
-          box-shadow: 0.2rem 0.8rem 3rem #16142b;
   -webkit-transition: 0.5s;
   transition: 0.5s;
   display: -webkit-box;
@@ -420,8 +418,6 @@ html button {
   height: 100rem;
   margin: auto;
   background: linear-gradient(220deg, #3d3a54 0%, #1a1f33e3 20%, #655777 100%);
-  -webkit-box-shadow: 2rem 0.1rem 6rem #494662d3;
-          box-shadow: 2rem 0.1rem 6rem #494662d3;
 }
 
 .moviewapper #playerarea {
@@ -736,6 +732,13 @@ html button {
   opacity: 0;
 }
 
+.check {
+  background: #ffe277;
+  color: #ffba00;
+  -webkit-box-shadow: 0.2rem 0.8rem 3rem #ffbb0065;
+          box-shadow: 0.2rem 0.8rem 3rem #ffbb0065;
+}
+
 .membershipBox {
   width: 95%;
   height: 80%;
@@ -844,37 +847,33 @@ html button {
       align-self: center;
   border: 0;
   background: #f3b4d8;
-  background: linear-gradient(160deg, #fff0bcfb 3%, #ea85b4 50%, #ea76ac 60%, #655777 100%);
   font-family: 'GmarketSansMedium';
   font-weight: bold;
   border: none;
   width: 32rem;
-  height: 10rem;
+  height: 12rem;
   outline: none;
   padding: 1rem;
-  -webkit-box-shadow: 0.2rem 0.8rem 3rem #1d224e59;
-          box-shadow: 0.2rem 0.8rem 3rem #1d224e59;
+  -webkit-box-shadow: 0.2rem 0.8rem 3rem #1d224e6c;
+          box-shadow: 0.2rem 0.8rem 3rem #1d224e6c;
   -webkit-transition: 0.4s;
   transition: 0.4s;
   font-size: 4rem;
   color: #fff;
-  text-shadow: 0rem 0rem 1rem #ea76ac;
+  color: #3d3a54;
   letter-spacing: 1rem;
   text-align: center;
   cursor: pointer;
-  border-radius: 5rem;
+  border-radius: 3rem;
   -webkit-transition: 0.7s;
   transition: 0.7s;
 }
 
 .buttonBox .ticketsumit:hover {
-  -webkit-box-shadow: 0.2rem 0.8rem 3rem #7e87d859;
-          box-shadow: 0.2rem 0.8rem 3rem #7e87d859;
-}
-
-.buttonBox .Mbtn:active {
-  -webkit-transform: scale(90%);
-          transform: scale(90%);
+  background: #fff;
+  color: #465fa4;
+  -webkit-box-shadow: 0.2rem 0.8rem 3rem #7e87d881;
+          box-shadow: 0.2rem 0.8rem 3rem #7e87d881;
 }
 
 .intromembership {
@@ -909,8 +908,8 @@ html button {
   letter-spacing: 1rem;
   color: #fff;
   text-shadow: 0.2rem 0.8rem 3rem #16142b88;
-  -webkit-transform: translate(8rem);
-          transform: translate(8rem);
+  -webkit-transform: translate(9rem);
+          transform: translate(9rem);
 }
 
 .membershipModal {
@@ -921,8 +920,8 @@ html button {
           transform: translate(-50%, -50%);
   position: fixed;
   width: 40rem;
-  -webkit-transition: .5s;
-  transition: .5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   z-index: 100;
   height: 60rem;
   -webkit-box-shadow: 2rem 0rem 10rem #23222db2;
@@ -1015,11 +1014,3 @@ html button {
   font-size: 2rem;
   text-align: center;
 }
-
-.check {
-  background: #ffe277;
-  color: #ffba00;
-  -webkit-box-shadow: 0.2rem 0.8rem 3rem #ffbb0065;
-          box-shadow: 0.2rem 0.8rem 3rem #ffbb0065;
-}
-/*# sourceMappingURL=gettiket.css.map */
