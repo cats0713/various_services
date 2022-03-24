@@ -5,6 +5,7 @@ window.onload = () => {
 	const geticket = document.querySelector('#geticket');
 	let userDataArray = [];	
 	//[1]: 영화제목, [2]: 시간, [3]: 영화관(A,B), [4]: 성인, [5]: 청소년, [6]: 장애인, [7]: 노약자
+
 	let newUrl = window.location.search;
 	let RegExp = /=\w+(:)?\d*(~)?\d*(:)?\d*/g;
 	userDataArray = newUrl.match(RegExp);
@@ -43,13 +44,14 @@ window.onload = () => {
 					const check = document.querySelectorAll('.check');
 					let selectCart = document.querySelector('#selectCart');
 					if (check.length > countNum) {
-						e.target.classList.toggle('check');
+						e.target.classList.remove('check');
 						console.log('초과되었습니다.');
 					}else{
 						selectCart.innerHTML += `<li class="cartList">
-						<div class="movie"><i class="fa-solid fa-circle-minus" id="removeselectseat"></i><span
-								class="BoxName">${userDataArray[3]}관</span><span class="seatNum">${e.target.id}</span><span
-								class="typeofPerson">성인</span><span class="oneofprice">9000</span></div>
+						<div class="movie">
+						<span class="BoxName">${userDataArray[3]}관</span>
+						<span class="seatNum">${e.target.id}</span>
+						<span class="typeofPerson">성인</span><span class="oneofprice">9000</span></div>
 					</li>`;
 					}
 					break;
@@ -70,7 +72,7 @@ window.onload = () => {
 
 	seat.forEach((value, index, array) => { //seat 버튼이 눌리면
 		value.addEventListener('click', (e) => {
-			e.target.classList.toggle('check');
+			e.target.classList.add('check');
 		});
 	});
 
