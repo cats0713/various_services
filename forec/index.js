@@ -26,7 +26,83 @@ app.get('/forec', (req, res) => {
     res.sendFile(__dirname + '/FILE/html/intro_intro.html');
 
   } else if (page == 10) { // 예매하기, 티켓출력하기 화면
-    res.sendFile(__dirname + '/FILE/html/intro.html');
+    let pageTag = `<!DOCTYPE html>
+    <html lang="ko">
+    
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <link rel="shortcut icon" href="../force.ico/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="../force.ico/favicon.ico" type="image/x-icon" />
+      <link rel="stylesheet" href="../css/intro.css">
+      <script src="../js/intro.js"></script>
+      <title>FOREC</title>
+    </head>
+    
+    <body>
+      
+      <section class="moviewapper">
+        <section class="windowloadimg">
+          <div class="logoimg"></div>
+        </section>
+        <header id="playerarea">
+          <div class="head__infor">
+            <span id="logoimg">FOREC</span>
+            <span id="logoimg">120</span>
+          </div>
+        </header>
+    
+        <section class="mainBox">
+          <section class="main__body">
+            <div class="timeBox">
+              <div class="timebox">
+              <h1 id="dayTime" class="dayTime"></h1>
+              <h2 id="time" class="time">00:00</h2></div>
+            </div>
+            <section class="btnsection">
+              <div class="btnBigBox" id="printTicketBtn">
+                <div class="btnBox printBTN">
+                  <article class="printTicketimg" id="lefttab">
+                    <div class="line"></div>    
+                  </article>
+                    <article class="ticketintroduce printticket">
+                        <h1 class="h1tagL">예매티켓출력</h1>
+                        <h2 class="h2tagL">Print Ticket</h2>
+                    </article>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="btnBigBox" id="reservationBtn">
+                <div class="btnBox reserBT">
+                  <article class="printTicketimg" id="righttab">
+                    <div class="line"></div>  
+                  </article>
+                  <article class="ticketintroduce Reservation">
+                    <h1 class="h1tagR">예매하기</h1>
+                    <h2 class="h2tagR">Reservation</h2>
+                    </div>
+                  </div>
+                  <!-- <div class="rigthBox"></div> -->
+                </div>
+              </div>
+            </section>
+            <img class="introfooterimg" src="../IMG/unchartedPoster.jpeg" alt="unchartedPoster">
+          </section>
+        </section>
+    
+    
+    </body>
+    
+    </html>`;
+
+    res.send(pageTag);
 
   } else if (page == 20) { //영화 선택 화면
 
@@ -72,6 +148,8 @@ app.get('/forec', (req, res) => {
           <title>movieselect</title>
           <script src="https://code.jquery.com/jquery-3.6.0.min.js"
             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+            <link rel="shortcut icon" href="../force.ico/favicon.ico" type="image/x-icon" />
+		<link rel="icon" href="../force.ico/favicon.ico" type="image/x-icon" />
           <link rel="stylesheet" href="../css/selectmovie.css" />
           <script src="../js/selectmovie.js"></script>
         </head>
@@ -364,8 +442,8 @@ app.get('/forec', (req, res) => {
                         </ul><i class="fa-solid fa-arrow-rotate-left" id="Seatreset"></i>
                       </footer>
                     </div>
-                  </div>`;
-        pageTag += `<section class="resultprice">
+                  </div>
+                  <section class="resultprice">
         <div id="movieinfo">
         <img class="posterImg" src="../IMG/selectmovie/${rows[0]['img']}.jpg" alt="${rows[0]['name']} 포스터">
           <div id="MovieInfo">
@@ -374,9 +452,11 @@ app.get('/forec', (req, res) => {
         </div>
         <div class="personlist">
           <section class="totalpersonList">
-            <ul id="selectCart" class="selectCart">`;
-
-        pageTag += `</ul>
+            <ul id="selectCart" class="selectCart">
+              <li class="cartList">
+              <div class="movie"><span class="seatNum">좌석을 선택해주세요.</span></div>
+              </li>
+              </ul>
         </section>
         <div class="totalprice">
           <div class="totalPricePreview">
@@ -398,7 +478,6 @@ app.get('/forec', (req, res) => {
 
 </html>`;
 
-
         res.send(pageTag);
       }
     });
@@ -406,20 +485,121 @@ app.get('/forec', (req, res) => {
     db_handle.end();
 
   } else if (page == 40) { //영수증 화면
-    res.sendFile(__dirname + '/FILE/html/receipt.html');
-  } else if (page == 50) {
+    let db_handle = mysql.createConnection({
+      host: "127.0.0.1",
+      user: "c15st19",
+      password: "c15st19",
+      database: "c15st19"
+    });
+    //연결
+    db_handle.connect(function (err) {
+      if (err) {
+        console.log(err)
+      } else {
+        console.log("db연결 성공");
+      }
+    });
+    //명령어 날리기
+    db_handle.query(`select * from movie where img='${req.query.title}'`, function (err, rows) {
+      if (err) {
+        console.error(err);
+        db_handle.release();
+        return;
+      } else {//에러가 안났으면
+        // console.log(rows[0]['name']);
+        let pageTag = `<!DOCTYPE html>
+        <html lang="ko">
+          <head>
+            <meta charset="UTF-8" />
+            <meta http-equiv="X-UA-Compatible" content="chorme" />
+            <meta name="viewport" content="width=device-width,initial-scale=1" />
+            <link
+              rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+              integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+              crossorigin="anonymous"
+              referrerpolicy="no-referrer"
+            />
+            <title>receipt</title>
+            <script
+              src="https://code.jquery.com/jquery-3.6.0.min.js"
+              integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+              crossorigin="anonymous"
+            ></script>
+            <link rel="shortcut icon" href="../force.ico/favicon.ico" type="image/x-icon" />
+            <link rel="icon" href="../force.ico/favicon.ico" type="image/x-icon" />
+            <link rel="stylesheet" href="../css/receipt.css" />
+            <script src="../js/receipt.js"></script>
+          </head>
+          <body>
+            <section class="moviewapper">
+              <header id="playerarea">
+                <!--  동영상이 들어갑니다. --><!--  시간과 로고가 표시되는 header -->
+                <div class="head__infor">
+                  <div class="timewapper"><span id="time">00:00</span></div>
+                  <div class="timewapper"><span id="logoimg">120</span></div>
+                </div>
+              </header>
+              <!--  영화셀렉트하는 영역 시작 -->
+              <section class="mainBox">
+                <section class="main__body">
+                  <section class="reCeiptBody">
+                    <header class="reCeipheader">
+                      <figure class="receipinfoheader">
+                        <figcaption class="forceLogo">FORCE CINEMA</figcaption>
+                        <figcaption class="receipinfointro">예매 내역을 확인해주세요.</figcaption>
+                        <figcaption class="receipinfoheadertitle">${rows[0]['name']}</figcaption>
+                      </figure>
+                      <div class="holesleft"></div>
+                      <div class="holesright"></div>
+                    </header>
+                    <figure class="reCeipinfo">
+                      <figcaption class="receipinfoperson rcifo">
+                        <h3 class="rcifotitle">인원</h3>
+                        <p id="moviePersonnelText" class="rcifomation"></p>
+                      </figcaption>
+                      <figcaption class="selectSeatNum rcifo">
+                        <h3 class="rcifotitle">좌석</h3>
+                        <p id="movieSeatText" class="rcifomation">A3 A4 A6</p>
+                      </figcaption>
+                      <figcaption class="selecttheater rcifo">
+                        <h3 class="rcifotitle">상영관</h3>
+                        <p id="movieTheaterText" class="rcifomation">A</p>
+                      </figcaption>
+                      <figcaption class="movieruningtime rcifo">
+                        <h3 class="rcifotitle">상영시간</h3>
+                        <p id="showtimeText" class="rcifomation">10:20 - 12:40</p>
+                      </figcaption>
+                      <figcaption class="totalAmount rcifo">
+                        <h3 id="totalPriceText" class="rcifotitle">총 30,000</h3>
+                      </figcaption>
+                    </figure>
+                    <footer class="reCeipfooter">
+                      <button id="receiptBtn" class="receiptBtn">결제하기</button>
+                    </footer>
+                  </section>
+                </section>
+              </section>
+              <footer class="moviefooter">
+                <i id="previousBtn" class="fa-solid fa-angles-left"></i>
+                <i id="homeBtn" class="fa-brands fa-fort-awesome"></i>
+              </footer>
+            </section>
+        
+          </body>
+        </html>
+        `;
+        res.send(pageTag);
+      }
+    });
+
+    db_handle.end();
+  } else if (page == 50) { //결제화면
     res.sendFile(__dirname + '/FILE/html/point.html');
   } else if (page == 100) {
     res.sendFile(__dirname + '/FILE/html/gettiket.html');
   }
 });
-
-// app.get(/forec/, function(req, res){
-//   console.log(req.cookies);
-//   if(typeof req.cookies.conutTime !== undefined){
-//     res.redirect("/forec");
-//   }
-// });
 
 app.get('/coo', (req, res) => {
   // res.cookie('conutTime','conutTime',{
@@ -430,7 +610,6 @@ app.get('/coo', (req, res) => {
   } else {
     res.send(`${req.cookies.conutTime}`);
   }
-
 
 });
 

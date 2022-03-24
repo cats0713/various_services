@@ -505,6 +505,11 @@ html {
 								color: $main2_pink;
 								box-shadow: 0.2rem 0.8rem 3rem #ffbb0065;
 							}
+							.check{
+								background: #ffe277;
+								color: $main2_pink;
+								box-shadow: 0.2rem 0.8rem 3rem #ffbb0065;
+						}
 						}
 					}
 				}
@@ -603,7 +608,6 @@ html {
 				justify-content: space-evenly;
 				
 				.selectCart {
-					padding: 1rem;
 					width: 100%;
 				}
 				.cartList {

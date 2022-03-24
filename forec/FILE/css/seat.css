@@ -649,6 +649,13 @@ html button {
           box-shadow: 0.2rem 0.8rem 3rem #ffbb0065;
 }
 
+.moviewapper .mainBox .choseseat .seatcontainer .seatcon .seatbox .row .check {
+  background: #ffe277;
+  color: #ffba00;
+  -webkit-box-shadow: 0.2rem 0.8rem 3rem #ffbb0065;
+          box-shadow: 0.2rem 0.8rem 3rem #ffbb0065;
+}
+
 .moviewapper .resultprice {
   width: 95%;
   height: 36%;
@@ -785,7 +792,6 @@ html button {
 }
 
 .moviewapper .resultprice .personlist .totalpersonList .selectCart {
-  padding: 1rem;
   width: 100%;
 }
 

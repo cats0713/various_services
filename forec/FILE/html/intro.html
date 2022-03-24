@@ -10,13 +10,19 @@
     crossorigin="anonymous" referrerpolicy="no-referrer">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="../force.ico/favicon.ico" type="image/x-icon" />
+		<link rel="icon" href="../force.ico/favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="../css/intro.css">
   <script src="../js/intro.js"></script>
   <title>FOREC</title>
 </head>
 
 <body>
+  
   <section class="moviewapper">
+    <section class="windowloadimg">
+      <div class="logoimg"></div>
+    </section>
     <header id="playerarea">
       <div class="head__infor">
         <span id="logoimg">FOREC</span>
@@ -26,38 +32,39 @@
     <section class="mainBox">
       <section class="main__body">
         <div class="timeBox">
+          <div class="timebox">
           <h1 id="dayTime" class="dayTime"></h1>
-          <h2 id="time" class="time">00:00</h2>
+          <h2 id="time" class="time">00:00</h2></div>
         </div>
-        <section>
+        <section class="btnsection">
           <div class="btnBigBox" id="printTicketBtn">
-            <div class="btnBox">
-
-              <div class="leftBox">
-                <div>
-                  <h1>티켓출력하기</h1>
-                  <h2>print ticket</h2>
+            <div class="btnBox printBTN">
+              <article class="printTicketimg" id="lefttab">
+                <div class="line"></div>    
+              </article>
+                <article class="ticketintroduce printticket">
+                    <h1 class="h1tagL">예매티켓출력</h1>
+                    <h2 class="h2tagL">Print Ticket</h2>
+                </article>
                 </div>
               </div>
-              <div class="rigthBox"></div>
             </div>
           </div>
-
           <div class="btnBigBox" id="reservationBtn">
-            <div class="btnBox">
-
-              <div class="leftBox">
-                <div>
-                  <h1>예약하기</h1>
-                  <h2>make a reservation</h2>
+            <div class="btnBox reserBT">
+              <article class="printTicketimg" id="righttab">
+                <div class="line"></div>  
+              </article>
+              <article class="ticketintroduce Reservation">
+                <h1 class="h1tagR">예매하기</h1>
+                <h2 class="h2tagR">Reservation</h2>
                 </div>
               </div>
-              <div class="rigthBox"></div>
+              <!-- <div class="rigthBox"></div> -->
             </div>
           </div>
         </section>
-
-        <img src="../IMG/unchartedPoster.jpeg" alt="unchartedPoster">
+        <img class="introfooterimg" src="../IMG/unchartedPoster.jpeg" alt="unchartedPoster">
       </section>
     </section>
 

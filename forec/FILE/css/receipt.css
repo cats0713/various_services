@@ -548,9 +548,12 @@ html button {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  top: 40%;
+  top: 30%;
+  -webkit-transition: 2s;
+  transition: 2s;
   width: 70%;
   height: 100%;
+  opacity: 0;
   overflow: hidden;
   background: #f3b4d8;
   background-image: url("../img/blob-haikei.svg");
@@ -704,4 +707,3 @@ html button {
 .receiptBtn:hover {
   color: #fff;
 }
-/*# sourceMappingURL=receipt.css.map */

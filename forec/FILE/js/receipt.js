@@ -36,9 +36,9 @@ window.onload = () => {
 
 	let printReceipt = () => {
 		let totalprice = (Number(userDataArray[4]) * 13000) +
-											(Number(userDataArray[5]) * 10000) +
-											(Number(userDataArray[6]) * 13000) +
-											(Number(userDataArray[7]) * 9000);
+			(Number(userDataArray[5]) * 10000) +
+			(Number(userDataArray[6]) * 13000) +
+			(Number(userDataArray[7]) * 9000);
 		if (userDataArray[4] != 0) {
 			moviePersonnelText.innerHTML += `성인${userDataArray[4]}명 `;
 		}
@@ -51,14 +51,14 @@ window.onload = () => {
 		if (userDataArray[7] != 0) {
 			moviePersonnelText.innerHTML += `노약자${userDataArray[7]}명 `;
 		}
-		movieSeatText.innerHTML = `${userDataArray[8]}`;
+		movieSeatText.innerHTML = `${userDataArray[8].replaceAll('_',' ')}`;
 		movieTheaterText.innerHTML = `${userDataArray[3]}관`;
-		showtimeText.innerHTML = `${userDataArray[2]}`; 
+		showtimeText.innerHTML = `${userDataArray[2]}`;
 		totalPriceText.innerHTML = `총 ${totalprice.toLocaleString()}`;
 	}
 	printReceipt();
 
-	receiptBtn.addEventListener("click",()=>{
+	receiptBtn.addEventListener("click", () => {
 		location.href = `${window.location.pathname}?page=50`;
 	});
 
@@ -69,7 +69,8 @@ window.onload = () => {
 	$("#previousBtn").on("click", function () {
 		location.href = `${window.location.pathname}?page=20`;
 	});
-
-
+	$(document).ready(function () {
+		$('.reCeiptBody').css({ 'top': '40%', 'opacity': '1' })
+	});
 
 }

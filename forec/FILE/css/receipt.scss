@@ -79,6 +79,7 @@ $main_3: #ea85b4;
 
 body,
 html {
+
 	font-family: 'GmarketSansMedium';
 	// scroll-behavior: auto;
 	background: url('../../../img/film-strip-svgrepo-com.svg');
@@ -450,9 +451,11 @@ html {
 
 .reCeiptBody {
 	@include center;
-	top: 40%;
+	top: 30%;
+	transition: 2s;
 	width: 70%;
 	height: 100%;
+	opacity: 0;
 	overflow: hidden;
 	background: $main2_fff2;
 	background-image: url('../img/blob-haikei.svg');

@@ -1,4 +1,11 @@
 @font-face {
+  font-family: 'GmarketSansMedium';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'LeferiPoint-WhiteA';
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-WhiteA.woff") format("woff");
   font-weight: normal;
@@ -56,10 +63,13 @@
 
 body,
 html {
-  font-family: 'YUniverse-L';
+  font-family: 'GmarketSansMedium';
   width: 100%;
   font-size: 10px;
-  background: #1a1f33;
+  width: 100%;
+  font-size: 10px;
+  background-size: cover;
+  background-repeat: no-repeat;
   background: linear-gradient(200deg, #465fa4 10%, #657bb8 30%, #f3b4d8 100%);
   color: #3d3a54;
 }
@@ -71,12 +81,34 @@ html button {
           appearance: none;
 }
 
+.windowloadimg {
+  width: 72rem;
+  height: 100%;
+  position: fixed;
+  z-index: 10;
+  -webkit-transition: all ease-in-out 2s;
+  transition: all ease-in-out 2s;
+  background: #1a1f33;
+  background: linear-gradient(220deg, #1a1f33e3 20%, #3e3051 100%);
+}
+
+.windowloadimg .logoimg {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-size: 50%;
+  width: 50rem;
+  height: 50rem;
+  background: url("../IMG/FORCE-logo.png");
+}
+
 .moviewapper {
   width: 72rem;
   height: 100rem;
   margin: auto;
-  -webkit-box-shadow: 0rem 0rem 0.8rem #16142b;
-          box-shadow: 0rem 0rem 0.8rem #16142b;
+  background: linear-gradient(220deg, #1a1f33e3 20%, #3e3051 100%);
 }
 
 .moviewapper #playerarea {
@@ -89,14 +121,11 @@ html button {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  z-index: 10;
 }
 
 .moviewapper #playerarea .head__infor {
-  background: #1a1f33;
-  -webkit-box-shadow: 0rem 2rem 3rem #16142b62;
-          box-shadow: 0rem 2rem 3rem #16142b62;
-  height: 7rem;
+  z-index: 1;
+  height: 10rem;
   width: 100%;
   text-align: center;
   display: -webkit-box;
@@ -109,9 +138,7 @@ html button {
 .moviewapper #playerarea .head__infor span {
   font-size: 2rem;
   letter-spacing: 0.2rem;
-  line-height: 6.8rem;
-  display: block;
-  float: left;
+  line-height: 9.8rem;
   text-shadow: 0rem 2rem 3rem #16142b62;
   color: #f3b4d8;
 }
@@ -126,8 +153,7 @@ html button {
   overflow-y: auto;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  height: 93rem;
-  background: #3d3a54;
+  height: 90rem;
 }
 
 .moviewapper .mainBox .main__body {
@@ -142,29 +168,53 @@ html button {
 }
 
 .moviewapper .mainBox .main__body .timeBox {
+  -webkit-transform: translateY(-7em);
+          transform: translateY(-7em);
   margin: auto;
+  width: 100%;
+  height: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .moviewapper .mainBox .main__body .timeBox .time {
   display: block;
   font-size: 7rem;
+  letter-spacing: 0.5rem;
   color: white;
   text-align: center;
 }
 
 .moviewapper .mainBox .main__body .timeBox .dayTime {
+  letter-spacing: 0.5rem;
   display: block;
-  font-size: 5rem;
+  font-size: 4rem;
   color: white;
   text-align: center;
 }
 
+.moviewapper .btnsection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .moviewapper .btnBigBox {
-  float: left;
-  display: inline-block;
-  width: 29rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
   height: 18rem;
-  margin: 3.5rem;
 }
 
 .moviewapper .btnBigBox .btnBox {
@@ -177,77 +227,78 @@ html button {
   transition: 1s;
   text-align: center;
   position: relative;
-  overflow: hidden;
+  -webkit-transform: translateY(-8rem);
+          transform: translateY(-8rem);
 }
 
-.moviewapper .btnBigBox .btnBox .circleing {
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 50%;
-  background-color: #3d3a54;
-  z-index: 1;
-  position: absolute;
-}
-
-.moviewapper .btnBigBox .btnBox .circleing1 {
-  position: absolute;
-  top: -1.2rem;
-  right: 5.5rem;
-}
-
-.moviewapper .btnBigBox .btnBox .circleing2 {
-  position: absolute;
-  bottom: -1.2rem;
-  right: 5.5rem;
-}
-
-.moviewapper .btnBigBox .btnBox .leftBox {
-  float: left;
-  width: 22rem;
-  height: 100%;
-  background-color: white;
-  border-right: 0.3rem dashed #3d3a54;
-}
-
-.moviewapper .btnBigBox .btnBox .leftBox div {
-  margin-top: 6rem;
-}
-
-.moviewapper .btnBigBox .btnBox .leftBox div h1 {
+.moviewapper .btnBigBox .btnBox .printTicketimg {
+  width: 85%;
+  height: 90%;
+  opacity: .7;
+  -webkit-transition: 1s;
+  transition: 1s;
   display: inline-block;
+  -webkit-box-shadow: 0rem 2rem 5rem #675fc085;
+          box-shadow: 0rem 2rem 5rem #675fc085;
+  background: linear-gradient(220deg, #465fa4 0%, #7190e4 30%, #f3b4d8 100%);
+}
+
+.moviewapper .btnBigBox .btnBox .printTicketimg .line {
+  border-right: 0.2rem dashed #fff;
+  width: 20%;
+  height: 100%;
+}
+
+.moviewapper .btnBigBox .btnBox .ticketintroduce {
+  width: 80%;
+  height: 100%;
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-transform: translate(2.5rem, -19rem);
+          transform: translate(2.5rem, -19rem);
+  -webkit-backdrop-filter: blur(0.5rem);
+          backdrop-filter: blur(0.5rem);
+  border-radius: 1.5rem;
+  -webkit-box-shadow: 0rem 1rem 9rem #1a1f33;
+          box-shadow: 0rem 1rem 9rem #1a1f33;
+  padding: 1rem;
+  background: linear-gradient(120deg, #ffffff7e, #b8b0f468);
+}
+
+.moviewapper .btnBigBox .btnBox .ticketintroduce:hover {
+  -webkit-box-shadow: 0rem 0.5rem 3rem #675fc085;
+          box-shadow: 0rem 0.5rem 3rem #675fc085;
+}
+
+.moviewapper .btnBigBox .btnBox h1 {
+  display: block;
   font-size: 3rem;
+  letter-spacing: 0.3rem;
+  color: #fff;
 }
 
-.moviewapper .btnBigBox .btnBox .leftBox div h2 {
-  display: inline-block;
+.moviewapper .btnBigBox .btnBox h2 {
+  display: block;
+  letter-spacing: 0.2rem;
   font-size: 2rem;
+  color: #fff;
 }
 
-.moviewapper .btnBigBox .btnBox .rigthBox {
-  float: left;
-  width: 6.7rem;
-  height: 100%;
-  background-color: white;
+.moviewapper .btnBigBox .btnBox h1,
+.moviewapper .btnBigBox .btnBox h2 {
+  -webkit-transform: translateY(6rem);
+          transform: translateY(6rem);
 }
 
 .moviewapper .btnBigBox .btnBox:hover {
-  -webkit-box-shadow: 0.5rem 0.5rem 0.1rem rgba(0, 0, 0, 0.6);
-          box-shadow: 0.5rem 0.5rem 0.1rem rgba(0, 0, 0, 0.6);
   cursor: pointer;
-  -webkit-transition: all;
-  transition: all;
-  -webkit-transform: rotate(-3deg);
-          transform: rotate(-3deg);
 }
 
 .moviewapper footer {
   background: #1a1f33;
   width: 100%;
-  height: 10rem;
   display: inline-block;
   text-align: center;
-  -webkit-box-shadow: 0rem -2rem 3rem #16142b62;
-          box-shadow: 0rem -2rem 3rem #16142b62;
 }
 
 .moviewapper footer a {

@@ -17,6 +17,12 @@ $main_4: #465fa4;
 $main_2: #f3b4d8;
 $main_3: #ea85b4;
 
+@font-face {
+	font-family: 'GmarketSansMedium';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
 @mixin center {
 	position: relative;
 	top: 50%;
@@ -64,55 +70,70 @@ $main_3: #ea85b4;
 
 body,
 html {
-	font-family: 'YUniverse-L';
+	font-family: 'GmarketSansMedium';
 	// scroll-behavior: auto;
 	width: 100%;
 	font-size: 10px;
-	background: $main_1;
+	width: 100%;
+	font-size: 10px;
+	background-size: cover;
+	background-repeat: no-repeat;
 	background: linear-gradient(200deg, $main_4 10%, #657bb8 30%, $main_2 100%);
-	// background: $main2_black;
 	color: $main2_black2;
 	button {
 		appearance: none;
 	}
 }
+.windowloadimg {
 
+	width: 72rem;
+	height: 100%;
+	position: fixed;
+	z-index: 10;
+	transition: all ease-in-out 2s;
+	background: $main2_green;
+	background: linear-gradient(220deg, #1a1f33e3 20%, rgb(62, 48, 81) 100%);
+.logoimg { 
+	@include center();
+	background-size: 50%;
+	width: 50rem;
+	height: 50rem;
+	background: url('../IMG/FORCE-logo.png');
+}
 
-// 전체 감싸는 모달 // 
+}
 .moviewapper {
 	width: 72rem;
 	height: 100rem;
 	margin: auto;
-	box-shadow: 0rem 0rem 0.8rem #16142b;
-	// 헤더 
+	background: linear-gradient(220deg, #1a1f33e3 20%, rgb(62, 48, 81) 100%);
+
+	// 헤더
 	#playerarea {
 		width: 100%;
 		display: flex;
 		text-align: center;
 		flex-direction: column;
-		z-index: 10;
 		.head__infor {
-			background: $main2_green;
-			box-shadow: 0rem 2rem 3rem #16142b62;
-			height: 7rem;
+			// background: $main2_green;
+			z-index: 1;
+			height: 10rem;
 			width: 100%;
 			text-align: center;
 			display: flex;
-
+			// border-radius: 0rem 0rem 3rem 3rem;
 			justify-content: space-around;
 
 			span {
 				font-size: 2rem;
 				letter-spacing: 0.2rem;
-				line-height: 6.8rem;
-				display: block;
-				float: left;
+				line-height: 9.8rem;
 				text-shadow: 0rem 2rem 3rem #16142b62;
 				color: $main2_fff2;
 			}
 		}
 	}
-// 헤더다음에 나오는 몸통박스 // 
+	// 헤더다음에 나오는 몸통박스 //
 	.mainBox::-webkit-scrollbar {
 		width: none;
 		display: none;
@@ -121,107 +142,126 @@ html {
 		width: 100%;
 		overflow-y: auto;
 		box-sizing: border-box;
-		height: 93rem;
-		background: $main2_black2;
+		height: 90rem;
 		.main__body {
 			display: flex;
 			flex-direction: column;
 			height: 100%;
-			.timeBox{
+			.timeBox {
+				transform: translateY(-7em);
+				
 				margin: auto;
-				.time{
+				// background: $main2_green;
+				width: 100%;
+				height: 30%;
+				display: flex;
+				align-items: center;
+				flex-direction: column;
+				justify-content: center;
+
+				.time {
 					display: block;
 					font-size: 7rem;
+					letter-spacing: 0.5rem;
 					color: white;
 					text-align: center;
 				}
-				.dayTime{
+				.dayTime {
+					letter-spacing: 0.5rem;
 					display: block;
-					font-size: 5rem;
+					font-size: 4rem;
 					color: white;
 					text-align: center;
 				}
 			}
 		}
 	}
-	.btnBigBox{
-		float: left;
-		display: inline-block;
-		width: 29rem;
+	.btnsection {
+		display: flex;
+	}
+	.btnBigBox {
+		box-sizing: border-box;
+		width: 100%;
 		height: 18rem;
-		margin: 3.5rem;
-		.btnBox{
+
+		.btnBox {
 			align-items: center;
 			width: 100%;
 			height: 100%;
 			transition: 1s;
 			text-align: center;
 			position: relative;
-			overflow: hidden;
-			.circleing {
-				width: 2.5rem;
-				height: 2.5rem;
-				border-radius: 50%;
-				background-color: $main2_black2;
-				z-index: 1;
-				position: absolute;
-			}
-			.circleing1{
-				position: absolute;
-				top: -1.2rem;
-				right: 5.5rem;
-			}
-			.circleing2{
-				position: absolute;
-				bottom: -1.2rem;
-				right: 5.5rem;
-				
-			}
-			.leftBox{
-				float: left;
-				width: 22rem;
-				height: 100%;
-				background-color: white;
-				border-right: 0.3rem dashed $main2_black2;
+			transform: translateY(-8rem);
 
-
-				div{
-					margin-top: 6rem;
-					h1{
-						display: inline-block;
-						font-size: 3rem;
-					}
-					h2{
-						display: inline-block;
-						font-size: 2rem;
-					}
+			.printTicketimg {
+				width: 85%;
+				height: 90% ;
+				opacity: .7;
+				transition: 1s;
+				display: inline-block;
+				box-shadow: 0rem 2rem 5rem #675fc085;
+				background: linear-gradient(220deg, $main_4 0%, #7190e4 30%, $main_2 100%);
+				.line {
+					border-right: 0.2rem dashed #fff;
+					width: 20%;
+					height: 100%;
 				}
-				
 			}
-			.rigthBox{
-				float: left;
-				width: 6.7rem;
-				height: 100%;
-				background-color: white;
-			}
-		}
-		.btnBox:hover{
-			box-shadow: 0.5rem 0.5rem 0.1rem rgba($color: #000000, $alpha: 0.6);
-			cursor: pointer;
-			transition: all;
-			transform: rotate(-3deg);
-		}
-	}
-	
-	// footer 
-	footer {
 
+			.ticketintroduce {
+				width: 80%;
+				height: 100%;
+				transition: 1s;
+				transform: translate(2.5rem, -19rem);
+				backdrop-filter: blur(0.5rem);
+				border-radius: 1.5rem;
+				box-shadow: 0rem 1rem 9rem $main2_green;
+				padding: 1rem;
+				background: linear-gradient(120deg, #ffffff7e, #b8b0f468);
+			}
+	
+
+			.ticketintroduce:hover {
+				box-shadow: 0rem 0.5rem 3rem #675fc085;
+			}
+
+			h1 {
+				display: block;
+				font-size: 3rem;
+				letter-spacing: 0.3rem;
+				color: #fff;
+			}
+			h2 {
+				display: block;
+				letter-spacing: 0.2rem;
+				font-size: 2rem;
+				color: #fff;
+			}
+			h1,
+			h2 {
+				transform: translateY(6rem);
+			}
+		}
+		.btnBox:hover {
+			cursor: pointer;
+		}
+
+		// .btnBox:hover{
+		// 	box-shadow: 0.5rem 0.5rem 0.1rem rgba($color: #000000, $alpha: 0.6);
+		// 	cursor: pointer;
+		// 	transition: all;
+		// 	transform: rotate(-3deg);
+		// }
+	}
+
+	// footer
+	footer {
 		background: $main_1;
 		width: 100%;
-		height: 10rem;
+
 		display: inline-block;
 		text-align: center;
-		box-shadow: 0rem -2rem 3rem #16142b62;
+
 		a {
 			text-decoration: none;
 		}
