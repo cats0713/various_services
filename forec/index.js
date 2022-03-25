@@ -4,7 +4,6 @@ const app = express();
 const mysql = require('mysql');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-const e = require("express");
 
 
 app.locals.pretty = true;
@@ -16,15 +15,19 @@ app.get('/', (req, res) => {
 });
 
 app.get('/forec', (req, res) => {
-  res.cookie('conutTime', 'conutTime', {
+  res.cookie('conutTime', 120, {
     maxAge: 120000
   });
 
-  let page = req.query.page;
-  if (page == undefined) { //홈페이지의 처음 화면            
-    // console.log(res.query);
-    res.sendFile(__dirname + '/FILE/html/intro_intro.html');
+  let userTime = () =>{
+    res.cookie('conutTime', Number(req.cookies.conutTime)-1);
+    setTimeout(userTime, 1000);
+  };
+ userTime(); 
 
+  let page = req.query.page;
+  if (page == undefined) { //홈페이지의 처음 화면 
+    res.sendFile(__dirname + '/FILE/html/intro_intro.html');
   } else if (page == 10) { // 예매하기, 티켓출력하기 화면
     let pageTag = `<!DOCTYPE html>
     <html lang="ko">
@@ -54,7 +57,7 @@ app.get('/forec', (req, res) => {
         <header id="playerarea">
           <div class="head__infor">
             <span id="logoimg">FOREC</span>
-            <span id="logoimg">120</span>
+            <span id="logoimg">${req.cookies.conutTime}</span>
           </div>
         </header>
     
@@ -125,7 +128,6 @@ app.get('/forec', (req, res) => {
     db_handle.query("select * from movie", function (err, rows) {
       if (err) {
         console.error(err);
-        db_handle.release();
         return;
       } else {//에러가 안났으면
         let movieTime = [
@@ -155,6 +157,8 @@ app.get('/forec', (req, res) => {
         </head>
         
         <body>
+        <section class="coutnWrningModal opacityscroll">
+          </section>
           <section class="countermodalwapper opacityscroll">
             <section class="countPersonsection">
               <header class="countmodalheader">
@@ -329,6 +333,8 @@ app.get('/forec', (req, res) => {
         </head>
         
         <body>
+        <section class="coutnWrningModal opacityscroll">
+          </section>
           <section class="moviewapper">
             <header id="playerarea">
               <div class="head__infor">
@@ -352,7 +358,7 @@ app.get('/forec', (req, res) => {
                           <div class="seat" id="A2"></div>
                           <div class="seat" id="A3"></div>
                           <div class="seat" id="A4"></div>
-                          <div class="seat" id="A5"></div>
+                          <div claseatNumss="seat" id="A5"></div>
                           <div class="seat" id="A6"></div>
                           <div class="seat visibiliySeat"></div>
                           <div class="seat visibiliySeat"></div>

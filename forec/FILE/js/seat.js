@@ -15,11 +15,11 @@ window.onload = () => {
 	let countNum = Number(userDataArray[4]) + Number(userDataArray[5]) + Number(userDataArray[6]) + Number(userDataArray[7]);
 
 	//가격
-	let displayPrice = () => {
+	(() => {
 		let totalprice = (Number(userDataArray[4]) * 13000) + (Number(userDataArray[5]) * 10000) + (Number(userDataArray[6]) * 13000) + (Number(userDataArray[7]) * 9000);
 		let Pricetitle = document.querySelector("#Pricetitle");
 		Pricetitle.innerHTML = `총 ${totalprice.toLocaleString()}원`;
-	}
+	})();
 
 	//시간
 	let getTime = () => {
@@ -29,13 +29,38 @@ window.onload = () => {
 		const seconds = date.getSeconds();
 		clocktitle.innerHTML = `${hours < 10 ? `0${hours}` : hours} : ${minutes < 10 ? `0${minutes}` : minutes} : ${seconds < 10 ? `0${seconds}` : seconds}`;
 	};
-	let init = () => {
+
+	(() => {
 		getTime();
 		setInterval(getTime, 1000);
-	};
+	})();
 
-	displayPrice();
-	init();
+	let modalAboutPersonNumChoice = (innervalue, innervalue_2, mymodal) => { //경고 모달
+		mymodal.classList.toggle('opacityscroll');
+		for (let i = 0; i < 2; i++) {
+			setTimeout(() => {
+				mymodal.innerHTML = `<div class="modalhat">
+	<div class="strip"></div>
+	<div class="strip"></div>
+	<div class="strip"></div>
+</div>
+<header class="coutnWrningModalheader">
+	<h1 class="coutnWrningModalheadertitle">
+		${innervalue}
+		<p class="enterkey">${innervalue_2}</p>
+		<i class="fa-solid fa-triangle-exclamation"></i>
+	</h1>
+</header>
+<figure class="modalinfomation">
+	<figcaption class="modalinfomation_inner">
+		<p class="cunnum">${2 - i}초 뒤에</p>
+		자동으로 창이 닫힙니다.
+	</figcaption>
+</figure>`
+			}, i * 1000);
+		}
+	}
+
 
 	$(document).on({
 		click: (e) => {
@@ -46,25 +71,53 @@ window.onload = () => {
 					let wCount = 0;
 					if (check.length > countNum) {
 						e.target.classList.remove('check');
-						console.log('초과되었습니다.');
-					}else if (e.target.id[0] == 'W') {
-						check.forEach((v,i,a)=>{
+						const mymodal = document.querySelector('.coutnWrningModal');
+						modalAboutPersonNumChoice(`총 인원이`, `초과되었습니다`, mymodal);
+						setTimeout(function () {
+							document.querySelector('.modalhat').style.transform = 'translate(-2rem, -8rem) rotate(0deg)';
+						}, 1800)
+						setTimeout(function () {
+							mymodal.classList.add('opacityscroll');
+						}, 2000);
+
+					} else if (e.target.id[0] == 'W') {
+						check.forEach((v, i, a) => {
 							wCount += /W/.test(v.id) ? 1 : 0;
 						});
-						if(userDataArray[6] == 0){
-							e.target.classList.remove('check');	
-							console.log("장애인 석은 선택 불가 합니다.");
-						}else if(userDataArray[6] < wCount ){
+						if (userDataArray[6] == 0) {
 							e.target.classList.remove('check');
-							console.log("장애인 석을 초과 하셨습니다.");
+							// console.log("장애인 석은 선택 불가 합니다.");
+							const mymodal = document.querySelector('.coutnWrningModal');
+							modalAboutPersonNumChoice(`장애인석은`, `선택이 불가합니다`, mymodal);
+							setTimeout(function () {
+								document.querySelector('.modalhat').style.transform = 'translate(-2rem, -8rem) rotate(0deg)';
+							}, 1800)
+							setTimeout(function () {
+								mymodal.classList.add('opacityscroll');
+							}, 2000);
+						} else if (userDataArray[6] < wCount) {
+							e.target.classList.remove('check');
+							// console.log("장애인 석을 초과 하셨습니다.");
+							const mymodal = document.querySelector('.coutnWrningModal');
+							modalAboutPersonNumChoice(`장애인석이`, `초과 선택 되었습니다`, mymodal);
+							setTimeout(function () {
+								document.querySelector('.modalhat').style.transform = 'translate(-2rem, -8rem) rotate(0deg)';
+							}, 1800)
+							setTimeout(function () {
+								mymodal.classList.add('opacityscroll');
+							}, 2000);
 						}
-					} 
-					if(!(check.length > countNum) && !(userDataArray[6] < wCount)){
-						seatNum.innerHTML = `좌석 : `;
+					}
+					if (!(check.length > countNum) && !(userDataArray[6] < wCount)) {
+						seatNum.innerHTML = ``;
 						check.forEach((v, i, a) => {
 							seatNum.innerHTML += ` ${v.id}`;
 						});
 					}
+					break;
+				case 'seat':
+					let numBox = document.querySelector('.seatNum');
+					numBox.innerHTML = numBox.innerHTML.replace(e.target.id,'');
 					break;
 			}
 		}
@@ -73,7 +126,8 @@ window.onload = () => {
 
 	seat.forEach((value, index, array) => { //seat 버튼이 눌리면
 		value.addEventListener('click', (e) => {
-			e.target.classList.add('check');
+			e.target.classList.toggle('check');
+
 		});
 	});
 
@@ -103,12 +157,29 @@ window.onload = () => {
 			userSeat += `${e.id}_`;
 		});
 		if (userSeat == '') { //좌석을 선택하지 않았다면
-			console.log("좌석을 선택하여 주십시오");
+			// console.log("좌석을 선택하여 주십시오");
+			const mymodal = document.querySelector('.coutnWrningModal');
+			modalAboutPersonNumChoice(`좌석을`, `선택하여 주십시오`, mymodal);
+			setTimeout(function () {
+				document.querySelector('.modalhat').style.transform = 'translate(-2rem, -8rem) rotate(0deg)';
+			}, 1800)
+			setTimeout(function () {
+				mymodal.classList.add('opacityscroll');
+			}, 2000);
+
 		} else if (checkSeat.length == countNum) {
 			seadUrl += `&seat=${userSeat}`;
 			location.href = seadUrl;
 		} else {
-			console.log("남은 좌석을 마저 선택하십시오");
+			// console.log("남은 좌석을 마저 선택하십시오");
+			const mymodal = document.querySelector('.coutnWrningModal');
+			modalAboutPersonNumChoice(`나머지 좌석을`, `선택하여 주십시오`, mymodal);
+			setTimeout(function () {
+				document.querySelector('.modalhat').style.transform = 'translate(-2rem, -8rem) rotate(0deg)';
+			}, 1800)
+			setTimeout(function () {
+				mymodal.classList.add('opacityscroll');
+			}, 2000);
 		}
 	});
 }

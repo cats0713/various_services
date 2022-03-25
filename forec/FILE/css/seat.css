@@ -1015,4 +1015,136 @@ html button {
   -o-object-fit: cover;
      object-fit: cover;
 }
+
+.coutnWrningModal {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  position: fixed;
+  width: 35rem;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  z-index: 100;
+  height: 30rem;
+  -webkit-box-shadow: 2rem 0rem 16rem #23222db2;
+          box-shadow: 2rem 0rem 16rem #23222db2;
+  background: #1a1f33;
+  padding: 2rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 0rem 0rem 1rem 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.coutnWrningModal .modalhat {
+  border-radius: 1rem 1rem 0rem 0rem;
+  width: 96%;
+  height: 18%;
+  padding: 2%;
+  position: absolute;
+  -webkit-transition: .5s;
+  transition: .5s;
+  background: #1a1f33;
+  -webkit-box-shadow: 2rem 0rem 16rem #23222db2;
+          box-shadow: 2rem 0rem 16rem #23222db2;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transform: translate(-3rem, -12rem) rotate(-15deg);
+          transform: translate(-3rem, -12rem) rotate(-15deg);
+}
+
+.coutnWrningModal .modalhat .strip {
+  width: 10%;
+  height: 100%;
+  background: #fff;
+}
+
+.coutnWrningModal .coutnWrningModalheader {
+  height: 40%;
+  width: 100%;
+  text-align: center;
+  border-radius: 1rem;
+}
+
+.coutnWrningModal .coutnWrningModalheader .coutnWrningModalheadertitle {
+  font-size: 3rem;
+  color: #fff;
+  -webkit-transform: translateY(1rem);
+          transform: translateY(1rem);
+  letter-spacing: 0.3rem;
+  line-height: 6rem;
+}
+
+.coutnWrningModal .coutnWrningModalheader .coutnWrningModalheadertitle .fa-triangle-exclamation {
+  -webkit-transform: translateY(1rem);
+          transform: translateY(1rem);
+  font-size: 6rem;
+  color: #ffe277;
+}
+
+.coutnWrningModal .modalinfomation {
+  height: 50%;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.coutnWrningModal .modalinfomation #modal_point {
+  display: inline-block;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  font-size: 14rem;
+  color: #ffba00;
+  -webkit-animation: identifier 4s infinite;
+          animation: identifier 4s infinite;
+}
+
+@-webkit-keyframes identifier {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes identifier {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.coutnWrningModal .modalinfomation .modalinfomation_inner {
+  font-size: 2rem;
+  text-align: center;
+  padding: 2rem;
+  -webkit-transform: translateY(5rem);
+          transform: translateY(5rem);
+  color: #fff;
+}
+
+.coutnWrningModal .modalinfomation .modalinfomation_inner .cunnum {
+  font-size: 2rem;
+  text-align: center;
+}
 /*# sourceMappingURL=seat.css.map */
