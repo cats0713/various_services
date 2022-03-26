@@ -1,4 +1,14 @@
 window.onload = () => {
+	setInterval(()=>{
+		let userCookie = document.cookie.split('=');
+		// console.log("카운트가 진행되고 있습니다.");
+		document.cookie = `userCookie=${Number(userCookie[1])-1}`;	
+		// console.log(document.cookie);
+		if(Number(userCookie[1]) <= 0){
+			console.log("작동시간이 초과되었습니다.");
+			location.href = `/forec`;
+		}
+	},1000);
 	// 시간띄우는 함수
 	const clockContainer = document.querySelector('.head__infor');
 	// 시간 들어갈 wapper
@@ -13,6 +23,8 @@ window.onload = () => {
 	const receiptBtn = document.querySelector('.receiptBtn');
 	const receiptModal = document.querySelector('.receiptModal');
 	let ReservationNumber = `${Math.floor(Math.random()*(9999-1000)+1000)}-${Math.floor(Math.random()*(99999-10000)+10000)}`;
+	let totalprice = '';
+	let personUrl = '';
 
 	let newUrl = window.location.search;
 	let RegExp = /=\w+(:)?\d*(~)?\d*(:)?\d*/g;
@@ -31,11 +43,11 @@ window.onload = () => {
 	};
 	let init = () => {
 		getTime();
-		setInterval(getTime, 1000);
+		setTimeout(getTime, 1000);
 	};
 
 	let printReceipt = () => {
-		let totalprice = (Number(userDataArray[4]) * 13000) +
+		totalprice = (Number(userDataArray[4]) * 13000) +
 			(Number(userDataArray[5]) * 10000) +
 			(Number(userDataArray[6]) * 13000) +
 			(Number(userDataArray[7]) * 9000);
@@ -56,11 +68,17 @@ window.onload = () => {
 		showtimeText.innerHTML = `${userDataArray[2]}`;
 		movieReservationNumber.innerHTML = ReservationNumber;
 		totalPriceText.innerHTML = `총 ${totalprice.toLocaleString()}`;
+		personUrl = moviePersonnelText.innerHTML.replaceAll(' ','_');
 	}
 
 	printReceipt();
 	init();
 
+	$(document).on({
+		click: (e) => {
+			document.cookie = `userCookie=120`;	
+		}
+	});
 
 	$("#homeBtn").on("click", function () {
 		location.href = `${window.location.pathname}?page=10`;
@@ -71,7 +89,7 @@ window.onload = () => {
 	});
 
 	$(".skipbtn").on("click",()=>{
-		let seadUrl = `${window.location.pathname}?page=50&title=${userDataArray[1]}&time=${userDataArray[2]}&gan=${userDataArray[3]}&adult=${userDataArray[4]}&jonior=${userDataArray[5]}&Disabled=${userDataArray[6]}&old=${userDataArray[7]}&seat=${userDataArray[8]}&number=${ReservationNumber}`;
+		let seadUrl = `${window.location.pathname}?page=50&title=${userDataArray[1]}&time=${userDataArray[2]}&gan=${userDataArray[3]}&seat=${userDataArray[8]}&number=${ReservationNumber}&person=${personUrl}&price=${totalprice}`;
 		location.href = seadUrl;
 	});
 

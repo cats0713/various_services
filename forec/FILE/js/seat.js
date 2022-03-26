@@ -1,4 +1,15 @@
 window.onload = () => {
+	setInterval(()=>{
+		let userCookie = document.cookie.split('=');
+		// console.log("카운트가 진행되고 있습니다.");
+		document.cookie = `userCookie=${Number(userCookie[1])-1}`;	
+		// console.log(document.cookie);
+		if(Number(userCookie[1]) <= 0){
+			console.log("작동시간이 초과되었습니다.");
+			location.href = `/forec`;
+		}
+	},1000);
+
 	let clocktitle = document.querySelector('#time');
 
 	const seat = document.querySelectorAll('.seat');
@@ -32,7 +43,7 @@ window.onload = () => {
 
 	let init = () => {
 		getTime();
-		setInterval(getTime, 1000);
+		setTimeout(getTime, 1000);
 	};
 
 	let modalAboutPersonNumChoice = (innervalue, innervalue_2, mymodal) => { //경고 모달
@@ -62,17 +73,6 @@ window.onload = () => {
 	}
 
 	init();
-
-	setInterval(()=>{
-		let userCookie = document.cookie.split('=');
-		// console.log("카운트가 진행되고 있습니다.");
-		document.cookie = `userCookie=${Number(userCookie[1])-1}`;	
-		// console.log(document.cookie);
-		if(Number(userCookie[1]) <= 0){
-			console.log("작동시간이 초과되었습니다.");
-			location.href = `/forec`;
-		}
-	},1000);
 
 	$(document).on({
 		click: (e) => {
@@ -154,7 +154,7 @@ window.onload = () => {
 	$("#Seatreset").on("click", () => {
 		let seatNum = document.querySelector('.seatNum');
 		let seatSet = document.querySelectorAll(".check");
-		seatNum.innerHTML = `좌석을 선택해주세요.`;
+		seatNum.innerHTML = ``;
 		seatSet.forEach((v, i, a) => {
 			v.className = 'seat';
 		});

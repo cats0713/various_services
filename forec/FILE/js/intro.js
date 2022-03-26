@@ -1,11 +1,4 @@
 window.onload = () => {
-	// let userCount = () =>{
-	// 	document.cookie = `userCookie=${Number(userCookie[1])-1}`;
-	// }
-	// (()=>{
-	// 	setTimeout(userCount, 1000);
-	// 	console.log(document.cookies);
-	// })();
 
 	setInterval(()=>{
 		let userCookie = document.cookie.split('=');

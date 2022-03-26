@@ -610,37 +610,36 @@ html {
 				.selectCart {
 					width: 100%;
 				}
-				.cartList {
+				.cartText {
 					margin: auto;
 					border: 0.1rem solid $main2_fff2;
 					border-radius: 3rem;
 					margin-bottom: 1rem;
 					width: 90%;
 					height: 4rem;
-					text-align: left;
+					text-align: center;
 					line-height: 4rem;
 					padding: 1rem;
 					span {
 						margin-left: 1rem;
 						color: #fff;
-						font-size: 1.5rem;
+						font-size: 2.5rem;
 						letter-spacing: 0.2rem;
 					}
-					#removeselectseat {
+				}
+				.cartList{
+					margin: auto;
+					margin-bottom: 1rem;
+					width: 90%;
+					height: 4rem;
+					text-align: center;
+					line-height: 4rem;
+					padding: 1rem;
+					span {
 						margin-left: 1rem;
-						color: $main2_fff2;
-						cursor: pointer;
-						transform: translateY(0.2rem);
+						color: #fff;
 						font-size: 2rem;
-						transition: .4s;
-					}
-					#removeselectseat:hover {
-						color:$main_3;
-					}
-					.oneofprice {
-						float: right;
-						color: $main2_fff2;
-						margin-right: 1rem;
+						letter-spacing: 0.2rem;
 					}
 				}
 			}

@@ -1,4 +1,11 @@
 window.onload = () => {
+	let newUrl = window.location.search;
+	let RegExp = /=\w+(:)?\d*(~)?\d*(:)?\d*/g;
+	userDataArray = newUrl.match(RegExp);
+
+	if (userDataArray[1]) {
+		console.log("예매번호가 틀렸다고 모달띄우기");
+	}
 	// 시간띄우는 함수
 	const clockContainer = document.querySelector('.head__infor');
 	// 시간 들어갈 wapper
@@ -18,6 +25,8 @@ window.onload = () => {
 	};
 	init();
 
+
+
 	//예매번호 조회 
 	$(function () {
 		let getHypen = (target_number) => {
@@ -36,7 +45,7 @@ window.onload = () => {
 			) {
 				number += e.target.innerHTML;
 				$(".Numresult").html(getHypen(number));
-			} else if ( 
+			} else if (
 				$(".Numresult").html().length < 10 &&
 				e.target.id == $('#resetMnum') &&
 				e.target.id != $('#backSpace') &&
@@ -62,13 +71,12 @@ window.onload = () => {
 		$("#previousBtn").on("click", function () {
 			location.href = `${window.location.pathname}?page=10`;
 		});
-		
-		$("#ticketsumit").on("click",()=>{
-			if(Numresult.innerHTML.length == 10){
+
+		$("#ticketsumit").on("click", () => {
+			if (Numresult.innerHTML.length == 10) {
 				const userTicket = Numresult.innerHTML;
-				location.href = `${window.location.pathname}?page=110&number=${userTicket}`;	
+				location.href = `${window.location.pathname}?page=110&number=${userTicket}`;
 			}
 		});
-
 	});
 }

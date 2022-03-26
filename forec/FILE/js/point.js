@@ -1,4 +1,15 @@
 window.onload = () => {
+	setInterval(()=>{
+		let userCookie = document.cookie.split('=');
+		// console.log("카운트가 진행되고 있습니다.");
+		document.cookie = `userCookie=${Number(userCookie[1])-1}`;	
+		// console.log(document.cookie);
+		if(Number(userCookie[1]) <= 0){
+			console.log("작동시간이 초과되었습니다.");
+			location.href = `/forec`;
+		}
+	},1000);
+
 	// 시간띄우는 함수
 	const clockContainer = document.querySelector('.head__infor');
 	// 시간 들어갈 wapper
@@ -14,7 +25,7 @@ window.onload = () => {
 
 	init = () => {
 		getTime();
-		setInterval(getTime, 1000);
+		setTimeout(getTime, 1000);
 	};
 	init();
 

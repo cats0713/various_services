@@ -5,7 +5,6 @@ const mysql = require('mysql');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 
-
 app.locals.pretty = true;
 app.use(express.static('FILE'));
 app.use(cookieParser());
@@ -303,7 +302,6 @@ app.get('/forec', (req, res) => {
     db_handle.query(`select * from movie where img='${req.query.title}'`, function (err, rows) {
       if (err) {
         console.error(err);
-        db_handle.release();
         return;
       } else {//에러가 안났으면
         // console.log(rows[0]['name']);
@@ -455,7 +453,10 @@ app.get('/forec', (req, res) => {
           <section class="totalpersonList">
             <ul id="selectCart" class="selectCart">
               <li class="cartList">
-              <div class="movie"><span class="seatNum">좌석을 선택해주세요.</span></div>
+              <div class="movie"><span class="seatInfo">좌석을 선택해주세요</span></div>
+              </li>
+              <li class="cartText">
+              <div class="movie"><span class="seatNum"></span></div>
               </li>
               </ul>
         </section>
@@ -504,7 +505,6 @@ app.get('/forec', (req, res) => {
     db_handle.query(`select * from movie where img='${req.query.title}'`, function (err, rows) {
       if (err) {
         console.error(err);
-        db_handle.release();
         return;
       } else {//에러가 안났으면
         // console.log(rows[0]['name']);
@@ -616,17 +616,48 @@ app.get('/forec', (req, res) => {
           </body>
         </html>`;
         res.send(pageTag);
-        //db_handle.query(`insert into moviemember` values (1,'010-1111-1111',100);`, function (err, rows) {
-        // });
       }
     });
 
     db_handle.end();
+
   } else if (page == 50) { //결제화면
     res.sendFile(__dirname + '/FILE/html/point.html');
-  } else if (page == 100) {
+  } else if (page == 60) { //결제완료화면
+    let db_handle = mysql.createConnection({
+      host: "127.0.0.1",
+      user: "c15st19",
+      password: "c15st19",
+      database: "c15st19"
+    });
+    //연결
+    db_handle.connect(function (err) {
+      if (err) {
+        console.log(err)
+      } else {
+        console.log("db연결 성공");
+      }
+    });
+      // console.log(rows[0]['name']);
+      //res.send(pageTag);
+    db_handle.query(`select * from movie where img='${req.query.title}'`, function (err, rows) {
+      if (err) {
+        console.error(err);
+        return;
+      } else {
+      db_handle.query(`insert into moviemember values ('','${rows[0]['name']}','${req.query.person.replaceAll('_', ' ')}', '${userDataArray[8].replaceAll('_', ' ')}','${req.query.gan}','${req.query.time}','${req.query.number}','${req.query.price}');`, function (err2, rows2) {
+        if (err) {
+          console.error(err);
+          return;
+        }
+      });
+    }
+    });
+      
+    db_handle.end();
+  } else if (page == 100) { //예매 확인
     res.sendFile(__dirname + '/FILE/html/gettiket.html');
-  } else if (page == 110) {
+  } else if (page == 110) { //예매정보 확인
     let db_handle = mysql.createConnection({
       host: "127.0.0.1",
       user: "c15st19",
@@ -644,10 +675,8 @@ app.get('/forec', (req, res) => {
     //명령어 날리기
     db_handle.query(`select * from moviemember where number='${req.query.number}'`, function (err, rows) {
       if (err) {
-        console.error(err);
-        db_handle.release();
-        return;
-      } else {//에러가 안났으면
+        throw err;
+      } else if(rows[0]){//에러가 안났으면
         // console.log(rows[0]['name']);
         let pageTag = `<!DOCTYPE html>
         <html lang="ko">
@@ -733,10 +762,13 @@ app.get('/forec', (req, res) => {
           </body>
         </html>`;
         res.send(pageTag);
+      }else{
+        res.redirect('/forec?page=100&err=101');
       }
     });
+
     db_handle.end();
-  }
+  } 
 });
 
 

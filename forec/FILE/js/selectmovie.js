@@ -1,5 +1,15 @@
 window.onload = () => {
-	
+	setInterval(()=>{
+		let userCookie = document.cookie.split('=');
+		// console.log("카운트가 진행되고 있습니다.");
+		document.cookie = `userCookie=${Number(userCookie[1])-1}`;	
+		// console.log(document.cookie);
+		if(Number(userCookie[1]) <= 0){
+			console.log("작동시간이 초과되었습니다.");
+			location.href = `/forec`;
+		}
+	},1000);
+
 	let clocktitle = document.querySelector('#time');
 	let userDataArray = [];
 	//[0]: 영화제목, [1]: 시간, [2]: 영화관(A,B), [3]: 성인, [4]: 청소년, [5]: 장애인, [6]: 노약자
@@ -62,20 +72,9 @@ window.onload = () => {
 
 	let init = () => {
 		userGetTime();
-		setInterval(userGetTime, 1000);
+		setTimeout(userGetTime, 1000);
 	};
 	init();
-
-	setInterval(()=>{
-		let userCookie = document.cookie.split('=');
-		// console.log("카운트가 진행되고 있습니다.");
-		document.cookie = `userCookie=${Number(userCookie[1])-1}`;	
-		// console.log(document.cookie);
-		if(Number(userCookie[1]) <= 0){
-			console.log("작동시간이 초과되었습니다.");
-			location.href = `/forec`;
-		}
-	},1000);
 
 	// 동작들 제이쿼리
 	$(document).on({
