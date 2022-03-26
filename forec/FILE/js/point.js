@@ -29,6 +29,11 @@ window.onload = () => {
 	};
 	init();
 
+	$(document).on({
+		click: (e) => {
+			document.cookie = `userCookie=120`;	
+		}
+	});
 
 	//예매번호 조회 
 	$(function () {

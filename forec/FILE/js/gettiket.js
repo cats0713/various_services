@@ -1,4 +1,15 @@
 window.onload = () => {
+	setInterval(()=>{
+		let userCookie = document.cookie.split('=');
+		// console.log("카운트가 진행되고 있습니다.");
+		document.cookie = `userCookie=${Number(userCookie[1])-1}`;	
+		// console.log(document.cookie);
+		if(Number(userCookie[1]) <= 0){
+			console.log("작동시간이 초과되었습니다.");
+			location.href = `/forec`;
+		}
+	},1000);
+
 	let newUrl = window.location.search;
 	let RegExp = /=\w+(:)?\d*(~)?\d*(:)?\d*/g;
 	userDataArray = newUrl.match(RegExp);
@@ -21,11 +32,15 @@ window.onload = () => {
 
 	init = () => {
 		getTime();
-		setInterval(getTime, 1000);
+		setTimeout(getTime, 1000);
 	};
 	init();
 
-
+	$(document).on({
+		click: (e) => {
+			document.cookie = `userCookie=120`;	
+		}
+	});
 
 	//예매번호 조회 
 	$(function () {

@@ -67,7 +67,7 @@ window.onload = () => {
 		userDataArray[4] = jonior_user;
 		userDataArray[5] = Disabled_user;
 		userDataArray[6] = old_user;
-		console.log(userDataArray);
+		//console.log(userDataArray);
 	}
 
 	let init = () => {
