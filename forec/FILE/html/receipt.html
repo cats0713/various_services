@@ -17,21 +17,41 @@
 			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
 			crossorigin="anonymous"
 		></script>
-		<link rel="shortcut icon" href="../force.ico/favicon.ico" type="image/x-icon" />
-		<link rel="icon" href="../force.ico/favicon.ico" type="image/x-icon" />
-		<link rel="stylesheet" href="../css/receipt.css" />
-		<script src="../js/receipt.js"></script>
+		<link rel="shortcut icon" href="./force.ico/favicon.ico" type="image/x-icon" />
+		<link rel="icon" href="./force.ico/favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" href="./receipt.css" />
 	</head>
 	<body>
 		<section class="moviewapper">
+			<section class="receiptModal opacityscroll">
+				
+				<article class="reciptmodalbody">
+					<h1>적립을 위해 바코드를<br>하단 왼쪽에 스캔해주세요.</h1>
+					<article class="reciptmodalhead"></article>
+					<article class="scanPhone">
+						<div class="readbacod">
+							<div class="readbacodscreen">
+							</div>
+							<div class="readbacodbottm"></div>
+						</div>
+					</article>
+
+					<article class="phone">
+
+					<article class="pointphone">
+						<div class="barcode_line"></div>
+						<img src="./306926.svg" alt="bacorde">
+
+					</article>
+			</article>
+			<h2 class="skipbtn">SKIP</h2><h2 class="numpadbtn">입력확인</h2>
+			</section>
 			<header id="playerarea">
-				<!--  동영상이 들어갑니다. --><!--  시간과 로고가 표시되는 header -->
 				<div class="head__infor">
 					<div class="timewapper"><span id="time">00:00</span></div>
 					<div class="timewapper"><span id="logoimg">120</span></div>
 				</div>
 			</header>
-			<!--  영화셀렉트하는 영역 시작 -->
 			<section class="mainBox">
 				<section class="main__body">
 					<section class="reCeiptBody">
@@ -47,35 +67,38 @@
 						<figure class="reCeipinfo">
 							<figcaption class="receipinfoperson rcifo">
 								<h3 class="rcifotitle">인원</h3>
-								<p id="moviePersonnelText" class="rcifomation"></p>
+								<p class="rcifomation">성인3명</p>
 							</figcaption>
 							<figcaption class="selectSeatNum rcifo">
 								<h3 class="rcifotitle">좌석</h3>
-								<p id="movieSeatText" class="rcifomation">A3 A4 A6</p>
+								<p class="rcifomation">A3 A4 A6</p>
 							</figcaption>
 							<figcaption class="selecttheater rcifo">
 								<h3 class="rcifotitle">상영관</h3>
-								<p id="movieTheaterText" class="rcifomation">A</p>
+								<p class="rcifomation">A2</p>
 							</figcaption>
 							<figcaption class="movieruningtime rcifo">
 								<h3 class="rcifotitle">상영시간</h3>
-								<p id="showtimeText" class="rcifomation">10:20 - 12:40</p>
+								<p class="rcifomation">10:20 - 12:40</p>
+							</figcaption>
+							<figcaption class="receipNum rcifo">
+								<h3 class="rcifotitle">예매번호</h3>
+								<p class="rcifomation">0000000000</p>
 							</figcaption>
 							<figcaption class="totalAmount rcifo">
-								<h3 id="totalPriceText" class="rcifotitle">총 30,000</h3>
+								<h3 class="rcifotitle">30,000</h3>
 							</figcaption>
 						</figure>
 						<footer class="reCeipfooter">
-							<button id="receiptBtn" class="receiptBtn">결제하기</button>
+							<button class="receiptBtn">결제하기</button>
 						</footer>
 					</section>
 				</section>
 			</section>
 			<footer class="moviefooter">
-				<i id="previousBtn" class="fa-solid fa-angles-left"></i>
-        <i id="homeBtn" class="fa-brands fa-fort-awesome"></i>
+				<i class="fa-solid fa-angles-left"><a href=""> </a></i><i class="fa-brands fa-fort-awesome"><a href=""> </a></i>
 			</footer>
 		</section>
-
+		<script src="./receipt.js"></script>
 	</body>
 </html>

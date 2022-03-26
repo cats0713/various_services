@@ -30,10 +30,10 @@ window.onload = () => {
 		clocktitle.innerHTML = `${hours < 10 ? `0${hours}` : hours} : ${minutes < 10 ? `0${minutes}` : minutes} : ${seconds < 10 ? `0${seconds}` : seconds}`;
 	};
 
-	(() => {
+	let init = () => {
 		getTime();
 		setInterval(getTime, 1000);
-	})();
+	};
 
 	let modalAboutPersonNumChoice = (innervalue, innervalue_2, mymodal) => { //경고 모달
 		mymodal.classList.toggle('opacityscroll');
@@ -61,9 +61,22 @@ window.onload = () => {
 		}
 	}
 
+	init();
+
+	setInterval(()=>{
+		let userCookie = document.cookie.split('=');
+		// console.log("카운트가 진행되고 있습니다.");
+		document.cookie = `userCookie=${Number(userCookie[1])-1}`;	
+		// console.log(document.cookie);
+		if(Number(userCookie[1]) <= 0){
+			console.log("작동시간이 초과되었습니다.");
+			location.href = `/forec`;
+		}
+	},1000);
 
 	$(document).on({
 		click: (e) => {
+			document.cookie = `userCookie=120`;	
 			switch (e.target.className) {
 				case 'seat check': // 체크가 되었을때
 					const check = document.querySelectorAll('.check');
@@ -127,7 +140,6 @@ window.onload = () => {
 	seat.forEach((value, index, array) => { //seat 버튼이 눌리면
 		value.addEventListener('click', (e) => {
 			e.target.classList.toggle('check');
-
 		});
 	});
 

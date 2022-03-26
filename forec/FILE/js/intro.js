@@ -1,12 +1,28 @@
 window.onload = () => {
+	// let userCount = () =>{
+	// 	document.cookie = `userCookie=${Number(userCookie[1])-1}`;
+	// }
+	// (()=>{
+	// 	setTimeout(userCount, 1000);
+	// 	console.log(document.cookies);
+	// })();
+
+	setInterval(()=>{
+		let userCookie = document.cookie.split('=');
+		// console.log("카운트가 진행되고 있습니다.");
+		document.cookie = `userCookie=${Number(userCookie[1])-1}`;	
+		// console.log(document.cookie);
+		if(Number(userCookie[1]) <= 0){
+			console.log("작동시간이 초과되었습니다.");
+			location.href = `/forec`;
+		}
+	},1000);
+
 	const clock = document.querySelector('#dayTime');
 	const clocktitle = document.querySelector('#time');
 
-	// console.log(clocktitle);
-
-	getTime = () => {
+	let getTime = () => {
 		const date = new Date();
-
 		const year = date.getFullYear();
 		const month = date.getMonth();
 		let day = date.getDay();
@@ -40,11 +56,18 @@ window.onload = () => {
 		clocktitle.innerHTML = `${hours < 10 ? `0${hours}` : hours}시 ${minutes < 10 ? `0${minutes}` : minutes}분`;
 	};
 
-	init = () => {
+	let init = () => {
 		getTime();
-		setInterval(getTime, 1000);
+		setTimeout(init, 1000);
 	};
+
 	init();
+
+	$(document).on({
+		click: (e) => {
+			document.cookie = `userCookie=120`;	
+		}
+	});
 
 	$('#reservationBtn').on('click', function () {
 		location.href = `/forec?page=20`;
@@ -53,6 +76,8 @@ window.onload = () => {
 		location.href = `/forec?page=100`;
 	});
 };
+
+
 $(window).on('load', (e) => {
 	$('.windowloadimg').css({ height: '0%', opacity: '0', visibility: 'hidden' });
 	$('.printTicketimg').css({ transform: 'translateY(-5rem)' });
@@ -67,8 +92,8 @@ $(document).on({
 				$('#lefttab').css({ transform: ' translateY(-5rem) rotate(5deg)' });
 				break;
 			case 'ticketintroduce Reservation':
-				case 'h1tagR':
-				case 'h2tagR':
+			case 'h1tagR':
+			case 'h2tagR':
 				$('#righttab').css({ transform: ' translateY(-5rem) rotate(5deg)' });
 				break;
 		}
@@ -76,8 +101,8 @@ $(document).on({
 	mouseout: (e) => {
 		switch (e.target.className) {
 			case 'ticketintroduce printticket':
-				case 'h1tagL':
-					case 'h2tagL':
+			case 'h1tagL':
+			case 'h2tagL':
 				$('#lefttab').css({ transform: 'translateY(-5rem) rotate(0deg)' });
 				break;
 			case 'ticketintroduce Reservation':

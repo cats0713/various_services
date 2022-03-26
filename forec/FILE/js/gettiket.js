@@ -22,14 +22,14 @@ window.onload = () => {
 	$(function () {
 		let getHypen = (target_number) => {
 			let target = String(target_number);
-			let dot = /\B(?=(\d{4})+(?!\d))/g;
+			let dot = /\B(?=(\d{5})+(?!\d))/g;
 			return target.replace(dot, "-");
 		};
 		let number = "";
 		let Numresult = document.querySelector('.Numresult');
 		$(".mkeybord").on('click', function (e) {
 			if ( //숫자 버튼을 눌렀을때
-				$('.Numresult').html().length < 9 &&
+				$('.Numresult').html().length < 10 &&
 				e.target.id != $('#resetMnum') &&
 				e.target.id != $('#backSpace') &&
 				e.target.innerHTML != "확인"
@@ -37,7 +37,7 @@ window.onload = () => {
 				number += e.target.innerHTML;
 				$(".Numresult").html(getHypen(number));
 			} else if ( 
-				$(".Numresult").html().length < 9 &&
+				$(".Numresult").html().length < 10 &&
 				e.target.id == $('#resetMnum') &&
 				e.target.id != $('#backSpace') &&
 				e.target.innerHTML != "확인"
@@ -62,6 +62,13 @@ window.onload = () => {
 		$("#previousBtn").on("click", function () {
 			location.href = `${window.location.pathname}?page=10`;
 		});
-	});
+		
+		$("#ticketsumit").on("click",()=>{
+			if(Numresult.innerHTML.length == 10){
+				const userTicket = Numresult.innerHTML;
+				location.href = `${window.location.pathname}?page=110&number=${userTicket}`;	
+			}
+		});
 
+	});
 }

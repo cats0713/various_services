@@ -1,48 +1,44 @@
 window.onload = () => {
-
+	
 	let clocktitle = document.querySelector('#time');
 	let userDataArray = [];
 	//[0]: 영화제목, [1]: 시간, [2]: 영화관(A,B), [3]: 성인, [4]: 청소년, [5]: 장애인, [6]: 노약자
 
 	const cutbtn = document.querySelectorAll('.cutbtn');
 
-	let getTime = () => {
+	let userGetTime = () => {
 		const date = new Date();
 		const minutes = date.getMinutes();
 		const hours = date.getHours();
 		const seconds = date.getSeconds();
 		clocktitle.innerHTML = `${hours < 10 ? `0${hours}` : hours} :${minutes < 10 ? `0${minutes}` : minutes}: ${seconds < 10 ? `0${seconds}` : seconds}`;
 	};
-	let init = () => {
-		getTime();
-		setInterval(getTime, 1000);
-	};
+
 	let modalAboutPersonNumChoice = (innervalue, innervalue_2, mymodal) => {
 		mymodal.classList.toggle('opacityscroll');
 		for (let i = 0; i < 2; i++) {
 			setTimeout(() => {
 				mymodal.innerHTML = `<div class="modalhat">
-	<div class="strip"></div>
-	<div class="strip"></div>
-	<div class="strip"></div>
-</div>
-<header class="coutnWrningModalheader">
-	<h1 class="coutnWrningModalheadertitle">
-		${innervalue}
-		<p class="enterkey">${innervalue_2}</p>
-		<i class="fa-solid fa-triangle-exclamation"></i>
-	</h1>
-</header>
-<figure class="modalinfomation">
-	<figcaption class="modalinfomation_inner">
-		<p class="cunnum">${2 - i}초 뒤에</p>
-		자동으로 창이 닫힙니다.
-	</figcaption>
-</figure>`
+				<div class="strip"></div>
+				<div class="strip"></div>
+				<div class="strip"></div>
+				</div>
+				<header class="coutnWrningModalheader">
+				<h1 class="coutnWrningModalheadertitle">
+				${innervalue}
+				<p class="enterkey">${innervalue_2}</p>
+				<i class="fa-solid fa-triangle-exclamation"></i>
+				</h1>
+				</header>
+				<figure class="modalinfomation">
+				<figcaption class="modalinfomation_inner">
+				<p class="cunnum">${2 - i}초 뒤에</p>
+				자동으로 창이 닫힙니다.
+				</figcaption>
+				</figure>`
 			}, i * 1000);
 		}
 	}
-	init();
 
 	let parseData = (userData) => {
 		if (/^no/.test(userData)) {
@@ -64,9 +60,27 @@ window.onload = () => {
 		console.log(userDataArray);
 	}
 
+	let init = () => {
+		userGetTime();
+		setInterval(userGetTime, 1000);
+	};
+	init();
+
+	setInterval(()=>{
+		let userCookie = document.cookie.split('=');
+		// console.log("카운트가 진행되고 있습니다.");
+		document.cookie = `userCookie=${Number(userCookie[1])-1}`;	
+		// console.log(document.cookie);
+		if(Number(userCookie[1]) <= 0){
+			console.log("작동시간이 초과되었습니다.");
+			location.href = `/forec`;
+		}
+	},1000);
+
 	// 동작들 제이쿼리
 	$(document).on({
 		click: (e) => {
+			document.cookie = `userCookie=120`;	
 			switch (e.target.id) {
 				case 'cutBtn':
 					if (true) {
@@ -99,7 +113,7 @@ window.onload = () => {
 							e.target.classList.remove('check');
 							e.target.classList.add('backColor');
 							// console.log("초과되었습니다.");
-							if(!(conut_Num1 >= 2 || conut_Num2 >= 2 || conut_Num3 >= 2 || conut_Num4 >= 2)){
+							if (!(conut_Num1 >= 2 || conut_Num2 >= 2 || conut_Num3 >= 2 || conut_Num4 >= 2)) {
 								const mymodal = document.querySelector('.coutnWrningModal');
 								modalAboutPersonNumChoice(`관람인원이`, `초과 되었습니다`, mymodal);
 								setTimeout(function () {
