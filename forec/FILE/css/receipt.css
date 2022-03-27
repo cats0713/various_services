@@ -237,6 +237,10 @@ html button {
   animation: translatebox 6s linear infinite reverse;
 }
 
+.receiptModal .barcode_line img {
+  margin-top: 2rem;
+}
+
 @-webkit-keyframes translatebox {
   0% {
     -webkit-transform: translateY(0rem);

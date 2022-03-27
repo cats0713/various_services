@@ -38,7 +38,8 @@ window.onload = () => {
 
 	$(document).on({
 		click: (e) => {
-			document.cookie = `userCookie=120`;	
+			document.cookie = `userCookie=120`;
+			console.log(e.target);
 		}
 	});
 
@@ -70,6 +71,7 @@ window.onload = () => {
 			}
 		});
 		$("#resetMnum").on('click', function (e) {
+
 			number = "";
 			Numresult.innerHTML = "";
 		});

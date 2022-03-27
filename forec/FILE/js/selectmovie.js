@@ -22,6 +22,7 @@ window.onload = () => {
 		const hours = date.getHours();
 		const seconds = date.getSeconds();
 		clocktitle.innerHTML = `${hours < 10 ? `0${hours}` : hours} :${minutes < 10 ? `0${minutes}` : minutes}: ${seconds < 10 ? `0${seconds}` : seconds}`;
+		setTimeout(userGetTime, 1000);
 	};
 
 	let modalAboutPersonNumChoice = (innervalue, innervalue_2, mymodal) => {
@@ -69,12 +70,7 @@ window.onload = () => {
 		userDataArray[6] = old_user;
 		//console.log(userDataArray);
 	}
-
-	let init = () => {
-		userGetTime();
-		setTimeout(userGetTime, 1000);
-	};
-	init();
+	userGetTime();
 
 	// 동작들 제이쿼리
 	$(document).on({

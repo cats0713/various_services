@@ -1,14 +1,14 @@
 window.onload = () => {
-	setInterval(()=>{
+	setInterval(() => {
 		let userCookie = document.cookie.split('=');
 		// console.log("카운트가 진행되고 있습니다.");
-		document.cookie = `userCookie=${Number(userCookie[1])-1}`;	
+		document.cookie = `userCookie=${Number(userCookie[1]) - 1}`;
 		// console.log(document.cookie);
-		if(Number(userCookie[1]) <= 0){
+		if (Number(userCookie[1]) <= 0) {
 			console.log("작동시간이 초과되었습니다.");
 			location.href = `/forec`;
 		}
-	},1000);
+	}, 1000);
 	// 시간띄우는 함수
 	const clockContainer = document.querySelector('.head__infor');
 	// 시간 들어갈 wapper
@@ -22,7 +22,7 @@ window.onload = () => {
 	const totalPriceText = document.querySelector("#totalPriceText");
 	const receiptBtn = document.querySelector('.receiptBtn');
 	const receiptModal = document.querySelector('.receiptModal');
-	let ReservationNumber = `${Math.floor(Math.random()*(9999-1000)+1000)}-${Math.floor(Math.random()*(99999-10000)+10000)}`;
+	let ReservationNumber = `${Math.floor(Math.random() * (9999 - 1000) + 1000)}-${Math.floor(Math.random() * (99999 - 10000) + 10000)}`;
 	let totalprice = '';
 	let personUrl = '';
 
@@ -40,9 +40,6 @@ window.onload = () => {
 		const seconds = date.getSeconds();
 		clocktitle.innerHTML = `${hours < 10 ? `0${hours}` : hours} :${minutes < 10 ? `0${minutes}` : minutes}: ${seconds < 10 ? `0${seconds}` : seconds
 			}`;
-	};
-	let init = () => {
-		getTime();
 		setTimeout(getTime, 1000);
 	};
 
@@ -68,15 +65,15 @@ window.onload = () => {
 		showtimeText.innerHTML = `${userDataArray[2]}`;
 		movieReservationNumber.innerHTML = ReservationNumber;
 		totalPriceText.innerHTML = `총 ${totalprice.toLocaleString()}`;
-		personUrl = moviePersonnelText.innerHTML.replaceAll(' ','_');
+		personUrl = moviePersonnelText.innerHTML.replaceAll(' ', '_');
 	}
 
 	printReceipt();
-	init();
+	getTime();
 
 	$(document).on({
 		click: (e) => {
-			document.cookie = `userCookie=120`;	
+			document.cookie = `userCookie=120`;
 		}
 	});
 
@@ -88,15 +85,15 @@ window.onload = () => {
 		location.href = `${window.location.pathname}?page=20`;
 	});
 
-	$(".skipbtn").on("click",()=>{
+	$(".skipbtn").on("click", () => {
 		let seadUrl = `${window.location.pathname}?page=50&title=${userDataArray[1]}&time=${userDataArray[2]}&gan=${userDataArray[3]}&seat=${userDataArray[8]}&number=${ReservationNumber}&person=${personUrl}&price=${totalprice}`;
 		location.href = seadUrl;
 	});
 
-	$(".numpadbtn").on("click",()=>{
+	$(".numpadbtn").on("click", () => {
 		// console.log(window.location.search);
 		//location.href = ``;
-		console.log("입력확인");	
+		console.log("입력확인");
 	});
 
 	//누르면 결제창

@@ -213,6 +213,10 @@ html {
 	 transform: translateY (15rem);
 	 background: #ffd7ee;
 	 animation: translatebox 6s linear infinite reverse;
+	 img{
+
+		 margin-top: 2rem;
+	 }
 	}
 }
 @keyframes translatebox {
