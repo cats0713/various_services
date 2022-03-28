@@ -74,7 +74,7 @@ html {
 	// scroll-behavior: auto;
 	width: 100%;
 	font-size: 10px;
-	height: 140vh;
+	height: 100vh;
 	background: linear-gradient(200deg, $main_4 10%, #657bb8 30%, $main_2 100%);
 	color: $main2_black2;
 	button {
@@ -86,7 +86,7 @@ html {
 .countermodalwapper {
 	width: 72rem;
 	height: 100rem;
-	@include center;
+
 	background: #16142b71;
 	position: fixed;
 	z-index: 20;
@@ -243,7 +243,6 @@ html {
 .modalwapper {
 	width: 72rem;
 	height: 100rem;
-	@include center;
 background: #16142b71;
 	position: fixed;
 	z-index: 20;
@@ -252,7 +251,6 @@ background: #16142b71;
 
 	.modal__header {
 		text-align: center;
-		border-bottom: 0.3rem dashed $main_1;
 		height: 10rem;
 		display: flex;
 		line-height: 9rem;
@@ -289,10 +287,11 @@ background: #16142b71;
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-		color: $main_1;
-		background: #fff;
+		color: $subcolor_1;
+		background: $main2_black2;
 		border-radius: 1.5rem;
 		text-align: center;
+		line-height: 5rem;
 		box-shadow: 0.2rem 2rem 8rem #16142b9c;
 		transition: 0.5s;
 
@@ -305,12 +304,19 @@ background: #16142b71;
 			padding: 1rem;
 			box-shadow: 0.2rem 0.8rem 3rem #15192432;
 			font-size: 2.5rem;
-			background: $main_4;
+			background: #16142b89;
 			color: #f3b4d8;
 			border-radius: 3rem;
-			transition: 0.4s;
+			transition: 0.5s;
 			cursor: pointer;
 		}
+		button:hover {
+			background: #ffe277;
+			color: $main2_pink;
+
+			box-shadow: 0.2rem 0.8rem 3rem #ffbb0065;
+		
+	}
 
 		.modalinfo {
 			padding-top: 1rem;
@@ -335,7 +341,7 @@ background: #16142b71;
 				font-size: 1.5rem;
 
 				letter-spacing: 0.2rem;
-				line-height: 2rem;
+				line-height: 3rem;
 			}
 		}
 	}
@@ -343,7 +349,7 @@ background: #16142b71;
 
 .moviewapper {
 	width: 72rem;
-	height: 100rem;
+	height: 102rem;
 	margin: auto;
 	background: linear-gradient(220deg, rgba(61, 58, 84, 1) 0%, #1a1f33e3 20%, rgba(101, 87, 119, 1) 100%);
 	// 헤더
@@ -568,6 +574,7 @@ background: #16142b71;
 		display: inline-block;
 		text-align: center;
 		text-align: center;
+		z-index: 10;
 		box-shadow: 0rem -3rem 8rem #2e2f4873;
 		border-radius: 3rem 3rem 0rem 0rem;
 
@@ -605,7 +612,18 @@ background: #16142b71;
 	box-shadow: 0rem 0rem 1.5rem #ffbb0065;
 }
 
+
 //인원 wrning modal //
+
+.cwrningwapper {
+	height: 100rem;
+	width: 72rem;
+	position: fixed;
+	z-index: 100;
+	background: #16142b71;
+	backdrop-filter: blur(1rem);
+	transition: 0.5s;
+}
 .coutnWrningModal {
 	
 	@include center;
@@ -614,7 +632,7 @@ background: #16142b71;
 	transition: 0.5s;
 	z-index: 100;
 	height: 30rem;
-	box-shadow: 2rem 0rem 16rem #23222db2;
+	box-shadow: 2rem 0rem 16rem #f3b4d863;
 	background:$main2_green;
 	padding: 2rem;
 	flex-direction: column;

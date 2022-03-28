@@ -134,20 +134,6 @@ html button {
   padding: 2rem;
   border: 0.2rem solid #f3b4d8;
   border-radius: 6rem;
-  -webkit-animation: colorchangepaytitle 3s linear infinite;
-          animation: colorchangepaytitle 3s linear infinite;
-}
-
-@-webkit-keyframes colorchangepaytitle {
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes colorchangepaytitle {
-  100% {
-    opacity: 1;
-  }
 }
 
 .receiptModal .reciptmodalbody {
@@ -220,8 +206,8 @@ html button {
 
 .receiptModal .pointphone img {
   width: 16rem;
-  -webkit-transform: rotate(90deg) translate(5.5rem, 3rem);
-          transform: rotate(90deg) translate(5.5rem, 3rem);
+  -webkit-transform: rotate(90deg) translate(5rem, 3rem);
+          transform: rotate(90deg) translate(5rem, 3rem);
 }
 
 .receiptModal .phone {
@@ -365,6 +351,8 @@ html button {
   background: #1a1f33;
   width: 100%;
   height: 12rem;
+  -webkit-transform: translateY(-2rem);
+          transform: translateY(-2rem);
   display: inline-block;
   text-align: center;
   text-align: center;
@@ -434,8 +422,18 @@ html button {
   border-bottom: 0.4rem dashed #383751;
 }
 
+.reCeiptBody .backIcon {
+  font-size: 30rem;
+  position: absolute;
+  z-index: -1;
+  top: 35%;
+  left: 50%;
+  margin-left: -15rem;
+  color: rgba(186, 127, 161, 0.5);
+}
+
 .reCeiptBody .reCeipheader {
-  height: 40%;
+  height: 45%;
   width: 100%;
   border-bottom: 0.3rem dashed #1a1f33;
 }
@@ -447,12 +445,12 @@ html button {
   width: 100%;
   -webkit-transform: translateY(50%);
           transform: translateY(50%);
-  height: 25%;
+  height: 30%;
   text-align: center;
 }
 
 .reCeiptBody .reCeipheader .receipinfoheader .receipinfointro {
-  font-size: 2rem;
+  font-size: 1.5rem;
   -webkit-transform: translateY(1rem);
           transform: translateY(1rem);
 }
@@ -477,18 +475,18 @@ html button {
   height: 5rem;
   background-color: #383751;
   border-radius: 50%;
-  -webkit-transform: translate(-3rem, 30rem);
-          transform: translate(-3rem, 30rem);
+  -webkit-transform: translate(-3rem, 33.5rem);
+          transform: translate(-3rem, 33.5rem);
 }
 
 .reCeiptBody .reCeipheader .holesright {
-  -webkit-transform: translate(48rem, 24.5rem);
-          transform: translate(48rem, 24.5rem);
+  -webkit-transform: translate(48rem, 28.5rem);
+          transform: translate(48rem, 28.5rem);
   background: #2e2f48;
 }
 
 .reCeiptBody .reCeipinfo {
-  height: 45%;
+  height: 40%;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -535,14 +533,18 @@ html button {
   font-size: 1.5rem;
 }
 
-.reCeiptBody .rcifo:nth-child(6) {
+.reCeiptBody .rcifo:nth-child(1) {
+  margin-top: 1rem;
+}
+
+.reCeiptBody .rcifo:nth-child(5) {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
   padding: 1rem;
 }
 
-.reCeiptBody .rcifo:nth-child(6) > h3 {
+.reCeiptBody .rcifo:nth-child(5) > h3 {
   font-size: 3rem;
 }
 
@@ -563,13 +565,14 @@ html button {
 
 .reCeiptBody .receiptBtn {
   border: none;
-  font-size: 3rem;
-  cursor: pointer;
+  font-size: 2.5rem;
   background: transparent;
   -webkit-transition: 0.4s;
   transition: 0.4s;
   letter-spacing: 0.3rem;
-  width: 20rem;
+  line-height: 10rem;
+  text-align: center;
+  width: 100%;
   height: 10rem;
   color: #3d3a54;
 }
@@ -577,148 +580,4 @@ html button {
 .receiptBtn:hover {
   color: #fff;
 }
-
-.cwrningwapper {
-  height: 100rem;
-  width: 72rem;
-  position: fixed;
-  z-index: 100;
-  background: #16142b71;
-  -webkit-backdrop-filter: blur(1rem);
-          backdrop-filter: blur(1rem);
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-}
-
-.coutnWrningModal {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  position: fixed;
-  width: 35rem;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  z-index: 100;
-  height: 30rem;
-  -webkit-box-shadow: 2rem 0rem 16rem #f3b4d863;
-          box-shadow: 2rem 0rem 16rem #f3b4d863;
-  background: #1a1f33;
-  padding: 2rem;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  border-radius: 0rem 0rem 1rem 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.coutnWrningModal .modalhat {
-  border-radius: 1rem 1rem 0rem 0rem;
-  width: 96%;
-  height: 18%;
-  padding: 2%;
-  position: absolute;
-  -webkit-transition: .5s;
-  transition: .5s;
-  background: #1a1f33;
-  -webkit-box-shadow: 2rem 0rem 16rem #23222db2;
-          box-shadow: 2rem 0rem 16rem #23222db2;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-transform: translate(-3rem, -12rem) rotate(-15deg);
-          transform: translate(-3rem, -12rem) rotate(-15deg);
-}
-
-.coutnWrningModal .modalhat .strip {
-  width: 10%;
-  height: 100%;
-  background: #fff;
-}
-
-.coutnWrningModal .coutnWrningModalheader {
-  height: 40%;
-  width: 100%;
-  text-align: center;
-  border-radius: 1rem;
-}
-
-.coutnWrningModal .coutnWrningModalheader .coutnWrningModalheadertitle {
-  font-size: 3rem;
-  color: #fff;
-  -webkit-transform: translateY(1rem);
-          transform: translateY(1rem);
-  letter-spacing: 0.3rem;
-  line-height: 6rem;
-}
-
-.coutnWrningModal .coutnWrningModalheader .coutnWrningModalheadertitle .fa-triangle-exclamation {
-  -webkit-transform: translateY(1rem);
-          transform: translateY(1rem);
-  font-size: 6rem;
-  color: #ffe277;
-}
-
-.coutnWrningModal .modalinfomation {
-  height: 50%;
-  text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.coutnWrningModal .modalinfomation #modal_point {
-  display: inline-block;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  font-size: 14rem;
-  color: #ffba00;
-  -webkit-animation: identifier 4s infinite;
-          animation: identifier 4s infinite;
-}
-
-@-webkit-keyframes identifier {
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-
-@keyframes identifier {
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-
-.coutnWrningModal .modalinfomation .modalinfomation_inner {
-  font-size: 2rem;
-  text-align: center;
-  padding: 2rem;
-  -webkit-transform: translateY(5rem);
-          transform: translateY(5rem);
-  color: #fff;
-}
-
-.coutnWrningModal .modalinfomation .modalinfomation_inner .cunnum {
-  font-size: 2rem;
-  text-align: center;
-}
-/*# sourceMappingURL=receipt.css.map */
+/*# sourceMappingURL=getpay.css.map */

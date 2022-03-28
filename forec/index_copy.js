@@ -42,10 +42,6 @@ app.get('/forec', (req, res) => {
     </head>
     <body>
       <section class="moviewapper">
-      <section class="cwrningwapper opacityscroll">
-          <section class="coutnWrningModal">
-          </section>
-        </section> 
         <section class="windowloadimg">
           <div class="logoimg"></div>
         </section>
@@ -107,13 +103,13 @@ app.get('/forec', (req, res) => {
     let db_handle = mysql.createConnection({
       host: "127.0.0.1",
       user: "c15st19",
-      password: "c15st19",
+      password: "H07dQfkwWfP5TmM5",
       database: "c15st19"
     });
     //연결
     db_handle.connect(function (err) {
       if (err) {
-        throw err;
+        console.log(err)
       } else {
         console.log("db연결 성공");
       }
@@ -121,7 +117,8 @@ app.get('/forec', (req, res) => {
     //명령어 날리기
     db_handle.query("select * from movie", function (err, rows) {
       if (err) {
-        throw err;
+        console.error(err);
+        return;
       } else {//에러가 안났으면
         let movieTime = [
           ['06:40~08:40<br>A관 46/50', '11:20~13:20<br>B관 46/50', '16:00~18:00<br>A관 46/50', '20:40~22:40<br>B관 46/50'],
@@ -274,7 +271,9 @@ app.get('/forec', (req, res) => {
         <i id="homeBtn" class="fa-brands fa-fort-awesome"></i>
       </footer>
     </section>
+  
   </body>
+  
   </html>`;
 
         res.send(pageTag);
@@ -288,13 +287,13 @@ app.get('/forec', (req, res) => {
     let db_handle = mysql.createConnection({
       host: "127.0.0.1",
       user: "c15st19",
-      password: "c15st19",
+      password: "H07dQfkwWfP5TmM5",
       database: "c15st19"
     });
     //연결
     db_handle.connect(function (err) {
       if (err) {
-        throw err;
+        console.log(err)
       } else {
         console.log("db연결 성공");
       }
@@ -302,7 +301,7 @@ app.get('/forec', (req, res) => {
     //명령어 날리기
     db_handle.query(`select * from movie where img='${req.query.title}'`, function (err, rows) {
       if (err) {
-        throw err;
+        console.error(err);
         return;
       } else {//에러가 안났으면
         // console.log(rows[0]['name']);
@@ -328,11 +327,8 @@ app.get('/forec', (req, res) => {
         <body>
        
           <section class="moviewapper">
-          <section class="cwrningwapper opacityscroll">
-          <section class="coutnWrningModal">
-          </section>
-        </section>
-
+            <section class="cwrningwapper opacityscroll">
+            </section>
 
             <header id="playerarea">
               <div class="head__infor">
@@ -496,13 +492,13 @@ app.get('/forec', (req, res) => {
     let db_handle = mysql.createConnection({
       host: "127.0.0.1",
       user: "c15st19",
-      password: "c15st19",
+      password: "H07dQfkwWfP5TmM5",
       database: "c15st19"
     });
     //연결
     db_handle.connect(function (err) {
       if (err) {
-        throw err;
+        console.log(err)
       } else {
         console.log("db연결 성공");
       }
@@ -510,7 +506,8 @@ app.get('/forec', (req, res) => {
     //명령어 날리기
     db_handle.query(`select * from movie where img='${req.query.title}'`, function (err, rows) {
       if (err) {
-        throw err;
+        console.error(err);
+        return;
       } else {//에러가 안났으면
         // console.log(rows[0]['name']);
         let pageTag = `<!DOCTYPE html>
@@ -541,6 +538,7 @@ app.get('/forec', (req, res) => {
           <body>
             <section class="moviewapper">
               <section class="receiptModal opacityscroll">
+                
                 <article class="reciptmodalbody">
                   <h1>적립을 위해 바코드를<br>하단 왼쪽에 스캔해주세요.</h1>
                   <article class="reciptmodalhead"></article>
@@ -563,10 +561,6 @@ app.get('/forec', (req, res) => {
               <h2 class="skipbtn">SKIP</h2>
               <h2 class="numpadbtn">입력확인</h2>
               </section>
-              <section class="cwrningwapper opacityscroll">
-            <section class="coutnWrningModal">
-            </section>
-          </section>
               <header id="playerarea">
                 <div class="head__infor">
                 <div class="timewapper"><span id="logoimg">FORCE</span></div>
@@ -633,57 +627,36 @@ app.get('/forec', (req, res) => {
   } else if (page == 50) { //결제화면
     res.sendFile(__dirname + '/FILE/html/payment.html');
   } else if (page == 60) { //결제완료화면
-
-    let movieTitle = {
-        'no1_movie' : '타오르는 여인의 초상',
-        'no2_movie' : '언차티드',
-        'no3_movie' : '엔칸토',
-        'no4_movie' : '라라랜드'
-      };
-
-
     let db_handle = mysql.createConnection({
       host: "127.0.0.1",
       user: "c15st19",
-      password: "c15st19",
+      password: "H07dQfkwWfP5TmM5",
       database: "c15st19"
     });
     //연결
     db_handle.connect(function (err) {
       if (err) {
-        throw err;
+        console.log(err)
       } else {
         console.log("db연결 성공");
       }
     });
-
-    let userPerson = ``;
-    if (req.query.adult != 0) {
-      userPerson += `성인${req.query.adult}명 `;
+      // console.log(rows[0]['name']);
+      //res.send(pageTag);
+    db_handle.query(`select * from movie where img='${req.query.title}'`, function (err, rows) {
+      if (err) {
+        console.error(err);
+        return;
+      } else {
+      db_handle.query(`insert into moviemember values ('','${rows[0]['name']}','${req.query.person.replaceAll('_', ' ')}', '${userDataArray[8].replaceAll('_', ' ')}','${req.query.gan}','${req.query.time}','${req.query.number}','${req.query.price}');`, function (err2, rows2) {
+        if (err) {
+          console.error(err);
+          return;
+        }
+      });
     }
-    if (req.query.jonior != 0) {
-      userPerson += `청소년${req.query.jonior}명 `;
-    }
-    if (req.query.Disabled != 0) {
-      userPerson += `장애인${req.query.Disabled}명 `;
-    }
-    if (req.query.old != 0) {
-      userPerson += `노약자${req.query.old}명 `;
-    }
-    let userTitle = `"${req.query.title}"`;
-    console.log(userTitle);
-    console.log(`insert into moviemember (` + '`name`,' + '`person`,' + '`seat`,' + '`gan`,' + '`time`,' + '`number`,' + '`price`' + `) values ('${movieTitle[userTitle]}','${userPerson}','${req.query.seat.replaceAll('_', ' ')}','${req.query.gan}','${req.query.time}','${req.query.number}','${req.query.price}');`);
-    // db_handle.query(`insert into moviemember (` + '`name`,' + '`person`,' + '`seat`,' + '`gan`,' + '`time`,' + '`number`,' + '`price`' + `) values ('${movieTitle[req.query.title]}','${userPerson}','${req.query.seat.replaceAll('_', ' ')}','${req.query.gan}','${req.query.time}','${req.query.number}','${req.query.price}');`, (err2, rows2) => {
-    //   if (err2) {
-    //     throw err2;
-    //   } else {
-    //     console.log(rows2);
-    //     console.log(err2);
-    //     console.log(`insert into moviemember (` + '`name`,' + '`person`,' + '`seat`,' + '`gan`,' + '`time`,' + '`number`,' + '`price`' + `) values ('${movieTitle}','${userPerson}','${req.query.seat.replaceAll('_', ' ')}','${req.query.gan}','${req.query.time}','${req.query.number}','${req.query.price}');`);
-    //     res.sendFile(__dirname + '/FILE/html/getpay.html');
-    //   }
-    // });
-
+    });
+      
     db_handle.end();
   } else if (page == 100) { //예매 확인
     res.sendFile(__dirname + '/FILE/html/gettiket.html');
@@ -691,13 +664,13 @@ app.get('/forec', (req, res) => {
     let db_handle = mysql.createConnection({
       host: "127.0.0.1",
       user: "c15st19",
-      password: "c15st19",
+      password: "H07dQfkwWfP5TmM5",
       database: "c15st19"
     });
     //연결
     db_handle.connect(function (err) {
       if (err) {
-        throw err;
+        console.log(err)
       } else {
         console.log("db연결 성공");
       }
@@ -706,7 +679,7 @@ app.get('/forec', (req, res) => {
     db_handle.query(`select * from moviemember where number='${req.query.number}'`, function (err, rows) {
       if (err) {
         throw err;
-      } else if (rows[0]) {//에러가 안났으면
+      } else if(rows[0]){//에러가 안났으면
         // console.log(rows[0]['name']);
         let pageTag = `<!DOCTYPE html>
         <html lang="ko">
@@ -792,13 +765,13 @@ app.get('/forec', (req, res) => {
           </body>
         </html>`;
         res.send(pageTag);
-      } else {
+      }else{
         res.redirect('/forec?page=100&err=101');
       }
     });
 
     db_handle.end();
-  }
+  } 
 });
 
 

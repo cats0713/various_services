@@ -72,10 +72,10 @@ body,
 html {
 	font-family: 'GmarketSansMedium';
 	// scroll-behavior: auto;
-	width: 100%;
 	font-size: 10px;
 	width: 100%;
-	font-size: 10px;
+	height: 100vh;
+
 	background-size: cover;
 	background-repeat: no-repeat;
 	background: linear-gradient(200deg, $main_4 10%, #657bb8 30%, $main_2 100%);
@@ -85,7 +85,6 @@ html {
 	}
 }
 .windowloadimg {
-
 	width: 72rem;
 	height: 100rem;
 	position: fixed;
@@ -151,7 +150,7 @@ html {
 				transform: translateY(-7em);
 				
 				margin: auto;
-				// background: $main2_green;
+
 				width: 100%;
 				height: 30%;
 				display: flex;
@@ -288,4 +287,99 @@ html {
 .opacityscroll {
 	visibility: hidden;
 	opacity: 0;
+}
+.cwrningwapper {
+	height: 100rem;
+	width: 72rem;
+	position: fixed;
+	z-index: 100;
+	background: #16142b71;
+	backdrop-filter: blur(1rem);
+	transition: 0.5s;
+}
+.coutnWrningModal {
+	
+	@include center;
+	position: fixed;
+	width: 35rem;
+	transition: 0.5s;
+	z-index: 100;
+	height: 30rem;
+	box-shadow: 2rem 0rem 16rem #f3b4d863;
+	background:$main2_green;
+	padding: 2rem;
+	flex-direction: column;
+	border-radius: 0rem 0rem 1rem 1rem;
+	display: flex;
+	.modalhat {
+		border-radius: 1rem 1rem 0rem 0rem;
+		width: 96%;
+		height: 18%;
+		padding:2%;
+		position: absolute;
+		transition: .5s;
+		background: $main2_green;
+		box-shadow: 2rem 0rem 16rem #23222db2;
+		justify-content: space-evenly;
+		display: flex;
+		transform: translate(-3rem,-12rem) rotate(-15deg);
+		.strip {
+			width: 10%;
+			height: 100%;
+			background: #fff;
+		}
+		
+	}
+	.coutnWrningModalheader {
+		height: 40%;
+		width: 100%;
+		text-align: center;
+
+		border-radius: 1rem;
+		.coutnWrningModalheadertitle {
+			font-size: 3rem;
+			color:$subcolor_1;
+			transform: translateY(1rem);
+			letter-spacing: 0.3rem;
+			line-height: 6rem;
+
+		
+			.fa-triangle-exclamation {
+				transform: translateY(1rem);
+				font-size: 6rem;
+				color: #ffe277;
+			}
+		}
+	}
+	.modalinfomation {
+		height: 50%;
+		text-align: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		#modal_point {
+			display: inline-block;
+			transition: 0.5s;
+			font-size: 14rem;
+			color: $main2_pink;
+			animation: identifier 4s infinite;
+		}
+		@keyframes identifier {
+			100% {
+				transform: rotate(360deg);
+			}
+		}
+		.modalinfomation_inner {
+			font-size: 2rem;
+			text-align: center;
+			padding: 2rem;
+			transform: translateY(5rem);
+			color: $subcolor_1;
+			.cunnum {
+				font-size: 2rem;
+				text-align: center;
+			}  
+		}
+	}
 }

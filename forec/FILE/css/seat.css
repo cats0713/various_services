@@ -68,7 +68,7 @@ html {
   background-size: cover;
   background-repeat: no-repeat;
   font-size: 10px;
-  height: 140vh;
+  height: 100vh;
   background: linear-gradient(200deg, #465fa4 10%, #657bb8 30%, #f3b4d8 100%);
   color: #3d3a54;
 }
@@ -415,8 +415,6 @@ html button {
   height: 100rem;
   margin: auto;
   background: linear-gradient(220deg, #3d3a54 0%, #1a1f33e3 20%, #655777 100%);
-  -webkit-box-shadow: 2rem .1rem 6rem #494662d3;
-          box-shadow: 2rem .1rem 6rem #494662d3;
 }
 
 .moviewapper #playerarea {
@@ -757,23 +755,7 @@ html button {
   letter-spacing: 0.5rem;
 }
 
-.moviewapper .resultprice .personlist .totalpersonList::-webkit-scrollbar {
-  width: 1rem;
-}
-
-.moviewapper .resultprice .personlist .totalpersonList::-webkit-scrollbar-thumb {
-  height: 1rem;
-  background-color: #f3b4d8;
-  border-radius: 1rem;
-}
-
-.moviewapper .resultprice .personlist .totalpersonList::-webkit-scrollbar-track {
-  background: #3d3a54;
-}
-
 .moviewapper .resultprice .personlist .totalpersonList {
-  -webkit-transform: translateY(-1rem);
-          transform: translateY(-1rem);
   height: 65%;
   width: 100%;
   -webkit-box-orient: horizontal;
@@ -784,7 +766,6 @@ html button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  overflow-y: scroll;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
@@ -833,6 +814,8 @@ html button {
 .moviewapper .resultprice .personlist .totalPricePreview {
   border-radius: 1rem;
   width: 20rem;
+  -webkit-transform: translateY(-1rem);
+          transform: translateY(-1rem);
   height: 5rem;
   padding: 2rem;
   -ms-flex-item-align: center;
@@ -870,7 +853,7 @@ html button {
   font-size: 2.5rem;
   letter-spacing: 0.2rem;
   cursor: pointer;
-  border-radius: 2rem;
+  border-radius: 4rem;
   -webkit-transition: 0.7s;
   transition: 0.7s;
 }
@@ -1011,6 +994,18 @@ html button {
      object-fit: cover;
 }
 
+.cwrningwapper {
+  height: 100rem;
+  width: 72rem;
+  position: fixed;
+  z-index: 100;
+  background: #16142b71;
+  -webkit-backdrop-filter: blur(1rem);
+          backdrop-filter: blur(1rem);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
 .coutnWrningModal {
   position: relative;
   top: 50%;
@@ -1023,8 +1018,8 @@ html button {
   transition: 0.5s;
   z-index: 100;
   height: 30rem;
-  -webkit-box-shadow: 2rem 0rem 16rem #23222db2;
-          box-shadow: 2rem 0rem 16rem #23222db2;
+  -webkit-box-shadow: 2rem 0rem 16rem #f3b4d863;
+          box-shadow: 2rem 0rem 16rem #f3b4d863;
   background: #1a1f33;
   padding: 2rem;
   -webkit-box-orient: vertical;
@@ -1142,4 +1137,3 @@ html button {
   font-size: 2rem;
   text-align: center;
 }
-/*# sourceMappingURL=seat.css.map */

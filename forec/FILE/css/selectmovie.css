@@ -66,7 +66,7 @@ html {
   font-family: 'GmarketSansMedium';
   width: 100%;
   font-size: 10px;
-  height: 140vh;
+  height: 100vh;
   background: linear-gradient(200deg, #465fa4 10%, #657bb8 30%, #f3b4d8 100%);
   color: #3d3a54;
 }
@@ -82,11 +82,6 @@ html button {
 .countermodalwapper {
   width: 72rem;
   height: 100rem;
-  position: relative;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
   background: #16142b71;
   position: fixed;
   z-index: 20;
@@ -302,11 +297,6 @@ html button {
 .modalwapper {
   width: 72rem;
   height: 100rem;
-  position: relative;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
   background: #16142b71;
   position: fixed;
   z-index: 20;
@@ -318,7 +308,6 @@ html button {
 
 .modalwapper .modal__header {
   text-align: center;
-  border-bottom: 0.3rem dashed #1a1f33;
   height: 10rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -366,10 +355,11 @@ html button {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  color: #1a1f33;
-  background: #fff;
+  color: #fff;
+  background: #3d3a54;
   border-radius: 1.5rem;
   text-align: center;
+  line-height: 5rem;
   -webkit-box-shadow: 0.2rem 2rem 8rem #16142b9c;
           box-shadow: 0.2rem 2rem 8rem #16142b9c;
   -webkit-transition: 0.5s;
@@ -386,12 +376,19 @@ html button {
   -webkit-box-shadow: 0.2rem 0.8rem 3rem #15192432;
           box-shadow: 0.2rem 0.8rem 3rem #15192432;
   font-size: 2.5rem;
-  background: #465fa4;
+  background: #16142b89;
   color: #f3b4d8;
   border-radius: 3rem;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   cursor: pointer;
+}
+
+.modalwapper .modal_body button:hover {
+  background: #ffe277;
+  color: #ffba00;
+  -webkit-box-shadow: 0.2rem 0.8rem 3rem #ffbb0065;
+          box-shadow: 0.2rem 0.8rem 3rem #ffbb0065;
 }
 
 .modalwapper .modal_body .modalinfo {
@@ -427,12 +424,12 @@ html button {
 .modalwapper .modal_body .modalinfo p {
   font-size: 1.5rem;
   letter-spacing: 0.2rem;
-  line-height: 2rem;
+  line-height: 3rem;
 }
 
 .moviewapper {
   width: 72rem;
-  height: 100rem;
+  height: 102rem;
   margin: auto;
   background: linear-gradient(220deg, #3d3a54 0%, #1a1f33e3 20%, #655777 100%);
 }
@@ -733,6 +730,7 @@ html button {
   display: inline-block;
   text-align: center;
   text-align: center;
+  z-index: 10;
   -webkit-box-shadow: 0rem -3rem 8rem #2e2f4873;
           box-shadow: 0rem -3rem 8rem #2e2f4873;
   border-radius: 3rem 3rem 0rem 0rem;
@@ -779,6 +777,18 @@ html button {
           box-shadow: 0rem 0rem 1.5rem #ffbb0065;
 }
 
+.cwrningwapper {
+  height: 100rem;
+  width: 72rem;
+  position: fixed;
+  z-index: 100;
+  background: #16142b71;
+  -webkit-backdrop-filter: blur(1rem);
+          backdrop-filter: blur(1rem);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
 .coutnWrningModal {
   position: relative;
   top: 50%;
@@ -791,8 +801,8 @@ html button {
   transition: 0.5s;
   z-index: 100;
   height: 30rem;
-  -webkit-box-shadow: 2rem 0rem 16rem #23222db2;
-          box-shadow: 2rem 0rem 16rem #23222db2;
+  -webkit-box-shadow: 2rem 0rem 16rem #f3b4d863;
+          box-shadow: 2rem 0rem 16rem #f3b4d863;
   background: #1a1f33;
   padding: 2rem;
   -webkit-box-orient: vertical;
@@ -910,4 +920,3 @@ html button {
   font-size: 2rem;
   text-align: center;
 }
-/*# sourceMappingURL=selectmovie.css.map */

@@ -1,12 +1,34 @@
 window.onload = () => {
+	let countTime = 0;
+
 	setInterval(()=>{
 		let userCookie = document.cookie.split('=');
-		// console.log("카운트가 진행되고 있습니다.");
-		document.cookie = `userCookie=${Number(userCookie[1])-1}`;	
+		let timer1;
+		let timer2;
+
+		document.cookie = `userCookie=${Number(userCookie[1])-1}`;//쿠키 카운트
 		// console.log(document.cookie);
-		if(Number(userCookie[1]) <= 0){
-			console.log("작동시간이 초과되었습니다.");
+
+		if(Number(userCookie[1]) == 5){ //경고시간
+			countTime += 1;	
+			if(countTime == 1){
+				const mymodal = document.querySelector('.cwrningwapper');
+				modalAboutPersonNumChoice2(`홈 화면으로`, `돌아갑니다.`, mymodal);
+				timer1 = setTimeout(function () {
+					document.querySelector('.modalhat').style.transform = 'translate(-2rem, -8rem) rotate(0deg)';
+				}, 4800)
+				timer2 = setTimeout(function () {
+					mymodal.classList.add('opacityscroll');
+				}, 5000);
+			}
+		}
+
+		if(Number(userCookie[1]) == 0){ //진짜로 돌아갈 시간 
 			location.href = `/forec`;
+		}
+		if(countTime == 0){ //도중에 클릭했을경우 중지
+			clearTimeout(timer1);
+			clearTimeout(timer2);
 		}
 	},1000);
 
@@ -21,7 +43,9 @@ window.onload = () => {
 		const minutes = date.getMinutes();
 		const hours = date.getHours();
 		const seconds = date.getSeconds();
-		clocktitle.innerHTML = `${hours < 10 ? `0${hours}` : hours} :${minutes < 10 ? `0${minutes}` : minutes}: ${seconds < 10 ? `0${seconds}` : seconds}`;
+		clocktitle.innerHTML = `${hours < 10 ? `0${hours}` : hours} :${minutes < 10 ? `0${minutes}` : minutes}: ${
+			seconds < 10 ? `0${seconds}` : seconds
+		}`;
 		setTimeout(userGetTime, 1000);
 	};
 
@@ -29,7 +53,9 @@ window.onload = () => {
 		mymodal.classList.toggle('opacityscroll');
 		for (let i = 0; i < 2; i++) {
 			setTimeout(() => {
-				mymodal.innerHTML = `<div class="modalhat">
+				mymodal.innerHTML = `
+				<section class="coutnWrningModal">
+				<div class="modalhat">
 				<div class="strip"></div>
 				<div class="strip"></div>
 				<div class="strip"></div>
@@ -46,7 +72,36 @@ window.onload = () => {
 				<p class="cunnum">${2 - i}초 뒤에</p>
 				자동으로 창이 닫힙니다.
 				</figcaption>
-				</figure>`
+				</figure>
+				</section>`;
+			}, i * 1000);
+		}
+	};
+	let modalAboutPersonNumChoice2 = (innervalue, innervalue_2, mymodal) => { //경고 모달
+		mymodal.classList.toggle('opacityscroll');
+		for (let i = 0; i < 5; i++) {
+			setTimeout(() => {
+				mymodal.innerHTML = `
+				<section class="coutnWrningModal">
+				<div class="modalhat">
+	<div class="strip"></div>
+	<div class="strip"></div>
+	<div class="strip"></div>
+</div>
+<header class="coutnWrningModalheader">
+	<h1 class="coutnWrningModalheadertitle">
+		${innervalue}
+		<p class="enterkey">${innervalue_2}</p>
+		<i class="fa-solid fa-triangle-exclamation"></i>
+	</h1>
+</header>
+<figure class="modalinfomation">
+	<figcaption class="modalinfomation_inner">
+		<p class="cunnum">${5 - i}초 뒤에</p>
+		자동으로 창이 닫힙니다.
+	</figcaption>
+</figure>
+</section>`
 			}, i * 1000);
 		}
 	}
@@ -54,14 +109,14 @@ window.onload = () => {
 	let parseData = (userData) => {
 		if (/^no/.test(userData)) {
 			userDataArray[0] = userData;
-		} else if (typeof (userData) == 'string') {
+		} else if (typeof userData == 'string') {
 			let usertime = [];
 			usertime = userData.split('<br>');
 			userDataArray[1] = usertime[0];
-			userDataArray[2] = (usertime[1][0] == 'A') ? 'A' : 'B'
+			userDataArray[2] = usertime[1][0] == 'A' ? 'A' : 'B';
 			// console.log(userDataArray);
 		}
-	}
+	};
 
 	let parseData_user = (adult_user, jonior_user, Disabled_user, old_user) => {
 		userDataArray[3] = adult_user;
@@ -69,12 +124,15 @@ window.onload = () => {
 		userDataArray[5] = Disabled_user;
 		userDataArray[6] = old_user;
 		//console.log(userDataArray);
-	}
+	};
 	userGetTime();
 
 	// 동작들 제이쿼리
 	$(document).on({
 		click: (e) => {
+			const mymodal = document.querySelector('.cwrningwapper');	
+			countTime = 0;
+			mymodal.classList.add('opacityscroll');
 			document.cookie = `userCookie=120`;	
 			switch (e.target.id) {
 				case 'cutBtn':
@@ -109,11 +167,11 @@ window.onload = () => {
 							e.target.classList.add('backColor');
 							// console.log("초과되었습니다.");
 							if (!(conut_Num1 >= 2 || conut_Num2 >= 2 || conut_Num3 >= 2 || conut_Num4 >= 2)) {
-								const mymodal = document.querySelector('.coutnWrningModal');
+								const mymodal = document.querySelector('.cwrningwapper');
 								modalAboutPersonNumChoice(`관람인원이`, `초과 되었습니다`, mymodal);
 								setTimeout(function () {
 									document.querySelector('.modalhat').style.transform = 'translate(-2rem, -8rem) rotate(0deg)';
-								}, 1800)
+								}, 1800);
 								setTimeout(function () {
 									mymodal.classList.add('opacityscroll');
 								}, 2000);
@@ -135,18 +193,18 @@ window.onload = () => {
 					check.forEach((e, i, v) => {
 						switch (e.className) {
 							case 'adultpeoplecounter cutbtn check':
-								adult_user = Number(e.innerHTML) * 1
+								adult_user = Number(e.innerHTML) * 1;
 								break;
 							case 'joniorpeplecounter cutbtn check':
-								jonior_user = Number(e.innerHTML) * 1
+								jonior_user = Number(e.innerHTML) * 1;
 								// console.log("청소년");
 								break;
 							case 'Disabledpeplecounter cutbtn check':
-								Disabled_user = Number(e.innerHTML) * 1
+								Disabled_user = Number(e.innerHTML) * 1;
 								// console.log("장애인");
 								break;
 							case 'oldplecounter cutbtn check':
-								old_user = Number(e.innerHTML) * 1
+								old_user = Number(e.innerHTML) * 1;
 								// console.log("노약자");
 								break;
 						}
@@ -168,7 +226,7 @@ window.onload = () => {
 					$('.countermodalwapper').toggleClass('opacityscroll');
 					break;
 			}
-		}
+		},
 	});
 
 	cutbtn.forEach((value, index, array) => {
@@ -178,31 +236,26 @@ window.onload = () => {
 		});
 	});
 
-
-
-
-	$("#homeBtn").on("click", function () {
+	$('#homeBtn').on('click', function () {
 		location.href = `${window.location.pathname}?page=10`;
 	});
 
-	$("#previousBtn").on("click", function () {
+	$('#previousBtn').on('click', function () {
 		location.href = `${window.location.pathname}?page=10`;
 	});
-	$("#submitperson").on("click", function () {
-		if ($(".check").length == 0) {
+	$('#submitperson').on('click', function () {
+		if ($('.check').length == 0) {
 			//모달 인원을 선택해주세요
-			const mymodal = document.querySelector('.coutnWrningModal');
+			const mymodal = document.querySelector('.cwrningwapper');
 			modalAboutPersonNumChoice(`인원을`, `선택 해주세요`, mymodal);
 			setTimeout(function () {
 				document.querySelector('.modalhat').style.transform = 'translate(-2rem, -8rem) rotate(0deg)';
-			}, 1800)
+			}, 1800);
 			setTimeout(function () {
 				mymodal.classList.add('opacityscroll');
 			}, 2000);
-
 		} else {
 			location.href = `${window.location.pathname}?page=30&title=${userDataArray[0]}&time=${userDataArray[1]}&gan=${userDataArray[2]}&adult=${userDataArray[3]}&jonior=${userDataArray[4]}&Disabled=${userDataArray[5]}&old=${userDataArray[6]}`;
-
 		}
 	});
 };
