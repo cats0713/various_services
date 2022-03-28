@@ -1,0 +1,182 @@
+@font-face {
+  font-family: 'LeferiPoint-WhiteA';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-WhiteA.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GmarketSansLight';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'YUniverse-L';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_yuniverse@1.0/YUniverse-L.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@-webkit-keyframes big {
+  0% {
+    -webkit-transform: perspective(50rem) translateZ(0);
+            transform: perspective(50rem) translateZ(0);
+  }
+  50% {
+    -webkit-transform: perspective(50rem) translateZ(5rem);
+            transform: perspective(50rem) translateZ(5rem);
+  }
+  100% {
+    -webkit-transform: perspective(50rem) translateZ(0rem);
+            transform: perspective(50rem) translateZ(0rem);
+  }
+}
+
+@keyframes big {
+  0% {
+    -webkit-transform: perspective(50rem) translateZ(0);
+            transform: perspective(50rem) translateZ(0);
+  }
+  50% {
+    -webkit-transform: perspective(50rem) translateZ(5rem);
+            transform: perspective(50rem) translateZ(5rem);
+  }
+  100% {
+    -webkit-transform: perspective(50rem) translateZ(0rem);
+            transform: perspective(50rem) translateZ(0rem);
+  }
+}
+
+@-webkit-keyframes colorchange {
+  0% {
+    text-shadow: 0;
+  }
+  50% {
+    text-shadow: 0rem 0rem 0.8rem #ffba00;
+  }
+  100% {
+    text-shadow: 0;
+  }
+}
+
+@keyframes colorchange {
+  0% {
+    text-shadow: 0;
+  }
+  50% {
+    text-shadow: 0rem 0rem 0.8rem #ffba00;
+  }
+  100% {
+    text-shadow: 0;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body,
+html {
+  font-family: 'YUniverse-L';
+  width: 100%;
+  height: 100vh;
+  font-size: 10px;
+  background: #1a1f33;
+  background: linear-gradient(200deg, #465fa4 10%, #657bb8 30%, #f3b4d8 100%);
+  color: #3d3a54;
+}
+
+body button,
+html button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+.moviewapper {
+  position: relative;
+  width: 72rem;
+  height: 100rem;
+  margin: auto;
+}
+
+.moviewapper .imgBox1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.moviewapper .imgBox2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.moviewapper .nextBtn {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.moviewapper .nextBtn section {
+  width: 100%;
+  height: 50%;
+}
+
+.moviewapper .nextBtn section .textBox {
+  width: 100%;
+  margin-top: 10%;
+}
+
+.moviewapper .nextBtn section .textBox h1 {
+  display: inline-block;
+  font-size: 3rem;
+  color: white;
+  text-shadow: 0.1rem 0.1rem 0.3rem black;
+}
+
+.moviewapper .nextBtn section .textBox div {
+  width: 10rem;
+  height: 10rem;
+  display: inline-block;
+}
+
+.moviewapper .nextBtn section .textBox div .mouseIcon {
+  font-size: 6rem;
+  color: #fff;
+  text-shadow: 0.1rem 0.1rem 0.3rem black;
+  -webkit-animation: big 1s ease infinite;
+          animation: big 1s ease infinite;
+}
+
+.moviewapper .nextBtn:hover {
+  cursor: pointer;
+}
+
+.opacityscroll {
+  visibility: hidden;
+  opacity: 0;
+}

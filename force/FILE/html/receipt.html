@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="chorme" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+			integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<title>receipt</title>
+		<script
+			src="https://code.jquery.com/jquery-3.6.0.min.js"
+			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+			crossorigin="anonymous"
+		></script>
+		<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="./receipt.css" />
+	</head>
+	<body>
+		<section class="moviewapper">
+			<section class="receiptModal opacityscroll">
+				
+				<article class="reciptmodalbody">
+					<h1>적립을 위해 바코드를<br>하단 왼쪽에 스캔해주세요.</h1>
+					<article class="reciptmodalhead"></article>
+					<article class="scanPhone">
+						<div class="readbacod">
+							<div class="readbacodscreen">
+							</div>
+							<div class="readbacodbottm"></div>
+						</div>
+					</article>
+
+					<article class="phone">
+
+					<article class="pointphone">
+						<div class="barcode_line"></div>
+						<img src="./306926.svg" alt="bacorde">
+
+					</article>
+			</article>
+			<h2 class="skipbtn">SKIP</h2><h2 class="numpadbtn">입력확인</h2>
+			</section>
+			<header id="playerarea">
+				<div class="head__infor">
+					<div class="timewapper"><span id="time">00:00</span></div>
+					<div class="timewapper"><span id="logoimg">120</span></div>
+				</div>
+			</header>
+			<section class="mainBox">
+				<section class="main__body">
+					<section class="reCeiptBody">
+						<header class="reCeipheader">
+							<figure class="receipinfoheader">
+								<figcaption class="forceLogo">FORCE CINEMA</figcaption>
+								<figcaption class="receipinfointro">예매 내역을 확인해주세요.</figcaption>
+								<figcaption class="receipinfoheadertitle">타오르는 여인의 초상</figcaption>
+							</figure>
+							<div class="holesleft"></div>
+							<div class="holesright"></div>
+						</header>
+						<figure class="reCeipinfo">
+							<figcaption class="receipinfoperson rcifo">
+								<h3 class="rcifotitle">인원</h3>
+								<p class="rcifomation">성인3명</p>
+							</figcaption>
+							<figcaption class="selectSeatNum rcifo">
+								<h3 class="rcifotitle">좌석</h3>
+								<p class="rcifomation">A3 A4 A6</p>
+							</figcaption>
+							<figcaption class="selecttheater rcifo">
+								<h3 class="rcifotitle">상영관</h3>
+								<p class="rcifomation">A2</p>
+							</figcaption>
+							<figcaption class="movieruningtime rcifo">
+								<h3 class="rcifotitle">상영시간</h3>
+								<p class="rcifomation">10:20 - 12:40</p>
+							</figcaption>
+							<figcaption class="receipNum rcifo">
+								<h3 class="rcifotitle">예매번호</h3>
+								<p class="rcifomation">0000000000</p>
+							</figcaption>
+							<figcaption class="totalAmount rcifo">
+								<h3 class="rcifotitle">30,000</h3>
+							</figcaption>
+						</figure>
+						<footer class="reCeipfooter">
+							<button class="receiptBtn">결제하기</button>
+						</footer>
+					</section>
+				</section>
+			</section>
+			<footer class="moviefooter">
+				<i class="fa-solid fa-angles-left"><a href=""> </a></i><i class="fa-brands fa-fort-awesome"><a href=""> </a></i>
+			</footer>
+		</section>
+		<script src="./receipt.js"></script>
+	</body>
+</html>

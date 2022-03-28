@@ -1,0 +1,583 @@
+@font-face {
+  font-family: 'S-CoreDream-4Regular';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GmarketSansMedium';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'LeferiPoint-WhiteA';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-WhiteA.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GmarketSansLight';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'YUniverse-L';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_yuniverse@1.0/YUniverse-L.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@-webkit-keyframes colorchange {
+  0% {
+    text-shadow: 0;
+  }
+  50% {
+    text-shadow: 0rem 0rem 0.8rem #ffba00;
+  }
+  100% {
+    text-shadow: 0;
+  }
+}
+
+@keyframes colorchange {
+  0% {
+    text-shadow: 0;
+  }
+  50% {
+    text-shadow: 0rem 0rem 0.8rem #ffba00;
+  }
+  100% {
+    text-shadow: 0;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body,
+html {
+  font-family: 'GmarketSansMedium';
+  background: url("../../../img/film-strip-svgrepo-com.svg");
+  width: 100%;
+  font-size: 10px;
+  background: whitesmoke;
+  height: 100vh;
+  color: #3d3a54;
+  background: #1a1f33;
+  background: linear-gradient(200deg, #465fa4 10%, #657bb8 30%, #f3b4d8 100%);
+}
+
+body button,
+html button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  font-family: 'GmarketSansMedium';
+}
+
+.receiptModal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  text-align: center;
+  -webkit-transition: 1s;
+  transition: 1s;
+  background: #16142b85;
+  -webkit-backdrop-filter: blur(1rem);
+          backdrop-filter: blur(1rem);
+}
+
+.receiptModal h2 {
+  font-size: 3rem;
+  width: 30%;
+  -webkit-transform: translate(8rem);
+          transform: translate(8rem);
+  margin: 1rem;
+  padding: 2rem;
+  float: left;
+  border: 0.2rem solid #f3b4d8;
+  border-radius: 7rem;
+  color: #fff;
+  letter-spacing: .2rem;
+  -webkit-transition: .6s;
+  transition: .6s;
+}
+
+.receiptModal h2:hover {
+  cursor: pointer;
+  color: #f3b4d8;
+  background: #fff;
+}
+
+.receiptModal h1 {
+  width: 75%;
+  -webkit-transform: translate(12%);
+          transform: translate(12%);
+  font-size: 3rem;
+  letter-spacing: .2rem;
+  color: #fff;
+  padding: 2rem;
+  border: 0.2rem solid #f3b4d8;
+  border-radius: 6rem;
+}
+
+.receiptModal .reciptmodalbody {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+  height: 60%;
+  -webkit-perspective: 20rem;
+          perspective: 20rem;
+  -webkit-perspective-origin: 20%;
+          perspective-origin: 20%;
+}
+
+.receiptModal .reciptmodalbody .scanPhone {
+  -webkit-box-shadow: 2rem 2rem 4rem #f3b4d8;
+          box-shadow: 2rem 2rem 4rem #f3b4d8;
+  width: 40%;
+  height: 30%;
+  background: white;
+  -webkit-transform: translate(7rem, 12rem) rotateY(10deg);
+          transform: translate(7rem, 12rem) rotateY(10deg);
+  border-radius: 2rem;
+}
+
+.receiptModal .reciptmodalbody .scanPhone .readbacod {
+  width: 80%;
+  height: 70%;
+  -webkit-transform: translate(3rem, 2.5rem);
+          transform: translate(3rem, 2.5rem);
+  background: linear-gradient(190deg, #f3b4d8 40%, #fff);
+  border-radius: 1rem;
+  overflow: hidden;
+  -webkit-perspective: 10rem;
+          perspective: 10rem;
+}
+
+.receiptModal .reciptmodalbody .scanPhone .readbacod .readbacodscreen {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(20deg, #f3b4d8, rgba(255, 255, 255, 0.664));
+  -webkit-box-shadow: inset 3rem 4rem 3rem #ffe2f29f;
+          box-shadow: inset 3rem 4rem 3rem #ffe2f29f;
+  -webkit-transform: translate(-6rem, 0.5rem) rotateX(-50deg);
+          transform: translate(-6rem, 0.5rem) rotateX(-50deg);
+}
+
+.receiptModal .reciptmodalbody .scanPhone .readbacod .readbacodbottm {
+  width: 100%;
+  height: 70%;
+  -webkit-transform: translate(-5.5rem, -6rem) rotateX(100deg);
+          transform: translate(-5.5rem, -6rem) rotateX(100deg);
+  background: linear-gradient(30deg, #fff, #f3b4d8);
+}
+
+.receiptModal .pointphone {
+  width: 12rem;
+  height: 20rem;
+  border-radius: .5rem;
+  -webkit-transform: translate(-4rem);
+          transform: translate(-4rem);
+  -webkit-backdrop-filter: blur(0.4rem);
+          backdrop-filter: blur(0.4rem);
+  -webkit-box-shadow: 2rem 0rem 6rem #f3b4d8;
+          box-shadow: 2rem 0rem 6rem #f3b4d8;
+  background: #fff;
+}
+
+.receiptModal .pointphone img {
+  width: 16rem;
+  -webkit-transform: rotate(90deg) translate(5rem, 3rem);
+          transform: rotate(90deg) translate(5rem, 3rem);
+}
+
+.receiptModal .phone {
+  width: 10rem;
+  height: 25rem;
+  background: linear-gradient(-50deg, #465fa4 10%, #657bb8 30%, #f3b4d8 100%);
+  -webkit-box-shadow: 0rem 2rem 8rem #16142b85;
+          box-shadow: 0rem 2rem 8rem #16142b85;
+  padding: 2rem;
+  border-radius: 1rem;
+  margin-left: 5rem;
+  -webkit-transform: rotateY(-5deg) translate(35rem, -10rem);
+          transform: rotateY(-5deg) translate(35rem, -10rem);
+}
+
+.receiptModal .barcode_line {
+  width: 100%;
+  height: 1rem;
+  -webkit-box-shadow: -3rem 2rem 5rem #f3b4d8;
+          box-shadow: -3rem 2rem 5rem #f3b4d8;
+  position: absolute;
+  -webkit-transition: 2s;
+  transition: 2s;
+  -webkit-transform: translateY 15rem;
+          transform: translateY 15rem;
+  background: #ffd7ee;
+  animation: translatebox 6s linear infinite reverse;
+}
+
+.receiptModal .barcode_line img {
+  margin-top: 2rem;
+}
+
+@-webkit-keyframes translatebox {
+  0% {
+    -webkit-transform: translateY(0rem);
+            transform: translateY(0rem);
+  }
+  50% {
+    -webkit-transform: translateY(19rem);
+            transform: translateY(19rem);
+  }
+  100% {
+    -webkit-transform: translateY(0rem);
+            transform: translateY(0rem);
+  }
+}
+
+@keyframes translatebox {
+  0% {
+    -webkit-transform: translateY(0rem);
+            transform: translateY(0rem);
+  }
+  50% {
+    -webkit-transform: translateY(19rem);
+            transform: translateY(19rem);
+  }
+  100% {
+    -webkit-transform: translateY(0rem);
+            transform: translateY(0rem);
+  }
+}
+
+.moviewapper {
+  -webkit-backdrop-filter: blur(0.5rem);
+          backdrop-filter: blur(0.5rem);
+  width: 72rem;
+  height: 100rem;
+  margin: auto;
+  background: #1a1f33;
+  background: linear-gradient(220deg, #3d3a54 0%, #1a1f33e3 20%, #655777 100%);
+}
+
+.moviewapper #playerarea {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.moviewapper #playerarea .head__infor {
+  -webkit-box-shadow: 0rem 3rem 8rem #2e2f4873;
+          box-shadow: 0rem 3rem 8rem #2e2f4873;
+  background: #1a1f33;
+  z-index: 1;
+  height: 10rem;
+  border-radius: 0rem 0rem 3rem 3rem;
+  width: 100%;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.moviewapper #playerarea .head__infor span {
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  line-height: 9.8rem;
+  text-shadow: 0rem 2rem 3rem #16142b62;
+  color: #f3b4d8;
+}
+
+.moviewapper .mainBox::-webkit-scrollbar {
+  width: none;
+  display: none;
+}
+
+.moviewapper .mainBox {
+  width: 100%;
+  overflow-y: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 80rem;
+}
+
+.moviewapper .mainBox .main__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+}
+
+.moviewapper .mainBox .main__body h1 {
+  color: #655777;
+  font-size: 3rem;
+  margin: auto;
+}
+
+.moviewapper .moviefooter {
+  background: #1a1f33;
+  width: 100%;
+  height: 12rem;
+  -webkit-transform: translateY(-2rem);
+          transform: translateY(-2rem);
+  display: inline-block;
+  text-align: center;
+  text-align: center;
+  border-radius: 3rem 3rem 0rem 0rem;
+  -webkit-box-shadow: 0rem -3rem 8rem #2e2f4873;
+          box-shadow: 0rem -3rem 8rem #2e2f4873;
+}
+
+.moviewapper .moviefooter a {
+  text-decoration: none;
+}
+
+.moviewapper .moviefooter i {
+  color: #655777;
+  line-height: 11.8rem;
+  font-size: 4rem;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.moviewapper .moviefooter i:hover {
+  color: #ffe277;
+  text-shadow: 0.2rem 0.8rem 3rem #ffbb0065;
+}
+
+.moviewapper .moviefooter i:nth-child(1) {
+  -webkit-transform: translate(-28rem);
+          transform: translate(-28rem);
+}
+
+.moviewapper .moviefooter i:nth-child(2) {
+  -webkit-transform: translate(28rem);
+          transform: translate(28rem);
+}
+
+.opacityscroll {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.check {
+  background: #ffe277;
+  color: #ffba00;
+  -webkit-box-shadow: 0.2rem 0.8rem 3rem #ffbb0065;
+          box-shadow: 0.2rem 0.8rem 3rem #ffbb0065;
+}
+
+.reCeiptBody {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  top: 30%;
+  -webkit-transition: 2s;
+  transition: 2s;
+  width: 70%;
+  height: 100%;
+  opacity: 0;
+  overflow: hidden;
+  background: #f3b4d8;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  -webkit-box-shadow: 0rem 5rem 8rem #2e2f48;
+          box-shadow: 0rem 5rem 8rem #2e2f48;
+  border-bottom: 0.4rem dashed #383751;
+}
+
+.reCeiptBody .backIcon {
+  font-size: 30rem;
+  position: absolute;
+  z-index: -1;
+  top: 35%;
+  left: 50%;
+  margin-left: -15rem;
+  color: rgba(186, 127, 161, 0.5);
+}
+
+.reCeiptBody .reCeipheader {
+  height: 45%;
+  width: 100%;
+  border-bottom: 0.3rem dashed #1a1f33;
+}
+
+.reCeiptBody .reCeipheader .receipinfoheader {
+  position: absolute;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+  height: 30%;
+  text-align: center;
+}
+
+.reCeiptBody .reCeipheader .receipinfoheader .receipinfointro {
+  font-size: 1.5rem;
+  -webkit-transform: translateY(1rem);
+          transform: translateY(1rem);
+}
+
+.reCeiptBody .reCeipheader .receipinfoheader .forceLogo {
+  font-size: 1.5rem;
+  color: #fff;
+  letter-spacing: 0.5rem;
+}
+
+.reCeiptBody .reCeipheader .receipinfoheader .receipinfoheadertitle {
+  font-size: 5rem;
+  word-break: keep-all;
+  letter-spacing: 0.2rem;
+  color: #3d3a54;
+  padding: 2rem;
+}
+
+.reCeiptBody .reCeipheader .holesleft,
+.reCeiptBody .reCeipheader .holesright {
+  width: 5rem;
+  height: 5rem;
+  background-color: #383751;
+  border-radius: 50%;
+  -webkit-transform: translate(-3rem, 33.5rem);
+          transform: translate(-3rem, 33.5rem);
+}
+
+.reCeiptBody .reCeipheader .holesright {
+  -webkit-transform: translate(48rem, 28.5rem);
+          transform: translate(48rem, 28.5rem);
+  background: #2e2f48;
+}
+
+.reCeiptBody .reCeipinfo {
+  height: 40%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.reCeiptBody .reCeipinfo .rcifo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 78%;
+  height: 12%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-align: center;
+}
+
+.reCeiptBody .reCeipinfo .rcifotitle,
+.reCeiptBody .reCeipinfo .rcifomation {
+  letter-spacing: 0.3rem;
+  color: #1a1f33;
+}
+
+.reCeiptBody .reCeipinfo .rcifotitle {
+  font-size: 2rem;
+}
+
+.reCeiptBody .reCeipinfo .rcifomation {
+  font-size: 1.5rem;
+}
+
+.reCeiptBody .rcifo:nth-child(1) {
+  margin-top: 1rem;
+}
+
+.reCeiptBody .rcifo:nth-child(5) {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding: 1rem;
+}
+
+.reCeiptBody .rcifo:nth-child(5) > h3 {
+  font-size: 3rem;
+}
+
+.reCeiptBody .reCeipfooter {
+  height: 15%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-top: 0.3rem dashed #1a1f33;
+}
+
+.reCeiptBody .receiptBtn {
+  border: none;
+  font-size: 2.5rem;
+  background: transparent;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  letter-spacing: 0.3rem;
+  line-height: 10rem;
+  text-align: center;
+  width: 100%;
+  height: 10rem;
+  color: #3d3a54;
+}
+
+.receiptBtn:hover {
+  color: #fff;
+}
+/*# sourceMappingURL=getpay.css.map */

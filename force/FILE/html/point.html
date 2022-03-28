@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="chorme" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+			integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<title>point</title>
+		<script
+			src="https://code.jquery.com/jquery-3.6.0.min.js"
+			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+			crossorigin="anonymous"
+		></script>
+		<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="../css/point.css" />
+		<script src="../js/point.js"></script>
+
+	</head>
+	<body>
+		<section class="membershipModal opacityscroll">
+			<header class="membershipmodalheader">
+				<h1 class="membershipmodalheadertitle">
+					포인트가
+					<p class="enterkey">적립 되었습니다</p>
+				</h1>
+			</header>
+			<figure class="modalinfomation">
+				<i class="fa-solid fa-wand-sparkles" id="modal_point"></i>
+				<figcaption class="modalinfomation_inner">
+					<p class="cunnum">5초</p>
+					뒤에 자동으로 창이 닫힙니다.
+				</figcaption>
+			</figure>
+		</section>
+		<section class="moviewapper">
+			<header id="playerarea">
+				<!--  동영상이 들어갑니다. --><!--  시간과 로고가 표시되는 header -->
+				<div class="head__infor">
+					<div class="timewapper"><span id="time">00:00</span></div>
+					<div class="timewapper"><span id="logoimg">120</span></div>
+				</div>
+			</header>
+			<!--  영화셀렉트하는 영역 시작 -->
+			<section class="mainBox">
+				<section class="main__body">
+					<section class="membershipBox">
+						<article class="membershipnumberviewer">
+							<div class="intromembership">
+								<p class="intromembership_1">번호를 입력하시면 적립됩니다</p>
+							</div>
+							<div class="numberviewr">
+								<p class="NumNum">010</p>
+								<p class="Numresult"></p>
+							</div>
+						</article>
+						<article class="membershipkeybord">
+							<button class="mkeybord" value="1">1</button>
+							<button class="mkeybord" value="4">4</button>
+							<button class="mkeybord" value="7">7</button>
+							<button class="mkeybord" value="2">2</button>
+							<button class="mkeybord" value="5">5</button>
+							<button class="mkeybord" value="8">8</button>
+							<button class="mkeybord" value="3">3</button>
+							<button class="mkeybord" value="6">6</button>
+							<button class="mkeybord" value="9">9</button>
+							<button class="mkeybord" value="0">0</button>
+							<button class="mkeybord" id="resetMnum"><i class="fa-solid fa-arrow-rotate-left"></i></button>
+						</article>
+					</section>
+					<section class="buttonBox">
+						<button class="gameofmembership Mbtn">GAME</button>
+						<button class="membershipsumit Mbtn">확인</button><button class="membershipskip Mbtn">SKIP</button>
+					</section>
+				</section>
+			</section>
+			<footer class="moviefooter">
+				<i id="previousBtn" class="fa-solid fa-angles-left"></i>
+        <i id="homeBtn" class="fa-brands fa-fort-awesome"></i>
+			</footer>
+		</section>
+
+	</body>
+</html>
