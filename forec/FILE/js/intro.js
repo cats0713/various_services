@@ -32,6 +32,7 @@ window.onload = () => {
 
 	const clock = document.querySelector('#dayTime');
 	const clocktitle = document.querySelector('#time');
+
 	let modalAboutPersonNumChoice2 = (innervalue, innervalue_2, mymodal) => { //경고 모달
 		mymodal.classList.toggle('opacityscroll');
 		for (let i = 0; i < 5; i++) {
@@ -60,6 +61,7 @@ window.onload = () => {
 			}, i * 1000);
 		}
 	}
+	
 	let getTime = () => {
 		const date = new Date();
 		const year = date.getFullYear();
