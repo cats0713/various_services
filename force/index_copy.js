@@ -1,4 +1,4 @@
-const express = require("express");
+const express = require('express');
 const app = express();
 
 const mysql = require('mysql');
@@ -10,20 +10,21 @@ app.use(express.static('FILE'));
 app.use(cookieParser());
 
 app.get('/', (req, res) => {
-  res.redirect('/forec');
+	res.redirect('/forec');
 });
 
 app.get('/forec', (req, res) => {
+	let page = req.query.page;
+	if (page == undefined) {
+		//홈페이지의 처음 화면
+		res.sendFile(__dirname + '/FILE/html/intro_intro.html');
+	} else if (page == 10) {
+		// 예매하기, 티켓출력하기 화면
+		res.cookie('userCookie', 120, {
+			path: '/',
+		});
 
-  let page = req.query.page;
-  if (page == undefined) { //홈페이지의 처음 화면 
-    res.sendFile(__dirname + '/FILE/html/intro_intro.html');
-  } else if (page == 10) { // 예매하기, 티켓출력하기 화면
-    res.cookie('userCookie', 120, {
-      path: '/'
-    });
-
-    let pageTag = `<!DOCTYPE html>
+		let pageTag = `<!DOCTYPE html>
     <html lang="ko">
     <head>
       <meta charset="UTF-8">
@@ -86,11 +87,17 @@ app.get('/forec', (req, res) => {
                     <h2 class="h2tagR">Reservation</h2>
                     </div>
                   </div>
-                  <!-- <div class="rigthBox"></div> -->
-                </div>
-              </div>
+                  </div>
+                  </div>
+                  <div class="poteText">본 홈페이지는 포트폴리오용 페이지입니다.
+                    <span>This homepage is for portfolio purposes.</span>
+                  </div>
+
             </section>
-            <img class="introfooterimg" src="../IMG/unchartedPoster.jpeg" alt="unchartedPoster">
+            <video autoplay loop muted poster="../IMG/intropost.jpeg" preload="auto">
+            <source src="../IMG/movieadd.mp4" type="video/mp4">
+              언티처블
+            </video>
           </section>
         </section>
     
@@ -99,38 +106,59 @@ app.get('/forec', (req, res) => {
     
     </html>`;
 
-    res.send(pageTag);
+		res.send(pageTag);
+	} else if (page == 20) {
+		//영화 선택 화면
 
-  } else if (page == 20) { //영화 선택 화면
+		//db연결정보
+		let db_handle = mysql.createConnection({
+			host: '127.0.0.1',
+			user: 'c15st19',
+			password: 'H07dQfkwWfP5TmM5',
+			database: 'c15st19',
+		});
+		//연결
+		db_handle.connect(function (err) {
+			if (err) {
+				throw err;
+			} else {
+				console.log('db연결 성공');
+			}
+		});
+		//명령어 날리기
+		db_handle.query('select * from movie', function (err, rows) {
+			if (err) {
+				throw err;
+			} else {
+				//에러가 안났으면
+				let movieTime = [
+					[
+						'06:40~08:40<br>A관 46/50',
+						'11:20~13:20<br>B관 46/50',
+						'16:00~18:00<br>A관 46/50',
+						'20:40~22:40<br>B관 46/50',
+					],
+					[
+						'09:00~11:00<br>A관 46/50',
+						'13:40~15:40<br>B관 46/50',
+						'18:20~20:20<br>A관 46/50',
+						'23:00~01:00<br>B관 46/50',
+					],
+					[
+						'6:40~8:40<br>B관 46/50',
+						'11:20~13:20<br>A관 46/50',
+						'16:00~18:00<br>B관 46/50',
+						'20:40~22:40<br>A관 46/50',
+					],
+					[
+						'9:00~11:10<br>B관 46/50',
+						'13:40~15:50<br>A관 46/50',
+						'18:20~20:30<br>B관 46/50',
+						'23:00~1:10<br>A관 46/50',
+					],
+				];
 
-    //db연결정보
-    let db_handle = mysql.createConnection({
-      host: "127.0.0.1",
-      user: "c15st19",
-      password: "H07dQfkwWfP5TmM5",
-      database: "c15st19"
-    });
-    //연결
-    db_handle.connect(function (err) {
-      if (err) {
-        throw err;
-      } else {
-        console.log("db연결 성공");
-      }
-    });
-    //명령어 날리기
-    db_handle.query("select * from movie", function (err, rows) {
-      if (err) {
-        throw err;
-      } else {//에러가 안났으면
-        let movieTime = [
-          ['06:40~08:40<br>A관 46/50', '11:20~13:20<br>B관 46/50', '16:00~18:00<br>A관 46/50', '20:40~22:40<br>B관 46/50'],
-          ['09:00~11:00<br>A관 46/50', '13:40~15:40<br>B관 46/50', '18:20~20:20<br>A관 46/50', '23:00~01:00<br>B관 46/50'],
-          ['6:40~8:40<br>B관 46/50', '11:20~13:20<br>A관 46/50', '16:00~18:00<br>B관 46/50', '20:40~22:40<br>A관 46/50'],
-          ['9:00~11:10<br>B관 46/50', '13:40~15:50<br>A관 46/50', '18:20~20:30<br>B관 46/50', '23:00~1:10<br>A관 46/50']
-        ];
-
-        let pageTag = `<!DOCTYPE html>
+				let pageTag = `<!DOCTYPE html>
         <html lang="ko">
         
         <head>
@@ -237,8 +265,8 @@ app.get('/forec', (req, res) => {
               <!--  slide될 영역 , 이미지를 누르면 시간과 남은좌석이 떠야함 -->
               <section class="main__body">`;
 
-        for (let i in rows) {
-          pageTag += `<div class="slide__info">
+				for (let i in rows) {
+					pageTag += `<div class="slide__info">
 					<img class="sliderimgs" id="sl__1" src="../IMG/selectmovie/no${rows[i]['no']}_movie.jpg" alt="${rows[i]['name']} 포스터"/>
 					<div class="infor__container">
 						<div class="movietitmeCon">
@@ -246,12 +274,12 @@ app.get('/forec', (req, res) => {
 							<p class="title_info">${rows[i]['genre']}</p>
 						</div>
 						<div class="movietimebox">`;
-          for (let j in movieTime[i]) {
-            pageTag += `
+					for (let j in movieTime[i]) {
+						pageTag += `
               <button class="movieUlLicontainer" value="${rows[i]['img']}">${movieTime[i][j]}</button>`;
-          }
+					}
 
-          pageTag += `
+					pageTag += `
 						</div>
 					</div>
 					<div class="infor__tail">
@@ -264,8 +292,8 @@ app.get('/forec', (req, res) => {
 						</div>
 					</div>
 				</div>`;
-        }
-        pageTag += `
+				}
+				pageTag += `
         </section>
         <!--  footer영역 일단 회사마크같은것만 넣 -->
       </section>
@@ -277,36 +305,36 @@ app.get('/forec', (req, res) => {
   </body>
   </html>`;
 
-        res.send(pageTag);
-      }
-    });
+				res.send(pageTag);
+			}
+		});
 
-    db_handle.end(); // DB 접속 종료
-
-  } else if (page == 30) { //좌석선택 화면
-    //db연결정보
-    let db_handle = mysql.createConnection({
-      host: "127.0.0.1",
-      user: "c15st19",
-      password: "H07dQfkwWfP5TmM5",
-      database: "c15st19"
-    });
-    //연결
-    db_handle.connect(function (err) {
-      if (err) {
-        throw err;
-      } else {
-        console.log("db연결 성공");
-      }
-    });
-    //명령어 날리기
-    db_handle.query(`select * from movie where img='${req.query.title}'`, function (err, rows) {
-      if (err) {
-        throw err;
-        return;
-      } else {//에러가 안났으면
-        // console.log(rows[0]['name']);
-        let pageTag = `<!DOCTYPE html>
+		db_handle.end(); // DB 접속 종료
+	} else if (page == 30) {
+		//좌석선택 화면
+		//db연결정보
+		let db_handle = mysql.createConnection({
+			host: '127.0.0.1',
+			user: 'c15st19',
+			password: 'H07dQfkwWfP5TmM5',
+			database: 'c15st19',
+		});
+		//연결
+		db_handle.connect(function (err) {
+			if (err) {
+				throw err;
+			} else {
+				console.log('db연결 성공');
+			}
+		});
+		//명령어 날리기
+		db_handle.query(`select * from movie where img='${req.query.title}'`, function (err, rows) {
+			if (err) {
+				throw err;
+			} else {
+				//에러가 안났으면
+				// console.log(rows[0]['name']);
+				let pageTag = `<!DOCTYPE html>
         <html lang="ko">
         
         <head>
@@ -326,7 +354,7 @@ app.get('/forec', (req, res) => {
         </head>
         
         <body>
-       
+
           <section class="moviewapper">
           <section class="cwrningwapper opacityscroll">
           <section class="coutnWrningModal">
@@ -429,19 +457,19 @@ app.get('/forec', (req, res) => {
                       <footer class="aboutseat">
                         <ul class="showcase">
                           <li>
-                            <div class="seat NA"></div>
+                            <div class="NA"></div>
                             <p>예매 완료</p>
                           </li>
                           <li>
-                            <div class="seat selected"></div>
+                            <div class="selected"></div>
                             <p>선택 가능</p>
                           </li>
                           <li>
-                            <div class="seat occupied"></div>
+                            <div class="occupied"></div>
                             <p>선택 좌석</p>
                           </li>
                           <li>
-                            <div class="seat wheel">W</div>
+                            <div class="wheel">W</div>
                             <p>휠체어 전용석</p>
                           </li>
                         </ul><i class="fa-solid fa-arrow-rotate-left" id="Seatreset"></i>
@@ -459,7 +487,7 @@ app.get('/forec', (req, res) => {
           <section class="totalpersonList">
             <ul id="selectCart" class="selectCart">
               <li class="cartList">
-              <div class="movie"><span class="seatInfo">좌석을 선택해주세요</span></div>
+              <div class="movie"><span class="seatInfo">예매 인원 : </span></div>
               </li>
               <li class="cartText">
               <div class="movie"><span class="seatNum"></span></div>
@@ -486,34 +514,35 @@ app.get('/forec', (req, res) => {
 
 </html>`;
 
-        res.send(pageTag);
-      }
-    });
+				res.send(pageTag);
+			}
+		});
 
-    db_handle.end();
-
-  } else if (page == 40) { //영수증 화면
-    let db_handle = mysql.createConnection({
-      host: "127.0.0.1",
-      user: "c15st19",
-      password: "H07dQfkwWfP5TmM5",
-      database: "c15st19"
-    });
-    //연결
-    db_handle.connect(function (err) {
-      if (err) {
-        throw err;
-      } else {
-        console.log("db연결 성공");
-      }
-    });
-    //명령어 날리기
-    db_handle.query(`select * from movie where img='${req.query.title}'`, function (err, rows) {
-      if (err) {
-        throw err;
-      } else {//에러가 안났으면
-        // console.log(rows[0]['name']);
-        let pageTag = `<!DOCTYPE html>
+		db_handle.end();
+	} else if (page == 40) {
+		//영수증 화면
+		let db_handle = mysql.createConnection({
+			host: '127.0.0.1',
+			user: 'c15st19',
+			password: 'H07dQfkwWfP5TmM5',
+			database: 'c15st19',
+		});
+		//연결
+		db_handle.connect(function (err) {
+			if (err) {
+				throw err;
+			} else {
+				console.log('db연결 성공');
+			}
+		});
+		//명령어 날리기
+		db_handle.query(`select * from movie where img='${req.query.title}'`, function (err, rows) {
+			if (err) {
+				throw err;
+			} else {
+				//에러가 안났으면
+				// console.log(rows[0]['name']);
+				let pageTag = `<!DOCTYPE html>
         <html lang="ko">
           <head>
             <meta charset="UTF-8" />
@@ -624,53 +653,186 @@ app.get('/forec', (req, res) => {
             </section>
           </body>
         </html>`;
-        res.send(pageTag);
-      }
-    });
+				res.send(pageTag);
+			}
+		});
 
-    db_handle.end();
+		db_handle.end();
+	} else if (page == 50) {
+		//결제화면
+    let pageTag = `<!DOCTYPE html>
+    <html lang="ko">
+    
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="chorme" />
+      <meta name="viewport" content="width=device-width,initial-scale=1" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <title>FORCE</title>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+      <link rel="shortcut icon" href="../IMG/favicon/favicon.ico" type="image/x-icon">
+      <link rel="icon" href="../IMG/favicon/favicon.ico" type="image/x-icon">
+      <link rel="stylesheet" href="../css/payment.css" />
+      <script src="../js/payment.js"></script>
+    </head>
+    
+    <body>
+      <section class="moviewapper">
+        <section class="cwrningwapper opacityscroll">
+          <section class="coutnWrningModal">
+          </section>
+        </section>
+        <section class="paymodal opacityscroll">
+          <article class="paymentcard">
+            <h1 class="paymentcardmtitle">
+              카드를 투입구에 넣어주세요
+            </h1>
+            <div class="realcard">
+              <div class="cardline"></div>
+              <img src="../IMG/WireFramer.svg" alt="lune" />
+            </div>
+    
+          </article>
+    
+        </section>
+    
+        <section class="receiptModal opacityscroll">
+    
+          <article class="reciptmodalbody">
+            <h1>적립을 위해 바코드를<br>하단 왼쪽에 스캔해주세요.</h1>
+            <article class="reciptmodalhead"></article>
+            <article class="scanPhone">
+              <div class="readbacod">
+                <div class="readbacodscreen">
+                </div>
+                <div class="readbacodbottm"></div>
+              </div>
+            </article>
+    
+            <article class="phone">
+    
+              <article class="pointphone">
+                <div class="barcode_line"></div>
+                <img src="../IMG/306926.svg" alt="bacorde">
+    
+              </article>
+            </article>
+    
+        </section>
+        <header id="playerarea">
+          <!--  동영상이 들어갑니다. -->
+          <!--  시간과 로고가 표시되는 header -->
+          <div class="head__infor">
+            <div class="timewapper"><span id="logoimg">FORCE</span></div>
+            <div class="timewapper"><span id="title">결제</span></div>
+            <div class="timewapper"><span id="time">00:00</span></div>
+          </div>
+        </header>
+        <!--  영화셀렉트하는 영역 시작 -->
+        <section class="mainBox">
+          <section class="main__body">
+            <section class="Paymentbody">
+              <header class="paymentheader">
+                <h1 class="totalpaymenttitle">결제금액</h1>
+                <p class="totalpayment">30,000원</p>
+              </header>
+              <figure class="paymentinfo">
+                <figcaption class="card paymentsystem">
+                  <div class="cardment">
+                    <div class="dashline"></div>
+                  </div>
+                  <div class="realcard" id="realcard">
+                    <div class="cardline"></div>
+                    <img src="../IMG/WireFramer.svg" alt="lune" />
+                  </div>
+                  <p class="cardtitle">카드결제</p>
+                </figcaption>
+                <figcaption class="money paymentsystem">
+                  <div class="pointment">
+                    <div class="dashline"></div>
+                  </div>
+                  <div class="realpoint" id="realpoint">
+                    <p class="pointInnertext">
+                      FORCE
+                    </p>
+                    <p class="pointInnertext">
+                      POINT
+                    </p>
+                  </div>
+                  <p class="cardtitle">포인트결제</p>
+                </figcaption>
+              </figure>
+              <footer class="paymentfooter">
+                <p class="payfootertitle">결제수단을 선택해주세요.</p>
+              </footer>
+            </section>
+          </section>
+        </section>
+        <footer class="moviefooter">
+          <i id="previousBtn" class="fa-solid fa-angles-left"></i>
+          <i id="homeBtn" class="fa-brands fa-fort-awesome"></i>
+        </footer>
+      </section>
+    
+    </body>
+    
+    </html>`;
+		res.send(pageTag);
+	} else if (page == 60) {
+		//결제완료화면
 
-  } else if (page == 50) { //결제화면
-    res.sendFile(__dirname + '/FILE/html/payment.html');
-  } else if (page == 60) { //결제완료화면
+		let movieTitle = ['영화제목배열', '타오르는 여인의 초상', '언차티드', '엔칸토', '라라랜드'];
 
-    let movieTitle = ['영화제목배열','타오르는 여인의 초상', '언차티드','엔칸토','라라랜드'];
+		let db_handle = mysql.createConnection({
+			host: '127.0.0.1',
+			user: 'c15st19',
+			password: 'H07dQfkwWfP5TmM5',
+			database: 'c15st19',
+		});
+		//연결
+		db_handle.connect(function (err) {
+			if (err) {
+				throw err;
+			} else {
+				console.log('db연결 성공');
+			}
+		});
 
-    let db_handle = mysql.createConnection({
-      host: "127.0.0.1",
-      user: "c15st19",
-      password: "H07dQfkwWfP5TmM5",
-      database: "c15st19"
-    });
-    //연결
-    db_handle.connect(function (err) {
-      if (err) {
-        throw err;
-      } else {
-        console.log("db연결 성공");
-      }
-    });
-
-    let userPerson = ``;
-    if (req.query.adult != 0) {
-      userPerson += `성인${req.query.adult}명 `;
-    }
-    if (req.query.jonior != 0) {
-      userPerson += `청소년${req.query.jonior}명 `;
-    }
-    if (req.query.Disabled != 0) {
-      userPerson += `장애인${req.query.Disabled}명 `;
-    }
-    if (req.query.old != 0) {
-      userPerson += `노약자${req.query.old}명 `;
-    }
-    let userMovieNo = req.query.title.match(/\d/);
-    console.log(movieTitle[userMovieNo[0]]); 
-    db_handle.query(`insert into moviemember (` + '`name`,' + '`person`,' + '`seat`,' + '`gan`,' + '`time`,' + '`number`,' + '`price`' + `) values ('${movieTitle[userMovieNo[0]]}','${userPerson}','${req.query.seat.replaceAll('_', ' ')}','${req.query.gan}','${req.query.time}','${req.query.number}','${req.query.price}');`, (err2, rows2) => {
-      if (err2) {
-        throw err2;
-      } else {
-        let pageTag = `<!DOCTYPE html>
+		let userPerson = ``;
+		if (req.query.adult != 0) {
+			userPerson += `성인${req.query.adult}명 `;
+		}
+		if (req.query.jonior != 0) {
+			userPerson += `청소년${req.query.jonior}명 `;
+		}
+		if (req.query.Disabled != 0) {
+			userPerson += `장애인${req.query.Disabled}명 `;
+		}
+		if (req.query.old != 0) {
+			userPerson += `노약자${req.query.old}명 `;
+		}
+		let userMovieNo = req.query.title.match(/\d/);
+		console.log(movieTitle[userMovieNo[0]]);
+		db_handle.query(
+			`insert into moviemember (` +
+				'`name`,' +
+				'`person`,' +
+				'`seat`,' +
+				'`gan`,' +
+				'`time`,' +
+				'`number`,' +
+				'`price`' +
+				`) values ('${movieTitle[userMovieNo[0]]}','${userPerson}','${req.query.seat.replaceAll('_', ' ')}','${
+					req.query.gan
+				}','${req.query.time}','${req.query.number}','${req.query.price}');`,
+			(err2, rows2) => {
+				if (err2) {
+					throw err2;
+				} else {
+					let pageTag = `<!DOCTYPE html>
         <html lang="ko">
         
         <head>
@@ -744,35 +906,39 @@ app.get('/forec', (req, res) => {
         </body>
         
         </html>`;
-        res.send(pageTag);
-      }
-    });
+					res.send(pageTag);
+				}
+			}
+		);
 
-    db_handle.end();
-  } else if (page == 100) { //예매 확인
-    res.sendFile(__dirname + '/FILE/html/gettiket.html');
-  } else if (page == 110) { //예매정보 확인
-    let db_handle = mysql.createConnection({
-      host: "127.0.0.1",
-      user: "c15st19",
-      password: "H07dQfkwWfP5TmM5",
-      database: "c15st19"
-    });
-    //연결
-    db_handle.connect(function (err) {
-      if (err) {
-        throw err;
-      } else {
-        console.log("db연결 성공");
-      }
-    });
-    //명령어 날리기
-    db_handle.query(`select * from moviemember where number='${req.query.number}'`, function (err, rows) {
-      if (err) {
-        throw err;
-      } else if (rows[0]) {//에러가 안났으면
-        // console.log(rows[0]['name']);
-        let pageTag = `<!DOCTYPE html>
+		db_handle.end();
+	} else if (page == 100) {
+		//예매 확인
+		res.sendFile(__dirname + '/FILE/html/gettiket.html');
+	} else if (page == 110) {
+		//예매정보 확인
+		let db_handle = mysql.createConnection({
+			host: '127.0.0.1',
+			user: 'c15st19',
+			password: 'H07dQfkwWfP5TmM5',
+			database: 'c15st19',
+		});
+		//연결
+		db_handle.connect(function (err) {
+			if (err) {
+				throw err;
+			} else {
+				console.log('db연결 성공');
+			}
+		});
+		//명령어 날리기
+		db_handle.query(`select * from moviemember where number='${req.query.number}'`, function (err, rows) {
+			if (err) {
+				throw err;
+			} else if (rows[0]) {
+				//에러가 안났으면
+				// console.log(rows[0]['name']);
+				let pageTag = `<!DOCTYPE html>
         <html lang="ko">
           <head>
             <meta charset="UTF-8" />
@@ -797,7 +963,20 @@ app.get('/forec', (req, res) => {
             <script src="../js/receipt2.js"></script>
           </head>
           <body>
+        
             <section class="moviewapper">
+            <section class="receipt2modal opacityscroll">
+            <article class="priningreceipt">
+              <h1 class="printingtitle">티켓 출력중입니다</h1>
+              <figure class="printinghead">
+                <header>FORCE</header>
+                  <figure class="printingbody"">
+                  <div class="line"></div>
+                  </figure>
+                <footer></footer>
+              </figure>
+            </article>
+          </section>
               <header id="playerarea">
                 <div class="head__infor">
                 <div class="timewapper"><span id="logoimg">FORCE</span></div>
@@ -839,7 +1018,7 @@ app.get('/forec', (req, res) => {
                         <p id="movieReservationNumber" class="rcifomation">${rows[0]['number']}</p>
                       </figcaption>
                       <figcaption class="totalAmount rcifo">
-                        <h3 id="totalPriceText" class="rcifotitle">총 ${rows[0]['price']}원</h3>
+                        <h3 id="totalPriceText" class="rcifotitle">총 ${rows[0]['price'].toLocaleString()}원</h3>
                       </figcaption>
                     </figure>
                     <footer class="reCeipfooter">
@@ -850,22 +1029,21 @@ app.get('/forec', (req, res) => {
               </section>
               <footer class="moviefooter">
               <i id="previousBtn" class="fa-solid fa-angles-left"></i>
-<i id="homeBtn" class="fa-brands fa-fort-awesome"></i>
+              <i id="homeBtn" class="fa-brands fa-fort-awesome"></i>
               </footer>
             </section>
           </body>
         </html>`;
-        res.send(pageTag);
-      } else {
-        res.redirect('/forec?page=100&err=101');
-      }
-    });
+				res.send(pageTag);
+			} else {
+				res.redirect('/forec?page=100&err=101');
+			}
+		});
 
-    db_handle.end();
-  }
+		db_handle.end();
+	}
 });
 
-
 app.listen(2000, () => {
-  console.log("2000 open");
+	console.log('2000 open');
 });

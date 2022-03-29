@@ -33,6 +33,18 @@
   font-style: normal;
 }
 
+@-webkit-keyframes colorchangepaytitle {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes colorchangepaytitle {
+  100% {
+    opacity: 1;
+  }
+}
+
 @-webkit-keyframes colorchange {
   0% {
     text-shadow: 0;
@@ -113,9 +125,9 @@ html button {
   border: 0.2rem solid #f3b4d8;
   border-radius: 7rem;
   color: #fff;
-  letter-spacing: .2rem;
-  -webkit-transition: .6s;
-  transition: .6s;
+  letter-spacing: 0.2rem;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
 }
 
 .receiptModal h2:hover {
@@ -129,19 +141,13 @@ html button {
   -webkit-transform: translate(12%);
           transform: translate(12%);
   font-size: 3rem;
-  letter-spacing: .2rem;
+  letter-spacing: 0.2rem;
   color: #fff;
   padding: 2rem;
   border: 0.2rem solid #f3b4d8;
   border-radius: 6rem;
   -webkit-animation: colorchangepaytitle 3s linear infinite;
           animation: colorchangepaytitle 3s linear infinite;
-}
-
-@-webkit-keyframes colorchangepaytitle {
-  100% {
-    opacity: 1;
-  }
 }
 
 @keyframes colorchangepaytitle {
@@ -208,7 +214,7 @@ html button {
 .receiptModal .pointphone {
   width: 12rem;
   height: 20rem;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   -webkit-transform: translate(-4rem);
           transform: translate(-4rem);
   -webkit-backdrop-filter: blur(0.4rem);
@@ -561,7 +567,8 @@ html button {
   border-top: 0.3rem dashed #1a1f33;
 }
 
-.reCeiptBody .receiptBtn {
+.reCeiptBody .receiptBtn,
+.reCeiptBody .printBtn {
   border: none;
   font-size: 3rem;
   cursor: pointer;
@@ -574,7 +581,8 @@ html button {
   color: #3d3a54;
 }
 
-.receiptBtn:hover {
+.receiptBtn:hover,
+.printBtn:hover {
   color: #fff;
 }
 
@@ -622,8 +630,8 @@ html button {
   height: 18%;
   padding: 2%;
   position: absolute;
-  -webkit-transition: .5s;
-  transition: .5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   background: #1a1f33;
   -webkit-box-shadow: 2rem 0rem 16rem #23222db2;
           box-shadow: 2rem 0rem 16rem #23222db2;
@@ -720,5 +728,120 @@ html button {
 .coutnWrningModal .modalinfomation .modalinfomation_inner .cunnum {
   font-size: 2rem;
   text-align: center;
+}
+
+.receipt2modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  text-align: center;
+  -webkit-transition: 1s;
+  transition: 1s;
+  background: #16142b85;
+  -webkit-backdrop-filter: blur(1rem);
+          backdrop-filter: blur(1rem);
+}
+
+.receipt2modal .priningreceipt {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+  height: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.receipt2modal .priningreceipt h1 {
+  width: 75%;
+  font-size: 3rem;
+  letter-spacing: 0.2rem;
+  color: #fff;
+  padding: 2rem;
+  border: 0.2rem solid #f3b4d8;
+  border-radius: 7rem;
+  -webkit-transform: translateY(-8rem);
+          transform: translateY(-8rem);
+  opacity: 0;
+  animation: colorchangepaytitle 3s linear infinite reverse;
+}
+
+.receipt2modal .priningreceipt .printinghead {
+  border-radius: 2rem 2rem 0rem 0rem;
+  width: 60%;
+  height: 50%;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #1a1f33), to(transparent));
+  background: linear-gradient(#1a1f33 50%, transparent);
+}
+
+.receipt2modal .priningreceipt .printinghead header {
+  border-radius: 2rem 2rem 2rem 2rem;
+  width: 100%;
+  height: 20%;
+  background: #1a1f33;
+  line-height: 8.5rem;
+  font-size: 2.5rem;
+  letter-spacing: 0.2rem;
+  color: #f3b4d8;
+}
+
+.receipt2modal .priningreceipt .printinghead footer {
+  width: 100%;
+  height: 20%;
+  background: #1a1f33;
+  bottom: 0%;
+}
+
+.receipt2modal .priningreceipt .printingbody {
+  width: 45%;
+  height: 30%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background: #f3b4d8;
+  -webkit-transform: translate(5.5rem);
+          transform: translate(5.5rem);
+  position: absolute;
+  -webkit-animation: receipting 4s linear infinite;
+          animation: receipting 4s linear infinite;
+}
+
+.receipt2modal .priningreceipt .printingbody .line {
+  bottom: 8rem;
+  width: 100%;
+  height: 7rem;
+  position: absolute;
+  border-bottom: 0.5rem dashed #1a1f33;
+}
+
+@-webkit-keyframes receipting {
+  0% {
+    height: 10%;
+  }
+  100% {
+    height: 30%;
+  }
+}
+
+@keyframes receipting {
+  0% {
+    height: 10%;
+  }
+  100% {
+    height: 30%;
+  }
 }
 /*# sourceMappingURL=receipt.css.map */

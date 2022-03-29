@@ -574,10 +574,30 @@ html button {
   text-align: center;
   width: 100%;
   height: 10rem;
-  color: #3d3a54;
+  animation: fontcolchange 2s linear infinite reverse;
 }
 
-.receiptBtn:hover {
-  color: #fff;
+@-webkit-keyframes fontcolchange {
+  0% {
+    color: #3d3a54;
+  }
+  50% {
+    color: #ea85b4;
+  }
+  100% {
+    color: #3d3a54;
+  }
+}
+
+@keyframes fontcolchange {
+  0% {
+    color: #3d3a54;
+  }
+  50% {
+    color: #ea85b4;
+  }
+  100% {
+    color: #3d3a54;
+  }
 }
 /*# sourceMappingURL=getpay.css.map */

@@ -1,20 +1,41 @@
 window.onload = () => {
-	setInterval(()=>{
-		let userCookie = document.cookie.split('=');
-		// console.log("카운트가 진행되고 있습니다.");
-		document.cookie = `userCookie=${Number(userCookie[1])-1}`;	
-		// console.log(document.cookie);
-		if(Number(userCookie[1]) <= 0){
-			console.log("작동시간이 초과되었습니다.");
-			location.href = `/forec`;
-		}
-	},1000);
+	let countTime = 0;
+
+	(()=>{
+		let timer1;
+		let timer2;
+		setInterval(()=>{
+			const userCookie = document.cookie.split('=');
+			document.cookie = `userCookie=${Number(userCookie[1])-1}`;//쿠키 카운트
+			// console.log(document.cookie);
+			if(Number(userCookie[1]) == 5){ //경고시간
+				countTime += 1;	
+				if(countTime == 1){
+					const mymodal = document.querySelector('.cwrningwapper');
+					modalAboutPersonNumChoice2(`홈 화면으로`, `돌아갑니다.`, mymodal);
+					timer1 = setTimeout(function () {
+						document.querySelector('.modalhat').style.transform = 'translate(-2rem, -8rem) rotate(0deg)';
+					}, 4800)
+					timer2 = setTimeout(function () {
+						mymodal.classList.add('opacityscroll');
+					}, 5000);
+				}
+			}
+	
+			if(Number(userCookie[1]) == 0){ //진짜로 돌아갈 시간 
+				location.href = `/forec`;
+			}
+			if(countTime == 0){ //도중에 클릭했을경우 중지
+				clearTimeout(timer1);
+				clearTimeout(timer2);
+			}
+		},1000);
+	})();
 
 	// 시간 들어갈 wapper
-	let clocktitle = document.querySelector('#time');
+	const clocktitle = document.querySelector('#time');
 
-
-	let getTime = () => {
+	const getTime = () => {
 		const date = new Date();
 		const minutes = date.getMinutes();
 		const hours = date.getHours();
@@ -29,9 +50,13 @@ window.onload = () => {
 
 	$(document).on({
 		click: (e) => {
-			document.cookie = `userCookie=120`;	
+			const mymodal = document.querySelector('.cwrningwapper');	
+			countTime = 0;
+			mymodal.classList.add('opacityscroll');
+			document.cookie = `userCookie=120`;
 		}
 	});
+
 
 	$("#homeBtn").on("click", function () {
 		location.href = `${window.location.pathname}?page=10`;
@@ -41,8 +66,9 @@ window.onload = () => {
 		location.href = `${window.location.pathname}?page=10`;
 	});
 
-	$("#printBtn").on("click",()=>{
-		console.log("인쇄하기페이지? 모달?");
+	$(".printBtn").on("click",()=>{
+		// console.log("인쇄하기페이지? 모달?");
+		$('.receipt2modal').toggleClass('opacityscroll');
 	});
 
 };

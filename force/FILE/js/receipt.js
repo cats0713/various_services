@@ -1,39 +1,39 @@
 window.onload = () => {
 	let countTime = 0;
 
-	setInterval(()=>{
-		let userCookie = document.cookie.split('=');
+	(()=>{
 		let timer1;
 		let timer2;
-
-		document.cookie = `userCookie=${Number(userCookie[1])-1}`;//쿠키 카운트
-		// console.log(document.cookie);
-
-		if(Number(userCookie[1]) == 5){ //경고시간
-			countTime += 1;	
-			if(countTime == 1){
-				const mymodal = document.querySelector('.cwrningwapper');
-				modalAboutPersonNumChoice2(`홈 화면으로`, `돌아갑니다.`, mymodal);
-				timer1 = setTimeout(function () {
-					document.querySelector('.modalhat').style.transform = 'translate(-2rem, -8rem) rotate(0deg)';
-				}, 4800)
-				timer2 = setTimeout(function () {
-					mymodal.classList.add('opacityscroll');
-				}, 5000);
+		setInterval(()=>{
+			const userCookie = document.cookie.split('=');
+			document.cookie = `userCookie=${Number(userCookie[1])-1}`;//쿠키 카운트
+			// console.log(document.cookie);
+			if(Number(userCookie[1]) == 5){ //경고시간
+				countTime += 1;	
+				if(countTime == 1){
+					const mymodal = document.querySelector('.cwrningwapper');
+					modalAboutPersonNumChoice2(`홈 화면으로`, `돌아갑니다.`, mymodal);
+					timer1 = setTimeout(function () {
+						document.querySelector('.modalhat').style.transform = 'translate(-2rem, -8rem) rotate(0deg)';
+					}, 4800)
+					timer2 = setTimeout(function () {
+						mymodal.classList.add('opacityscroll');
+					}, 5000);
+				}
 			}
-		}
-		if(Number(userCookie[1]) == 0){ //진짜로 돌아갈 시간 
-			location.href = `/forec`;
-		}
-		if(countTime == 0){ //도중에 클릭했을경우 중지
-			clearTimeout(timer1);
-			clearTimeout(timer2);
-		}
-	},1000);
-	// 시간띄우는 함수
-	const clockContainer = document.querySelector('.head__infor');
+	
+			if(Number(userCookie[1]) == 0){ //진짜로 돌아갈 시간 
+				location.href = `/forec`;
+			}
+			if(countTime == 0){ //도중에 클릭했을경우 중지
+				clearTimeout(timer1);
+				clearTimeout(timer2);
+			}
+		},1000);
+	})();
+	
 	// 시간 들어갈 wapper
-	let clocktitle = document.querySelector('#time');
+	const clocktitle = document.querySelector('#time');
 
 	const moviePersonnelText = document.querySelector("#moviePersonnelText");
 	const movieSeatText = document.querySelector("#movieSeatText");
@@ -44,27 +44,18 @@ window.onload = () => {
 	const receiptBtn = document.querySelector('.receiptBtn');
 	const receiptModal = document.querySelector('.receiptModal');
 
-	let ReservationNumber = `${Math.floor(Math.random() * (9999 - 1000) + 1000)}-${Math.floor(Math.random() * (99999 - 10000) + 10000)}`;
+	const ReservationNumber = `${Math.floor(Math.random() * (9999 - 1000) + 1000)}-${Math.floor(Math.random() * (99999 - 10000) + 10000)}`;
 	let totalprice = '';
 
-	let newUrl = window.location.search;
-	let RegExp = /=\w+(:)?\d*(~)?\d*(:)?\d*/g;
+	const newUrl = window.location.search;
+	const RegExp = /=\w+(:)?\d*(~)?\d*(:)?\d*/g;
 	userDataArray = newUrl.match(RegExp);
 	for (let i = 0; i < userDataArray.length; i++) {
 		userDataArray[i] = userDataArray[i].replace('=', '');
 	}
 
-	let getTime = () => {
-		const date = new Date();
-		const minutes = date.getMinutes();
-		const hours = date.getHours();
-		const seconds = date.getSeconds();
-		clocktitle.innerHTML = `${hours < 10 ? `0${hours}` : hours} :${minutes < 10 ? `0${minutes}` : minutes}: ${seconds < 10 ? `0${seconds}` : seconds
-			}`;
-		setTimeout(getTime, 1000);
-	};
-
-	let printReceipt = () => {
+	(() => {
+		// 영수증 표시
 		totalprice = (Number(userDataArray[4]) * 13000) +
 			(Number(userDataArray[5]) * 10000) +
 			(Number(userDataArray[6]) * 13000) +
@@ -85,11 +76,11 @@ window.onload = () => {
 		movieTheaterText.innerHTML = `${userDataArray[3]}관`;
 		showtimeText.innerHTML = `${userDataArray[2]}`;
 		movieReservationNumber.innerHTML = ReservationNumber;
-		totalPriceText.innerHTML = `총 ${totalprice.toLocaleString()}`;
+		totalPriceText.innerHTML = `총 ${totalprice.toLocaleString()}원`;
 		personUrl = moviePersonnelText.innerHTML.replaceAll(' ', '_');
-	}
+	})();
 
-	let modalAboutPersonNumChoice2 = (innervalue, innervalue_2, mymodal) => { //경고 모달
+	const modalAboutPersonNumChoice2 = (innervalue, innervalue_2, mymodal) => { //경고 모달
 		mymodal.classList.toggle('opacityscroll');
 		for (let i = 0; i < 5; i++) {
 			setTimeout(() => {
@@ -117,8 +108,16 @@ window.onload = () => {
 			}, i * 1000);
 		}
 	}
+	const getTime = () => {
+		const date = new Date();
+		const minutes = date.getMinutes();
+		const hours = date.getHours();
+		const seconds = date.getSeconds();
+		clocktitle.innerHTML = `${hours < 10 ? `0${hours}` : hours} :${minutes < 10 ? `0${minutes}` : minutes}: ${seconds < 10 ? `0${seconds}` : seconds
+			}`;
+		setTimeout(getTime, 1000);
+	};
 
-	printReceipt();
 	getTime();
 
 	$(document).on({
@@ -139,12 +138,12 @@ window.onload = () => {
 	});
 
 	$(".skipbtn").on("click", () => {
-		let seadUrl = `${window.location.pathname}?page=50&title=${userDataArray[1]}&time=${userDataArray[2]}&gan=${userDataArray[3]}&adult=${userDataArray[4]}&jonior=${userDataArray[5]}&Disabled=${userDataArray[6]}&old=${userDataArray[7]}&seat=${userDataArray[8]}&number=${ReservationNumber}&price=${totalprice}`;
+		const seadUrl = `${window.location.pathname}?page=50&title=${userDataArray[1]}&time=${userDataArray[2]}&gan=${userDataArray[3]}&adult=${userDataArray[4]}&jonior=${userDataArray[5]}&Disabled=${userDataArray[6]}&old=${userDataArray[7]}&seat=${userDataArray[8]}&number=${ReservationNumber}&price=${totalprice}`;
 		location.href = seadUrl;
 	});
 
 	$(".numpadbtn").on("click", () => {
-		let seadUrl = `${window.location.pathname}?page=50&title=${userDataArray[1]}&time=${userDataArray[2]}&gan=${userDataArray[3]}&adult=${userDataArray[4]}&jonior=${userDataArray[5]}&Disabled=${userDataArray[6]}&old=${userDataArray[7]}&seat=${userDataArray[8]}&number=${ReservationNumber}&price=${totalprice}`;
+		const seadUrl = `${window.location.pathname}?page=50&title=${userDataArray[1]}&time=${userDataArray[2]}&gan=${userDataArray[3]}&adult=${userDataArray[4]}&jonior=${userDataArray[5]}&Disabled=${userDataArray[6]}&old=${userDataArray[7]}&seat=${userDataArray[8]}&number=${ReservationNumber}&price=${totalprice}`;
 		location.href = seadUrl;
 	});
 
@@ -154,6 +153,7 @@ window.onload = () => {
 	});
 
 };
+
 $(document).ready(function () {
 	$('.reCeiptBody').css({ 'top': '40%', 'opacity': '1' })
 });

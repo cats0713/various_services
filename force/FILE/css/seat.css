@@ -618,7 +618,7 @@ html button {
   height: 80%;
   background: #fff;
   cursor: pointer;
-  border-radius: .4rem;
+  border-radius: 0.4rem;
   -webkit-box-shadow: 0rem 0.8rem 2rem #1a1f33;
           box-shadow: 0rem 0.8rem 2rem #1a1f33;
 }
@@ -678,7 +678,7 @@ html button {
   width: 17rem;
   height: 24.4rem;
   background-size: cover;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   -webkit-box-shadow: 1rem 2rem 6rem #1a1f33ab;
           box-shadow: 1rem 2rem 6rem #1a1f33ab;
   z-index: 1;
@@ -807,7 +807,7 @@ html button {
 .moviewapper .resultprice .personlist .totalpersonList .cartList span {
   margin-left: 1rem;
   color: #fff;
-  font-size: 2rem;
+  font-size: 1.5rem;
   letter-spacing: 0.2rem;
 }
 
@@ -827,9 +827,9 @@ html button {
   letter-spacing: 0.2rem;
   color: white;
   font-weight: bold;
-  font-size: 2.5rem;
+  font-size: 3rem;
   float: right;
-  line-height: 4.9rem;
+  line-height: 7.6rem;
 }
 
 .moviewapper .resultprice .personlist .geticket {
@@ -923,8 +923,8 @@ html button {
 .aboutseat #Seatreset {
   float: right;
   font-size: 5rem;
-  -webkit-transition: .5s;
-  transition: .5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   cursor: pointer;
   color: #655777;
 }
@@ -950,13 +950,22 @@ html button {
 
 .aboutseat .NA {
   background: #465fa4;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 10%;
 }
 
 .aboutseat .selected {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 10%;
   background: #fff;
 }
 
 .aboutseat .occupied {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 10%;
   background: #ffe277;
 }
 
@@ -970,16 +979,12 @@ html button {
 
 .aboutseat .wheel {
   font-size: 2rem;
+  -webkit-transform: translateY(0.5rem);
+          transform: translateY(0.5rem);
   color: #ea85b4;
 }
 
-.aboutseat .seat {
-  border-radius: 10%;
-  width: 2rem;
-  height: 2rem;
-}
-
-[class*=check] {
+[class*='check'] {
   border-radius: 50%;
   background-color: #ffe277;
   color: #ffba00;
@@ -1038,8 +1043,8 @@ html button {
   height: 18%;
   padding: 2%;
   position: absolute;
-  -webkit-transition: .5s;
-  transition: .5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   background: #1a1f33;
   -webkit-box-shadow: 2rem 0rem 16rem #23222db2;
           box-shadow: 2rem 0rem 16rem #23222db2;
@@ -1137,3 +1142,4 @@ html button {
   font-size: 2rem;
   text-align: center;
 }
+/*# sourceMappingURL=seat.css.map */

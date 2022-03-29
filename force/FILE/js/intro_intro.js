@@ -1,7 +1,6 @@
 window.onload=()=>{
-  let imgarray = ['../IMG/intropost.jpeg'];
 
-  let chageImg = (img) => {
+  const chageImg = () => {
     $("#imgBox").fadeToggle();
     setTimeout(function(){
       chageImg();

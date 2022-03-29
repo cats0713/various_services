@@ -1,39 +1,40 @@
 window.onload = () => {
 	let countTime = 0;
-	setInterval(()=>{
-		let userCookie = document.cookie.split('=');
+	(()=>{
 		let timer1;
 		let timer2;
-
-		document.cookie = `userCookie=${Number(userCookie[1])-1}`;//쿠키 카운트
-		// console.log(document.cookie);
-
-		if(Number(userCookie[1]) == 5){ //경고시간
-			countTime += 1;	
-			if(countTime == 1){
-				const mymodal = document.querySelector('.cwrningwapper');
-				modalAboutPersonNumChoice2(`홈 화면으로`, `돌아갑니다.`, mymodal);
-				timer1 = setTimeout(function () {
-					document.querySelector('.modalhat').style.transform = 'translate(-2rem, -8rem) rotate(0deg)';
-				}, 4800)
-				timer2 = setTimeout(function () {
-					mymodal.classList.add('opacityscroll');
-				}, 5000);
+		setInterval(()=>{
+			const userCookie = document.cookie.split('=');
+			document.cookie = `userCookie=${Number(userCookie[1])-1}`;//쿠키 카운트
+			// console.log(document.cookie);
+			if(Number(userCookie[1]) == 5){ //경고시간
+				countTime += 1;	
+				if(countTime == 1){
+					const mymodal = document.querySelector('.cwrningwapper');
+					modalAboutPersonNumChoice2(`홈 화면으로`, `돌아갑니다.`, mymodal);
+					timer1 = setTimeout(function () {
+						document.querySelector('.modalhat').style.transform = 'translate(-2rem, -8rem) rotate(0deg)';
+					}, 4800)
+					timer2 = setTimeout(function () {
+						mymodal.classList.add('opacityscroll');
+					}, 5000);
+				}
 			}
-		}
-		if(Number(userCookie[1]) == 0){ //진짜로 돌아갈 시간 
-			location.href = `/forec`;
-		}
-		if(countTime == 0){ //도중에 클릭했을경우 중지
-			clearTimeout(timer1);
-			clearTimeout(timer2);
-		}
-	},1000);
+	
+			if(Number(userCookie[1]) == 0){ //진짜로 돌아갈 시간 
+				location.href = `/forec`;
+			}
+			if(countTime == 0){ //도중에 클릭했을경우 중지
+				clearTimeout(timer1);
+				clearTimeout(timer2);
+			}
+		},1000);
+	})();
 
 	const clock = document.querySelector('#dayTime');
 	const clocktitle = document.querySelector('#time');
 
-	let modalAboutPersonNumChoice2 = (innervalue, innervalue_2, mymodal) => { //경고 모달
+	const modalAboutPersonNumChoice2 = (innervalue, innervalue_2, mymodal) => { //경고 모달
 		mymodal.classList.toggle('opacityscroll');
 		for (let i = 0; i < 5; i++) {
 			setTimeout(() => {
@@ -62,7 +63,7 @@ window.onload = () => {
 		}
 	}
 	
-	let getTime = () => {
+	const getTime = () => {
 		const date = new Date();
 		const year = date.getFullYear();
 		const month = date.getMonth();

@@ -461,9 +461,20 @@ html {
 		text-align: center;
 		width: 100%;
 		height: 10rem;
-		color: $main2_black2;
+
+		animation: fontcolchange 2s linear infinite reverse;
+	}
+
+	@keyframes fontcolchange {
+		0% { 
+			color:$main2_black2;
+		}
+		50% {
+			color: $main_3;
+		}
+		100% {
+			color: $main2_black2;
+		}
 	}
 }
-.receiptBtn:hover {
-	color: #fff;
-}
+

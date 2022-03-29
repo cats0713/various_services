@@ -476,4 +476,20 @@ html button {
   font-size: 2rem;
   text-align: center;
 }
+
+.poteText {
+  text-align: center;
+  width: 70rem;
+  position: absolute;
+  top: 54rem;
+  left: 50%;
+  margin-left: -35rem;
+  color: #fff;
+  font-size: 2rem;
+}
+
+.poteText span {
+  display: block;
+  font-size: 1rem;
+}
 /*# sourceMappingURL=intro.css.map */

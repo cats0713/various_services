@@ -719,7 +719,13 @@ html button {
 }
 
 .paymodal {
+  text-align: center;
   width: 72rem;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   z-index: 10;
   height: 101rem;
   display: -webkit-box;
@@ -741,8 +747,8 @@ html button {
 }
 
 .paymodal .realcard {
-  -webkit-transform: translate(0rem, 27rem) rotate(90deg);
-          transform: translate(0rem, 27rem) rotate(90deg);
+  -webkit-transform: translate(4.4em, 27rem) rotate(90deg);
+          transform: translate(4.4em, 27rem) rotate(90deg);
   background: linear-gradient(220deg, #465fa4 0%, #7894de 30%, #f3b4d8 100%);
   width: 35rem;
   height: 24rem;
@@ -759,25 +765,55 @@ html button {
           transform: translate(0rem, 5rem);
 }
 
-@-webkit-keyframes movecard {
+@-webkit-keyframes cardstyle {
   0% {
-    -webkit-transform: translate(0rem, 27rem) rotate(90deg);
-            transform: translate(0rem, 27rem) rotate(90deg);
+    -webkit-box-shadow: 0rem 0rem 10rem #675fc09b;
+            box-shadow: 0rem 0rem 10rem #675fc09b;
   }
   50% {
-    -webkit-transform: translate(0rem, 37rem) rotate(90deg);
-            transform: translate(0rem, 37rem) rotate(90deg);
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  100% {
+    -webkit-box-shadow: 0rem 0rem 10rem #675fc09b;
+            box-shadow: 0rem 0rem 10rem #675fc09b;
+  }
+}
+
+@keyframes cardstyle {
+  0% {
+    -webkit-box-shadow: 0rem 0rem 10rem #675fc09b;
+            box-shadow: 0rem 0rem 10rem #675fc09b;
+  }
+  50% {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  100% {
+    -webkit-box-shadow: 0rem 0rem 10rem #675fc09b;
+            box-shadow: 0rem 0rem 10rem #675fc09b;
+  }
+}
+
+@-webkit-keyframes movecard {
+  0% {
+    -webkit-transform: translate(4.4rem, 27rem) rotate(90deg);
+            transform: translate(4.4rem, 27rem) rotate(90deg);
+  }
+  50% {
+    -webkit-transform: translate(4.4rem, 37rem) rotate(90deg);
+            transform: translate(4.4rem, 37rem) rotate(90deg);
   }
 }
 
 @keyframes movecard {
   0% {
-    -webkit-transform: translate(0rem, 27rem) rotate(90deg);
-            transform: translate(0rem, 27rem) rotate(90deg);
+    -webkit-transform: translate(4.4rem, 27rem) rotate(90deg);
+            transform: translate(4.4rem, 27rem) rotate(90deg);
   }
   50% {
-    -webkit-transform: translate(0rem, 37rem) rotate(90deg);
-            transform: translate(0rem, 37rem) rotate(90deg);
+    -webkit-transform: translate(4.4rem, 37rem) rotate(90deg);
+            transform: translate(4.4rem, 37rem) rotate(90deg);
   }
 }
 

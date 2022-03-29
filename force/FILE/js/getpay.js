@@ -1,12 +1,8 @@
 window.onload = () => {
-
-	// 시간띄우는 함수
-	const clockContainer = document.querySelector('.head__infor');
 	// 시간 들어갈 wapper
-	let clocktitle = document.querySelector('#time');
+	const clocktitle = document.querySelector('#time');
 
-
-	let getTime = () => {
+	const getTime = () => {
 		const date = new Date();
 		const minutes = date.getMinutes();
 		const hours = date.getHours();
@@ -20,14 +16,7 @@ window.onload = () => {
 
 	setTimeout(()=>{
 		location.href = window.location.pathname;
-	},10000);
-
-
-	$(document).on({
-		click: (e) => {
-			document.cookie = `userCookie=120`;
-		}
-	});
+	},13000);
 
 	$("#homeBtn").on("click", function () {
 		location.href = `${window.location.pathname}?page=10`;
@@ -35,11 +24,6 @@ window.onload = () => {
 
 	$("#previousBtn").on("click", function () {
 		location.href = `${window.location.pathname}?page=10`;
-	});
-
-	//누르면 결제창
-	receiptBtn.addEventListener('click', () => {
-		receiptModal.classList.toggle('opacityscroll');
 	});
 
 };

@@ -620,7 +620,7 @@ html {
 		align-items: center;
 		align-content: center;
 		flex-wrap: wrap;
-		.mkeybord {
+		.mkeybord, .resultkeybord {
 			background: transparent;
 			border: none;
 			font-family: 'GmarketSansMedium';
@@ -637,7 +637,7 @@ html {
 			border-radius: 1rem;
 			cursor: pointer;
 		}
-		.mkeybord:hover {
+		.mkeybord:hover, .resultkeybord:hover {
 			text-shadow: none;
 			border-radius: 50%;
 			background: #ffe277;
@@ -665,7 +665,6 @@ html {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	transform: translateY(-1rem);
 	.ticketsumit {
 		align-self: center;
 		border: 0;
@@ -673,8 +672,8 @@ html {
 		font-family: 'GmarketSansMedium';
 		font-weight: bold;
 		border: none;
-		width: 32rem;
-		height: 12rem;
+    width: 30rem;
+    height: 10rem;
 		outline: none;
 		padding: 1rem;
 		box-shadow: 0.2rem 0.8rem 3rem #1d224e6c;
@@ -685,7 +684,7 @@ html {
 		letter-spacing: 1rem;
 		text-align: center;
 		cursor: pointer;
-		border-radius: 3rem;
+		border-radius: 5rem;
 		transition: 0.7s;
 	}
 	.ticketsumit:hover {

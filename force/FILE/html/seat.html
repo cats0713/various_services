@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="chorme">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+  <title>seatSelect</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../css/seat.css">
+  <script src="../js/seat.js"></script>
+</head>
+
+<body>
+  <section class="moviewapper">
+    
+    <header id="playerarea">
+      <div class="head__infor">
+        <span id="time">00:00</span>
+        <span id="logoimg">120</span>
+      </div>
+    </header>
+    <section class="mainBox">
+      <section class="main__body">
+        <article class="choseseat">
+          <div class="seatcontainer">
+            <div class="seatcon">
+              <div class="Screen"></div>
+              <i class="fa-solid fa-person-walking-arrow-right"></i>
+              <div class="seatbox">
+                <div class="row Aline">
+                  <p>A</p>
+                  <div class="seat visibiliySeat aline"></div>
+                  <div class="seat visibiliySeat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat visibiliySeat"></div>
+                  <div class="seat visibiliySeat"></div>
+                </div>
+                <div class="row">
+                  <p>B</p>
+                  <div class="seat visibiliySeat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat visibiliySeat"></div>
+                </div>
+                <div class="row">
+                  <p>C</p>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                </div>
+                <div class="row">
+                  <p>D</p>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                </div>
+                <div class="row">
+                  <p>E</p>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                </div>
+                <div class="row backward">
+                  <p>W</p>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                  <div class="seat"></div>
+                </div>
+              </div>
+              <footer class="aboutseat">
+                <ul class="showcase">
+                  <li>
+                    <div class="NA"></div>
+                    <p>예매 완료</p>
+                  </li>
+                  <li>
+                    <div class="selected"></div>
+                    <p>선택 가능</p>
+                  </li>
+                  <li>
+                    <div class="occupied"></div>
+                    <p>선택 좌석</p>
+                  </li>
+                  <li>
+                    <div class="wheel">W</div>
+                    <p>휠체어 전용석</p>
+                  </li>
+                </ul><i class="fa-solid fa-arrow-rotate-left" id="Seatreset"></i>
+              </footer>
+            </div>
+          </div>
+          <section class="resultprice">
+            <div id="movieinfo">
+              <div id="MovieInfo">
+                <h id="Movieinfo_title">타오르는 여인의 초상</h>
+              </div>
+            </div>
+            <div class="personlist">
+              <section class="totalpersonList">
+                <ul class="selectCart">
+                  <li class="cartList">
+                    <div class="movie"><i class="fa-solid fa-circle-minus" id="removeselectseat"></i><span
+                        class="BoxName">A관</span><span class="seatNum">B6</span><span
+                        class="typeofPerson">성인</span><span class="oneofprice">9000</span></div>
+                  </li>
+                  <li class="cartList">
+                    <div class="movie">
+                      <i class="fa-solid fa-circle-minus" id="removeselectseat"></i>
+                      <span class="BoxName">A관</span><span class="seatNum">B6</span><span
+                        class="typeofPerson">성인</span><span class="oneofprice">9000</span>
+                    </div>
+                  </li>
+                  <li class="cartList">
+                    <div class="movie"><i class="fa-solid fa-circle-minus" id="removeselectseat"></i><span
+                        class="BoxName">A관</span><span class="seatNum">B6</span><span
+                        class="typeofPerson">성인</span><span class="oneofprice">9000</span></div>
+                  </li>
+                </ul>
+              </section>
+              <div class="totalprice">
+                <div class="totalPricePreview">
+                  <p class="Pricetitle">20000</p>
+                </div>
+                <button class="geticket">결제하기</button>
+              </div>
+            </div>
+          </section>
+        </article>
+      </section>
+    </section>
+    <footer class="moviefooter">
+      <i class="fa-solid fa-angles-left"></i>
+      <i class="fa-brands fa-fort-awesome"></i>
+    </footer>
+  </section>
+</body>
+
+</html>

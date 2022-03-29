@@ -566,7 +566,9 @@ html {
 
 //paymodal
 .paymodal {
+	text-align: center;
 	width: 72rem;
+	@include center;
 	z-index: 10;
 	height: 101rem;
 	display: flex;
@@ -577,8 +579,7 @@ html {
 	background: #1a1f33be;
 	backdrop-filter: blur(0.5rem);
 	.realcard {
-		
-		transform: translate(0rem, 27rem) rotate(90deg);
+		transform: translate(4.4em,27rem) rotate(90deg);
 		background: linear-gradient(220deg, $main_4 0%, #7894de 30%, $main_2 100%);
 		width: 35rem;
 		height: 24rem;
@@ -589,14 +590,26 @@ html {
 			height: 5rem;
 			transform: translate(0rem, 5rem);
 		}
+
+	}
+	@keyframes cardstyle {
+		0% { 
+			box-shadow: 0rem 0rem 10rem #675fc09b;
+		}
+		50% {
+			box-shadow: none;
+		}
+		100% {
+			box-shadow: 0rem 0rem 10rem #675fc09b;
+		}
 	}
 }
 @keyframes movecard {
 	0% {
-		transform: translate(0rem, 27rem) rotate(90deg);
+		transform: translate(4.4rem,27rem) rotate(90deg);
 	}
 	50% {
-		transform: translate(0rem, 37rem) rotate(90deg);
+		transform: translate(4.4rem,37rem) rotate(90deg);
 
 	}
 }
