@@ -23,7 +23,7 @@ window.onload = () => {
 			}
 	
 			if(Number(userCookie[1]) == 0){ //진짜로 돌아갈 시간 
-				location.href = `/forec`;
+				location.href = `${window.location.pathname}`;
 			}
 			if(countTime == 0){ //도중에 클릭했을경우 중지
 				clearTimeout(timer1);
@@ -40,7 +40,7 @@ window.onload = () => {
 		const minutes = date.getMinutes();
 		const hours = date.getHours();
 		const seconds = date.getSeconds();
-		clocktitle.innerHTML = `${hours < 10 ? `0${hours}` : hours} :${minutes < 10 ? `0${minutes}` : minutes}: ${seconds < 10 ? `0${seconds}` : seconds
+		clocktitle.innerHTML = `${hours < 10 ? `0${hours}` : hours} : ${minutes < 10 ? `0${minutes}` : minutes} : ${seconds < 10 ? `0${seconds}` : seconds
 			}`;
 			setTimeout(getTime, 1000);
 	};
@@ -50,9 +50,8 @@ window.onload = () => {
 
 	$(document).on({
 		click: (e) => {
-			const mymodal = document.querySelector('.cwrningwapper');	
 			countTime = 0;
-			mymodal.classList.add('opacityscroll');
+			$('.cwrningwapper').addClass('opacityscroll');
 			document.cookie = `userCookie=120`;
 		}
 	});
@@ -69,7 +68,16 @@ window.onload = () => {
 	$(".printBtn").on("click",()=>{
 		// console.log("인쇄하기페이지? 모달?");
 		$('.receipt2modal').toggleClass('opacityscroll');
+		setTimeout(()=>{
+			$(".printingtitle").html("인쇄가 완료되었습니다");
+			$('.printingtitle').css({animation:'none',opacity:'1'});
+			$('.printingbody').css({animation:'none'});
+		},7000);
+		setTimeout(()=>{
+			location.href = `${window.location.pathname}`;	
+		},12000);
 	});
+
 
 };
 $(document).ready(function () {

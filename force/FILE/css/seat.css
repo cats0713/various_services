@@ -722,6 +722,8 @@ html button {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-transform: translateY(-2rem);
+          transform: translateY(-2rem);
 }
 
 .moviewapper .resultprice .personlist li {
@@ -827,7 +829,7 @@ html button {
   letter-spacing: 0.2rem;
   color: white;
   font-weight: bold;
-  font-size: 3rem;
+  font-size: 2.5rem;
   float: right;
   line-height: 7.6rem;
 }

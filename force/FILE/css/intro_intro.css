@@ -1,4 +1,11 @@
 @font-face {
+  font-family: 'GmarketSansMedium';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'LeferiPoint-WhiteA';
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-WhiteA.woff") format("woff");
   font-weight: normal;
@@ -21,31 +28,31 @@
 
 @-webkit-keyframes big {
   0% {
-    -webkit-transform: perspective(50rem) translateZ(0);
-            transform: perspective(50rem) translateZ(0);
+    -webkit-transform: perspective(50rem) translateZ(0) rotate(-25deg);
+            transform: perspective(50rem) translateZ(0) rotate(-25deg);
   }
   50% {
-    -webkit-transform: perspective(50rem) translateZ(5rem);
-            transform: perspective(50rem) translateZ(5rem);
+    -webkit-transform: perspective(50rem) translateZ(5rem) rotate(-25deg);
+            transform: perspective(50rem) translateZ(5rem) rotate(-25deg);
   }
   100% {
-    -webkit-transform: perspective(50rem) translateZ(0rem);
-            transform: perspective(50rem) translateZ(0rem);
+    -webkit-transform: perspective(50rem) translateZ(0rem) rotate(-25deg);
+            transform: perspective(50rem) translateZ(0rem) rotate(-25deg);
   }
 }
 
 @keyframes big {
   0% {
-    -webkit-transform: perspective(50rem) translateZ(0);
-            transform: perspective(50rem) translateZ(0);
+    -webkit-transform: perspective(50rem) translateZ(0) rotate(-25deg);
+            transform: perspective(50rem) translateZ(0) rotate(-25deg);
   }
   50% {
-    -webkit-transform: perspective(50rem) translateZ(5rem);
-            transform: perspective(50rem) translateZ(5rem);
+    -webkit-transform: perspective(50rem) translateZ(5rem) rotate(-25deg);
+            transform: perspective(50rem) translateZ(5rem) rotate(-25deg);
   }
   100% {
-    -webkit-transform: perspective(50rem) translateZ(0rem);
-            transform: perspective(50rem) translateZ(0rem);
+    -webkit-transform: perspective(50rem) translateZ(0rem) rotate(-25deg);
+            transform: perspective(50rem) translateZ(0rem) rotate(-25deg);
   }
 }
 
@@ -149,15 +156,19 @@ html button {
 }
 
 .moviewapper .nextBtn section .textBox {
-  width: 100%;
-  margin-top: 10%;
+  background: #3d3a5440;
+  margin-top: 15%;
+  height: 20rem;
+  text-shadow: 0rem 0rem 0.8rem #1a1f33;
+  font-family: 'GmarketSansMedium';
 }
 
 .moviewapper .nextBtn section .textBox h1 {
+  line-height: 19.8rem;
   display: inline-block;
-  font-size: 3rem;
+  font-size: 4rem;
+  letter-spacing: 0.4rem;
   color: white;
-  text-shadow: 0.1rem 0.1rem 0.3rem black;
 }
 
 .moviewapper .nextBtn section .textBox div {
@@ -169,7 +180,6 @@ html button {
 .moviewapper .nextBtn section .textBox div .mouseIcon {
   font-size: 6rem;
   color: #fff;
-  text-shadow: 0.1rem 0.1rem 0.3rem black;
   -webkit-animation: big 1s ease infinite;
           animation: big 1s ease infinite;
 }
@@ -182,4 +192,3 @@ html button {
   visibility: hidden;
   opacity: 0;
 }
-/*# sourceMappingURL=intro_intro.css.map */

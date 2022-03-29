@@ -882,6 +882,7 @@ html button {
           box-shadow: 0.2rem 0.8rem 3rem #7e87d859;
   border-radius: 0rem 0rem 3rem 3rem;
   letter-spacing: 0.5rem;
+  line-height: 4rem;
 }
 
 .numberviewr {
@@ -893,10 +894,12 @@ html button {
 }
 
 .numberviewr .NumNum {
-  font-size: 4rem;
+  font-size: 3rem;
   letter-spacing: 1rem;
   color: #655777;
   text-shadow: 0.2rem 0.8rem 3rem #16142b88;
+  margin-top: -2rem;
+  margin-bottom: 1rem;
 }
 
 .numberviewr .Numresult {

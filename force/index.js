@@ -10,10 +10,10 @@ app.use(express.static('FILE'));
 app.use(cookieParser());
 
 app.get('/', (req, res) => {
-	res.redirect('/forec');
+	res.redirect('/force');
 });
 
-app.get('/forec', (req, res) => {
+app.get('/force', (req, res) => {
 	let page = req.query.page;
 	if (page == undefined) {
 		//홈페이지의 처음 화면
@@ -122,7 +122,7 @@ app.get('/forec', (req, res) => {
 			if (err) {
 				throw err;
 			} else {
-				console.log('db연결 성공');
+				console.log('page=20 db연결 성공');
 			}
 		});
 		//명령어 날리기
@@ -145,16 +145,16 @@ app.get('/forec', (req, res) => {
 						'23:00~01:00<br>B관 46/50',
 					],
 					[
-						'6:40~8:40<br>B관 46/50',
+						'06:40~08:40<br>B관 46/50',
 						'11:20~13:20<br>A관 46/50',
 						'16:00~18:00<br>B관 46/50',
 						'20:40~22:40<br>A관 46/50',
 					],
 					[
-						'9:00~11:10<br>B관 46/50',
+						'09:00~11:10<br>B관 46/50',
 						'13:40~15:50<br>A관 46/50',
 						'18:20~20:30<br>B관 46/50',
-						'23:00~1:10<br>A관 46/50',
+						'23:00~01:10<br>A관 46/50',
 					],
 				];
 
@@ -236,7 +236,8 @@ app.get('/forec', (req, res) => {
               </header>
               <div class="modalinfo">
                 <div>
-                  <p>만 15세미만의 고객님은(영,유아 포함)</p>
+                  <p>만 15이상 관람 영화를 관람하실</p>
+                  <p>만 15세 미만의 고객님(영,유아 포함)이 이용하실경우</p>
                   <p>반드시 성인 보호자와 동반하에 관람이 가능합니다.</p>
                   <p>확인 불가시에는 입장이 제한됩니다.</p>
                 </div>
@@ -324,7 +325,7 @@ app.get('/forec', (req, res) => {
 			if (err) {
 				throw err;
 			} else {
-				console.log('db연결 성공');
+				console.log('page=30 db연결 성공');
 			}
 		});
 		//명령어 날리기
@@ -333,7 +334,6 @@ app.get('/forec', (req, res) => {
 				throw err;
 			} else {
 				//에러가 안났으면
-				// console.log(rows[0]['name']);
 				let pageTag = `<!DOCTYPE html>
         <html lang="ko">
         
@@ -532,7 +532,7 @@ app.get('/forec', (req, res) => {
 			if (err) {
 				throw err;
 			} else {
-				console.log('db연결 성공');
+				console.log('page=40 db연결 성공');
 			}
 		});
 		//명령어 날리기
@@ -541,7 +541,7 @@ app.get('/forec', (req, res) => {
 				throw err;
 			} else {
 				//에러가 안났으면
-				// console.log(rows[0]['name']);
+
 				let pageTag = `<!DOCTYPE html>
         <html lang="ko">
           <head>
@@ -702,7 +702,7 @@ app.get('/forec', (req, res) => {
         <section class="receiptModal opacityscroll">
     
           <article class="reciptmodalbody">
-            <h1>적립을 위해 바코드를<br>하단 왼쪽에 스캔해주세요.</h1>
+            <h1>결제를 위해 바코드를<br>하단 왼쪽에 스캔해주세요.</h1>
             <article class="reciptmodalhead"></article>
             <article class="scanPhone">
               <div class="readbacod">
@@ -781,7 +781,9 @@ app.get('/forec', (req, res) => {
     
     </html>`;
 		res.send(pageTag);
-	} else if (page == 60) {
+	} else if (page == 60){
+    res.sendFile(__dirname + '/FILE/html/telinput.html');
+  } else if (page == 70) {
 		//결제완료화면
 
 		let movieTitle = ['영화제목배열', '타오르는 여인의 초상', '언차티드', '엔칸토', '라라랜드'];
@@ -797,7 +799,7 @@ app.get('/forec', (req, res) => {
 			if (err) {
 				throw err;
 			} else {
-				console.log('db연결 성공');
+				console.log('page=70 db연결 성공');
 			}
 		});
 
@@ -814,99 +816,15 @@ app.get('/forec', (req, res) => {
 		if (req.query.old != 0) {
 			userPerson += `노약자${req.query.old}명 `;
 		}
+
 		let userMovieNo = req.query.title.match(/\d/);
-		console.log(movieTitle[userMovieNo[0]]);
-		db_handle.query(
-			`insert into moviemember (` +
-				'`name`,' +
-				'`person`,' +
-				'`seat`,' +
-				'`gan`,' +
-				'`time`,' +
-				'`number`,' +
-				'`price`' +
-				`) values ('${movieTitle[userMovieNo[0]]}','${userPerson}','${req.query.seat.replaceAll('_', ' ')}','${
-					req.query.gan
-				}','${req.query.time}','${req.query.number}','${req.query.price}');`,
-			(err2, rows2) => {
-				if (err2) {
-					throw err2;
+
+    let dataQuery = `insert into movieticket (` +'`name`,' + '`person`,' + '`seat`,' + '`gan`,' + '`time`,' + '`number`,'+ '`tel`,' + '`price`' + `) values ('${movieTitle[userMovieNo[0]]}','${userPerson}','${req.query.seat.replaceAll('_', ' ')}','${req.query.gan}','${req.query.time}','${req.query.number}','010-${req.query.tel}','${req.query.price}');`;
+    db_handle.query(dataQuery,(err, rows) => {
+				if (err) {
+					throw err;
 				} else {
-					let pageTag = `<!DOCTYPE html>
-        <html lang="ko">
-        
-        <head>
-          <meta charset="UTF-8" />
-          <meta http-equiv="X-UA-Compatible" content="chorme" />
-          <meta name="viewport" content="width=device-width,initial-scale=1" />
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-            integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-            crossorigin="anonymous" referrerpolicy="no-referrer" />
-          <title>receipt</title>
-          <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-          <script src="../js/getpay.js"></script>
-          <link rel="stylesheet" href="../css/getpay.css">
-        </head>
-        
-        <body>
-          <section class="moviewapper">
-            <header id="playerarea">
-              <div class="head__infor">
-                <div class="timewapper"><span id="logoimg">FOREC</span></div>
-                <div class="timewapper"><span id="logoimg">결제확인</span></div>
-                <div class="timewapper"><span id="time">00:00</span></div>
-              </div>
-            </header>
-            <section class="mainBox">
-              <section class="main__body">
-                <section class="reCeiptBody">
-                  <i class="fa-solid fa-clapperboard backIcon"></i>
-                  <header class="reCeipheader">
-                    <figure class="receipinfoheader">
-                      <figcaption class="forceLogo">FORCE CINEMA</figcaption>
-                      <figcaption class="receipinfointro">즐거운 영화의 시작</figcaption>
-                      <figcaption class="receipinfoheadertitle">영화 예매가 완료되었습니다</figcaption>
-                    </figure>
-                    <div class="holesleft"></div>
-                    <div class="holesright"></div>
-                  </header>
-                  <figure class="reCeipinfo">	
-                    <figcaption class="selectSeatNum rcifo">
-                      <h3 class="rcifotitle">결제수단</h3>
-                      <p class="rcifomation">카드결제</p>
-                    </figcaption>
-                    <figcaption class="selecttheater rcifo">
-                      <h3 class="rcifotitle">결제일시</h3>
-                      <p class="rcifomation">2022년 3월 22일</p>
-                    </figcaption>
-                    <figcaption class="movieruningtime rcifo">
-                      <h3 class="rcifotitle">상호명</h3>
-                      <p class="rcifomation">FORCE CINEMA(주)</p>
-                    </figcaption>
-                    <figcaption class="receipNum rcifo">
-                      <h3 class="rcifotitle">예매번호</h3>
-                      <p class="rcifomation">${req.query.number}</p>
-                    </figcaption>
-                    <figcaption class="totalAmount rcifo">
-                      <h3 class="rcifotitle">총 ${req.query.price}원</h3>
-                    </figcaption>
-                  </figure>
-                  <footer class="reCeipfooter">
-                    <figcaption class="receiptBtn">잠시후 홈 화면으로 이동합니다</figcaption>
-                  </footer>
-                </section>
-              </section>
-            </section>
-            <footer class="moviefooter">
-              <i id="previousBtn" class="fa-solid fa-angles-left"></i>
-              <i id="homeBtn" class="fa-brands fa-fort-awesome"></i>
-            </footer>
-          </section>
-        </body>
-        
-        </html>`;
-					res.send(pageTag);
+					res.sendFile(__dirname + '/FILE/html/getpay.html');
 				}
 			}
 		);
@@ -915,6 +833,7 @@ app.get('/forec', (req, res) => {
 	} else if (page == 100) {
 		//예매 확인
 		res.sendFile(__dirname + '/FILE/html/gettiket.html');
+
 	} else if (page == 110) {
 		//예매정보 확인
 		let db_handle = mysql.createConnection({
@@ -928,117 +847,226 @@ app.get('/forec', (req, res) => {
 			if (err) {
 				throw err;
 			} else {
-				console.log('db연결 성공');
+				console.log('page=110 db연결 성공');
 			}
 		});
-		//명령어 날리기
-		db_handle.query(`select * from moviemember where number='${req.query.number}'`, function (err, rows) {
-			if (err) {
-				throw err;
-			} else if (rows[0]) {
-				//에러가 안났으면
-				// console.log(rows[0]['name']);
-				let pageTag = `<!DOCTYPE html>
-        <html lang="ko">
-          <head>
-            <meta charset="UTF-8" />
-            <meta http-equiv="X-UA-Compatible" content="chorme" />
-            <meta name="viewport" content="width=device-width,initial-scale=1" />
-            <link
-              rel="stylesheet"
-              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-              integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-              crossorigin="anonymous"
-              referrerpolicy="no-referrer"
-            />
-            <title>FORCE</title>
-            <script
-              src="https://code.jquery.com/jquery-3.6.0.min.js"
-              integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-              crossorigin="anonymous"
-            ></script>
-            <link rel="shortcut icon" href="../IMG/favicon/favicon.ico" type="image/x-icon">
-            <link rel="icon" href="../IMG/favicon/favicon.ico" type="image/x-icon">
-            <link rel="stylesheet" href="../css/receipt.css"/>
-            <script src="../js/receipt2.js"></script>
-          </head>
-          <body>
-        
-            <section class="moviewapper">
-            <section class="receipt2modal opacityscroll">
-            <article class="priningreceipt">
-              <h1 class="printingtitle">티켓 출력중입니다</h1>
-              <figure class="printinghead">
-                <header>FORCE</header>
-                  <figure class="printingbody"">
-                  <div class="line"></div>
-                  </figure>
-                <footer></footer>
-              </figure>
-            </article>
-          </section>
-              <header id="playerarea">
-                <div class="head__infor">
-                <div class="timewapper"><span id="logoimg">FORCE</span></div>
-                <div class="timewapper"><span id="logoimg">예매내역확인</span></div>
-                  <div class="timewapper"><span id="time">00:00</span></div>
-                </div>
-              </header>
-              <section class="mainBox">
-                <section class="main__body">
-                  <section class="reCeiptBody">
-                    <header class="reCeipheader">
-                      <figure class="receipinfoheader">
-                        <figcaption class="forceLogo">FORCE CINEMA</figcaption>
-                        <figcaption class="receipinfointro">예매 내역을 확인해주세요.</figcaption>
-                        <figcaption class="receipinfoheadertitle">${rows[0]['name']}</figcaption>
-                      </figure>
-                      <div class="holesleft"></div>
-                      <div class="holesright"></div>
-                    </header>
-                    <figure class="reCeipinfo">
-                      <figcaption class="receipinfoperson rcifo">
-                        <h3 class="rcifotitle">인원</h3>
-                        <p id="moviePersonnelText" class="rcifomation">${rows[0]['person']}</p>
-                      </figcaption>
-                      <figcaption class="selectSeatNum rcifo">
-                        <h3 class="rcifotitle">좌석</h3>
-                        <p id="movieSeatText" class="rcifomation">${rows[0]['seat']}</p>
-                      </figcaption>
-                      <figcaption class="selecttheater rcifo">
-                        <h3 class="rcifotitle">상영관</h3>
-                        <p id="movieTheaterText" class="rcifomation">${rows[0]['gan']}관</p>
-                      </figcaption>
-                      <figcaption class="movieruningtime rcifo">
-                        <h3 class="rcifotitle">상영시간</h3>
-                        <p id="showtimeText" class="rcifomation">${rows[0]['time']}</p>
-                      </figcaption>
-                      <figcaption class="receipNum rcifo">
-                        <h3 class="rcifotitle">예매번호</h3>
-                        <p id="movieReservationNumber" class="rcifomation">${rows[0]['number']}</p>
-                      </figcaption>
-                      <figcaption class="totalAmount rcifo">
-                        <h3 id="totalPriceText" class="rcifotitle">총 ${rows[0]['price'].toLocaleString()}원</h3>
-                      </figcaption>
+
+    if(req.query.number.length == 9){
+      db_handle.query(`select * from movieticket where tel='010-${req.query.number}'`, function (err, rows) {
+        if (err) {
+          throw err;
+        } else if (rows[0]) {
+          //에러가 안났으면
+          let pageTag = `<!DOCTYPE html>
+          <html lang="ko">
+            <head>
+              <meta charset="UTF-8" />
+              <meta http-equiv="X-UA-Compatible" content="chorme" />
+              <meta name="viewport" content="width=device-width,initial-scale=1" />
+              <link
+                rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+                integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+                crossorigin="anonymous"
+                referrerpolicy="no-referrer"
+              />
+              <title>FORCE</title>
+              <script
+                src="https://code.jquery.com/jquery-3.6.0.min.js"
+                integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+                crossorigin="anonymous"
+              ></script>
+              <link rel="shortcut icon" href="../IMG/favicon/favicon.ico" type="image/x-icon">
+              <link rel="icon" href="../IMG/favicon/favicon.ico" type="image/x-icon">
+              <link rel="stylesheet" href="../css/receipt.css"/>
+              <script src="../js/receipt2.js"></script>
+            </head>
+            <body>
+          
+              <section class="moviewapper">
+              <section class="receipt2modal opacityscroll">
+              <article class="priningreceipt">
+                <h1 class="printingtitle">티켓 출력중입니다</h1>
+                <figure class="printinghead">
+                  <header>FORCE</header>
+                    <figure class="printingbody"">
+                    <div class="line"></div>
                     </figure>
-                    <footer class="reCeipfooter">
-                      <button class="printBtn">인쇄하기</button>
-                    </footer>
+                  <footer></footer>
+                </figure>
+              </article>
+            </section>
+                <header id="playerarea">
+                  <div class="head__infor">
+                  <div class="timewapper"><span id="logoimg">FORCE</span></div>
+                  <div class="timewapper"><span id="logoimg">예매내역확인</span></div>
+                    <div class="timewapper"><span id="time">00:00</span></div>
+                  </div>
+                </header>
+                <section class="mainBox">
+                  <section class="main__body">
+                    <section class="reCeiptBody">
+                      <header class="reCeipheader">
+                        <figure class="receipinfoheader">
+                          <figcaption class="forceLogo">FORCE CINEMA</figcaption>
+                          <figcaption class="receipinfointro">예매 내역을 확인해주세요.</figcaption>
+                          <figcaption class="receipinfoheadertitle">${rows[0]['name']}</figcaption>
+                        </figure>
+                        <div class="holesleft"></div>
+                        <div class="holesright"></div>
+                      </header>
+                      <figure class="reCeipinfo">
+                        <figcaption class="receipinfoperson rcifo">
+                          <h3 class="rcifotitle">인원</h3>
+                          <p id="moviePersonnelText" class="rcifomation">${rows[0]['person']}</p>
+                        </figcaption>
+                        <figcaption class="selectSeatNum rcifo">
+                          <h3 class="rcifotitle">좌석</h3>
+                          <p id="movieSeatText" class="rcifomation">${rows[0]['seat']}</p>
+                        </figcaption>
+                        <figcaption class="selecttheater rcifo">
+                          <h3 class="rcifotitle">상영관</h3>
+                          <p id="movieTheaterText" class="rcifomation">${rows[0]['gan']}관</p>
+                        </figcaption>
+                        <figcaption class="movieruningtime rcifo">
+                          <h3 class="rcifotitle">상영시간</h3>
+                          <p id="showtimeText" class="rcifomation">${rows[0]['time']}</p>
+                        </figcaption>
+                        <figcaption class="receipNum rcifo">
+                          <h3 class="rcifotitle">예매번호</h3>
+                          <p id="movieReservationNumber" class="rcifomation">${rows[0]['number']}</p>
+                        </figcaption>
+                        <figcaption class="totalAmount rcifo">
+                          <h3 id="totalPriceText" class="rcifotitle">총 ${Number(rows[0]['price']).toLocaleString()}원</h3>
+                        </figcaption>
+                      </figure>
+                      <footer class="reCeipfooter">
+                        <button class="printBtn">인쇄하기</button>
+                      </footer>
+                    </section>
                   </section>
                 </section>
+                <footer class="moviefooter">
+                <i id="previousBtn" class="fa-solid fa-angles-left"></i>
+                <i id="homeBtn" class="fa-brands fa-fort-awesome"></i>
+                </footer>
               </section>
-              <footer class="moviefooter">
-              <i id="previousBtn" class="fa-solid fa-angles-left"></i>
-              <i id="homeBtn" class="fa-brands fa-fort-awesome"></i>
-              </footer>
+            </body>
+          </html>`;
+          res.send(pageTag);
+        } else {
+          res.redirect('/force?page=100&err=101');
+        }
+      });
+    }else{
+      db_handle.query(`select * from movieticket where number='${req.query.number}'`, function (err, rows) {
+        if (err) {
+          throw err;
+        } else if (rows[0]) {
+          //에러가 안났으면
+          let pageTag = `<!DOCTYPE html>
+          <html lang="ko">
+            <head>
+              <meta charset="UTF-8" />
+              <meta http-equiv="X-UA-Compatible" content="chorme" />
+              <meta name="viewport" content="width=device-width,initial-scale=1" />
+              <link
+                rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+                integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+                crossorigin="anonymous"
+                referrerpolicy="no-referrer"
+              />
+              <title>FORCE</title>
+              <script
+                src="https://code.jquery.com/jquery-3.6.0.min.js"
+                integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+                crossorigin="anonymous"
+              ></script>
+              <link rel="shortcut icon" href="../IMG/favicon/favicon.ico" type="image/x-icon">
+              <link rel="icon" href="../IMG/favicon/favicon.ico" type="image/x-icon">
+              <link rel="stylesheet" href="../css/receipt.css"/>
+              <script src="../js/receipt2.js"></script>
+            </head>
+            <body>
+          
+              <section class="moviewapper">
+              <section class="receipt2modal opacityscroll">
+              <article class="priningreceipt">
+                <h1 class="printingtitle">티켓 출력중입니다</h1>
+                <figure class="printinghead">
+                  <header>FORCE</header>
+                    <figure class="printingbody"">
+                    <div class="line"></div>
+                    </figure>
+                  <footer></footer>
+                </figure>
+              </article>
             </section>
-          </body>
-        </html>`;
-				res.send(pageTag);
-			} else {
-				res.redirect('/forec?page=100&err=101');
-			}
-		});
+                <header id="playerarea">
+                  <div class="head__infor">
+                  <div class="timewapper"><span id="logoimg">FORCE</span></div>
+                  <div class="timewapper"><span id="logoimg">예매내역확인</span></div>
+                    <div class="timewapper"><span id="time">00:00</span></div>
+                  </div>
+                </header>
+                <section class="mainBox">
+                  <section class="main__body">
+                    <section class="reCeiptBody">
+                      <header class="reCeipheader">
+                        <figure class="receipinfoheader">
+                          <figcaption class="forceLogo">FORCE CINEMA</figcaption>
+                          <figcaption class="receipinfointro">예매 내역을 확인해주세요.</figcaption>
+                          <figcaption class="receipinfoheadertitle">${rows[0]['name']}</figcaption>
+                        </figure>
+                        <div class="holesleft"></div>
+                        <div class="holesright"></div>
+                      </header>
+                      <figure class="reCeipinfo">
+                        <figcaption class="receipinfoperson rcifo">
+                          <h3 class="rcifotitle">인원</h3>
+                          <p id="moviePersonnelText" class="rcifomation">${rows[0]['person']}</p>
+                        </figcaption>
+                        <figcaption class="selectSeatNum rcifo">
+                          <h3 class="rcifotitle">좌석</h3>
+                          <p id="movieSeatText" class="rcifomation">${rows[0]['seat']}</p>
+                        </figcaption>
+                        <figcaption class="selecttheater rcifo">
+                          <h3 class="rcifotitle">상영관</h3>
+                          <p id="movieTheaterText" class="rcifomation">${rows[0]['gan']}관</p>
+                        </figcaption>
+                        <figcaption class="movieruningtime rcifo">
+                          <h3 class="rcifotitle">상영시간</h3>
+                          <p id="showtimeText" class="rcifomation">${rows[0]['time']}</p>
+                        </figcaption>
+                        <figcaption class="receipNum rcifo">
+                          <h3 class="rcifotitle">예매번호</h3>
+                          <p id="movieReservationNumber" class="rcifomation">${rows[0]['number']}</p>
+                        </figcaption>
+                        <figcaption class="totalAmount rcifo">
+                          <h3 id="totalPriceText" class="rcifotitle">총 ${Number(rows[0]['price']).toLocaleString()}원</h3>
+                        </figcaption>
+                      </figure>
+                      <footer class="reCeipfooter">
+                        <button class="printBtn">인쇄하기</button>
+                      </footer>
+                    </section>
+                  </section>
+                </section>
+                <footer class="moviefooter">
+                <i id="previousBtn" class="fa-solid fa-angles-left"></i>
+                <i id="homeBtn" class="fa-brands fa-fort-awesome"></i>
+                </footer>
+              </section>
+            </body>
+          </html>`;
+          res.send(pageTag);
+        } else {
+          res.redirect('/force?page=100&err=101');
+        }
+      });
+    }
+		//명령어 날리기
 
 		db_handle.end();
 	}

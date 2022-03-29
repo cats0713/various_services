@@ -224,9 +224,9 @@ html {
 			transition: 0.4s;
 			color: $main_2;
 			border-radius: 1rem;
-			cursor: pointer;	
+			cursor: pointer;
 		}
-		.backColor{
+		.backColor {
 			background-color: $main2_black2;
 		}
 
@@ -243,7 +243,7 @@ html {
 .modalwapper {
 	width: 72rem;
 	height: 100rem;
-background: #16142b71;
+	background: #16142b71;
 	position: fixed;
 	z-index: 20;
 	transition: 1s;
@@ -315,8 +315,7 @@ background: #16142b71;
 			color: $main2_pink;
 
 			box-shadow: 0.2rem 0.8rem 3rem #ffbb0065;
-		
-	}
+		}
 
 		.modalinfo {
 			padding-top: 1rem;
@@ -386,7 +385,7 @@ background: #16142b71;
 	}
 	.mainBox {
 		width: 100%;
-		overflow-y: auto;
+		overflow-y: scroll;
 		box-sizing: border-box;
 		height: 80rem;
 		background-size: cover;
@@ -394,6 +393,7 @@ background: #16142b71;
 			display: flex;
 			flex-direction: column;
 			height: 110rem;
+			width: 71rem;
 
 			h1 {
 				color: $main2_white;
@@ -445,34 +445,40 @@ background: #16142b71;
 				border-radius: 0.5rem;
 				background: whitesmoke;
 				flex-wrap: wrap;
-				padding: 1rem;
+				padding-top: 2rem;
 				flex-direction: column;
 				display: flex;
-				height: 7.5rem;
+				height: 9rem;
 
-				width: 35rem;
+				width: 36rem;
 				overflow-x: scroll;
-				transform: translate(1rem) translateY(-2rem);
+				transform: translate(2rem) translateY(-2rem);
 
 				// 영화시간
 				.movieUlLicontainer {
 					font-size: 'GmarketSansLight';
-					padding: 0.8rem;
-					font-size: 1.4rem;
-					text-align: left;
+					font-size: 2rem;
+					text-align: center;
+					width: 18rem;
+					height: 6.2rem;
 					color: $main_1;
 					border: none;
 					border-right: 0.3rem solid white;
 					cursor: pointer;
-					letter-spacing: 0.03rem;
+					letter-spacing: 0.2rem;
 					transition: 0.3s;
-					line-height: 2.3rem;
+					line-height: 3.3rem; 
 					background: transparent;
+
+				
 
 					.movieUlLicontainer:hover {
 						color: $main2_fff2;
 					}
 				}
+				.movieUlLicontainer:last-child {
+						border-right: transparent;
+					}
 			}
 			//  background: rgba(255, 255, 255, 0.43);
 			.sliderimgs {
@@ -497,13 +503,12 @@ background: #16142b71;
 				flex-wrap: wrap;
 				align-content: space-between;
 				border-right: 0.2rem dashed $main2_black2;
-				.movietitmeCon  {
+				.movietitmeCon {
 					align-self: flex-start;
 					padding-left: 2rem;
 					text-align: left;
 				}
-				.movietitle{
-					
+				.movietitle {
 					font-size: 3rem;
 					margin-top: 1.5rem;
 					color: $main2_green;
@@ -520,7 +525,6 @@ background: #16142b71;
 					margin-left: 1rem;
 					display: block;
 					font-size: 1.5rem;
-
 				}
 			}
 			.infor__tail {
@@ -559,7 +563,7 @@ background: #16142b71;
 
 					p {
 						font-size: 2rem;
-						line-height: 4.9rem;
+						line-height: 5.2rem;
 						color: #f3b4d8;
 					}
 				}
@@ -612,7 +616,6 @@ background: #16142b71;
 	box-shadow: 0rem 0rem 1.5rem #ffbb0065;
 }
 
-
 //인원 wrning modal //
 
 .cwrningwapper {
@@ -625,7 +628,6 @@ background: #16142b71;
 	transition: 0.5s;
 }
 .coutnWrningModal {
-	
 	@include center;
 	position: fixed;
 	width: 35rem;
@@ -633,7 +635,7 @@ background: #16142b71;
 	z-index: 100;
 	height: 30rem;
 	box-shadow: 2rem 0rem 16rem #f3b4d863;
-	background:$main2_green;
+	background: $main2_green;
 	padding: 2rem;
 	flex-direction: column;
 	border-radius: 0rem 0rem 1rem 1rem;
@@ -642,20 +644,19 @@ background: #16142b71;
 		border-radius: 1rem 1rem 0rem 0rem;
 		width: 96%;
 		height: 18%;
-		padding:2%;
+		padding: 2%;
 		position: absolute;
-		transition: .5s;
+		transition: 0.5s;
 		background: $main2_green;
 		box-shadow: 2rem 0rem 16rem #23222db2;
 		justify-content: space-evenly;
 		display: flex;
-		transform: translate(-3rem,-12rem) rotate(-15deg);
+		transform: translate(-3rem, -12rem) rotate(-15deg);
 		.strip {
 			width: 10%;
 			height: 100%;
 			background: #fff;
 		}
-		
 	}
 	.coutnWrningModalheader {
 		height: 40%;
@@ -665,12 +666,11 @@ background: #16142b71;
 		border-radius: 1rem;
 		.coutnWrningModalheadertitle {
 			font-size: 3rem;
-			color:$subcolor_1;
+			color: $subcolor_1;
 			transform: translateY(1rem);
 			letter-spacing: 0.3rem;
 			line-height: 6rem;
 
-		
 			.fa-triangle-exclamation {
 				transform: translateY(1rem);
 				font-size: 6rem;
@@ -706,7 +706,7 @@ background: #16142b71;
 			.cunnum {
 				font-size: 2rem;
 				text-align: center;
-			}  
+			}
 		}
 	}
 }

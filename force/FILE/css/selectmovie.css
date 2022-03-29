@@ -477,7 +477,7 @@ html button {
 
 .moviewapper .mainBox {
   width: 100%;
-  overflow-y: auto;
+  overflow-y: scroll;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   height: 80rem;
@@ -493,6 +493,7 @@ html button {
       -ms-flex-direction: column;
           flex-direction: column;
   height: 110rem;
+  width: 71rem;
 }
 
 .moviewapper .mainBox .main__body h1 {
@@ -566,7 +567,7 @@ html button {
   background: whitesmoke;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  padding: 1rem;
+  padding-top: 2rem;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -574,31 +575,36 @@ html button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 7.5rem;
-  width: 35rem;
+  height: 9rem;
+  width: 36rem;
   overflow-x: scroll;
-  -webkit-transform: translate(1rem) translateY(-2rem);
-          transform: translate(1rem) translateY(-2rem);
+  -webkit-transform: translate(2rem) translateY(-2rem);
+          transform: translate(2rem) translateY(-2rem);
 }
 
 .moviewapper .mainBox .slide__info .movietimebox .movieUlLicontainer {
   font-size: 'GmarketSansLight';
-  padding: 0.8rem;
-  font-size: 1.4rem;
-  text-align: left;
+  font-size: 2rem;
+  text-align: center;
+  width: 18rem;
+  height: 6.2rem;
   color: #1a1f33;
   border: none;
   border-right: 0.3rem solid white;
   cursor: pointer;
-  letter-spacing: 0.03rem;
+  letter-spacing: 0.2rem;
   -webkit-transition: 0.3s;
   transition: 0.3s;
-  line-height: 2.3rem;
+  line-height: 3.3rem;
   background: transparent;
 }
 
 .moviewapper .mainBox .slide__info .movietimebox .movieUlLicontainer .movieUlLicontainer:hover {
   color: #f3b4d8;
+}
+
+.moviewapper .mainBox .slide__info .movietimebox .movieUlLicontainer:last-child {
+  border-right: transparent;
 }
 
 .moviewapper .mainBox .slide__info .sliderimgs {
@@ -719,7 +725,7 @@ html button {
 
 .moviewapper .mainBox .slide__info .infor__tail .wathingage p {
   font-size: 2rem;
-  line-height: 4.9rem;
+  line-height: 5.2rem;
   color: #f3b4d8;
 }
 
@@ -821,8 +827,8 @@ html button {
   height: 18%;
   padding: 2%;
   position: absolute;
-  -webkit-transition: .5s;
-  transition: .5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   background: #1a1f33;
   -webkit-box-shadow: 2rem 0rem 16rem #23222db2;
           box-shadow: 2rem 0rem 16rem #23222db2;

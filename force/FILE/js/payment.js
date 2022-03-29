@@ -23,7 +23,7 @@ window.onload = () => {
 			}
 	
 			if(Number(userCookie[1]) == 0){ //진짜로 돌아갈 시간 
-				location.href = `/forec`;
+				location.href = `${window.location.pathname}`;
 			}
 			if(countTime == 0){ //도중에 클릭했을경우 중지
 				clearTimeout(timer1);
@@ -64,39 +64,11 @@ window.onload = () => {
 		const minutes = date.getMinutes();
 		const hours = date.getHours();
 		const seconds = date.getSeconds();
-		clocktitle.innerHTML = `${hours < 10 ? `0${hours}` : hours} :${minutes < 10 ? `0${minutes}` : minutes}: ${seconds < 10 ? `0${seconds}` : seconds
+		clocktitle.innerHTML = `${hours < 10 ? `0${hours}` : hours} : ${minutes < 10 ? `0${minutes}` : minutes} : ${seconds < 10 ? `0${seconds}` : seconds
 			}`;
 		setTimeout(getTime, 1000);
 	};
 
-	const modalAboutPersonNumChoice = (innervalue, innervalue_2, mymodal) => {
-		mymodal.classList.toggle('opacityscroll');
-		for (let i = 0; i < 2; i++) {
-			setTimeout(() => {
-				mymodal.innerHTML = `
-				<section class="coutnWrningModal">
-				<div class="modalhat">
-				<div class="strip"></div>
-				<div class="strip"></div>
-				<div class="strip"></div>
-				</div>
-				<header class="coutnWrningModalheader">
-				<h1 class="coutnWrningModalheadertitle">
-				${innervalue}
-				<p class="enterkey">${innervalue_2}</p>
-				<i class="fa-solid fa-triangle-exclamation"></i>
-				</h1>
-				</header>
-				<figure class="modalinfomation">
-				<figcaption class="modalinfomation_inner">
-				<p class="cunnum">${2 - i}초 뒤에</p>
-				자동으로 창이 닫힙니다.
-				</figcaption>
-				</figure>
-				</section>`;
-			}, i * 1000);
-		}
-	};
 	const modalAboutPersonNumChoice2 = (innervalue, innervalue_2, mymodal) => { //경고 모달
 		mymodal.classList.toggle('opacityscroll');
 		for (let i = 0; i < 5; i++) {
@@ -151,29 +123,15 @@ window.onload = () => {
 			const seadUrl = `${window.location.pathname}?page=60&title=${userDataArray[1]}&time=${userDataArray[2]}&gan=${userDataArray[3]}&adult=${userDataArray[4]}&jonior=${userDataArray[5]}&Disabled=${userDataArray[6]}&old=${userDataArray[7]}&seat=${userDataArray[8]}&number=${userDataArray[9]}&price=${userDataArray[10]}`;
 			location.href = seadUrl;
 		}, 5000);
-
 		return paymentModal;
 	});
 
 	pointpayment.addEventListener('click', (e) => {
-		if(userPoint == 1){
-			const mymodal = document.querySelector('.cwrningwapper');
-			modalAboutPersonNumChoice(`포인트 적립이`, `완료되었습니다.`, mymodal);
-			timer1 = setTimeout(function () {
-				document.querySelector('.modalhat').style.transform = 'translate(-2rem, -8rem) rotate(0deg)';
-			}, 2800)
-			timer2 = setTimeout(function () {
-				mymodal.classList.add('opacityscroll');
-			}, 3000);	
-			console.log(userPoint);
-		}else{
-			receiptModal.classList.toggle('opacityscroll');
-			setTimeout(()=>{
-				receiptModal.classList.toggle('opacityscroll');
-			},5000);
-			userPoint++;	
-			// console.log(userPoint);
-		}
+		receiptModal.classList.toggle('opacityscroll');
+		setTimeout(() => {
+			const seadUrl = `${window.location.pathname}?page=60&title=${userDataArray[1]}&time=${userDataArray[2]}&gan=${userDataArray[3]}&adult=${userDataArray[4]}&jonior=${userDataArray[5]}&Disabled=${userDataArray[6]}&old=${userDataArray[7]}&seat=${userDataArray[8]}&number=${userDataArray[9]}&price=${userDataArray[10]}`;
+			location.href = seadUrl;
+		}, 7000);	
 	});
 
 	$("#homeBtn").on("click", function () {

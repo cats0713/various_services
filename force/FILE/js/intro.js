@@ -1,40 +1,44 @@
 window.onload = () => {
 	let countTime = 0;
-	(()=>{
+	(() => {
 		let timer1;
 		let timer2;
-		setInterval(()=>{
+		setInterval(() => {
 			const userCookie = document.cookie.split('=');
-			document.cookie = `userCookie=${Number(userCookie[1])-1}`;//쿠키 카운트
+			document.cookie = `userCookie=${Number(userCookie[1]) - 1}`; //쿠키 카운트
 			// console.log(document.cookie);
-			if(Number(userCookie[1]) == 5){ //경고시간
-				countTime += 1;	
-				if(countTime == 1){
+			if (Number(userCookie[1]) == 5) {
+				//경고시간
+				countTime += 1;
+				if (countTime == 1) {
 					const mymodal = document.querySelector('.cwrningwapper');
 					modalAboutPersonNumChoice2(`홈 화면으로`, `돌아갑니다.`, mymodal);
 					timer1 = setTimeout(function () {
 						document.querySelector('.modalhat').style.transform = 'translate(-2rem, -8rem) rotate(0deg)';
-					}, 4800)
+					}, 4800);
 					timer2 = setTimeout(function () {
 						mymodal.classList.add('opacityscroll');
 					}, 5000);
 				}
 			}
-	
-			if(Number(userCookie[1]) == 0){ //진짜로 돌아갈 시간 
-				location.href = `/forec`;
+
+			if (Number(userCookie[1]) == 0) {
+				//진짜로 돌아갈 시간
+				location.href = `${window.location.pathname}`;
 			}
-			if(countTime == 0){ //도중에 클릭했을경우 중지
+			if (countTime == 0) {
+				//도중에 클릭했을경우 중지
 				clearTimeout(timer1);
 				clearTimeout(timer2);
 			}
-		},1000);
+		}, 1000);
 	})();
 
 	const clock = document.querySelector('#dayTime');
 	const clocktitle = document.querySelector('#time');
 
-	const modalAboutPersonNumChoice2 = (innervalue, innervalue_2, mymodal) => { //경고 모달
+	const modalAboutPersonNumChoice2 = (innervalue, innervalue_2, mymodal) => {
+		//경고 모달
 		mymodal.classList.toggle('opacityscroll');
 		for (let i = 0; i < 5; i++) {
 			setTimeout(() => {
@@ -58,11 +62,11 @@ window.onload = () => {
 		자동으로 창이 닫힙니다.
 	</figcaption>
 </figure>
-</section>`
+</section>`;
 			}, i * 1000);
 		}
-	}
-	
+	};
+
 	const getTime = () => {
 		const date = new Date();
 		const year = date.getFullYear();
@@ -103,25 +107,26 @@ window.onload = () => {
 
 	$(document).on({
 		click: (e) => {
-			const mymodal = document.querySelector('.cwrningwapper');	
+			const mymodal = document.querySelector('.cwrningwapper');
 			countTime = 0;
 			mymodal.classList.add('opacityscroll');
 			document.cookie = `userCookie=120`;
-		}
+		},
 	});
 
 	$('#reservationBtn').on('click', function () {
-		location.href = `/forec?page=20`;
+		location.href = `${window.location.pathname}?page=20`;
 	});
 	$('#printTicketBtn').on('click', function () {
-		location.href = `/forec?page=100`;
+		location.href = `${window.location.pathname}?page=100`;
 	});
 };
 
-
 $(window).on('load', (e) => {
 	$('.windowloadimg').css({ height: '0%', opacity: '0', visibility: 'hidden' });
-	$('.printTicketimg').css({ transform: 'translateY(-5rem)' });
+	setTimeout(() => {
+		$('.printTicketimg').css({ transform: 'translateY(-5rem)' });
+	}, 1000);
 });
 
 $(document).on({

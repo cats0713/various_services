@@ -23,7 +23,7 @@ window.onload = () => {
 			}
 	
 			if(Number(userCookie[1]) == 0){ //진짜로 돌아갈 시간 
-				location.href = `/forec`;
+				location.href = `${window.location.pathname}`;
 			}
 			if(countTime == 0){ //도중에 클릭했을경우 중지
 				clearTimeout(timer1);
@@ -44,7 +44,7 @@ window.onload = () => {
 	const receiptBtn = document.querySelector('.receiptBtn');
 	const receiptModal = document.querySelector('.receiptModal');
 
-	const ReservationNumber = `${Math.floor(Math.random() * (9999 - 1000) + 1000)}-${Math.floor(Math.random() * (99999 - 10000) + 10000)}`;
+	const ReservationNumber = `${Math.floor(Math.random() * (99999 - 10000) + 10000)}-${Math.floor(Math.random() * (9999 - 1000) + 1000)}`;
 	let totalprice = '';
 
 	const newUrl = window.location.search;
@@ -113,7 +113,7 @@ window.onload = () => {
 		const minutes = date.getMinutes();
 		const hours = date.getHours();
 		const seconds = date.getSeconds();
-		clocktitle.innerHTML = `${hours < 10 ? `0${hours}` : hours} :${minutes < 10 ? `0${minutes}` : minutes}: ${seconds < 10 ? `0${seconds}` : seconds
+		clocktitle.innerHTML = `${hours < 10 ? `0${hours}` : hours} : ${minutes < 10 ? `0${minutes}` : minutes} : ${seconds < 10 ? `0${seconds}` : seconds
 			}`;
 		setTimeout(getTime, 1000);
 	};

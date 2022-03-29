@@ -91,9 +91,11 @@ window.onload = () => {
 	// 시간띄우는 함수 	// 시간 들어갈 wapper
 	const clocktitle = document.querySelector('#time');
 	const newUrl = window.location.search;
-	const RegExp = /=\w+(:)?\d*(~)?\d*(:)?\d*/g;
+	const RegExp = /=\w+(:)?\d*(~)?\d*(:)?\d*-?\d*/g;
 	userDataArray = newUrl.match(RegExp);
-
+	for (let i = 0; i < userDataArray.length; i++) { //url데이터 파싱
+		userDataArray[i] = userDataArray[i].replace('=', '');
+	}
 	const getTime = () => {
 		const date = new Date();
 		const minutes = date.getMinutes();
@@ -105,46 +107,35 @@ window.onload = () => {
 	};
 	getTime();
 
-	if (userDataArray[1]) {
-		const mymodal = document.querySelector('.cwrningwapper');
-			modalAboutPersonNumChoice(`예매번호가`, `다릅니다.`, mymodal);
-			setTimeout(function () {
-			document.querySelector('.modalhat').style.transform = 'translate(-2rem, -8rem) rotate(0deg)';
-			}, 2800)
-			setTimeout(function () {
-			mymodal.classList.add('opacityscroll');
-			}, 3000);
-	}
-
-	document.addEventListener('click', (e)=>{
+	document.addEventListener('click', (e)=>{ //아무대나 누르면 모달창 안생김
 		const mymodal = document.querySelector('.cwrningwapper');	
 		countTime = 0;
 		mymodal.classList.add('opacityscroll');
 		document.cookie = `userCookie=120`;	
 	});
 
-	//예매번호 조회 
+	//전화번호 기재
 	$(function () {
-
+		let number = "";
 		let getHypen = (target_number) => {
 			let target = String(target_number);
-			let dot = /\B(?=(\d{4})?(?!\d))/g;
+			let dot = /\B(?=(\d{4})+(?!\d))/g;
 			return target.replace(dot, "-");
 		};
 
-		let number = "";
 		let Numresult = document.querySelector('.Numresult');
 		$(".mkeybord").on('click', function (e) {
 			if ( //숫자 버튼을 눌렀을때
-				$('.Numresult').html().length < 10 &&
+				$('.Numresult').html().length < 9 &&
 				e.target.id != $('#resetMnum') &&
 				e.target.id != $('#backSpace') &&
 				e.target.innerHTML != "확인"
 			) {
 				number += e.target.innerHTML;
 				$(".Numresult").html(getHypen(number));
+				// console.log(Numresult);
 			} else if (
-				$(".Numresult").html().length < 10 &&
+				$(".Numresult").html().length < 9 &&
 				e.target.id == $('#resetMnum') &&
 				e.target.id != $('#backSpace') &&
 				e.target.innerHTML != "확인"
@@ -152,7 +143,6 @@ window.onload = () => {
 				Numresult.innerHTML = "";
 			}
 		});
-
 		$("#resetMnum").on('click', function (e) {
 			number = "";
 			Numresult.innerHTML = "";
@@ -161,29 +151,41 @@ window.onload = () => {
 		$("#backSpace").on("click", () => {
 			number = number.substring(0,number.length-1);
 			$(".Numresult").html(getHypen(number));
-			if(Numresult.innerHTML == '-'){
-				number = "";
-				Numresult.innerHTML = "";	
-			}
 			// console.log(Numresult);
 			// console.log(number);
 		});
-
-		$("#homeBtn").on("click", function () {
-			location.href = `${window.location.pathname}?page=10`;
+		$("#skipBtn").on("click",()=>{
+			const seadUrl = `${window.location.pathname}?page=70&title=${userDataArray[1]}&time=${userDataArray[2]}&gan=${userDataArray[3]}&adult=${userDataArray[4]}&jonior=${userDataArray[5]}&Disabled=${userDataArray[6]}&old=${userDataArray[7]}&seat=${userDataArray[8]}&number=${userDataArray[9]}&price=${userDataArray[10]}&tel=0`;
+			location.href = seadUrl;
 		});
-
-		$("#previousBtn").on("click", function () {
-			location.href = `${window.location.pathname}?page=10`;
-		});
-
-		$("#ticketsumit").on("click", () => {
-			const userTicket = Numresult.innerHTML;
-			// console.log(`${window.location.pathname}?page=110&number=${userTicket}`);
-			// console.log(Numresult.innerHTML.length);
-			if (Numresult.innerHTML.length == 10 || Numresult.innerHTML.length == 9) {
-				location.href = `${window.location.pathname}?page=110&number=${userTicket}`;
+	
+		$("#ticketsumit").on("click",()=>{
+			if(Numresult.innerHTML.length == 9){
+				const seadUrl = `${window.location.pathname}?page=70&title=${userDataArray[1]}&time=${userDataArray[2]}&gan=${userDataArray[3]}&adult=${userDataArray[4]}&jonior=${userDataArray[5]}&Disabled=${userDataArray[6]}&old=${userDataArray[7]}&seat=${userDataArray[8]}&number=${userDataArray[9]}&price=${userDataArray[10]}&tel=${Numresult.innerHTML}`;
+				location.href = seadUrl;
+			}else{
+				// const mymodal = document.querySelector('.cwrningwapper');
+				// modalAboutPersonNumChoice(`전화번호를 끝`, `선택해주세요.`, mymodal);
+				// setTimeout(function () {
+				// document.querySelector('.modalhat').style.transform = 'translate(-2rem, -8rem) rotate(0deg)';
+				// },1800)
+				// setTimeout(function () {
+				// mymodal.classList.add('opacityscroll');
+				// }, 2000);
 			}
+	
 		});
+
 	});
-}
+
+	
+
+	$("#homeBtn").on("click", function () {
+		location.href = `${window.location.pathname}?page=10`;
+	});
+
+	$("#previousBtn").on("click", function () {
+		location.href = `${window.location.pathname}?page=10`;
+	});
+
+};

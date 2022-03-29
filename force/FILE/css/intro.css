@@ -149,7 +149,6 @@ html button {
 
 .moviewapper .mainBox {
   width: 100%;
-  overflow-y: auto;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   height: 90rem;
@@ -167,11 +166,9 @@ html button {
 }
 
 .moviewapper .mainBox .main__body .timeBox {
-  -webkit-transform: translateY(-7em);
-          transform: translateY(-7em);
-  margin: auto;
   width: 100%;
-  height: 30%;
+  height: 15rem;
+  margin-bottom: 8rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -226,14 +223,12 @@ html button {
   transition: 1s;
   text-align: center;
   position: relative;
-  -webkit-transform: translateY(-8rem);
-          transform: translateY(-8rem);
 }
 
 .moviewapper .btnBigBox .btnBox .printTicketimg {
   width: 85%;
   height: 90%;
-  opacity: .7;
+  opacity: 0.7;
   -webkit-transition: 1s;
   transition: 1s;
   display: inline-block;
@@ -249,12 +244,12 @@ html button {
 }
 
 .moviewapper .btnBigBox .btnBox .ticketintroduce {
-  width: 80%;
+  width: 83%;
   height: 100%;
+  -webkit-transform: translate(2rem, -19rem);
+          transform: translate(2rem, -19rem);
   -webkit-transition: 1s;
   transition: 1s;
-  -webkit-transform: translate(2.5rem, -19rem);
-          transform: translate(2.5rem, -19rem);
   -webkit-backdrop-filter: blur(0.5rem);
           backdrop-filter: blur(0.5rem);
   border-radius: 1.5rem;
@@ -377,8 +372,8 @@ html button {
   height: 18%;
   padding: 2%;
   position: absolute;
-  -webkit-transition: .5s;
-  transition: .5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   background: #1a1f33;
   -webkit-box-shadow: 2rem 0rem 16rem #23222db2;
           box-shadow: 2rem 0rem 16rem #23222db2;
@@ -492,4 +487,7 @@ html button {
   display: block;
   font-size: 1rem;
 }
-/*# sourceMappingURL=intro.css.map */
+
+video {
+  margin-top: 9rem;
+}

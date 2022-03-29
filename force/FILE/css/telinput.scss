@@ -665,20 +665,20 @@ html {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	.ticketsumit {
+	.ticketsumit, .skipBtn {
 		align-self: center;
 		border: 0;
 		background: $main2_fff2;
 		font-family: 'GmarketSansMedium';
 		font-weight: bold;
 		border: none;
-    width: 30rem;
-    height: 10rem;
+    width: 26rem;
+    height: 9rem;
 		outline: none;
 		padding: 1rem;
 		box-shadow: 0.2rem 0.8rem 3rem #1d224e6c;
 		transition: 0.4s;
-		font-size: 4rem;
+		font-size: 3.5rem;
 		color: $subcolor_1;
 		color: $main2_black2;
 		letter-spacing: 1rem;
@@ -687,7 +687,7 @@ html {
 		border-radius: 5rem;
 		transition: 0.7s;
 	}
-	.ticketsumit:hover {
+	.ticketsumit:hover, .skipBtn:hover {
 		background: #fff;
 		color: $main_4;
 		box-shadow: 0.2rem 0.8rem 3rem #7e87d881;
@@ -710,13 +710,12 @@ html {
 	transform: translateY(5rem);
 	width: 84%;
 	margin: auto;
+
 	.NumNum {
-		font-size: 3rem;
+		font-size: 4rem;
 		letter-spacing: 1rem;
 		color: $main2_white;
 		text-shadow: 0.2rem 0.8rem 3rem #16142b88;
-		margin-top: -2rem;
-		margin-bottom: 1rem;
 	}
 	.Numresult {
 		font-size: 5rem;

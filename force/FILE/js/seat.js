@@ -23,7 +23,7 @@ window.onload = () => {
 			}
 	
 			if(Number(userCookie[1]) == 0){ //진짜로 돌아갈 시간 
-				location.href = `/forec`;
+				location.href = `${window.location.pathname}`;
 			}
 			if(countTime == 0){ //도중에 클릭했을경우 중지
 				clearTimeout(timer1);
