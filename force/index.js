@@ -781,7 +781,7 @@ app.get('/force', (req, res) => {
     
     </html>`;
 		res.send(pageTag);
-	} else if (page == 60){
+	} else if (page == 60) {
     res.sendFile(__dirname + '/FILE/html/telinput.html');
   } else if (page == 70) {
 		//결제완료화면
