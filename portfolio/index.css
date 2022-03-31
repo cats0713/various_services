@@ -1,0 +1,423 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Work+Sans:wght@300&display=swap");
+@-webkit-keyframes moving {
+  0% {
+    -webkit-transform: perspective(50rem) translateY(1rem) translateZ(0) rotate(0.63turn);
+            transform: perspective(50rem) translateY(1rem) translateZ(0) rotate(0.63turn);
+  }
+  50% {
+    -webkit-transform: perspective(50rem) translateY(0rem) translateZ(5rem) rotate(0.63turn);
+            transform: perspective(50rem) translateY(0rem) translateZ(5rem) rotate(0.63turn);
+  }
+  100% {
+    -webkit-transform: perspective(50rem) translateY(1rem) translateZ(0rem) rotate(0.63turn);
+            transform: perspective(50rem) translateY(1rem) translateZ(0rem) rotate(0.63turn);
+  }
+}
+@keyframes moving {
+  0% {
+    -webkit-transform: perspective(50rem) translateY(1rem) translateZ(0) rotate(0.63turn);
+            transform: perspective(50rem) translateY(1rem) translateZ(0) rotate(0.63turn);
+  }
+  50% {
+    -webkit-transform: perspective(50rem) translateY(0rem) translateZ(5rem) rotate(0.63turn);
+            transform: perspective(50rem) translateY(0rem) translateZ(5rem) rotate(0.63turn);
+  }
+  100% {
+    -webkit-transform: perspective(50rem) translateY(1rem) translateZ(0rem) rotate(0.63turn);
+            transform: perspective(50rem) translateY(1rem) translateZ(0rem) rotate(0.63turn);
+  }
+}
+
+@-webkit-keyframes arrow {
+  0% {
+    -webkit-transform: translateY(-2rem);
+            transform: translateY(-2rem);
+  }
+  50% {
+    -webkit-transform: translateY(0rem);
+            transform: translateY(0rem);
+  }
+  100% {
+    -webkit-transform: translateY(-2rem);
+            transform: translateY(-2rem);
+  }
+}
+
+@keyframes arrow {
+  0% {
+    -webkit-transform: translateY(-2rem);
+            transform: translateY(-2rem);
+  }
+  50% {
+    -webkit-transform: translateY(0rem);
+            transform: translateY(0rem);
+  }
+  100% {
+    -webkit-transform: translateY(-2rem);
+            transform: translateY(-2rem);
+  }
+}
+
+@-webkit-keyframes fire {
+  0% {
+    -webkit-transform: perspective(50rem) translateZ(0) rotate(0.63turn);
+            transform: perspective(50rem) translateZ(0) rotate(0.63turn);
+    -webkit-box-shadow: 0 0 4rem #fff9d0;
+            box-shadow: 0 0 4rem #fff9d0;
+  }
+  50% {
+    -webkit-transform: perspective(50rem) translateZ(5rem) rotate(0.63turn);
+            transform: perspective(50rem) translateZ(5rem) rotate(0.63turn);
+    -webkit-box-shadow: 0 0 2em #fff9d0;
+            box-shadow: 0 0 2em #fff9d0;
+  }
+  100% {
+    -webkit-transform: perspective(50rem) translateZ(0) rotate(0.63turn);
+            transform: perspective(50rem) translateZ(0) rotate(0.63turn);
+    -webkit-box-shadow: 0 0 4em #fff9d0;
+            box-shadow: 0 0 4em #fff9d0;
+  }
+}
+
+@keyframes fire {
+  0% {
+    -webkit-transform: perspective(50rem) translateZ(0) rotate(0.63turn);
+            transform: perspective(50rem) translateZ(0) rotate(0.63turn);
+    -webkit-box-shadow: 0 0 4rem #fff9d0;
+            box-shadow: 0 0 4rem #fff9d0;
+  }
+  50% {
+    -webkit-transform: perspective(50rem) translateZ(5rem) rotate(0.63turn);
+            transform: perspective(50rem) translateZ(5rem) rotate(0.63turn);
+    -webkit-box-shadow: 0 0 2em #fff9d0;
+            box-shadow: 0 0 2em #fff9d0;
+  }
+  100% {
+    -webkit-transform: perspective(50rem) translateZ(0) rotate(0.63turn);
+            transform: perspective(50rem) translateZ(0) rotate(0.63turn);
+    -webkit-box-shadow: 0 0 4em #fff9d0;
+            box-shadow: 0 0 4em #fff9d0;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+  font-family: 'Nanum Gothic', sans-serif;
+  font-family: 'Work Sans', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+  background: linear-gradient(200deg, #6994c3 10%, #952b41 20%, #19082d 40%, #0a0f20 80%, #4d3e76 87%, #cf8caa 95%, #f2f3e1 100%);
+}
+
+nav {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  width: 5rem;
+  height: 5rem;
+}
+
+nav:hover {
+  cursor: pointer;
+}
+
+section {
+  width: 100%;
+  height: 400rem;
+  background-color: red;
+}
+
+.userBox {
+  position: fixed;
+  top: 40%;
+  left: 45%;
+  -webkit-animation: arrow 1.5s ease-in-out infinite;
+          animation: arrow 1.5s ease-in-out infinite;
+}
+
+.userBox .userBody {
+  position: relative;
+  width: 17rem;
+  height: 28rem;
+  background: linear-gradient(200deg, #d2d8f0 60%, #ebedfe 100%);
+  border-top-left-radius: 30rem;
+  border-top-right-radius: 30rem;
+  border-bottom-left-radius: 5rem;
+  border-bottom-right-radius: 5rem;
+}
+
+.userBox .leg1 {
+  position: absolute;
+  bottom: -5rem;
+  left: -3rem;
+  width: 5rem;
+  height: 13rem;
+  background: linear-gradient(200deg, #a2aade 60%, #e5e6f9 100%);
+  border-top-left-radius: 3rem;
+  border-top-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.userBox .leg2 {
+  position: absolute;
+  bottom: -5rem;
+  left: 50%;
+  margin-left: -1.5rem;
+  width: 3rem;
+  height: 13rem;
+  background: linear-gradient(200deg, #a2aade 60%, #e5e6f9 100%);
+  border-top-left-radius: 3rem;
+  border-top-right-radius: 3rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.userBox .leg3 {
+  position: absolute;
+  bottom: -5rem;
+  right: -3rem;
+  width: 5rem;
+  height: 13rem;
+  background: linear-gradient(200deg, #a2aade 60%, #e5e6f9 100%);
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 3rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.userBox .userWindow {
+  position: absolute;
+  top: 3rem;
+  left: 50%;
+  -webkit-transform: translateX(-5.25rem);
+          transform: translateX(-5.25rem);
+  width: 10.5rem;
+  height: 10.5rem;
+  border-radius: 50%;
+  border: 1rem solid #929ed5;
+  background: linear-gradient(200deg, #a2aade 60%, #e5e6f9 100%);
+}
+
+.userBox .fire {
+  position: absolute;
+  bottom: -4.5rem;
+  left: 50%;
+  margin-left: -4rem;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 1rem;
+  border-bottom-left-radius: 50%;
+  border-top-right-radius: 50%;
+  background: linear-gradient(140deg, #ca732e 20%, #fad90e 100%);
+  -webkit-animation: fire 2s ease-in-out infinite;
+          animation: fire 2s ease-in-out infinite;
+}
+
+.userBox .cloudBox {
+  position: relative;
+  top: 4rem;
+}
+
+.userBox .cloudBox [class*="cloud"] {
+  border-radius: 50%;
+  background-color: white;
+  -webkit-animation: moving 1s ease-in-out infinite;
+          animation: moving 1s ease-in-out infinite;
+}
+
+.userBox .cloudBox .smoke {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -3.5rem;
+  width: 7rem;
+  height: 10rem;
+  border-radius: 50%;
+  background: linear-gradient(10deg, #fff 60%, #ffffff83 100%);
+}
+
+.userBox .cloudBox .cloud1 {
+  position: absolute;
+  top: 5rem;
+  left: -3rem;
+  width: 10rem;
+  height: 10rem;
+  -webkit-animation: moving 2s ease-in-out infinite;
+          animation: moving 2s ease-in-out infinite;
+}
+
+.userBox .cloudBox .cloud2 {
+  position: absolute;
+  top: 5rem;
+  right: -2rem;
+  width: 11rem;
+  height: 11rem;
+  -webkit-animation: moving 4s ease-in-out infinite;
+          animation: moving 4s ease-in-out infinite;
+}
+
+.userBox .cloudBox .cloud3 {
+  position: absolute;
+  top: 3rem;
+  right: 0;
+  width: 6rem;
+  height: 6rem;
+  -webkit-animation: moving 3s ease-in-out infinite;
+          animation: moving 3s ease-in-out infinite;
+}
+
+.userBox .cloudBox .cloud4 {
+  position: absolute;
+  top: 3rem;
+  right: 40%;
+  width: 8rem;
+  height: 8rem;
+  -webkit-animation: moving 2s ease-in-out infinite;
+          animation: moving 2s ease-in-out infinite;
+}
+
+.userBox .cloudBox .cloud5 {
+  position: absolute;
+  top: 8rem;
+  right: 30%;
+  width: 10rem;
+  height: 10rem;
+}
+
+.userBox .cloudBox .cloud6 {
+  position: absolute;
+  top: 4rem;
+  right: 4rem;
+  width: 5rem;
+  height: 5rem;
+}
+
+.userBox .cloudBox .cloud7 {
+  position: absolute;
+  top: 11rem;
+  right: 70%;
+  width: 7rem;
+  height: 7rem;
+}
+
+.userBox .cloudBox .cloud8 {
+  position: absolute;
+  top: 15rem;
+  right: -3rem;
+  width: 3rem;
+  height: 3rem;
+}
+
+.userBox .cloudBox .cloud9 {
+  position: absolute;
+  top: 4rem;
+  left: -6rem;
+  width: 2rem;
+  height: 2rem;
+}
+
+.userBox .cloudBox .cloud10 {
+  position: absolute;
+  top: 4rem;
+  right: -6rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  -webkit-animation: moving 0.5s ease-in-out infinite;
+          animation: moving 0.5s ease-in-out infinite;
+}
+
+.introPage {
+  width: 100%;
+  height: 400rem;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.introPage .cloudBox {
+  width: 100%;
+  height: 30%;
+}
+
+.introPage .cloudBox .cloud1 {
+  width: 70rem;
+  height: 40rem;
+}
+
+.introPage .cloudBox .cloud1 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.introPage .introBox {
+  width: 100%;
+  height: 50%;
+}
+
+.introPage .introBox .imgBox {
+  width: 50rem;
+  height: 50rem;
+}
+
+.introPage .introBox .imgBox img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.introPage .introBox .textBox h1 {
+  font-size: 4rem;
+  letter-spacing: 0.2rem;
+}
+
+.introPage .introBox .textBox p {
+  font-size: 3rem;
+}
+
+.introPage .mountainBox {
+  width: 100%;
+  height: 30%;
+  background-image: url("./IMG/mountain1.svg");
+  background-size: cover;
+  background-color: #000000;
+}
+
+.introPage .mountainBox .introGuidance {
+  -webkit-transform: translateY(40rem);
+          transform: translateY(40rem);
+  text-align: center;
+}
+
+.introPage .mountainBox .introGuidance h1 {
+  font-size: 5rem;
+  font-weight: 300;
+  letter-spacing: 0.3rem;
+  line-height: 6rem;
+}
+
+.introPage .mountainBox .introGuidance i {
+  -webkit-animation: arrow 2s ease-in-out infinite;
+          animation: arrow 2s ease-in-out infinite;
+  font-size: 10rem;
+}
+
+.introPage .mountainBox img {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: -1rem;
+  width: 100%;
+  z-index: 100;
+}
+/*# sourceMappingURL=index.css.map */
