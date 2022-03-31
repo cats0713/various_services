@@ -1,19 +1,31 @@
 import React from "react";
+import foodlist from './foodlist.json';
+import PropTypes from "prop-types";
 
-function FoodNameDisplay( {food} ){
-  return <div>i love {food}</div>
+function Food() {
+  let FoodNameDisplay = ({name,img,rating}) => {
+    return (<div>
+      <h1>i love {name}</h1>
+      <h4>{rating}/5.0</h4>
+      <img src = {img} alt = {name}/>
+    </div>);
+  }
+  FoodNameDisplay.propTypes = {
+    name: PropTypes.string.isRequired,
+    img: PropTypes.string.isRequired,
+    rating: PropTypes.number
+  };
+  const readerFood = dish =>{
+    console.log(dish.id);
+    return <FoodNameDisplay  name={dish.name} key={dish.id} img={dish.img} rating={dish.rating} />;
+  }
+
+  return (<div>
+    {foodlist.map(dish => readerFood(dish))}
+  </div>);
 }
 
-function Food(){
-  return(
-    <div>
-      <h1>FOODLIST</h1>
-      <FoodNameDisplay food="라면"/>
-      <FoodNameDisplay food="김밥"/>
-      <FoodNameDisplay food="오뎅탕"/>
-      <FoodNameDisplay food="쫄면"/>
-    </div>
-  );
-}
+
+
 
 export default Food;

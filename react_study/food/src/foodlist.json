@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "김밥",
+    "rating":4,
+    "img": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjAzMTRfMjc0%2FMDAxNjQ3MTg1MTk1MDUw.UvOUVQyfXyzTr6EyR8KDEHNHg1JqsLppGWkBF2nrpGUg.lzhsdjEmRVlZZXwpkKq2_9QhnTVs-9mSbazhHK6OqbIg.JPEG.gugu9416%2F0.JPG&type=sc960_832"
+  },
+  {
+    "id": 2,
+    "name": "라면",
+    "rating":5,
+    "img": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjAzMTNfMTYw%2FMDAxNjQ3MTcxNDE3NDUz.GT1_kAXCK8EBtiHuLOZ97W-YMZfKKKrEzLGS47JSAskg.uQJT2a2eK2QMLSLNn02DI0JFP6oDbtmr70_mYsM-fQkg.JPEG.aldna22%2F20220304_204955_02.jpg&type=a340"
+  },
+  {
+    "id": 3,
+    "name": "오뎅",
+    "rating":3,
+    "img": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjAxMTNfMjUw%2FMDAxNjQyMDY1NzU5Nzkz.cNs9r31oY12NQ32pBjGi1Chk2aDWMlVTo7LN7n3oy7cg.QovW0rb_ATtYbIVISeFvmKpoc-ORJZnOMWakevlK6WUg.JPEG.goodthinkgood%2Foutput_2955513552.jpg&type=a340"
+  }
+]
