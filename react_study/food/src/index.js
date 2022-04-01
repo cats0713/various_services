@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Food from './Food';
+import App from './App';
 
 ReactDOM.render(
-  <Food />,
-  document.querySelector(".food")
+  <App />,
+  document.querySelector(".app")
 );
