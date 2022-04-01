@@ -448,12 +448,25 @@ html button {
       justify-content: space-around;
 }
 
-.moviewapper #playerarea .head__infor span {
+.moviewapper #playerarea .head__infor .timewapper {
   font-size: 2rem;
   letter-spacing: 0.2rem;
+  display: inline-block;
   line-height: 9.8rem;
   text-shadow: 0rem 2rem 3rem #16142b62;
   color: #f3b4d8;
+}
+
+.moviewapper #playerarea .head__infor .timewapper:first-child {
+  position: absolute;
+  -webkit-transform: translate(-25rem);
+          transform: translate(-25rem);
+}
+
+.moviewapper #playerarea .head__infor .timewapper:last-child {
+  -webkit-transform: translate(25rem);
+          transform: translate(25rem);
+  position: absolute;
 }
 
 .moviewapper .mainBox::-webkit-scrollbar {
@@ -1158,4 +1171,3 @@ html button {
   font-size: 2rem;
   text-align: center;
 }
-/*# sourceMappingURL=point.css.map */

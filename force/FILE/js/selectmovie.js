@@ -137,8 +137,7 @@ window.onload = () => {
 			countTime = 0;
 			mymodal.classList.add('opacityscroll');
 			document.cookie = `userCookie=120`;
-			switch (e.target.id)
-			{
+			switch (e.target.id){
 				case 'submitperson':
 					const checkd = document.querySelectorAll('.check');
 					if(checkd.length == 0) {
@@ -156,39 +155,65 @@ window.onload = () => {
 						location.href = `${window.location.pathname}?page=30&title=${userDataArray[0]}&time=${userDataArray[1]}&gan=${userDataArray[2]}&adult=${userDataArray[3]}&jonior=${userDataArray[4]}&Disabled=${userDataArray[5]}&old=${userDataArray[6]}`;				
 					}
 					break;
+
 				case 'cutBtn':
+					if(e.target.classList[2] =='check'){
+						e.target.classList.toggle('check');
+						e.target.classList.toggle('backColor');
+						break;
+					}
+					switch (e.target.classList[0]) {
+						case 'adultpeoplecounter':
+							const adultpeoplecounter = document.querySelectorAll(".adultpeoplecounter");
+							adultpeoplecounter.forEach((v,i,a)=>{
+							v.classList.remove('check');
+							v.classList.add('backColor');
+							});
+							e.target.classList.toggle('check');
+							e.target.classList.toggle('backColor');
+							break;
+						case 'joniorpeplecounter':
+							const joniorpeplecounter = document.querySelectorAll(".joniorpeplecounter");
+							joniorpeplecounter.forEach((v,i,a)=>{
+							v.classList.remove('check');
+							v.classList.add('backColor');
+							});
+							e.target.classList.toggle('check');
+							e.target.classList.toggle('backColor');
+							break;
+						case 'Disabledpeplecounter':
+							const Disabledpeplecounter = document.querySelectorAll(".Disabledpeplecounter");
+							Disabledpeplecounter.forEach((v,i,a)=>{
+							v.classList.remove('check');
+							v.classList.add('backColor');
+							});
+							e.target.classList.toggle('check');
+							e.target.classList.toggle('backColor');
+							break;
+						case 'oldplecounter':
+							const oldplecounter = document.querySelectorAll(".oldplecounter");
+							oldplecounter.forEach((v,i,a)=>{
+							v.classList.remove('check');
+							v.classList.add('backColor');
+							});
+							e.target.classList.toggle('check');
+							e.target.classList.toggle('backColor');
+							break;
+					}
 					if (true) {
 						const check = document.querySelectorAll('.check');
 						//최대 선택 갯수 확인
 						let checkNum = 0;
-						let conut_Num1 = 0;
-						let conut_Num2 = 0;
-						let conut_Num3 = 0;
-						let conut_Num4 = 0;
+
 						check.forEach((e, i, v) => {
 							checkNum += Number(e.innerHTML);
-							switch (e.classList[0]) {
-								case 'adultpeoplecounter':
-									conut_Num1++;
-									break;
-								case 'joniorpeplecounter':
-									conut_Num2++;
-									break;
-								case 'Disabledpeplecounter':
-									conut_Num3++;
-									break;
-								case 'oldplecounter':
-									conut_Num4++;
-									break;
-							}
 						});
 
 						if (checkNum > 6) {
 							e.target.classList.remove('check');
 							e.target.classList.add('backColor');
 							// console.log("초과되었습니다.");
-							if (!(conut_Num1 >= 2 || conut_Num2 >= 2 || conut_Num3 >= 2 || conut_Num4 >= 2)) {
-								const mymodal = document.querySelector('.cwrningwapper');
+							const mymodal = document.querySelector('.cwrningwapper');
 								modalAboutPersonNumChoice(`관람인원이`, `초과 되었습니다`, mymodal);
 								setTimeout(function () {
 									document.querySelector('.modalhat').style.transform = 'translate(-2rem, -8rem) rotate(0deg)';
@@ -196,14 +221,10 @@ window.onload = () => {
 								setTimeout(function () {
 									mymodal.classList.add('opacityscroll');
 								}, 2000);
-							}
-						}
-						if (conut_Num1 >= 2 || conut_Num2 >= 2 || conut_Num3 >= 2 || conut_Num4 >= 2) {
-							e.target.classList.remove('check');
-							e.target.classList.add('backColor');
-							
+							break;
 						}
 					}
+					
 					const check = document.querySelectorAll('.check');
 					//인원선택
 					let adult_user = 0;
@@ -214,18 +235,18 @@ window.onload = () => {
 					check.forEach((e, i, v) => {
 						switch (e.className) {
 							case 'adultpeoplecounter cutbtn check':
-								adult_user = Number(e.innerHTML) * 1;
+								adult_user = Number(e.innerHTML);
 								break;
 							case 'joniorpeplecounter cutbtn check':
-								jonior_user = Number(e.innerHTML) * 1;
+								jonior_user = Number(e.innerHTML);
 								// console.log("청소년");
 								break;
 							case 'Disabledpeplecounter cutbtn check':
-								Disabled_user = Number(e.innerHTML) * 1;
+								Disabled_user = Number(e.innerHTML);
 								// console.log("장애인");
 								break;
 							case 'oldplecounter cutbtn check':
-								old_user = Number(e.innerHTML) * 1;
+								old_user = Number(e.innerHTML);
 								// console.log("노약자");
 								break;
 						}
@@ -233,7 +254,7 @@ window.onload = () => {
 					parseData_user(adult_user, jonior_user, Disabled_user, old_user);
 					break;
 				
-				}
+			}
 
 			switch (e.target.className) {
 				case 'movieUlLicontainer':
@@ -248,15 +269,12 @@ window.onload = () => {
 					$('.countermodalwapper').toggleClass('opacityscroll');
 					break;
 			}
-		},
+			modalclosebtn = document.querySelector('#modalclosebtn');
+			modalclosebtn.addEventListener('click', ()=>{
+				$('.modalwapper').toggleClass('opacityscroll');
+		})},
 	});
 
-	cutbtn.forEach((value, index, array) => {
-		value.addEventListener('click', (e) => {
-			e.target.classList.toggle('check');
-			e.target.classList.toggle('backColor');
-		});
-	});
 
 	$('#homeBtn').on('click', function () {
 		location.href = `${window.location.pathname}?page=10`;
@@ -265,4 +283,8 @@ window.onload = () => {
 	$('#previousBtn').on('click', function () {
 		location.href = `${window.location.pathname}?page=10`;
 	});
+
+	$('#prevperson').on('click', function() {
+		location.reload();
+	})
 };

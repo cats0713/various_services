@@ -376,14 +376,26 @@ html {
 			display: flex;
 			justify-content: space-around;
 
-			span {
+			.timewapper {
 				font-size: 2rem;
 				letter-spacing: 0.2rem;
+				display: inline-block;
 				line-height: 9.8rem;
 				text-shadow: 0rem 2rem 3rem #16142b62;
 				color: $main2_fff2;
+				
 			}
-		}
+			
+			.timewapper:first-child {
+				position: absolute;
+				transform: translate(-25rem);
+			}
+			
+			.timewapper:last-child {
+				transform: translate(25rem);
+				position: absolute;
+			}
+		}	
 	}
 	// 헤더다음에 나오는 몸통박스 //
 	.mainBox::-webkit-scrollbar {
@@ -570,7 +582,7 @@ html {
 	width: 72rem;
 	@include center;
 	z-index: 10;
-	height: 101rem;
+	height: 102rem;
 	display: flex;
 	flex-direction: column;
 	position: fixed;
@@ -579,7 +591,7 @@ html {
 	background: #1a1f33be;
 	backdrop-filter: blur(0.5rem);
 	.realcard {
-		transform: translate(4.4em,27rem) rotate(90deg);
+		transform: translate(4.4em, 27rem) rotate(90deg);
 		background: linear-gradient(220deg, $main_4 0%, #7894de 30%, $main_2 100%);
 		width: 35rem;
 		height: 24rem;
@@ -590,10 +602,9 @@ html {
 			height: 5rem;
 			transform: translate(0rem, 5rem);
 		}
-
 	}
 	@keyframes cardstyle {
-		0% { 
+		0% {
 			box-shadow: 0rem 0rem 10rem #675fc09b;
 		}
 		50% {
@@ -606,11 +617,10 @@ html {
 }
 @keyframes movecard {
 	0% {
-		transform: translate(4.4rem,27rem) rotate(90deg);
+		transform: translate(4.4rem, 27rem) rotate(90deg);
 	}
 	50% {
-		transform: translate(4.4rem,37rem) rotate(90deg);
-
+		transform: translate(4.4rem, 37rem) rotate(90deg);
 	}
 }
 .pointment {
@@ -659,11 +669,11 @@ html {
 	font-size: 4rem;
 	opacity: 0;
 	transform: translateY(12rem);
-	font-size:3rem;
-	letter-spacing: .2rem;
+	font-size: 3rem;
+	letter-spacing: 0.2rem;
 	color: $subcolor_1;
-	padding:2rem;
-	border: .2rem solid $main2_fff2;
+	padding: 2rem;
+	border: 0.2rem solid $main2_fff2;
 	border-radius: 6rem;
 	animation: colorchangepaytitle 3s linear infinite;
 }
@@ -674,47 +684,45 @@ html {
 	}
 }
 
-
-//payment_point modal 
+//payment_point modal
 
 .receiptModal {
 	position: fixed;
-	width: 100%;
-	height: 100%;
+	width: 72rem;
+	height: 102rem;
 	z-index: 20;
 	text-align: center;
 	transition: 1s;
 	background: #16142b85;
 	backdrop-filter: blur(1rem);
-	
 
 	h2 {
-		font-size:3rem;
+		font-size: 3rem;
 		width: 30%;
 		transform: translate(8rem);
-		margin:1rem;
-		padding:2rem;
+		margin: 1rem;
+		padding: 2rem;
 		float: left;
-		border:.2rem solid $main2_fff2;
+		border: 0.2rem solid $main2_fff2;
 		border-radius: 7rem;
-		color:$subcolor_1;
-		letter-spacing: .2rem;
-		transition: .6s;
+		color: $subcolor_1;
+		letter-spacing: 0.2rem;
+		transition: 0.6s;
 	}
 	h2:hover {
 		cursor: pointer;
-		color:$main2_fff2;
+		color: $main2_fff2;
 		background: $subcolor_1;
 	}
 	h1 {
 		width: 75%;
 		transform: translate(12%);
-		font-size:3rem;
-		letter-spacing: .2rem;
+		font-size: 3rem;
+		letter-spacing: 0.2rem;
 		opacity: 0;
 		color: $subcolor_1;
-		padding:2rem;
-		border: .2rem solid $main2_fff2;
+		padding: 2rem;
+		border: 0.2rem solid $main2_fff2;
 		border-radius: 6rem;
 		animation: colorchangepaytitle 3s linear infinite;
 	}
@@ -734,73 +742,67 @@ html {
 			box-shadow: 2rem 2rem 4rem $main2_fff2;
 			width: 40%;
 			height: 30%;
-			background:rgb(255, 255, 255);
-			transform: translate(7rem,12rem) rotateY(10deg);
+			background: rgb(255, 255, 255);
+			transform: translate(7rem, 12rem) rotateY(10deg);
 			border-radius: 2rem;
-			
+
 			.readbacod {
 				width: 80%;
 				height: 70%;
-				transform: translate(3rem,2.5rem);
-				background: linear-gradient(190deg,$main2_fff2 40%, #fff);
+				transform: translate(3rem, 2.5rem);
+				background: linear-gradient(190deg, $main2_fff2 40%, #fff);
 				border-radius: 1rem;
 				overflow: hidden;
 				perspective: 10rem;
 				.readbacodscreen {
 					width: 100%;
 					height: 100%;
-					background:linear-gradient(20deg,$main2_fff2, rgba(255, 255, 255, 0.664));
+					background: linear-gradient(20deg, $main2_fff2, rgba(255, 255, 255, 0.664));
 					box-shadow: inset 3rem 4rem 3rem #ffe2f29f;
 					transform: translate(-6rem, 0.5rem) rotateX(-50deg);
-
-
-				}	.readbacodbottm {
-						width: 100%;
-						height: 70%;	
-						transform: translate(-5.5rem,-6rem) rotateX(100deg);
-						background: linear-gradient(30deg,#fff, $main2_fff2);
-					}
-				
-					
+				}
+				.readbacodbottm {
+					width: 100%;
+					height: 70%;
+					transform: translate(-5.5rem, -6rem) rotateX(100deg);
+					background: linear-gradient(30deg, #fff, $main2_fff2);
+				}
 			}
 		}
 	}
-	
+
 	.pointphone {
 		width: 12rem;
 		height: 20rem;
-		border-radius: .5rem;
+		border-radius: 0.5rem;
 		transform: translate(-4rem);
-		backdrop-filter: blur(.4rem);
+		backdrop-filter: blur(0.4rem);
 		box-shadow: 2rem 0rem 6rem $main2_fff2;
 		background: #fff;
 		img {
 			width: 16rem;
-			transform:rotate(90deg) translate(5.5rem,3rem);
-			
+			transform: rotate(90deg) translate(5.5rem, 3rem);
 		}
 	}
 	.phone {
-	
 		width: 10rem;
 		height: 25rem;
 		background: linear-gradient(-50deg, $main_4 10%, #657bb8 30%, $main_2 100%);
 		box-shadow: 0rem 2rem 8rem #16142b85;
-		padding:2rem;
+		padding: 2rem;
 		border-radius: 1rem;
-		margin-left:5rem;
-		transform: rotateY(-5deg) translate(35rem,-10rem);
-		
+		margin-left: 5rem;
+		transform: rotateY(-5deg) translate(35rem, -10rem);
 	}
 	.barcode_line {
-	 width: 100%;
-	 height: 1rem;
-	 box-shadow: -3rem 2rem 5rem $main2_fff2;
-	 position: absolute;
-	 transition: 2s;
-	 transform: translateY (15rem);
-	 background: #ffd7ee;
-	 animation: translatebox 6s linear infinite reverse;
+		width: 100%;
+		height: 1rem;
+		box-shadow: -3rem 2rem 5rem $main2_fff2;
+		position: absolute;
+		transition: 2s;
+		transform: translateY (15rem);
+		background: #ffd7ee;
+		animation: translatebox 6s linear infinite reverse;
 	}
 }
 @keyframes translatebox {
@@ -817,7 +819,7 @@ html {
 //인원 wrning modal //
 
 .cwrningwapper {
-	height: 100rem;
+	height: 102rem;
 	width: 72rem;
 	position: fixed;
 	z-index: 100;
@@ -826,7 +828,6 @@ html {
 	transition: 0.5s;
 }
 .coutnWrningModal {
-	
 	@include center;
 	position: fixed;
 	width: 35rem;
@@ -834,7 +835,7 @@ html {
 	z-index: 100;
 	height: 30rem;
 	box-shadow: 2rem 0rem 16rem #f3b4d863;
-	background:$main2_green;
+	background: $main2_green;
 	padding: 2rem;
 	flex-direction: column;
 	border-radius: 0rem 0rem 1rem 1rem;
@@ -843,20 +844,19 @@ html {
 		border-radius: 1rem 1rem 0rem 0rem;
 		width: 96%;
 		height: 18%;
-		padding:2%;
+		padding: 2%;
 		position: absolute;
-		transition: .5s;
+		transition: 0.5s;
 		background: $main2_green;
 		box-shadow: 2rem 0rem 16rem #23222db2;
 		justify-content: space-evenly;
 		display: flex;
-		transform: translate(-3rem,-12rem) rotate(-15deg);
+		transform: translate(-3rem, -12rem) rotate(-15deg);
 		.strip {
 			width: 10%;
 			height: 100%;
 			background: #fff;
 		}
-		
 	}
 	.coutnWrningModalheader {
 		height: 40%;
@@ -866,12 +866,11 @@ html {
 		border-radius: 1rem;
 		.coutnWrningModalheadertitle {
 			font-size: 3rem;
-			color:$subcolor_1;
+			color: $subcolor_1;
 			transform: translateY(1rem);
 			letter-spacing: 0.3rem;
 			line-height: 6rem;
 
-		
 			.fa-triangle-exclamation {
 				transform: translateY(1rem);
 				font-size: 6rem;
@@ -907,7 +906,7 @@ html {
 			.cunnum {
 				font-size: 2rem;
 				text-align: center;
-			}  
+			}
 		}
 	}
 }

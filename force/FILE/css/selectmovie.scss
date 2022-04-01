@@ -129,7 +129,8 @@ html {
 			align-items: center;
 
 			#submitperson,
-			#resetPerson {
+			#resetPerson,
+			#prevperson {
 				font-family: 'GmarketSansMedium';
 				font-weight: 900;
 				border: none;
@@ -147,6 +148,14 @@ html {
 			#submitperson:active,
 			#submitperson:hover,
 			#submitperson:focus {
+				background: #ffe277;
+				color: $main2_pink;
+
+				box-shadow: 0.2rem 0.8rem 3rem #ffbb0065;
+			}
+			#prevperson:active,
+			#prevperson:hover,
+			#prevperson:focus {
 				background: #ffe277;
 				color: $main2_pink;
 
@@ -228,14 +237,6 @@ html {
 		}
 		.backColor {
 			background-color: $main2_black2;
-		}
-
-		.cutbtn:hover,
-		.cutbtn:active {
-			background-color: #ffe277;
-			color: $main2_pink;
-			border-radius: 50%;
-			box-shadow: 0rem 0rem 2rem #ffbb0065;
 		}
 	}
 }
@@ -369,12 +370,23 @@ html {
 			display: flex;
 			justify-content: space-around;
 
-			span {
+			.timewapper {
 				font-size: 2rem;
 				letter-spacing: 0.2rem;
+				display: inline-block;
 				line-height: 9.8rem;
 				text-shadow: 0rem 2rem 3rem #16142b62;
 				color: $main2_fff2;
+			}
+
+			.timewapper:first-child {
+				position: absolute;
+				transform: translate(-25rem);
+			}
+
+			.timewapper:last-child {
+				transform: translate(25rem);
+				position: absolute;
 			}
 		}
 	}
@@ -459,26 +471,24 @@ html {
 					font-size: 'GmarketSansLight';
 					font-size: 2rem;
 					text-align: center;
-					width: 18rem;
+					width: 16rem;
 					height: 6.2rem;
 					color: $main_1;
 					border: none;
 					border-right: 0.3rem solid white;
 					cursor: pointer;
-					letter-spacing: 0.2rem;
+					letter-spacing: 0.1rem;
 					transition: 0.3s;
-					line-height: 3.3rem; 
+					line-height: 2.3rem;
 					background: transparent;
+				}
 
-				
-
-					.movieUlLicontainer:hover {
-						color: $main2_fff2;
-					}
+				.movieUlLicontainer:hover {
+					color: $main2_fff2;
 				}
 				.movieUlLicontainer:last-child {
-						border-right: transparent;
-					}
+					border-right: transparent;
+				}
 			}
 			//  background: rgba(255, 255, 255, 0.43);
 			.sliderimgs {

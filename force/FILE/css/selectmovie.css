@@ -154,7 +154,8 @@ html button {
 }
 
 .countermodalwapper .countPersonsection .counterresult #submitperson,
-.countermodalwapper .countPersonsection .counterresult #resetPerson {
+.countermodalwapper .countPersonsection .counterresult #resetPerson,
+.countermodalwapper .countPersonsection .counterresult #prevperson {
   font-family: 'GmarketSansMedium';
   font-weight: 900;
   border: none;
@@ -175,6 +176,15 @@ html button {
 .countermodalwapper .countPersonsection .counterresult #submitperson:active,
 .countermodalwapper .countPersonsection .counterresult #submitperson:hover,
 .countermodalwapper .countPersonsection .counterresult #submitperson:focus {
+  background: #ffe277;
+  color: #ffba00;
+  -webkit-box-shadow: 0.2rem 0.8rem 3rem #ffbb0065;
+          box-shadow: 0.2rem 0.8rem 3rem #ffbb0065;
+}
+
+.countermodalwapper .countPersonsection .counterresult #prevperson:active,
+.countermodalwapper .countPersonsection .counterresult #prevperson:hover,
+.countermodalwapper .countPersonsection .counterresult #prevperson:focus {
   background: #ffe277;
   color: #ffba00;
   -webkit-box-shadow: 0.2rem 0.8rem 3rem #ffbb0065;
@@ -283,15 +293,6 @@ html button {
 
 .countermodalwapper .countPersonsection .backColor {
   background-color: #3d3a54;
-}
-
-.countermodalwapper .countPersonsection .cutbtn:hover,
-.countermodalwapper .countPersonsection .cutbtn:active {
-  background-color: #ffe277;
-  color: #ffba00;
-  border-radius: 50%;
-  -webkit-box-shadow: 0rem 0rem 2rem #ffbb0065;
-          box-shadow: 0rem 0rem 2rem #ffbb0065;
 }
 
 .modalwapper {
@@ -462,12 +463,25 @@ html button {
       justify-content: space-around;
 }
 
-.moviewapper #playerarea .head__infor span {
+.moviewapper #playerarea .head__infor .timewapper {
   font-size: 2rem;
   letter-spacing: 0.2rem;
+  display: inline-block;
   line-height: 9.8rem;
   text-shadow: 0rem 2rem 3rem #16142b62;
   color: #f3b4d8;
+}
+
+.moviewapper #playerarea .head__infor .timewapper:first-child {
+  position: absolute;
+  -webkit-transform: translate(-25rem);
+          transform: translate(-25rem);
+}
+
+.moviewapper #playerarea .head__infor .timewapper:last-child {
+  -webkit-transform: translate(25rem);
+          transform: translate(25rem);
+  position: absolute;
 }
 
 .moviewapper .mainBox::-webkit-scrollbar {
@@ -586,20 +600,20 @@ html button {
   font-size: 'GmarketSansLight';
   font-size: 2rem;
   text-align: center;
-  width: 18rem;
+  width: 16rem;
   height: 6.2rem;
   color: #1a1f33;
   border: none;
   border-right: 0.3rem solid white;
   cursor: pointer;
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.1rem;
   -webkit-transition: 0.3s;
   transition: 0.3s;
-  line-height: 3.3rem;
+  line-height: 2.3rem;
   background: transparent;
 }
 
-.moviewapper .mainBox .slide__info .movietimebox .movieUlLicontainer .movieUlLicontainer:hover {
+.moviewapper .mainBox .slide__info .movietimebox .movieUlLicontainer:hover {
   color: #f3b4d8;
 }
 
@@ -926,4 +940,3 @@ html button {
   font-size: 2rem;
   text-align: center;
 }
-/*# sourceMappingURL=selectmovie.css.map */

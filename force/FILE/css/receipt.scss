@@ -103,8 +103,8 @@ html {
 //포인트적립모달//
 .receiptModal {
 	position: fixed;
-	width: 100%;
-	height: 100%;
+	width: 72rem;
+	height: 102rem;
 	z-index: 20;
 	text-align: center;
 	transition: 1s;
@@ -259,12 +259,23 @@ html {
 			display: flex;
 			justify-content: space-around;
 
-			span {
+			.timewapper {
 				font-size: 2rem;
 				letter-spacing: 0.2rem;
+				display: inline-block;
 				line-height: 9.8rem;
 				text-shadow: 0rem 2rem 3rem #16142b62;
 				color: $main2_fff2;
+			}
+
+			.timewapper:first-child {
+				position: absolute;
+				transform: translate(-25rem);
+			}
+
+			.timewapper:last-child {
+				transform: translate(25rem);
+				position: absolute;
 			}
 		}
 	}
@@ -554,8 +565,8 @@ html {
 }
 .receipt2modal {
 	position: fixed;
-	width: 100%;
-	height: 100%;
+	width: 72rem;
+	height: 100rem;
 	z-index: 20;
 	text-align: center;
 	transition: 1s;

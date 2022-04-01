@@ -1,0 +1,431 @@
+@charset "utf-8";
+// maincolor1
+
+$subcolor_1: #fff;
+
+// maincolor2
+$main2_black: #08030a;
+$main2_black2: #3d3a54;
+$main2_green: #1a1f33;
+$main2_pink: #ffba00;
+$main2_fff2: #f3b4d8;
+$main2_white: #655777;
+
+//maincolor3
+$main_1: #1a1f33;
+$main_4: #465fa4;
+$main_2: #f3b4d8;
+$main_3: #ea85b4;
+@keyframes colorchangepaytitle {
+	100% {
+		opacity: 1;
+	}
+}
+
+@mixin center {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+@mixin modal {
+}
+@font-face {
+	font-family: 'S-CoreDream-4Regular';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'GmarketSansMedium';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'LeferiPoint-WhiteA';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-WhiteA.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'GmarketSansLight';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'YUniverse-L';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_yuniverse@1.0/YUniverse-L.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@keyframes colorchange {
+	0% {
+		text-shadow: 0;
+	}
+	50% {
+		text-shadow: 0rem 0rem 0.8rem $main2_pink;
+	}
+	100% {
+		text-shadow: 0;
+	}
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body,
+html {
+	font-family: 'GmarketSansMedium';
+	// scroll-behavior: auto;
+	background: url('../../../img/film-strip-svgrepo-com.svg');
+	width: 100%;
+	font-size: 10px;
+	background: whitesmoke;
+	height: 100vh;
+	color: $main2_black2;
+	background: $main_1;
+	background: linear-gradient(200deg, $main_4 10%, #657bb8 30%, $main_2 100%);
+
+	button {
+		appearance: none;
+		font-family: 'GmarketSansMedium';
+	}
+}
+// 인원수 입력하는 모달 //
+
+.moviewapper {
+	backdrop-filter: blur(0.5rem);
+	width: 72rem;
+	height: 100rem;
+	margin: auto;
+	background: linear-gradient(220deg, rgba(61, 58, 84, 1) 0%, #1a1f33e3 20%, rgba(101, 87, 119, 1) 100%);
+
+	// 헤더
+	#playerarea {
+		width: 100%;
+		display: flex;
+		text-align: center;
+		flex-direction: column;
+
+		.head__infor {
+			background: $main2_green;
+			z-index: 1;
+			height: 10rem;
+			border-radius: 0rem 0rem 3rem 3rem;
+			width: 100%;
+			text-align: center;
+			display: flex;
+			justify-content: space-around;
+
+			span {
+				font-size: 2rem;
+				letter-spacing: 0.2rem;
+				line-height: 9.8rem;
+				text-shadow: 0rem 2rem 3rem #16142b62;
+				color: $main2_fff2;
+			}
+		}
+	}
+	// 헤더다음에 나오는 몸통박스 //
+	.mainBox::-webkit-scrollbar {
+		width: none;
+		display: none;
+	}
+	.mainBox {
+		overflow: hidden;
+		width: 72rem;
+		box-sizing: border-box;
+		height: 80rem;
+
+		.main__body {
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			height: 100%;
+			justify-content: space-evenly;
+			align-items: center;
+
+			.timeSection {
+				width: 100%;
+				height: 70%;
+				flex-direction: row;
+				align-items: center;
+				transform: translateY(-3rem);
+				display: flex;
+				position: relative;
+			}
+		}
+	}
+	// Photo modal
+
+	// footer
+	.moviefooter {
+		background: $main_1;
+		width: 100%;
+		height: 12rem;
+		transform: translateY(-2rem);
+		display: inline-block;
+		text-align: center;
+		text-align: center;
+		border-radius: 3rem 3rem 0rem 0rem;
+
+		a {
+			text-decoration: none;
+		}
+
+		i {
+			color: $main2_white;
+			line-height: 11.8rem;
+			font-size: 4rem;
+			cursor: pointer;
+			transition: 0.3s;
+		}
+		i:hover {
+			color: #ffe277;
+			text-shadow: 0.2rem 0.8rem 3rem #ffbb0065;
+		}
+		i:nth-child(1) {
+			transform: translate(-28rem);
+		}
+		i:nth-child(2) {
+			transform: translate(28rem);
+		}
+	}
+}
+.opacityscroll {
+	visibility: hidden;
+	opacity: 0;
+}
+.PhotoTicket::-webkit-scrollbar {
+	width: none;
+	display: none;
+}
+.PhotoTicket::-webkit-scrollbar-track {
+	background-color: rgba(0, 0, 0, 0);
+}
+.PhotoTicket {
+	box-shadow: inset 0rem 0rem 5rem $main2_green;
+	width: 68rem;
+	height: 55rem;
+	overflow-x: scroll;
+	border-radius: 1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.PhotoTicket_header {
+	font-size: 2.5rem;
+	text-align: center;
+	background: #fff;
+	align-items: center;
+	transform: translateY(-2.6rem);
+	width: 85%;
+	height: 8%;
+	color: $main2_green;
+	padding: 3rem;
+	box-shadow: 0.2rem 0.8rem 3rem #7e87d859;
+	border-radius: 0rem 0rem 3rem 3rem;
+	letter-spacing: 0.3rem;
+}
+.PhotoTicketTitle {
+	color: $main2_green;
+	line-height: 6.2rem;
+}
+
+ul,
+li {
+	list-style-type: none;
+}
+.PhotoTicket__li,
+.Modal_ticket_back {
+	display: inline-block;
+	width: 40rem;
+	height: 50rem;
+	overflow: hidden;
+	margin-left: 1rem;
+	margin-right: 1rem;
+	background: white;
+	border-radius: 2rem;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	.Pt_li_img {
+		display: inline-block;
+		width: 36rem;
+		border-radius: 1rem;
+		height: 40rem;
+		background-size: cover;
+		background-position-y: 20%;
+		img {
+			display: inline-block;
+			width: 100%;
+			height: 100%;
+			border-radius: 0.5rem;
+			object-fit: cover;
+		}
+	}
+
+	.Pt_li_information {
+		font-size: 1.5rem;
+		letter-spacing: 0.3rem;
+	}
+	.ticketlogo {
+		letter-spacing: 0.2rem;
+		font-weight: bold;
+		font-size: 1.5rem;
+
+		color: $main2_fff2;
+	}
+}
+.PhotoTicket__li:hover {
+	cursor: pointer;
+}
+.PhotoTicket > li:first-child {
+	margin-left: 2rem;
+}
+.PhotoTicket > li:last-child {
+	margin-right: 2rem;
+}
+
+.PhototicketModal {
+	width: 72rem;
+	height: 100rem;
+	position: fixed;
+	z-index: 20;
+	text-align: center;
+	transition: 1s;
+	background: #16142b85;
+	backdrop-filter: blur(1rem);
+	.Modal_ticket_back {
+		@include center;
+		display: flex;
+	}
+	.Mtb_head {
+		width: 95%;
+		h1 {
+			font-size: 2.7rem;
+		}
+	}
+	.Mtb_info {
+		width: 80%;
+		height: 50%;
+	}
+	.Mtb_info_para {
+		width: 100%;
+		height: 20%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		h3 {
+			font-size: 2rem;
+		}
+		p {
+			font-size: 2rem;
+		}
+	}
+	.Mtb_footer {
+		color: $main2_fff2;
+		font-size: 2rem;
+	}
+}
+.aboutticket {
+	font-size: 2rem;
+	letter-spacing: 0.2rem;
+	color: $main2_fff2;
+	transform: translateY(-1rem);
+}
+.receipt2modal {
+	position: fixed;
+	width: 72rem;
+	height: 100rem;
+	z-index: 20;
+	text-align: center;
+	transition: 1s;
+	background: #16142b85;
+	backdrop-filter: blur(1rem);
+	.priningreceipt {
+		@include center;
+		width: 100%;
+		height: 80%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		h1 {
+			width: 75%;
+			font-size: 3rem;
+			letter-spacing: 0.2rem;
+			color: $subcolor_1;
+			padding: 2rem;
+			border: 0.2rem solid $main2_fff2;
+			border-radius: 7rem;
+			transform: translateY(-8rem);
+			opacity: 0;
+			animation: colorchangepaytitle 3s linear infinite reverse;
+		}
+		.printinghead {
+			border-radius: 2rem 2rem 0rem 0rem;
+			width: 60%;
+			height: 50%;
+			background: linear-gradient($main2_green 50%, transparent);
+
+			header {
+				border-radius: 2rem 2rem 2rem 2rem;
+				width: 100%;
+				height: 20%;
+				background: $main2_green;
+				line-height: 8.5rem;
+				font-size: 2.5rem;
+				overflow: hidden;
+				letter-spacing: 0.2rem;
+				color: $main2_fff2;
+			}
+			footer {
+				width: 100%;
+				height: 20%;
+
+				background: $main2_green;
+				bottom: 0%;
+			}
+		}
+		.printingbody {
+			width: 45%;
+			height: 20rem;
+			transition: 0.5s;
+			background: white;
+			transform: translate(5.5rem);
+			border-radius: 0rem 0rem 1rem 1rem;
+			position: absolute;
+			animation: receipting 4s linear infinite;
+			.inbody {
+				width: 90%;
+				height: 50%;
+				transform: translate(6%);
+				border-radius: 0rem 0rem 1rem 1rem;
+				background: $main2_fff2;
+			}
+		}
+		@keyframes receipting {
+			0% {
+				height: 10%;
+			}
+			100% {
+				height: 30%;
+			}
+		}
+	}
+}

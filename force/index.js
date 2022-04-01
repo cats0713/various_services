@@ -70,7 +70,7 @@ app.get('/force', (req, res) => {
                     <div class="line"></div>    
                   </article>
                     <article class="ticketintroduce printticket">
-                        <h1 class="h1tagL">예매티켓출력</h1>
+                        <h1 class="h1tagL">포토티켓출력</h1>
                         <h2 class="h2tagL">Print Ticket</h2>
                     </article>
                     </div>
@@ -224,7 +224,7 @@ app.get('/force', (req, res) => {
                 <button class="oldplecounter cutbtn backColor" id="cutBtn">5</button>
                 <button class="oldplecounter cutbtn backColor" id="cutBtn">6</button>
               </div>
-              <div class="counterresult"><button id="submitperson">확인</button></div>
+              <div class="counterresult"><button id="prevperson">이전으로<button id="submitperson">확인</button></div>
               </div>
               <!--일반문구 모달-->
             </section>
@@ -233,6 +233,7 @@ app.get('/force', (req, res) => {
             <section class="modal_body">
               <header class="modal__header">
                 <h1>확인해주세요!</h1>
+                <i class="fa-solid fa-x modalclosebtn" id="modalclosebtn"></i>
               </header>
               <div class="modalinfo">
                 <div>
@@ -256,9 +257,9 @@ app.get('/force', (req, res) => {
               <!--  동영상이 들어갑니다. -->
               <!--  시간과 로고가 표시되는 header -->
               <div class="head__infor">
-              <span id="logoimg">FORCE</span>
-              <span id="logoimg">상영영화</span>
-              <span id="time">00:00</span>
+              <div class="timewapper"><span id="logoimg">FORCE</span></div>
+              <div class="timewapper"><span id="logoimg">상영영화</span></div>
+              <div class="timewapper"><span id="time">00:00</span></div>
               </div>
             </header>
             <!--  영화셀렉트하는 영역 시작 -->
@@ -362,96 +363,96 @@ app.get('/force', (req, res) => {
         </section>
 
 
-            <header id="playerarea">
-              <div class="head__infor">
-              <span id="logoimg">FORCE</span>
-              <span id="logoimg">좌석선택</span>
-              <span id="time">00:00</span>
-              </div>
-            </header>
-            <section class="mainBox">
-              <section class="main__body">
-                <article class="choseseat">
-                  <div class="seatcontainer">
-                    <div class="seatcon">
-                      <div class="Screen"></div>
-                      <i class="fa-solid fa-person-walking-arrow-right"></i>
-                      <div class="seatbox">
-                        <div class="row Aline">
-                          <p>A</p>
-                          <div class="seat visibiliySeat aline"></div>
-                          <div class="seat visibiliySeat"></div>
-                          <div class="seat" id="A1"></div>
-                          <div class="seat" id="A2"></div>
-                          <div class="seat" id="A3"></div>
-                          <div class="seat" id="A4"></div>
-                          <div class="seat" id="A5"></div>
-                          <div class="seat" id="A6"></div>
-                          <div class="seat visibiliySeat"></div>
-                          <div class="seat visibiliySeat"></div>
-                        </div>
-                        <div class="row">
-                          <p>B</p>
-                          <div class="seat visibiliySeat"></div>
-                          <div class="seat" id="B1"></div>
-                          <div class="seat" id="B2"></div>
-                          <div class="seat" id="B3"></div>
-                          <div class="seat" id="B4"></div>
-                          <div class="seat" id="B5"></div>
-                          <div class="seat" id="B6"></div>
-                          <div class="seat" id="B7"></div>
-                          <div class="seat" id="B8"></div>
-                          <div class="seat visibiliySeat"></div>
-                        </div>
-                        <div class="row">
-                          <p>C</p>
-                          <div class="seat" id="C1"></div>
-                          <div class="seat" id="C2"></div>
-                          <div class="seat" id="C3"></div>
-                          <div class="seat" id="C4"></div>
-                          <div class="seat" id="C5"></div>
-                          <div class="seat" id="C6"></div>
-                          <div class="seat" id="C7"></div>
-                          <div class="seat" id="C8"></div>
-                          <div class="seat" id="C9"></div>
-                          <div class="seat" id="C10"></div>
-                        </div>
-                        <div class="row">
-                          <p>D</p>
-                          <div class="seat" id="D1"></div>
-                          <div class="seat" id="D2"></div>
-                          <div class="seat" id="D3"></div>
-                          <div class="seat" id="D4"></div>
-                          <div class="seat" id="D5"></div>
-                          <div class="seat" id="D6"></div>
-                          <div class="seat" id="D7"></div>
-                          <div class="seat" id="D8"></div>
-                          <div class="seat" id="D9"></div>
-                          <div class="seat" id="D10"></div>
-                        </div>
-                        <div class="row">
-                          <p>E</p>
-                          <div class="seat" id="E1"></div>
-                          <div class="seat" id="E2"></div>
-                          <div class="seat" id="E3"></div>
-                          <div class="seat" id="E4"></div>
-                          <div class="seat" id="E5"></div>
-                          <div class="seat" id="E6"></div>
-                          <div class="seat" id="E7"></div>
-                          <div class="seat" id="E8"></div>
-                          <div class="seat" id="E9"></div>
-                          <div class="seat" id="E10"></div>
-                        </div>
-                        <div class="row backward">
-                          <p>W</p>
-                          <div class="seat" id="W1"></div>
-                          <div class="seat" id="W2"></div>
-                          <div class="seat" id="W3"></div>
-                          <div class="seat" id="W4"></div>
-                          <div class="seat" id="W5"></div>
-                          <div class="seat" id="W6"></div>
-                          <div class="seat" id="W7"></div>
-                          <div class="seat" id="W8"></div>
+        <header id="playerarea">
+        <div class="head__infor">
+        <div class="timewapper"><span id="logoimg">FORCE</span></div>
+        <div class="timewapper"><span id="logoimg">좌석선택</span></div>
+        <div class="timewapper"><span id="time">00:00</span></div>
+        </div>
+      </header>
+      <section class="mainBox">
+        <section class="main__body">
+          <article class="choseseat">
+            <div class="seatcontainer">
+              <div class="seatcon">
+                <div class="Screen"></div>
+                <i class="fa-solid fa-person-walking-arrow-right"></i>
+                <div class="seatbox">
+                  <div class="row Aline">
+                    <p class="rowTitle">A</p>
+                    <div class="seat visibiliySeat aline"></div>
+                    <div class="seat visibiliySeat"></div>
+                    <div class="seat" id="A1"></div>
+                    <div class="seat" id="A2"></div>
+                    <div class="seat" id="A3"></div>
+                    <div class="seat" id="A4"></div>
+                    <div class="seat" id="A5"></div>
+                    <div class="seat" id="A6"></div>
+                    <div class="seat visibiliySeat"></div>
+                    <div class="seat visibiliySeat"></div>
+                  </div>
+                  <div class="row">
+                    <p class="rowTitle">B</p>
+                    <div class="seat visibiliySeat"></div>
+                    <div class="seat" id="B1"></div>
+                    <div class="seat" id="B2"></div>
+                    <div class="seat" id="B3"></div>
+                    <div class="seat" id="B4"></div>
+                    <div class="seat" id="B5"></div>
+                    <div class="seat" id="B6"></div>
+                    <div class="seat" id="B7"></div>
+                    <div class="seat" id="B8"></div>
+                    <div class="seat visibiliySeat"></div>
+                  </div>
+                  <div class="row">
+                    <p class="rowTitle">C</p>
+                    <div class="seat" id="C1"></div>
+                    <div class="seat" id="C2"></div>
+                    <div class="seat" id="C3"></div>
+                    <div class="seat" id="C4"></div>
+                    <div class="seat" id="C5"></div>
+                    <div class="seat" id="C6"></div>
+                    <div class="seat" id="C7"></div>
+                    <div class="seat" id="C8"></div>
+                    <div class="seat" id="C9"></div>
+                    <div class="seat" id="C10"></div>
+                  </div>
+                  <div class="row">
+                    <p class="rowTitle">D</p>
+                    <div class="seat" id="D1"></div>
+                    <div class="seat" id="D2"></div>
+                    <div class="seat" id="D3"></div>
+                    <div class="seat" id="D4"></div>
+                    <div class="seat" id="D5"></div>
+                    <div class="seat" id="D6"></div>
+                    <div class="seat" id="D7"></div>
+                    <div class="seat" id="D8"></div>
+                    <div class="seat" id="D9"></div>
+                    <div class="seat" id="D10"></div>
+                  </div>
+                  <div class="row">
+                    <p class="rowTitle">E</p>
+                    <div class="seat" id="E1"></div>
+                    <div class="seat" id="E2"></div>
+                    <div class="seat" id="E3"></div>
+                    <div class="seat" id="E4"></div>
+                    <div class="seat" id="E5"></div>
+                    <div class="seat" id="E6"></div>
+                    <div class="seat" id="E7"></div>
+                    <div class="seat" id="E8"></div>
+                    <div class="seat" id="E9"></div>
+                    <div class="seat" id="E10"></div>
+                  </div>
+                  <div class="row backward">
+                    <p class="rowTitle">W</p>
+                    <div class="seat" id="W1"></div>
+                    <div class="seat" id="W2"></div>
+                    <div class="seat" id="W3"></div>
+                    <div class="seat" id="W4"></div>
+                    <div class="seat" id="W5"></div>
+                    <div class="seat" id="W6"></div>
+                    <div class="seat" id="W7"></div>
+                    <div class="seat" id="W8"></div>
                         </div>
                       </div>
                       <footer class="aboutseat">
@@ -600,7 +601,7 @@ app.get('/force', (req, res) => {
                 <div class="head__infor">
                 <div class="timewapper"><span id="logoimg">FORCE</span></div>
                 <div class="timewapper"><span id="logoimg">예매내역확인</span></div>
-                  <div class="timewapper"><span id="time">00:00</span></div>
+                <div class="timewapper"><span id="time">00:00</span></div>
                 </div>
               </header>
               <section class="mainBox">
@@ -660,7 +661,7 @@ app.get('/force', (req, res) => {
 		db_handle.end();
 	} else if (page == 50) {
 		//결제화면
-    let pageTag = `<!DOCTYPE html>
+		let pageTag = `<!DOCTYPE html>
     <html lang="ko">
     
     <head>
@@ -782,8 +783,8 @@ app.get('/force', (req, res) => {
     </html>`;
 		res.send(pageTag);
 	} else if (page == 60) {
-    res.sendFile(__dirname + '/FILE/html/telinput.html');
-  } else if (page == 70) {
+		res.sendFile(__dirname + '/FILE/html/telinput.html');
+	} else if (page == 70) {
 		//결제완료화면
 
 		let movieTitle = ['영화제목배열', '타오르는 여인의 초상', '언차티드', '엔칸토', '라라랜드'];
@@ -819,21 +820,33 @@ app.get('/force', (req, res) => {
 
 		let userMovieNo = req.query.title.match(/\d/);
 
-    let dataQuery = `insert into movieticket (` +'`name`,' + '`person`,' + '`seat`,' + '`gan`,' + '`time`,' + '`number`,'+ '`tel`,' + '`price`' + `) values ('${movieTitle[userMovieNo[0]]}','${userPerson}','${req.query.seat.replaceAll('_', ' ')}','${req.query.gan}','${req.query.time}','${req.query.number}','010-${req.query.tel}','${req.query.price}');`;
-    db_handle.query(dataQuery,(err, rows) => {
-				if (err) {
-					throw err;
-				} else {
-					res.sendFile(__dirname + '/FILE/html/getpay.html');
-				}
+		let dataQuery =
+			`insert into movieticket (` +
+			'`name`,' +
+			'`person`,' +
+			'`seat`,' +
+			'`gan`,' +
+			'`time`,' +
+			'`number`,' +
+			'`tel`,' +
+			'`price`,' +
+			'`img`' +
+			`) values ('${movieTitle[userMovieNo[0]]}','${userPerson}','${req.query.seat.replaceAll('_', ' ')}','${
+				req.query.gan
+			}','${req.query.time}','${req.query.number}','010-${req.query.tel}','${req.query.price}','${req.query.title}');`;
+		console.log(dataQuery);
+		db_handle.query(dataQuery, (err, rows) => {
+			if (err) {
+				throw err;
+			} else {
+				res.sendFile(__dirname + '/FILE/html/getpay.html');
 			}
-		);
+		});
 
 		db_handle.end();
 	} else if (page == 100) {
-		//예매 확인
+		//예매 번호 혹은 전화번호(포토티켓)
 		res.sendFile(__dirname + '/FILE/html/gettiket.html');
-
 	} else if (page == 110) {
 		//예매정보 확인
 		let db_handle = mysql.createConnection({
@@ -850,222 +863,98 @@ app.get('/force', (req, res) => {
 				console.log('page=110 db연결 성공');
 			}
 		});
+		console.log(`select * from movieticket where tel='010-${req.query.number}' or number='${req.query.number}'`);
+		db_handle.query(
+			`select * from movieticket where tel='010-${req.query.number}' or number='${req.query.number}'`,
+			function (err, rows) {
+				if (err) {
+					throw err;
+				} else if (rows[0]) {
+					//에러가 안났으면
+					let pageTag = `<!DOCTYPE html>
+          <html lang="ko">
+            <head>
+              <meta charset="UTF-8" />
+              <meta http-equiv="X-UA-Compatible" content="chorme" />
+              <meta name="viewport" content="width=device-width,initial-scale=1" />
+              <link
+                rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+                integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+                crossorigin="anonymous"
+                referrerpolicy="no-referrer"
+              />
+              <title>FORCE</title>
+              <script
+                src="https://code.jquery.com/jquery-3.6.0.min.js"
+                integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+                crossorigin="anonymous"
+              ></script>
+              <link rel="shortcut icon" href="../IMG/favicon/favicon.ico" type="image/x-icon">
+              <link rel="icon" href="../IMG/favicon/favicon.ico" type="image/x-icon">
+              <link rel="stylesheet" href="../css/phototicket.css"/>
+              <script src="../js/phototicket.js"></script>
+            </head>
+            <body>
+              <section class="moviewapper">
+                <section class="receipt2modal opacityscroll">
+                  <article class="priningreceipt">
+                    <h1 class="printingtitle">티켓 출력중입니다</h1>
+                    <figure class="printinghead">
+                      <header>FORCE</header>
+                        <figure class="printingbody"">
+                          <figcaption class="inbody"></figcaption>
+                        </figure>
+                      <footer></footer>
+                    </figure>
+                  </article>
+                </section>
+                <header id="playerarea">
+                  <!--  동영상이 들어갑니다. --><!--  시간과 로고가 표시되는 header -->
+                  <div class="head__infor">
+                    <div class="timewapper"><span id="logoimg">FORCE</span></div>
+                    <div class="timewapper"><span id="logoimg">포토티켓출력</span></div>
+                    <div class="timewapper"><span id="time">00:00</span></div>
+                  </div>
+                </header>
+                <!--  영화셀렉트하는 영역 시작 -->
+                <section class="mainBox">
+                  <!-- pototicket body -->
+                  <section class="main__body">
+                    <!-- pototicket start -->
+                    <header class="PhotoTicket_header">
+                      <h1 class="PhotoTicketTitle">출력을 원하는 예매내역을 선택해주세요</h1>
+                        </header> 
+                      <h3 class="aboutticket">총 ${rows.length}건의 예매내역이 있습니다.</h3>
+                      <ul class="PhotoTicket">`;
+					for (let i in rows) {
+						pageTag += `<li class="PhotoTicket__li">
+                        <h2 class="ticketlogo">FORCE</h2>
+                        <article class="Pt_li_img">
+                          <img src="../IMG/PhotoTicket/${rows[i]['img']}.jpg" alt="${rows[i]['img']}">
+                        </article>
+                        <div class="Pt_li_information">
+                          <h2 class="Pt_li_info_movietitle">${rows[i]['name']}</h2>
+                        </div>
+                      </li>`;
+					}
+					pageTag += `</ul>
+                  </section>
+                </section>
+                <footer class="moviefooter">
+                  <i class="fa-solid fa-angles-left fadeinright "></i>
+                  <i class="fa-brands fa-fort-awesome"></i>
+                </footer>
+              </section>  
+            </body>
+          </html>`;
 
-    if(req.query.number.length == 9){
-      db_handle.query(`select * from movieticket where tel='010-${req.query.number}'`, function (err, rows) {
-        if (err) {
-          throw err;
-        } else if (rows[0]) {
-          //에러가 안났으면
-          let pageTag = `<!DOCTYPE html>
-          <html lang="ko">
-            <head>
-              <meta charset="UTF-8" />
-              <meta http-equiv="X-UA-Compatible" content="chorme" />
-              <meta name="viewport" content="width=device-width,initial-scale=1" />
-              <link
-                rel="stylesheet"
-                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-                integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-                crossorigin="anonymous"
-                referrerpolicy="no-referrer"
-              />
-              <title>FORCE</title>
-              <script
-                src="https://code.jquery.com/jquery-3.6.0.min.js"
-                integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-                crossorigin="anonymous"
-              ></script>
-              <link rel="shortcut icon" href="../IMG/favicon/favicon.ico" type="image/x-icon">
-              <link rel="icon" href="../IMG/favicon/favicon.ico" type="image/x-icon">
-              <link rel="stylesheet" href="../css/receipt.css"/>
-              <script src="../js/receipt2.js"></script>
-            </head>
-            <body>
-          
-              <section class="moviewapper">
-              <section class="receipt2modal opacityscroll">
-              <article class="priningreceipt">
-                <h1 class="printingtitle">티켓 출력중입니다</h1>
-                <figure class="printinghead">
-                  <header>FORCE</header>
-                    <figure class="printingbody"">
-                    <div class="line"></div>
-                    </figure>
-                  <footer></footer>
-                </figure>
-              </article>
-            </section>
-                <header id="playerarea">
-                  <div class="head__infor">
-                  <div class="timewapper"><span id="logoimg">FORCE</span></div>
-                  <div class="timewapper"><span id="logoimg">예매내역확인</span></div>
-                    <div class="timewapper"><span id="time">00:00</span></div>
-                  </div>
-                </header>
-                <section class="mainBox">
-                  <section class="main__body">
-                    <section class="reCeiptBody">
-                      <header class="reCeipheader">
-                        <figure class="receipinfoheader">
-                          <figcaption class="forceLogo">FORCE CINEMA</figcaption>
-                          <figcaption class="receipinfointro">예매 내역을 확인해주세요.</figcaption>
-                          <figcaption class="receipinfoheadertitle">${rows[0]['name']}</figcaption>
-                        </figure>
-                        <div class="holesleft"></div>
-                        <div class="holesright"></div>
-                      </header>
-                      <figure class="reCeipinfo">
-                        <figcaption class="receipinfoperson rcifo">
-                          <h3 class="rcifotitle">인원</h3>
-                          <p id="moviePersonnelText" class="rcifomation">${rows[0]['person']}</p>
-                        </figcaption>
-                        <figcaption class="selectSeatNum rcifo">
-                          <h3 class="rcifotitle">좌석</h3>
-                          <p id="movieSeatText" class="rcifomation">${rows[0]['seat']}</p>
-                        </figcaption>
-                        <figcaption class="selecttheater rcifo">
-                          <h3 class="rcifotitle">상영관</h3>
-                          <p id="movieTheaterText" class="rcifomation">${rows[0]['gan']}관</p>
-                        </figcaption>
-                        <figcaption class="movieruningtime rcifo">
-                          <h3 class="rcifotitle">상영시간</h3>
-                          <p id="showtimeText" class="rcifomation">${rows[0]['time']}</p>
-                        </figcaption>
-                        <figcaption class="receipNum rcifo">
-                          <h3 class="rcifotitle">예매번호</h3>
-                          <p id="movieReservationNumber" class="rcifomation">${rows[0]['number']}</p>
-                        </figcaption>
-                        <figcaption class="totalAmount rcifo">
-                          <h3 id="totalPriceText" class="rcifotitle">총 ${Number(rows[0]['price']).toLocaleString()}원</h3>
-                        </figcaption>
-                      </figure>
-                      <footer class="reCeipfooter">
-                        <button class="printBtn">인쇄하기</button>
-                      </footer>
-                    </section>
-                  </section>
-                </section>
-                <footer class="moviefooter">
-                <i id="previousBtn" class="fa-solid fa-angles-left"></i>
-                <i id="homeBtn" class="fa-brands fa-fort-awesome"></i>
-                </footer>
-              </section>
-            </body>
-          </html>`;
-          res.send(pageTag);
-        } else {
-          res.redirect('/force?page=100&err=101');
-        }
-      });
-    }else{
-      db_handle.query(`select * from movieticket where number='${req.query.number}'`, function (err, rows) {
-        if (err) {
-          throw err;
-        } else if (rows[0]) {
-          //에러가 안났으면
-          let pageTag = `<!DOCTYPE html>
-          <html lang="ko">
-            <head>
-              <meta charset="UTF-8" />
-              <meta http-equiv="X-UA-Compatible" content="chorme" />
-              <meta name="viewport" content="width=device-width,initial-scale=1" />
-              <link
-                rel="stylesheet"
-                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-                integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-                crossorigin="anonymous"
-                referrerpolicy="no-referrer"
-              />
-              <title>FORCE</title>
-              <script
-                src="https://code.jquery.com/jquery-3.6.0.min.js"
-                integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-                crossorigin="anonymous"
-              ></script>
-              <link rel="shortcut icon" href="../IMG/favicon/favicon.ico" type="image/x-icon">
-              <link rel="icon" href="../IMG/favicon/favicon.ico" type="image/x-icon">
-              <link rel="stylesheet" href="../css/receipt.css"/>
-              <script src="../js/receipt2.js"></script>
-            </head>
-            <body>
-          
-              <section class="moviewapper">
-              <section class="receipt2modal opacityscroll">
-              <article class="priningreceipt">
-                <h1 class="printingtitle">티켓 출력중입니다</h1>
-                <figure class="printinghead">
-                  <header>FORCE</header>
-                    <figure class="printingbody"">
-                    <div class="line"></div>
-                    </figure>
-                  <footer></footer>
-                </figure>
-              </article>
-            </section>
-                <header id="playerarea">
-                  <div class="head__infor">
-                  <div class="timewapper"><span id="logoimg">FORCE</span></div>
-                  <div class="timewapper"><span id="logoimg">예매내역확인</span></div>
-                    <div class="timewapper"><span id="time">00:00</span></div>
-                  </div>
-                </header>
-                <section class="mainBox">
-                  <section class="main__body">
-                    <section class="reCeiptBody">
-                      <header class="reCeipheader">
-                        <figure class="receipinfoheader">
-                          <figcaption class="forceLogo">FORCE CINEMA</figcaption>
-                          <figcaption class="receipinfointro">예매 내역을 확인해주세요.</figcaption>
-                          <figcaption class="receipinfoheadertitle">${rows[0]['name']}</figcaption>
-                        </figure>
-                        <div class="holesleft"></div>
-                        <div class="holesright"></div>
-                      </header>
-                      <figure class="reCeipinfo">
-                        <figcaption class="receipinfoperson rcifo">
-                          <h3 class="rcifotitle">인원</h3>
-                          <p id="moviePersonnelText" class="rcifomation">${rows[0]['person']}</p>
-                        </figcaption>
-                        <figcaption class="selectSeatNum rcifo">
-                          <h3 class="rcifotitle">좌석</h3>
-                          <p id="movieSeatText" class="rcifomation">${rows[0]['seat']}</p>
-                        </figcaption>
-                        <figcaption class="selecttheater rcifo">
-                          <h3 class="rcifotitle">상영관</h3>
-                          <p id="movieTheaterText" class="rcifomation">${rows[0]['gan']}관</p>
-                        </figcaption>
-                        <figcaption class="movieruningtime rcifo">
-                          <h3 class="rcifotitle">상영시간</h3>
-                          <p id="showtimeText" class="rcifomation">${rows[0]['time']}</p>
-                        </figcaption>
-                        <figcaption class="receipNum rcifo">
-                          <h3 class="rcifotitle">예매번호</h3>
-                          <p id="movieReservationNumber" class="rcifomation">${rows[0]['number']}</p>
-                        </figcaption>
-                        <figcaption class="totalAmount rcifo">
-                          <h3 id="totalPriceText" class="rcifotitle">총 ${Number(rows[0]['price']).toLocaleString()}원</h3>
-                        </figcaption>
-                      </figure>
-                      <footer class="reCeipfooter">
-                        <button class="printBtn">인쇄하기</button>
-                      </footer>
-                    </section>
-                  </section>
-                </section>
-                <footer class="moviefooter">
-                <i id="previousBtn" class="fa-solid fa-angles-left"></i>
-                <i id="homeBtn" class="fa-brands fa-fort-awesome"></i>
-                </footer>
-              </section>
-            </body>
-          </html>`;
-          res.send(pageTag);
-        } else {
-          res.redirect('/force?page=100&err=101');
-        }
-      });
-    }
+					res.send(pageTag);
+				} else {
+					res.redirect('/force?page=100&err=101');
+				}
+			}
+		);
 		//명령어 날리기
 
 		db_handle.end();

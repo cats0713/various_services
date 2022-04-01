@@ -13,7 +13,7 @@ window.onload = () => {
 		setTimeout(getTime, 1000);
 	};
 
-	(()=>{
+	(() => {
 		const newUrl = window.location.search;
 		const RegExp = /=\w+(:)?\d*(~)?\d*(:)?\d*-?\d*/g;
 		userDataArray = newUrl.match(RegExp);
@@ -58,9 +58,18 @@ window.onload = () => {
 
 	getTime();
 
-	setTimeout(()=>{
-		location.href = window.location.pathname;
-	},13000);
+	setTimeout(() => {
+			// console.log("인쇄하기페이지? 모달?");
+			$('.receipt2modal').toggleClass('opacityscroll');
+			setTimeout(() => {
+				$(".printingtitle").html("인쇄가 완료되었습니다");
+				$('.printingtitle').css({ animation: 'none', opacity: '1' });
+				$('.printingbody').css({ animation: 'none' });
+			}, 7000);
+			setTimeout(() => {
+				location.href = `${window.location.pathname}`;
+			}, 12000);
+	}, 3000);
 
 	$("#homeBtn").on("click", function () {
 		location.href = `${window.location.pathname}?page=10`;

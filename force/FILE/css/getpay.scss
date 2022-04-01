@@ -55,7 +55,11 @@ $main_3: #ea85b4;
 	font-weight: normal;
 	font-style: normal;
 }
-
+@keyframes colorchangepaytitle {
+	100% {
+		opacity: 1;
+	}
+}
 @keyframes colorchange {
 	0% {
 		text-shadow: 0;
@@ -256,13 +260,26 @@ html {
 			display: flex;
 			justify-content: space-around;
 
-			span {
+			.timewapper {
 				font-size: 2rem;
 				letter-spacing: 0.2rem;
+				display: inline-block;
 				line-height: 9.8rem;
 				text-shadow: 0rem 2rem 3rem #16142b62;
 				color: $main2_fff2;
+				
 			}
+			
+			.timewapper:first-child {
+				position: absolute;
+				transform: translate(-25rem);
+			}
+			
+			.timewapper:last-child {
+				transform: translate(25rem);
+				position: absolute;
+			}
+		
 		}
 	}
 	// 헤더다음에 나오는 몸통박스 //
@@ -478,3 +495,84 @@ html {
 	}
 }
 
+
+.receipt2modal {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 20;
+	text-align: center;
+	transition: 1s;
+	background: #16142b85;
+	backdrop-filter: blur(1rem);
+	.priningreceipt {
+		@include center;
+		width: 100%;
+		height: 80%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		h1 {
+			width: 75%;
+			font-size: 3rem;
+			letter-spacing: 0.2rem;
+			color: $subcolor_1;
+			padding: 2rem;
+			border: 0.2rem solid $main2_fff2;
+			border-radius: 7rem;
+			transform: translateY(-8rem);
+			opacity: 0;
+			animation: colorchangepaytitle 3s linear infinite reverse;
+		}
+		.printinghead {
+			border-radius: 2rem 2rem 0rem 0rem;
+			width: 60%;
+			height: 50%;
+			background: linear-gradient($main2_green 50%, transparent);
+
+			header {
+				border-radius: 2rem 2rem 2rem 2rem;
+				width: 100%;
+				height: 20%;
+				background: $main2_green;
+				line-height: 8.5rem;
+				font-size: 2.5rem;
+				letter-spacing: 0.2rem;
+				color: $main2_fff2;
+			}
+			footer {
+				width: 100%;
+				height: 20%;
+
+				background: $main2_green;
+				bottom: 0%;
+			}
+		}
+		.printingbody {
+			width: 45%;
+			height: 30%;
+			transition: 0.5s;
+			background: $main2_fff2;
+			transform: translate(5.5rem);
+			position: absolute;
+			animation: receipting 4s linear infinite;
+			.line {
+				bottom: 8rem;
+				width: 100%;
+				height: 7rem;
+				position: absolute;
+				border-bottom: 0.5rem dashed $main2_green;
+			}
+		}
+		@keyframes receipting {
+			0% {
+				height: 10%;
+			}
+			100% {
+				height: 30%;
+			}
+		}
+	}
+}

@@ -446,12 +446,25 @@ html button {
       justify-content: space-around;
 }
 
-.moviewapper #playerarea .head__infor span {
+.moviewapper #playerarea .head__infor .timewapper {
   font-size: 2rem;
   letter-spacing: 0.2rem;
+  display: inline-block;
   line-height: 9.8rem;
   text-shadow: 0rem 2rem 3rem #16142b62;
   color: #f3b4d8;
+}
+
+.moviewapper #playerarea .head__infor .timewapper:first-child {
+  position: absolute;
+  -webkit-transform: translate(-25rem);
+          transform: translate(-25rem);
+}
+
+.moviewapper #playerarea .head__infor .timewapper:last-child {
+  -webkit-transform: translate(25rem);
+          transform: translate(25rem);
+  position: absolute;
 }
 
 .moviewapper .mainBox::-webkit-scrollbar {
@@ -782,7 +795,8 @@ html button {
       flex-wrap: wrap;
 }
 
-.membershipBox .membershipkeybord .mkeybord, .membershipBox .membershipkeybord .resultkeybord {
+.membershipBox .membershipkeybord .mkeybord,
+.membershipBox .membershipkeybord .resultkeybord {
   background: transparent;
   border: none;
   font-family: 'GmarketSansMedium';
@@ -802,7 +816,8 @@ html button {
   cursor: pointer;
 }
 
-.membershipBox .membershipkeybord .mkeybord:hover, .membershipBox .membershipkeybord .resultkeybord:hover {
+.membershipBox .membershipkeybord .mkeybord:hover,
+.membershipBox .membershipkeybord .resultkeybord:hover {
   text-shadow: none;
   border-radius: 50%;
   background: #ffe277;
@@ -882,7 +897,6 @@ html button {
           box-shadow: 0.2rem 0.8rem 3rem #7e87d859;
   border-radius: 0rem 0rem 3rem 3rem;
   letter-spacing: 0.5rem;
-  line-height: 4rem;
 }
 
 .numberviewr {
@@ -894,12 +908,10 @@ html button {
 }
 
 .numberviewr .NumNum {
-  font-size: 3rem;
+  font-size: 4rem;
   letter-spacing: 1rem;
   color: #655777;
   text-shadow: 0.2rem 0.8rem 3rem #16142b88;
-  margin-top: -2rem;
-  margin-bottom: 1rem;
 }
 
 .numberviewr .Numresult {
@@ -1046,8 +1058,8 @@ html button {
   height: 18%;
   padding: 2%;
   position: absolute;
-  -webkit-transition: .5s;
-  transition: .5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   background: #1a1f33;
   -webkit-box-shadow: 2rem 0rem 16rem #23222db2;
           box-shadow: 2rem 0rem 16rem #23222db2;
@@ -1183,8 +1195,8 @@ html button {
   height: 18%;
   padding: 2%;
   position: absolute;
-  -webkit-transition: .5s;
-  transition: .5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   background: #1a1f33;
   -webkit-box-shadow: 2rem 0rem 16rem #23222db2;
           box-shadow: 2rem 0rem 16rem #23222db2;
@@ -1275,4 +1287,24 @@ html button {
   font-size: 2rem;
   text-align: center;
 }
-/*# sourceMappingURL=gettiket.css.map */
+
+.timewapper {
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  display: inline-block;
+  line-height: 9.8rem;
+  text-shadow: 0rem 2rem 3rem #16142b62;
+  color: #f3b4d8;
+}
+
+.timewapper:first-child {
+  position: absolute;
+  -webkit-transform: translate(-25rem);
+          transform: translate(-25rem);
+}
+
+.timewapper:last-child {
+  -webkit-transform: translate(25rem);
+          transform: translate(25rem);
+  position: absolute;
+}

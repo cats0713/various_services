@@ -366,13 +366,24 @@ html {
 			text-align: center;
 			display: flex;
 			justify-content: space-around;
-
-			span {
+			.timewapper {
 				font-size: 2rem;
 				letter-spacing: 0.2rem;
+				display: inline-block;
 				line-height: 9.8rem;
 				text-shadow: 0rem 2rem 3rem #16142b62;
 				color: $main2_fff2;
+				
+			}
+			
+			.timewapper:first-child {
+				position: absolute;
+				transform: translate(-25rem);
+			}
+			
+			.timewapper:last-child {
+				transform: translate(25rem);
+				position: absolute;
 			}
 		}
 	}
