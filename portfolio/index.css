@@ -100,6 +100,36 @@
   }
 }
 
+@-webkit-keyframes twinkle {
+  0% {
+    -webkit-filter: drop-shadow(0 0 2rem rgba(255, 253, 144, 0.7));
+            filter: drop-shadow(0 0 2rem rgba(255, 253, 144, 0.7));
+  }
+  50% {
+    -webkit-filter: drop-shadow(0 0 1rem rgba(255, 253, 144, 0.7));
+            filter: drop-shadow(0 0 1rem rgba(255, 253, 144, 0.7));
+  }
+  100% {
+    -webkit-filter: drop-shadow(0 0 2rem rgba(255, 253, 144, 0.7));
+            filter: drop-shadow(0 0 2rem rgba(255, 253, 144, 0.7));
+  }
+}
+
+@keyframes twinkle {
+  0% {
+    -webkit-filter: drop-shadow(0 0 2rem rgba(255, 253, 144, 0.7));
+            filter: drop-shadow(0 0 2rem rgba(255, 253, 144, 0.7));
+  }
+  50% {
+    -webkit-filter: drop-shadow(0 0 1rem rgba(255, 253, 144, 0.7));
+            filter: drop-shadow(0 0 1rem rgba(255, 253, 144, 0.7));
+  }
+  100% {
+    -webkit-filter: drop-shadow(0 0 2rem rgba(255, 253, 144, 0.7));
+            filter: drop-shadow(0 0 2rem rgba(255, 253, 144, 0.7));
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -130,10 +160,13 @@ nav:hover {
   cursor: pointer;
 }
 
+nav::before {
+  contain: "eb9e";
+}
+
 section {
   width: 100%;
   height: 400rem;
-  background-color: red;
 }
 
 .userBox {
@@ -198,9 +231,7 @@ section {
 .userBox .userWindow {
   position: absolute;
   top: 3rem;
-  left: 50%;
-  -webkit-transform: translateX(-5.25rem);
-          transform: translateX(-5.25rem);
+  left: 2.4rem;
   width: 10.5rem;
   height: 10.5rem;
   border-radius: 50%;
@@ -337,6 +368,23 @@ section {
           animation: moving 0.5s ease-in-out infinite;
 }
 
+.meBox {
+  position: fixed;
+  top: 0%;
+  width: 20rem;
+  height: 25rem;
+  background-color: red;
+}
+
+.meBox img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -webkit-filter: drop-shadow(0 0 1rem rgba(0, 0, 0, 0.7));
+          filter: drop-shadow(0 0 1rem rgba(0, 0, 0, 0.7));
+}
+
 .introPage {
   width: 100%;
   height: 400rem;
@@ -349,6 +397,7 @@ section {
 }
 
 .introPage .cloudBox .cloud1 {
+  position: relative;
   width: 70rem;
   height: 40rem;
 }
@@ -358,6 +407,59 @@ section {
   height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+.introPage .cloudBox .cloud1 .c1 {
+  position: absolute;
+  bottom: -4rem;
+  right: 12rem;
+  width: 25rem;
+  height: 25rem;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.introPage .cloudBox .cloud1 .c2 {
+  position: absolute;
+  bottom: -8rem;
+  left: 16rem;
+  width: 25rem;
+  height: 25rem;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.introPage .cloudBox .cloud2 {
+  position: relative;
+  width: 70rem;
+  height: 40rem;
+}
+
+.introPage .cloudBox .cloud2 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.introPage .cloudBox .cloud2 .c1 {
+  position: absolute;
+  bottom: -4rem;
+  right: 12rem;
+  width: 25rem;
+  height: 25rem;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.introPage .cloudBox .cloud2 .c2 {
+  position: absolute;
+  bottom: -8rem;
+  left: 16rem;
+  width: 25rem;
+  height: 25rem;
+  border-radius: 50%;
+  background-color: white;
 }
 
 .introPage .introBox {
@@ -389,9 +491,8 @@ section {
 .introPage .mountainBox {
   width: 100%;
   height: 30%;
-  background-image: url("./IMG/mountain1.svg");
+  background-image: url("./IMG/mountain/mountain1.svg");
   background-size: cover;
-  background-color: #000000;
 }
 
 .introPage .mountainBox .introGuidance {
@@ -411,6 +512,7 @@ section {
   -webkit-animation: arrow 2s ease-in-out infinite;
           animation: arrow 2s ease-in-out infinite;
   font-size: 10rem;
+  font-weight: lighter;
 }
 
 .introPage .mountainBox img {
@@ -419,5 +521,20 @@ section {
   bottom: -1rem;
   width: 100%;
   z-index: 100;
+  -webkit-filter: drop-shadow(0 0 12rem rgba(0, 0, 0, 0.7));
+          filter: drop-shadow(0 0 12rem rgba(0, 0, 0, 0.7));
+}
+
+.infoProjectPage {
+  width: 100%;
+  height: 400rem;
+}
+
+.infoProjectPage .info {
+  background-image: url("./IMG/back/starBack1.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  -webkit-animation: twinkle 2s ease-in-out infinite;
+          animation: twinkle 2s ease-in-out infinite;
 }
 /*# sourceMappingURL=index.css.map */

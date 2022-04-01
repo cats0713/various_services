@@ -38,6 +38,20 @@
     box-shadow: 0 0 4em rgba($color: #fff9d0, $alpha: 1);
   }
 }
+@keyframes twinkle {
+  0% {
+    // transform: perspective(50rem) translateZ(0) rotate(0.63turn);
+    filter: drop-shadow( 0 0 2rem rgba(255, 253, 144, 0.7)); 
+  }
+  50% {
+    // transform: perspective(50rem) translateZ(5rem) rotate(0.63turn);
+    filter: drop-shadow( 0 0 1rem rgba(255, 253, 144, 0.7)); 
+  }
+  100% {
+    // transform: perspective(50rem) translateZ(0) rotate(0.63turn);
+    filter: drop-shadow( 0 0 2rem rgba(255, 253, 144, 0.7)); 
+  }
+}
 
 *{
   margin: 0;
@@ -65,13 +79,20 @@ nav{
 nav:hover{
   cursor: pointer;
 }
+nav::before{
+  contain: "eb9e";
+
+}
+
 
 section{
   width: 100%;
   height: 400rem;
-  background-color: red;
-  
+  // background-color: red;
 }
+
+
+
 
 //로켓
 .userBox{
@@ -130,8 +151,7 @@ section{
   .userWindow{
     position: absolute;
     top: 3rem;
-    left: 50%;
-    transform: translateX(-5.25rem);
+    left: 2.4rem;
     width: 10.5rem;
     height: 10.5rem;
     border-radius: 50%;
@@ -248,6 +268,20 @@ section{
   }
 }
 
+.meBox{
+  position: fixed;
+  top: 0%;
+  width: 20rem;
+  height: 25rem;
+  background-color: red;
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow( 0 0 1rem rgba(0, 0, 0, .7));
+  }
+}
+
 .introPage{
   width: 100%;
   height: 400rem;
@@ -256,6 +290,7 @@ section{
     width: 100%;
     height: 30%;
     .cloud1{
+      position: relative;
       width: 70rem;
       height: 40rem;
       img{
@@ -263,8 +298,57 @@ section{
         height: 100%;
         object-fit: contain;
       }
+      .c1{
+        position: absolute;
+        bottom: -4rem;
+        right: 12rem;
+        width: 25rem;
+        height: 25rem;
+        border-radius: 50%;
+        background-color: white;
+
+      }
+      .c2{
+        position: absolute;
+        bottom: -8rem;
+        left: 16rem;
+        width: 25rem;
+        height: 25rem;
+        border-radius: 50%;
+        background-color: white; 
+      }
+    }
+    .cloud2{
+      position: relative;
+      width: 70rem;
+      height: 40rem;
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+      .c1{
+        position: absolute;
+        bottom: -4rem;
+        right: 12rem;
+        width: 25rem;
+        height: 25rem;
+        border-radius: 50%;
+        background-color: white;
+
+      }
+      .c2{
+        position: absolute;
+        bottom: -8rem;
+        left: 16rem;
+        width: 25rem;
+        height: 25rem;
+        border-radius: 50%;
+        background-color: white; 
+      }
     }
   }
+
   .introBox{ //intro mainBox
     width: 100%;
     height: 50%;
@@ -291,9 +375,9 @@ section{
   .mountainBox{
     width: 100%;
     height: 30%;
-    background-image: url("./IMG/mountain1.svg");
+    background-image: url("./IMG/mountain/mountain1.svg");
     background-size: cover;
-    background-color: #000000;
+    // background-color: #000000;
     .introGuidance{
       transform: translateY(40rem);
       text-align: center;
@@ -306,7 +390,7 @@ section{
       i{
         animation: arrow 2s ease-in-out infinite;
         font-size: 10rem;
-
+        font-weight: lighter;
       }
     }
     img{
@@ -314,9 +398,21 @@ section{
       bottom: -1rem;
       width: 100%;
       z-index: 100;
+      filter: drop-shadow( 0 0 12rem rgba(0, 0, 0, .7));
     }
+
   }
 
 }
 
+.infoProjectPage{
+  width: 100%;
+  height: 400rem;
+  .info{
+    background-image: url('./IMG/back/starBack1.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    animation: twinkle 2s ease-in-out infinite; 
+  }
+}
 
