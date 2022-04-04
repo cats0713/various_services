@@ -2,20 +2,20 @@ import React from "react";
 
 class App extends React.Component{
   state = {
-    count: 0,
-  };
-  addNumber = () => {
-    this.setState(aa => ({count:aa.count+1}));
-  };
-  minusNumber = () => {
-    this.setState(current => ({count:current.count-1}));
+    isLoding:true,
+    movies:[],
   };
 
+  componentDidMount(){
+    setTimeout(()=>{
+      this.setState({isLoding:false});
+    },3000);
+  }
+
   render(){
+    const {isLoding} = this.state;
     return (<div>
-      <h1>class Component : {this.state.count}</h1>
-      <button onClick={this.addNumber}>add</button>
-      <button onClick={this.minusNumber}>minus</button>
+      {isLoding? 'Loding' : 'ready'}
     </div>
     );
   };

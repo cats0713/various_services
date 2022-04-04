@@ -7,7 +7,7 @@ window.onload = () => {
 			const userCookie = document.cookie.split('=');
 			document.cookie = `userCookie=${Number(userCookie[1]) - 1}`; //쿠키 카운트
 			// console.log(document.cookie);
-			if (Number(userCookie[1]) == 5) {
+			if (Number(userCookie[1]) <= 5) {
 				//경고시간
 				countTime += 1;
 				if (countTime == 1) {
@@ -22,7 +22,7 @@ window.onload = () => {
 				}
 			}
 
-			if (Number(userCookie[1]) == 0) {
+			if (Number(userCookie[1]) <= 0) {
 				//진짜로 돌아갈 시간
 				location.href = `${window.location.pathname}`;
 			}

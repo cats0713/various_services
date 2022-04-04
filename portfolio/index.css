@@ -1,4 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Work+Sans:wght@300&display=swap");
+@font-face {
+  font-family: 'Cafe24SsurroundAir';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24SsurroundAir.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 @-webkit-keyframes moving {
   0% {
     -webkit-transform: perspective(50rem) translateY(1rem) translateZ(0) rotate(0.63turn);
@@ -13,6 +19,7 @@
             transform: perspective(50rem) translateY(1rem) translateZ(0rem) rotate(0.63turn);
   }
 }
+
 @keyframes moving {
   0% {
     -webkit-transform: perspective(50rem) translateY(1rem) translateZ(0) rotate(0.63turn);
@@ -134,8 +141,7 @@
   margin: 0;
   padding: 0;
   font-size: 10px;
-  font-family: 'Nanum Gothic', sans-serif;
-  font-family: 'Work Sans', sans-serif;
+  font-family: 'Cafe24SsurroundAir';
 }
 
 html {
@@ -145,7 +151,7 @@ html {
 body {
   width: 100%;
   overflow-x: hidden;
-  background: linear-gradient(200deg, #6994c3 10%, #952b41 20%, #19082d 40%, #0a0f20 80%, #4d3e76 87%, #cf8caa 95%, #f2f3e1 100%);
+  background: linear-gradient(200deg, #6994c3 10%, #952b41 20%, #19082d 40%, #0a0f20 85%, #4d3e76 90%, #cf8caa 95%, #f2f3e1 100%);
 }
 
 nav {
@@ -179,8 +185,8 @@ section {
 
 .userBox .userBody {
   position: relative;
-  width: 17rem;
-  height: 28rem;
+  width: 13rem;
+  height: 22rem;
   background: linear-gradient(200deg, #d2d8f0 60%, #ebedfe 100%);
   border-top-left-radius: 30rem;
   border-top-right-radius: 30rem;
@@ -192,8 +198,8 @@ section {
   position: absolute;
   bottom: -5rem;
   left: -3rem;
-  width: 5rem;
-  height: 13rem;
+  width: 4rem;
+  height: 10rem;
   background: linear-gradient(200deg, #a2aade 60%, #e5e6f9 100%);
   border-top-left-radius: 3rem;
   border-top-right-radius: 1rem;
@@ -207,7 +213,7 @@ section {
   left: 50%;
   margin-left: -1.5rem;
   width: 3rem;
-  height: 13rem;
+  height: 10rem;
   background: linear-gradient(200deg, #a2aade 60%, #e5e6f9 100%);
   border-top-left-radius: 3rem;
   border-top-right-radius: 3rem;
@@ -219,8 +225,8 @@ section {
   position: absolute;
   bottom: -5rem;
   right: -3rem;
-  width: 5rem;
-  height: 13rem;
+  width: 4rem;
+  height: 10rem;
   background: linear-gradient(200deg, #a2aade 60%, #e5e6f9 100%);
   border-top-left-radius: 1rem;
   border-top-right-radius: 3rem;
@@ -230,10 +236,10 @@ section {
 
 .userBox .userWindow {
   position: absolute;
-  top: 3rem;
-  left: 2.4rem;
-  width: 10.5rem;
-  height: 10.5rem;
+  top: 2rem;
+  left: 1.5rem;
+  width: 8rem;
+  height: 8rem;
   border-radius: 50%;
   border: 1rem solid #929ed5;
   background: linear-gradient(200deg, #a2aade 60%, #e5e6f9 100%);
@@ -243,9 +249,9 @@ section {
   position: absolute;
   bottom: -4.5rem;
   left: 50%;
-  margin-left: -4rem;
-  width: 8rem;
-  height: 8rem;
+  margin-left: -3.5rem;
+  width: 7rem;
+  height: 7rem;
   border-radius: 1rem;
   border-bottom-left-radius: 50%;
   border-top-right-radius: 50%;
@@ -290,8 +296,8 @@ section {
 
 .userBox .cloudBox .cloud2 {
   position: absolute;
-  top: 5rem;
-  right: -2rem;
+  top: 6rem;
+  right: -3rem;
   width: 11rem;
   height: 11rem;
   -webkit-animation: moving 4s ease-in-out infinite;
@@ -385,31 +391,113 @@ section {
           filter: drop-shadow(0 0 1rem rgba(0, 0, 0, 0.7));
 }
 
-.introPage {
+.endPage {
   width: 100%;
   height: 400rem;
-  background-color: rgba(0, 0, 0, 0);
 }
 
-.introPage .cloudBox {
+.endPage .ah_info {
   width: 100%;
   height: 30%;
 }
 
-.introPage .cloudBox .cloud1 {
-  position: relative;
-  width: 70rem;
-  height: 40rem;
+.endPage .ah_info .endPlanet {
+  width: 100%;
+  background-color: red;
 }
 
-.introPage .cloudBox .cloud1 img {
+.endPage .ah_info .endPlanet img {
   width: 100%;
   height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
 }
 
-.introPage .cloudBox .cloud1 .c1 {
+.stackPage {
+  width: 100%;
+  height: 400rem;
+}
+
+.stackPage .javascriptBox {
+  width: 100%;
+  height: 35%;
+}
+
+.stackPage .cssBox {
+  width: 100%;
+  height: 35%;
+}
+
+.stackPage .moonBox {
+  width: 100%;
+  height: 30%;
+  position: relative;
+}
+
+.stackPage .moonBox img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -webkit-animation: twinkle 2s ease-in-out infinite;
+          animation: twinkle 2s ease-in-out infinite;
+}
+
+.stackPage .moonBox .moonPlanet {
+  width: 80rem;
+  height: 50rem;
+  margin-left: -30%;
+  background-image: url("./IMG/planet/moon.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-filter: drop-shadow(0 0 0.3rem rgba(255, 255, 255, 0.7));
+          filter: drop-shadow(0 0 0.3rem rgba(255, 255, 255, 0.7));
+}
+
+.introPage {
+  width: 100%;
+  height: 400rem;
+  overflow: hidden;
+}
+
+.introPage .cloudBox {
+  position: relative;
+  width: 100%;
+  height: 30%;
+}
+
+.introPage .cloudBox .backgroundStar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -webkit-animation: twinkle 2s ease-in-out infinite;
+          animation: twinkle 2s ease-in-out infinite;
+}
+
+.introPage .cloudBox .cloudBack1 {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  opacity: 0.8;
+  width: 70rem;
+  height: 40rem;
+}
+
+.introPage .cloudBox .cloudBack1 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.introPage .cloudBox .cloudBack1 .c1 {
   position: absolute;
   bottom: -4rem;
   right: 12rem;
@@ -419,7 +507,7 @@ section {
   background-color: white;
 }
 
-.introPage .cloudBox .cloud1 .c2 {
+.introPage .cloudBox .cloudBack1 .c2 {
   position: absolute;
   bottom: -8rem;
   left: 16rem;
@@ -429,20 +517,23 @@ section {
   background-color: white;
 }
 
-.introPage .cloudBox .cloud2 {
-  position: relative;
+.introPage .cloudBox .cloudBack2 {
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+  opacity: 0.8;
   width: 70rem;
   height: 40rem;
 }
 
-.introPage .cloudBox .cloud2 img {
+.introPage .cloudBox .cloudBack2 img {
   width: 100%;
   height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
 }
 
-.introPage .cloudBox .cloud2 .c1 {
+.introPage .cloudBox .cloudBack2 .c1 {
   position: absolute;
   bottom: -4rem;
   right: 12rem;
@@ -452,7 +543,7 @@ section {
   background-color: white;
 }
 
-.introPage .cloudBox .cloud2 .c2 {
+.introPage .cloudBox .cloudBack2 .c2 {
   position: absolute;
   bottom: -8rem;
   left: 16rem;
@@ -467,43 +558,118 @@ section {
   height: 50%;
 }
 
-.introPage .introBox .imgBox {
-  width: 50rem;
-  height: 50rem;
+.introPage .introBox .hi_ah {
+  margin-left: 65%;
 }
 
-.introPage .introBox .imgBox img {
+.introPage .introBox .hi_ah .imgBox {
+  width: 30rem;
+  height: 30rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.introPage .introBox .hi_ah .imgBox img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-.introPage .introBox .textBox h1 {
-  font-size: 4rem;
-  letter-spacing: 0.2rem;
+.introPage .introBox .hi_ah .textBox {
+  margin-top: 3rem;
 }
 
-.introPage .introBox .textBox p {
-  font-size: 3rem;
+.introPage .introBox .hi_ah .textBox h1 {
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  line-height: 3rem;
+}
+
+.introPage .introBox .hi_ah .textBox p {
+  font-size: 1.7em;
+  letter-spacing: 0.2rem;
+  line-height: 2rem;
+}
+
+.introPage .birdBox {
+  position: relative;
+  width: 18rem;
+  height: 14rem;
+  margin-left: -18rem;
+  -webkit-transform: rotate(20deg);
+          transform: rotate(20deg);
+}
+
+.introPage .birdBox .bird {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 6rem;
+  color: #1c1c1c;
+}
+
+.introPage .birdBox .bird2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 4rem;
+  color: #1c1c1c;
+}
+
+.introPage .birdBox .bird3 {
+  position: absolute;
+  top: 0;
+  left: 2rem;
+  width: 4rem;
+  color: #1c1c1c;
+}
+
+.introPage .birdBox .bird4 {
+  position: absolute;
+  bottom: 0;
+  right: 3rem;
+  width: 3rem;
+  color: #1c1c1c;
+  -webkit-transform: rotate(-5deg);
+          transform: rotate(-5deg);
+}
+
+.introPage .birdBox .bird5 {
+  position: absolute;
+  bottom: 1rem;
+  right: 7rem;
+  width: 4rem;
+  color: #1c1c1c;
 }
 
 .introPage .mountainBox {
+  position: relative;
   width: 100%;
-  height: 30%;
+  height: 20%;
   background-image: url("./IMG/mountain/mountain1.svg");
   background-size: cover;
 }
 
 .introPage .mountainBox .introGuidance {
-  -webkit-transform: translateY(40rem);
-          transform: translateY(40rem);
+  -webkit-transform: translateY(10rem);
+          transform: translateY(10rem);
   text-align: center;
 }
 
 .introPage .mountainBox .introGuidance h1 {
-  font-size: 5rem;
-  font-weight: 300;
+  font-size: 3rem;
+  font-weight: 100;
+  color: #1c1c1c;
+  letter-spacing: 0.3rem;
+  line-height: 3rem;
+}
+
+.introPage .mountainBox .introGuidance h2 {
+  font-size: 2rem;
+  font-weight: 100;
+  color: #a45d7b;
+  text-shadow: rgba(0, 0, 0, 0.7);
   letter-spacing: 0.3rem;
   line-height: 6rem;
 }
@@ -511,15 +677,15 @@ section {
 .introPage .mountainBox .introGuidance i {
   -webkit-animation: arrow 2s ease-in-out infinite;
           animation: arrow 2s ease-in-out infinite;
-  font-size: 10rem;
+  font-size: 5rem;
   font-weight: lighter;
+  color: #1c1c1c;
 }
 
 .introPage .mountainBox img {
-  position: -webkit-sticky;
-  position: sticky;
-  bottom: -1rem;
   width: 100%;
+  position: absolute;
+  bottom: -17%;
   z-index: 100;
   -webkit-filter: drop-shadow(0 0 12rem rgba(0, 0, 0, 0.7));
           filter: drop-shadow(0 0 12rem rgba(0, 0, 0, 0.7));

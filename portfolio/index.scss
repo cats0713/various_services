@@ -1,7 +1,12 @@
 @charset "utf-8";
 
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Work+Sans:wght@300&display=swap');
-
+// @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Work+Sans:wght@300&display=swap');
+@font-face {
+  font-family: 'Cafe24SsurroundAir';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24SsurroundAir.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 @keyframes moving {
   0% {
     transform: perspective(50rem) translateY(1rem) translateZ(0) rotate(0.63turn);
@@ -53,12 +58,14 @@
   }
 }
 
+$main_black: #1c1c1c;
+
+
 *{
   margin: 0;
   padding: 0;
   font-size: 10px;
-  font-family: 'Nanum Gothic', sans-serif;
-  font-family: 'Work Sans', sans-serif;
+  font-family: 'Cafe24SsurroundAir';
 }
 html{
   scroll-behavior: smooth;
@@ -66,7 +73,7 @@ html{
 body{
   width: 100%;
   overflow-x: hidden;
-  background: linear-gradient(200deg,#6994c3 10%,#952b41 20%,#19082d 40%, #0a0f20 80%, #4d3e76 87%, #cf8caa 95%, #f2f3e1 100%);
+  background: linear-gradient(200deg,#6994c3 10%,#952b41 20%,#19082d 40%, #0a0f20 85%, #4d3e76 90%, #cf8caa 95%, #f2f3e1 100%);
 }
 nav{
   position: fixed;
@@ -92,8 +99,6 @@ section{
 }
 
 
-
-
 //로켓
 .userBox{
   position: fixed;
@@ -103,8 +108,8 @@ section{
   // transform: rotate(5deg);
   .userBody{
     position: relative;
-    width: 17rem;
-    height: 28rem;
+    width: 13rem;
+    height: 22rem;
     background: linear-gradient(200deg, #d2d8f0 60%, #ebedfe 100%);
     border-top-left-radius: 30rem;
     border-top-right-radius: 30rem;
@@ -115,8 +120,8 @@ section{
     position: absolute;
     bottom: -5rem;
     left: -3rem;
-    width: 5rem;
-    height: 13rem;
+    width: 4rem;
+    height: 10rem;
     background: linear-gradient(200deg, #a2aade 60%, #e5e6f9 100%);
     border-top-left-radius: 3rem;
     border-top-right-radius: 1rem;
@@ -129,7 +134,7 @@ section{
     left: 50%;
     margin-left: -1.5rem;
     width: 3rem;
-    height: 13rem;
+    height: 10rem;
     background: linear-gradient(200deg, #a2aade 60%, #e5e6f9 100%);
     border-top-left-radius: 3rem;
     border-top-right-radius: 3rem;
@@ -140,8 +145,8 @@ section{
     position: absolute;
     bottom: -5rem;
     right: -3rem;
-    width: 5rem;
-    height: 13rem;
+    width: 4rem;
+    height: 10rem;
     background: linear-gradient(200deg, #a2aade 60%, #e5e6f9 100%);
     border-top-left-radius: 1rem;
     border-top-right-radius: 3rem;
@@ -150,10 +155,10 @@ section{
   }
   .userWindow{
     position: absolute;
-    top: 3rem;
-    left: 2.4rem;
-    width: 10.5rem;
-    height: 10.5rem;
+    top: 2rem;
+    left: 1.5rem;
+    width: 8rem;
+    height: 8rem;
     border-radius: 50%;
     border: 1rem solid #929ed5;
     background: linear-gradient(200deg, #a2aade 60%, #e5e6f9 100%);
@@ -162,9 +167,9 @@ section{
     position: absolute;
     bottom: -4.5rem;
     left: 50%;
-    margin-left: -4rem;
-    width: 8rem;
-    height: 8rem;
+    margin-left: -3.5rem;
+    width: 7rem;
+    height: 7rem;
     border-radius: 1rem;
     border-bottom-left-radius: 50%;
     border-top-right-radius: 50%;
@@ -200,8 +205,8 @@ section{
     }
     .cloud2{
       position: absolute;
-      top: 5rem;
-      right: -2rem;
+      top: 6rem;
+      right: -3rem;
       width: 11rem;
       height: 11rem;
       animation: moving 4s ease-in-out infinite;
@@ -267,7 +272,7 @@ section{
     }
   }
 }
-
+//우주인
 .meBox{
   position: fixed;
   top: 0%;
@@ -282,15 +287,82 @@ section{
   }
 }
 
+.endPage{
+  width: 100%;
+  height: 400rem;
+  .ah_info{
+    width: 100%;
+    height: 30%;
+    .endPlanet{
+      width: 100%;
+      background-color: red;
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+.stackPage{
+  width: 100%;
+  height: 400rem;
+  .javascriptBox{
+    width: 100%;
+    height: 35%;
+  }
+  .cssBox{
+    width: 100%;
+    height: 35%;
+  }
+  .moonBox{
+    width: 100%;
+    height: 30%;
+    position: relative;
+    img{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      animation: twinkle 2s ease-in-out infinite; 
+    }
+    .moonPlanet{
+      width: 80rem;
+      height: 50rem;
+      margin-left: -30%;
+      background-image: url("./IMG/planet/moon.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      filter: drop-shadow( 0 0 0.3rem rgba(255, 255, 255, 0.7)); 
+    }
+  }
+}
+
 .introPage{
   width: 100%;
   height: 400rem;
-  background-color: rgba($color: #000000, $alpha: 0);
+  overflow: hidden;
   .cloudBox{
+    position: relative;
     width: 100%;
     height: 30%;
-    .cloud1{
-      position: relative;
+    .backgroundStar{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      animation: twinkle 2s ease-in-out infinite; 
+    }
+    .cloudBack1{
+      position: absolute;
+      top: 10%;
+      left: 10%;
+      opacity: 0.8;
       width: 70rem;
       height: 40rem;
       img{
@@ -306,7 +378,6 @@ section{
         height: 25rem;
         border-radius: 50%;
         background-color: white;
-
       }
       .c2{
         position: absolute;
@@ -318,8 +389,11 @@ section{
         background-color: white; 
       }
     }
-    .cloud2{
-      position: relative;
+    .cloudBack2{
+      position: absolute;
+      bottom: 10%;
+      right: 10%;
+      opacity: 0.8;
       width: 70rem;
       height: 40rem;
       img{
@@ -352,51 +426,115 @@ section{
   .introBox{ //intro mainBox
     width: 100%;
     height: 50%;
-    .imgBox{
-      width: 50rem;
-      height: 50rem;
-      img{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+    // background-color: rgba($color: #000000, $alpha: .7);
+    .hi_ah{
+      margin-left: 65%;
+      .imgBox{
+        width: 30rem;
+        height: 30rem;
+        border-radius: 50%;
+        overflow: hidden;
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
       }
-    }
-    .textBox{
-      h1{
-        font-size: 4rem;
-        letter-spacing: 0.2rem;
+      .textBox{
+        margin-top: 3rem;
+        h1{
+          font-size: 2rem;
+          letter-spacing: 0.2rem;
+          line-height: 3rem;
 
-      }
-      p{
-        font-size: 3rem;
+        }
+        p{
+          font-size: 1.7em;
+          letter-spacing: 0.2rem;
+          line-height: 2rem;
+        }
       }
     }
   }
+  .birdBox{
+    position: relative;
+    width: 18rem;
+    height: 14rem;
+    margin-left: -18rem;
+    transform: rotate(20deg);
+    .bird{
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 6rem;
+      color: $main_black;
+    }
+    .bird2{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 4rem;
+      color: $main_black;
+    }
+    .bird3{
+      position: absolute;
+      top: 0;
+      left: 2rem;
+      width: 4rem;
+      color: $main_black;
+    }
+    .bird4{
+      position: absolute;
+      bottom: 0;
+      right: 3rem;
+      width: 3rem;
+      color: $main_black;
+      transform: rotate(-5deg);
+    }
+    .bird5{
+      position: absolute;
+      bottom: 1rem;
+      right: 7rem;
+      width: 4rem;
+      color: $main_black;
+    }
+  }
   .mountainBox{
+    position: relative;
     width: 100%;
-    height: 30%;
+    height: 20%;
     background-image: url("./IMG/mountain/mountain1.svg");
     background-size: cover;
-    // background-color: #000000;
     .introGuidance{
-      transform: translateY(40rem);
+      transform: translateY(10rem);
       text-align: center;
       h1{
-        font-size: 5rem;
-        font-weight: 300;
+        font-size: 3rem;
+        font-weight: 100;
+        color: $main_black;
+        // text-shadow: rgba($color: #000000, $alpha: .7);
         letter-spacing: 0.3rem;
-        line-height: 6rem;
+        line-height: 3rem;
+      }
+      h2{
+        font-size: 2rem;
+        font-weight: 100;
+        color: #a45d7b;
+        text-shadow: rgba($color: #000000, $alpha: .7);
+        letter-spacing: 0.3rem;
+        line-height: 6rem; 
       }
       i{
         animation: arrow 2s ease-in-out infinite;
-        font-size: 10rem;
+        font-size: 5rem;
         font-weight: lighter;
+        color: $main_black;
       }
     }
     img{
-      position: sticky;
-      bottom: -1rem;
       width: 100%;
+      position: absolute;
+      bottom: -17%;
       z-index: 100;
       filter: drop-shadow( 0 0 12rem rgba(0, 0, 0, .7));
     }
