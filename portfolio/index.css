@@ -35,6 +35,66 @@
   }
 }
 
+@-webkit-keyframes movingPlanet {
+  0% {
+    -webkit-transform: translateX(-7rem) translateY(-5rem);
+            transform: translateX(-7rem) translateY(-5rem);
+  }
+  50% {
+    -webkit-transform: translateX(0rem) translateY(0rem);
+            transform: translateX(0rem) translateY(0rem);
+  }
+  100% {
+    -webkit-transform: translateX(-7rem) translateY(-5rem);
+            transform: translateX(-7rem) translateY(-5rem);
+  }
+}
+
+@keyframes movingPlanet {
+  0% {
+    -webkit-transform: translateX(-7rem) translateY(-5rem);
+            transform: translateX(-7rem) translateY(-5rem);
+  }
+  50% {
+    -webkit-transform: translateX(0rem) translateY(0rem);
+            transform: translateX(0rem) translateY(0rem);
+  }
+  100% {
+    -webkit-transform: translateX(-7rem) translateY(-5rem);
+            transform: translateX(-7rem) translateY(-5rem);
+  }
+}
+
+@-webkit-keyframes movingX {
+  0% {
+    -webkit-transform: translateX(-4rem);
+            transform: translateX(-4rem);
+  }
+  50% {
+    -webkit-transform: translateX(0rem);
+            transform: translateX(0rem);
+  }
+  100% {
+    -webkit-transform: translateX(-4rem);
+            transform: translateX(-4rem);
+  }
+}
+
+@keyframes movingX {
+  0% {
+    -webkit-transform: translateX(-4rem);
+            transform: translateX(-4rem);
+  }
+  50% {
+    -webkit-transform: translateX(0rem);
+            transform: translateX(0rem);
+  }
+  100% {
+    -webkit-transform: translateX(-4rem);
+            transform: translateX(-4rem);
+  }
+}
+
 @-webkit-keyframes arrow {
   0% {
     -webkit-transform: translateY(-2rem);
@@ -62,6 +122,36 @@
   100% {
     -webkit-transform: translateY(-2rem);
             transform: translateY(-2rem);
+  }
+}
+
+@-webkit-keyframes satellite {
+  0% {
+    -webkit-transform: translateY(-2rem) rotate(180deg);
+            transform: translateY(-2rem) rotate(180deg);
+  }
+  50% {
+    -webkit-transform: translateY(0rem) rotate(180deg);
+            transform: translateY(0rem) rotate(180deg);
+  }
+  100% {
+    -webkit-transform: translateY(-2rem) rotate(180deg);
+            transform: translateY(-2rem) rotate(180deg);
+  }
+}
+
+@keyframes satellite {
+  0% {
+    -webkit-transform: translateY(-2rem) rotate(180deg);
+            transform: translateY(-2rem) rotate(180deg);
+  }
+  50% {
+    -webkit-transform: translateY(0rem) rotate(180deg);
+            transform: translateY(0rem) rotate(180deg);
+  }
+  100% {
+    -webkit-transform: translateY(-2rem) rotate(180deg);
+            transform: translateY(-2rem) rotate(180deg);
   }
 }
 
@@ -178,15 +268,15 @@ section {
 .userBox {
   position: fixed;
   top: 40%;
-  left: 45%;
+  left: 46%;
   -webkit-animation: arrow 1.5s ease-in-out infinite;
           animation: arrow 1.5s ease-in-out infinite;
 }
 
 .userBox .userBody {
   position: relative;
-  width: 13rem;
-  height: 22rem;
+  width: 10rem;
+  height: 18rem;
   background: linear-gradient(200deg, #d2d8f0 60%, #ebedfe 100%);
   border-top-left-radius: 30rem;
   border-top-right-radius: 30rem;
@@ -197,9 +287,9 @@ section {
 .userBox .leg1 {
   position: absolute;
   bottom: -5rem;
-  left: -3rem;
-  width: 4rem;
-  height: 10rem;
+  left: -2rem;
+  width: 3rem;
+  height: 8rem;
   background: linear-gradient(200deg, #a2aade 60%, #e5e6f9 100%);
   border-top-left-radius: 3rem;
   border-top-right-radius: 1rem;
@@ -213,7 +303,7 @@ section {
   left: 50%;
   margin-left: -1.5rem;
   width: 3rem;
-  height: 10rem;
+  height: 8rem;
   background: linear-gradient(200deg, #a2aade 60%, #e5e6f9 100%);
   border-top-left-radius: 3rem;
   border-top-right-radius: 3rem;
@@ -224,9 +314,9 @@ section {
 .userBox .leg3 {
   position: absolute;
   bottom: -5rem;
-  right: -3rem;
-  width: 4rem;
-  height: 10rem;
+  right: -2rem;
+  width: 3rem;
+  height: 8rem;
   background: linear-gradient(200deg, #a2aade 60%, #e5e6f9 100%);
   border-top-left-radius: 1rem;
   border-top-right-radius: 3rem;
@@ -236,10 +326,10 @@ section {
 
 .userBox .userWindow {
   position: absolute;
-  top: 2rem;
-  left: 1.5rem;
-  width: 8rem;
-  height: 8rem;
+  top: 1.5rem;
+  left: 1rem;
+  width: 6rem;
+  height: 6rem;
   border-radius: 50%;
   border: 1rem solid #929ed5;
   background: linear-gradient(200deg, #a2aade 60%, #e5e6f9 100%);
@@ -418,35 +508,334 @@ section {
   height: 400rem;
 }
 
-.stackPage .javascriptBox {
-  width: 100%;
-  height: 35%;
-}
-
-.stackPage .cssBox {
-  width: 100%;
-  height: 35%;
-}
-
-.stackPage .moonBox {
-  width: 100%;
-  height: 30%;
+.stackPage .planetBox {
   position: relative;
+  width: 100%;
+  height: 35%;
 }
 
-.stackPage .moonBox img {
+.stackPage .planetBox .planet {
+  position: absolute;
+  bottom: 30%;
+  left: 10%;
+  width: 12rem;
+  height: 12rem;
+  -webkit-animation: movingX 2s ease-in-out infinite;
+          animation: movingX 2s ease-in-out infinite;
+}
+
+.stackPage .planetBox .starImg {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-animation: twinkle 2s ease-in-out infinite;
+          animation: twinkle 2s ease-in-out infinite;
+}
+
+.stackPage .planetBox .cssPlanet {
+  position: relative;
+  width: 80rem;
+  height: 50rem;
+  margin-left: -30%;
+  background-image: url("./IMG/planet/css.svg");
+}
+
+.stackPage .planetBox .cssPlanet .cssBox {
+  width: 100%;
+  height: 100%;
+}
+
+.stackPage .planetBox .cssPlanet .cssBox .cssFlagImg {
+  opacity: 0;
+  position: absolute;
+  top: -20rem;
+  left: 50%;
+  margin-left: -5rem;
+  width: 10rem;
+  height: 10rem;
+}
+
+.stackPage .planetBox .cssPlanet .cssBox svg {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  margin-top: -7.5rem;
+  margin-left: -7.5rem;
+  width: 15rem;
+  height: 15rem;
+}
+
+.stackPage .planetBox .cssPlanet .cssBox h1 {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  margin-left: -10rem;
+  text-align: center;
+  display: inline-block;
+  width: 20rem;
+  font-size: 6rem;
+  color: white;
+}
+
+.stackPage .planetBox .cssPlanet .scssBox {
+  position: relative;
+  margin-left: 50rem;
+  width: 20rem;
+  height: 20rem;
+  -webkit-animation: movingPlanet 4s ease-in-out infinite;
+          animation: movingPlanet 4s ease-in-out infinite;
+}
+
+.stackPage .planetBox .cssPlanet .scssBox .scssImg {
+  width: 100%;
+  height: 100%;
+}
+
+.stackPage .planetBox .cssPlanet .scssBox svg {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  margin-left: -4rem;
+  width: 8rem;
+  height: 8rem;
+}
+
+.stackPage .planetBox .cssPlanet .scssBox h1 {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  margin-left: -7.5rem;
+  text-align: center;
+  display: inline-block;
+  width: 15rem;
+  font-size: 3rem;
+  color: white;
+}
+
+.stackPage .planetBox .htmlPlanet {
+  position: relative;
+  width: 80rem;
+  height: 50rem;
+  margin-left: 80%;
+  background-image: url("./IMG/planet/end.svg");
+}
+
+.stackPage .planetBox .htmlPlanet .htmlBox {
+  width: 100%;
+  height: 100%;
+}
+
+.stackPage .planetBox .htmlPlanet .htmlBox .htmlFlagImg {
+  opacity: 0;
+  position: absolute;
+  top: -21rem;
+  left: 50%;
+  margin-left: -5rem;
+  width: 10rem;
+  height: 10rem;
+}
+
+.stackPage .planetBox .htmlPlanet .htmlBox svg {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  margin-top: -7.5rem;
+  margin-left: -7.5rem;
+  width: 15rem;
+  height: 15rem;
+}
+
+.stackPage .planetBox .htmlPlanet .htmlBox h1 {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  margin-left: -9rem;
+  text-align: center;
+  display: inline-block;
+  width: 20rem;
+  font-size: 6rem;
+  color: white;
+}
+
+.stackPage .planetBox .htmlPlanet .pugBox {
+  width: 25rem;
+  height: 25rem;
+  position: relative;
+  margin-left: 10rem;
+  -webkit-animation: movingPlanet 2s ease-in-out infinite;
+          animation: movingPlanet 2s ease-in-out infinite;
+}
+
+.stackPage .planetBox .htmlPlanet .pugBox img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.stackPage .planetBox .htmlPlanet .pugBox svg {
+  position: absolute;
+  top: 15%;
+  left: 25%;
+  width: 12rem;
+  height: 12rem;
+}
+
+.stackPage .planetBox .htmlPlanet .pugBox h1 {
+  position: absolute;
+  top: 59%;
+  left: 30%;
+  text-align: center;
+  display: inline-block;
+  width: 10rem;
+  font-size: 3rem;
+  color: white;
+}
+
+.stackPage .planetBox2 {
+  position: relative;
+  width: 100%;
+  height: 35%;
+}
+
+.stackPage .planetBox2 .planet {
+  position: absolute;
+  top: 30%;
+  right: 10%;
+  width: 12rem;
+  height: 12rem;
+  -webkit-animation: movingX 2s ease-in-out infinite;
+          animation: movingX 2s ease-in-out infinite;
+}
+
+.stackPage .planetBox2 .starImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-animation: twinkle 2s ease-in-out infinite;
+          animation: twinkle 2s ease-in-out infinite;
+}
+
+.stackPage .planetBox2 .nodejsPlanet {
+  position: relative;
+  width: 80rem;
+  height: 50rem;
+  margin-top: 30%;
+  margin-left: -30%;
+  background-image: url("./IMG/planet/nodejs.svg");
+}
+
+.stackPage .planetBox2 .nodejsPlanet .nodejsFlagImg {
+  opacity: 0;
+  position: absolute;
+  top: -20rem;
+  left: 29rem;
+  width: 10rem;
+  height: 10rem;
+}
+
+.stackPage .planetBox2 .nodejsPlanet svg {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  margin-top: -7.5rem;
+  margin-left: -7.5rem;
+  width: 15rem;
+  height: 15rem;
+}
+
+.stackPage .planetBox2 .nodejsPlanet h1 {
+  position: absolute;
+  top: 65%;
+  left: 43%;
+  text-align: center;
+  display: inline-block;
+  width: 20rem;
+  font-size: 6rem;
+  color: white;
+}
+
+.stackPage .planetBox2 .jsPlanet {
+  position: relative;
+  width: 80rem;
+  height: 50rem;
+  margin-top: 10%;
+  margin-left: 80%;
+  background-image: url("./IMG/planet/js.svg");
+}
+
+.stackPage .planetBox2 .jsPlanet .jsFlagImg {
+  opacity: 0;
+  position: absolute;
+  top: -20rem;
+  left: 29rem;
+  width: 10rem;
+  height: 10rem;
+}
+
+.stackPage .planetBox2 .jsPlanet svg {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  margin-top: -7.5rem;
+  margin-left: -7.5rem;
+  width: 15rem;
+  height: 15rem;
+}
+
+.stackPage .planetBox2 .jsPlanet h1 {
+  position: absolute;
+  top: 65%;
+  left: 43%;
+  text-align: center;
+  display: inline-block;
+  width: 20rem;
+  font-size: 6rem;
+  color: white;
+}
+
+.stackPage .moonBox {
+  position: relative;
+  width: 100%;
+  height: 30%;
+}
+
+.stackPage .moonBox .blockBox {
+  width: 100%;
+  height: 20%;
+}
+
+.stackPage .moonBox .satelliteImg {
+  width: 10rem;
+  height: 10rem;
+  margin-left: 60%;
+  -webkit-animation: satellite 2s ease-in-out infinite;
+          animation: satellite 2s ease-in-out infinite;
+}
+
+.stackPage .moonBox .starImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
   -webkit-animation: twinkle 2s ease-in-out infinite;
           animation: twinkle 2s ease-in-out infinite;
 }
 
 .stackPage .moonBox .moonPlanet {
+  position: relative;
   width: 80rem;
   height: 50rem;
   margin-left: -30%;
@@ -455,6 +844,15 @@ section {
   background-repeat: no-repeat;
   -webkit-filter: drop-shadow(0 0 0.3rem rgba(255, 255, 255, 0.7));
           filter: drop-shadow(0 0 0.3rem rgba(255, 255, 255, 0.7));
+}
+
+.stackPage .moonBox .rabbitImg {
+  position: absolute;
+  top: -10rem;
+  left: 50%;
+  width: 10rem;
+  height: 13rem;
+  z-index: -1;
 }
 
 .introPage {
@@ -475,10 +873,18 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  -o-object-fit: cover;
+     object-fit: cover;
   -webkit-animation: twinkle 2s ease-in-out infinite;
           animation: twinkle 2s ease-in-out infinite;
+}
+
+.introPage .cloudBox .airplane {
+  width: 13rem;
+  height: 13rem;
+  position: absolute;
+  bottom: 35%;
+  left: 70%;
 }
 
 .introPage .cloudBox .cloudBack1 {
@@ -597,8 +1003,8 @@ section {
   width: 18rem;
   height: 14rem;
   margin-left: -18rem;
-  -webkit-transform: rotate(20deg);
-          transform: rotate(20deg);
+  -webkit-transform: rotate(150deg);
+          transform: rotate(150deg);
 }
 
 .introPage .birdBox .bird {

@@ -61,6 +61,98 @@ window.onload = () => {
     },
     x: 300, y: 100, duration: 1,
   });
+  gsap.from(".airplane", { //비행기
+    scrollTrigger: {
+      trigger: ".airplane",
+      markers: true,
+      start: "top center",
+      scrub: true,
+      // pin: true,
+    },
+    x: -700, y: 100, duration: 1,opacity: 0,
+  });
+  gsap.from(".cssPlanet", { //css
+    scrollTrigger: {
+      trigger: ".cssPlanet",
+      markers: true,
+      start: "top center",
+      scrub: true,
+      // pin: true,
+    },
+    x: 500, y: 100, duration: 1,
+  });
+  gsap.from(".htmlPlanet", { //html
+    scrollTrigger: {
+      trigger: ".htmlPlanet",
+      markers: true,
+      start: "top center",
+      scrub: true,
+      // pin: true,
+    },
+    x: -500, y: 100, duration: 1,
+  });
+  gsap.from(".cssFlagImg", { //cssImg
+    scrollTrigger: {
+      trigger: ".cssFlagImg",
+      markers: true,
+      start: "bottom center",
+      scrub: true,
+      // pin: true,
+    },
+    x: 0, y: 130, duration: 1, opacity: 1,
+  });
+  gsap.from(".htmlFlagImg", { //htmlImg
+    scrollTrigger: {
+      trigger: ".htmlPlanet",
+      markers: true,
+      start: "top center",
+      scrub: true,
+      // pin: true,
+    },
+    x: 0, y: 150, duration: 1, opacity: 1,
+  });
+  gsap.from(".nodejsPlanet", { //node
+    scrollTrigger: {
+      trigger: ".nodejsPlanet",
+      markers: true,
+      start: "top center",
+      scrub: true,
+      // pin: true,
+    },
+    x: 500, y: 100, duration: 1,
+  });
+  gsap.from(".jsPlanet", { //js
+    scrollTrigger: {
+      trigger: ".jsPlanet",
+      markers: true,
+      start: "top center",
+      scrub: true,
+      // pin: true,
+    },
+    x: -500, y: 100, duration: 1,
+  });
+  gsap.from(".nodejsFlagImg", { //nodeImg
+    scrollTrigger: {
+      trigger: ".nodejsFlagImg",
+      markers: true,
+      start: "bottom center",
+      scrub: true,
+      // pin: true,
+    },
+    x: 0, y: 150, duration: 1, opacity: 1,
+  });
+  gsap.from(".jsFlagImg", { //jsImg
+    scrollTrigger: {
+      trigger: ".jsFlagImg",
+      markers: true,
+      start: "top center",
+      scrub: true,
+      // pin: true,
+    },
+    x: 0, y: 150, duration: 1, opacity: 1,
+  });
+
+  
 
 
 }
