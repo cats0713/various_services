@@ -7,22 +7,33 @@
   font-family: 'DungGeunMo';
   src: url(./DungGeunMo.ttf);
 }
+@keyframes moving {
+  0% {
+    transform: perspective(100rem)  translateZ(0);
+  }
+  50% {
+    transform: perspective(100rem)  translateZ(5rem);
+  }
+  100% {
+    transform: perspective(100rem)  translateZ(0rem); 
+  }
+}
 body{
+  text-align: center;
   background: radial-gradient(ellipse at bottom, #0f0c29 0%, #302b63 100%);
 }
 .bigBox{
-  width: 100vw;
+  display: inline-block;
+  width: 140rem;
   height: 100vh;
   background-image: url("./IMG/backImg.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   .buttonBox{
-    position: absolute;
-    bottom: 17%;
-    right: 15%;
-    width: 40%;
-    height: 20%;
-    //background-color: red;
+    margin-left: 60rem;
+    width: 60rem;
+    height: 20rem;
+    // background-color: red;
     [class *= 'Button']{
       font-size: 15rem;
     }
@@ -31,30 +42,23 @@ body{
       transition-duration: 0.2s;
       transform: perspective(50rem) translateZ(10rem);
     }
-    .userButton1{
-      position: absolute;
-      top: 0;
-      left: 1%;
+    [class *= 'userButton']{
+      display: inline-block;
+      width: 33%;
+      height: 100%;
+      img{
+        width: 100%;
+        height: 100%;
+      }
 
-    }
-    .userButton2{
-      position: absolute;
-      top: 0;
-      left: 40%;
-
-    }
-    .userButton3{
-      position: absolute;
-      top: 0;
-      right: 0%;
     }
   }
   .userCoin{
     position: absolute;
     top: 35%;
     left: 0;
-    width: 8%;
-    height: 17%;
+    width: 12rem;
+    height: 12rem;
     // background-color: red;
     img{
       width: 100%;
@@ -69,12 +73,11 @@ body{
   }
 
   .userHeart{
-    display: none;
+    opacity: 0;
     width: 20rem;
     height: 10rem;
-    position: absolute;
-    top: 20%;
-    left: 16%;
+    margin-top: 17rem;
+    margin-left: 22rem;
     // background-color: red;
     div{
       float: left;
@@ -97,11 +100,9 @@ body{
   }
 
   .winOrLose{
-    position: absolute;
-    top: 20%;
-    left: 10%;
-    width: 80%;
-    height: 35%;
+    width: 70rem;
+    height: 18rem;
+    margin-left: 37rem;
     // background-color: red;
     img{
       width: 100%;
@@ -111,18 +112,41 @@ body{
   }
 
   .comHand{
-    position: absolute;
-    top: 40%;
-    left: 20%;
-    width: 20%;
-    height: 40%;
+    width: 10rem;
+    height: 11rem;
+    margin-left: 29rem;
+    // background-color: red;
+    position: relative;
     .resultText{
       font-size: 10rem;
     }
-    img{
+    .npc{
+      opacity: 0;
       width: 100%;
       height: 100%;
       object-fit: contain;
+    }
+    #comHand{
+      position: absolute;
+      top: 1rem;
+      left: 7rem;
+      width: 9rem;
+      height: 10rem;
+      transform: rotate(40deg);
+    }
+  }
+  .introText{
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    width: 80%;
+    height: 35%;
+    animation: moving 2s ease-in-out infinite;
+
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: contain; 
     }
   }
 }

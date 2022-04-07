@@ -2,11 +2,12 @@ window.onload = () => {
   let coincount = 0;
 
   $("#userCoin").on("click", function () {
-    $("#winOrLose").attr("src", './IMG/blank.png');
     if (coincount < 99) {
       coincount++;
-      $(".userHeart").css("display", 'block');
+      $(".npc").css("opacity", '1');
+      $(".userHeart").css("opacity", '1');
       $("#userHeart").html(`x ${coincount}`);
+      $(".introText").css('opacity','0');
     }
   });
 
@@ -41,7 +42,10 @@ window.onload = () => {
         
       if (coincount == 0) {
         $("#winOrLose").attr("src", './IMG/gameover.png');
-        $("#comHand").attr('src', './IMG/blank.png');
+        $("#comHand").css("display", 'none');
+        setTimeout(() => {
+          location.reload();
+        }, 3000);
       }
 
     } else {
