@@ -1216,7 +1216,7 @@ section{
         position: absolute;
         bottom: 13rem;
         right: 0;
-        font-size: 10rem;
+        font-size: 6rem;
         color: #f2f3e1;
       }
     }
@@ -1249,9 +1249,6 @@ section{
           left: 50%;
           margin-left: -15rem;
           font-size: 3rem;
-          background-image: url("./IMG/star/btn.svg");
-          background-size: cover;
-          background-repeat: no-repeat;
           i{
             font-size: 3.5rem;
           }
@@ -1292,6 +1289,53 @@ section{
       height: 100%;
       object-fit: cover; 
       background-color: rgba($color: #000000, $alpha: .4);
+    }
+    .gameTextBox{
+      position: absolute;
+      bottom: 20%;
+      left: -30rem;
+      width: 70rem;
+      height: 70rem;
+      // background-color: red;
+      .planet{
+        width: 100%;
+        height: 100%;
+        transform: rotate(2100deg);
+        filter: drop-shadow( 0 0 12rem rgba(0, 0, 0, .7));
+      }
+      h1{
+        color: #fff;
+        display: inline-block;
+        text-align: center;
+        // background-color: red;
+        position: absolute;
+        bottom: 30rem;
+        left: 50%;
+        margin-left: -15rem;
+        font-size: 4rem;
+        transform: rotate(15deg);
+        i{
+          font-size: 3.5rem; 
+        }
+      }
+      .gameBtn{
+        display: inline-block;
+        width: 30rem;
+        text-align: center;
+        // background-color: red;
+        position: absolute;
+        top: 13rem;
+        left: 50%;
+        margin-left: -15rem;
+        font-size: 3rem;
+        i{
+          font-size: 3.5rem;
+        }
+      }
+      .gameBtn:hover{
+        background-color: #b30439;
+        border-radius: 3rem;
+      }
     }
     .gameBox{
       position: absolute;
@@ -1350,15 +1394,6 @@ section{
       right: 10%;
       animation: movingStar 8s linear infinite; 
     }
-    .planet{
-      width: 70rem;
-      height: 70rem;
-      position: absolute;
-      bottom: 20%;
-      left: -30rem;
-      transform: rotate(2100deg);
-      filter: drop-shadow( 0 0 12rem rgba(0, 0, 0, .7));
-    }
   }
   .moviePageBox{
     width: 100%;
@@ -1403,23 +1438,35 @@ section{
           background: linear-gradient(50deg, #6a7eb8 70%, #fff 80%, #6a7eb8 100%);
           border-radius: 3rem;
         }
-        .movieGoBtn{
-          position: absolute;
-          bottom: 10rem;
-          left: 50%;
-          margin-left: -9.5rem;
-          width: 19rem;
-          height: 7rem;
+        .movieBtn{
+          display: inline-block;
+          width: 30rem;
           text-align: center;
-          background-color: #4d3e76;
-          color: white;
-          font-size: 2rem;
-          line-height: 7rem;
+          background-color: #a2aade;
           border-radius: 1rem;
+          position: absolute;
+          bottom: 13rem;
+          left: 50%;
+          margin-left: -15rem;
+          font-size: 3rem;
+          i{
+            font-size: 3.5rem;
+          }
         }
-        .movieGoBtn:hover{
+        .movieBtn:hover{
           cursor: pointer;
           background-color: #21174a;
+        }
+        h1{
+          display: inline-block;
+          width: 30rem;
+          text-align: center;
+          position: absolute;
+          bottom: 6rem;
+          left: 50%;
+          margin-left: -15rem;
+          font-size: 3rem;
+          color: #fff;
         }
       }
     }
@@ -1516,6 +1563,25 @@ section{
         width: 100%;
         height: 100%;
         background-image: url("./IMG/deco/planet11.svg");
+        .decimalBtn{
+          display: inline-block;
+          width: 30rem;
+          text-align: center;
+          background-color: #a2aade;
+          border-radius: 1rem;
+          position: absolute;
+          bottom: 13rem;
+          left: 50%;
+          margin-left: -15rem;
+          font-size: 3rem;
+          i{
+            font-size: 3.5rem;
+          }
+        }
+        .decimalBtn:hover{
+          background-color: #b30439;
+          border-radius: 3rem;
+        }
       }
     }
     .calculatorBox{
@@ -1529,6 +1595,37 @@ section{
         width: 100%;
         height: 100%;
         background-image: url("./IMG/deco/planet15.svg");
+        h1{
+          display: inline-block;
+          width: 30rem;
+          text-align: center;
+          border-radius: 1rem;
+          position: absolute;
+          bottom: 13rem;
+          left: 50%;
+          margin-left: -15rem;
+          font-size: 3rem;
+          color: #fff;
+        }
+        .calculatorBtn{
+          display: inline-block;
+          width: 30rem;
+          text-align: center;
+          background-color: #a2aade;
+          border-radius: 1rem;
+          position: absolute;
+          bottom: 13rem;
+          left: 50%;
+          margin-left: -15rem;
+          font-size: 3rem;
+          i{
+            font-size: 3.5rem;
+          }
+        }
+        .calculatorBtn:hover{
+          background-color: #b30439;
+          border-radius: 3rem;
+        }
       }
     }
   }

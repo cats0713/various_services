@@ -1,0 +1,145 @@
+@charset "UTF-8";
+@font-face {
+  font-family: 'HeirofLightRegular';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/HeirofLightRegular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@-webkit-keyframes moving {
+  0% {
+    -webkit-transform: perspective(50rem) translateZ(0);
+            transform: perspective(50rem) translateZ(0);
+  }
+  50% {
+    -webkit-transform: perspective(50rem) translateZ(2rem);
+            transform: perspective(50rem) translateZ(2rem);
+  }
+  100% {
+    -webkit-transform: perspective(50rem) translateZ(0rem);
+            transform: perspective(50rem) translateZ(0rem);
+  }
+}
+
+@keyframes moving {
+  0% {
+    -webkit-transform: perspective(50rem) translateZ(0);
+            transform: perspective(50rem) translateZ(0);
+  }
+  50% {
+    -webkit-transform: perspective(50rem) translateZ(2rem);
+            transform: perspective(50rem) translateZ(2rem);
+  }
+  100% {
+    -webkit-transform: perspective(50rem) translateZ(0rem);
+            transform: perspective(50rem) translateZ(0rem);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+  font-family: 'HeirofLightRegular';
+}
+
+.navBar {
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 100;
+  top: 0;
+  width: 100%;
+  height: 10rem;
+  background-color: #111111;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  /*수평 정렬*/
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.navBar .homeBtn {
+  width: 7rem;
+  height: 7rem;
+}
+
+.navBar .homeBtn a img {
+  width: 100%;
+  height: 100%;
+}
+
+.mainBox {
+  position: relative;
+  width: 100%;
+  height: 90rem;
+  overflow: hidden;
+}
+
+.mainBox .mainImg {
+  width: 100%;
+}
+
+.mainBox .xayah {
+  width: 54%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  -webkit-filter: drop-shadow(0 0 2rem RGB(170, 138, 75));
+          filter: drop-shadow(0 0 2rem RGB(170, 138, 75));
+  -webkit-animation: moving 6s ease-in-out infinite;
+          animation: moving 6s ease-in-out infinite;
+}
+
+.mainBox .imgBlur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.mainBox .blackBlur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, rgba(0, 0, 0, 0)), to(black));
+  background: linear-gradient(rgba(0, 0, 0, 0) 30%, black 100%);
+}
+
+.mainBox .xayahText {
+  text-align: center;
+  position: absolute;
+  bottom: 10rem;
+  left: 50%;
+  margin-left: -28rem;
+  font-size: 4rem;
+  color: #c4b898;
+  text-shadow: 0 0 1rem rgba(196, 184, 152, 0.4);
+  letter-spacing: 0.3rem;
+  line-height: 6rem;
+}
+
+.xayahProfile {
+  width: 100%;
+  height: 100rem;
+  background-color: #111111;
+  background-image: url("./IMG/img.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+/*# sourceMappingURL=index.css.map */

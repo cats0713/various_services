@@ -112,9 +112,9 @@ app.get('/force', (req, res) => {
 
 		//db연결정보
 		let db_handle = mysql.createConnection({
-			host: '127.0.0',
+			host: '127.0.0.1',
 			user: 'c15st19',
-			password: 'pH07dQfkwWfP5TmM5',
+			password: 'H07dQfkwWfP5TmM5',
 			database: 'c15st19',
 		});
 		//연결
@@ -318,7 +318,7 @@ app.get('/force', (req, res) => {
 		let db_handle = mysql.createConnection({
 			host: '127.0.0.1',
 			user: 'c15st19',
-			password: 'pH07dQfkwWfP5TmM5',
+			password: 'H07dQfkwWfP5TmM5',
 			database: 'c15st19',
 		});
 		//연결
@@ -525,7 +525,7 @@ app.get('/force', (req, res) => {
 		let db_handle = mysql.createConnection({
 			host: '127.0.0.1',
 			user: 'c15st19',
-			password: 'Hp07dQfkwWfP5TmM5',
+			password: 'H07dQfkwWfP5TmM5',
 			database: 'c15st19',
 		});
 		//연결
@@ -790,9 +790,9 @@ app.get('/force', (req, res) => {
 		let movieTitle = ['영화제목배열', '타오르는 여인의 초상', '언차티드', '엔칸토', '라라랜드'];
 
 		let db_handle = mysql.createConnection({
-			host: '127.0.0',
+			host: '127.0.0.1',
 			user: 'c15st19',
-			password: 'pH07dQfkwWfP5TmM5',
+			password: 'H07dQfkwWfP5TmM5',
 			database: 'c15st19',
 		});
 		//연결
@@ -852,7 +852,7 @@ app.get('/force', (req, res) => {
 		let db_handle = mysql.createConnection({
 			host: '127.0.0.1',
 			user: 'c15st19',
-			password: 'pH07dQfkwWfP5TmM5',
+			password: 'H07dQfkwWfP5TmM5',
 			database: 'c15st19',
 		});
 		//연결

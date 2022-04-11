@@ -196,9 +196,9 @@ window.onload = () => {
     },
     x:-300, y: 0, duration: 1,
   });
-  gsap.from(".planet", { //아이스
+  gsap.from(".gameTextBox", { //아이스
     scrollTrigger: {
-      trigger: ".gamePlanet",
+      trigger: ".gameTextBox",
       // markers: true,
       start: "bottom center",
       scrub: true,

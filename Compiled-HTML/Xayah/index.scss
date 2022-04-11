@@ -1,0 +1,109 @@
+@charset 'utf-8';
+@font-face {
+  font-family: 'HeirofLightRegular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/HeirofLightRegular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@keyframes moving {
+  0% {
+    transform: perspective(50rem) translateZ(0);
+  }
+  50% {
+    transform: perspective(50rem) translateZ(2rem);
+  }
+  100% {
+    transform: perspective(50rem) translateZ(0rem);
+  }
+}
+$main_black: #111111;
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+  font-family: 'HeirofLightRegular';
+}
+
+.navBar{
+  position: sticky;
+  z-index: 100;
+  top: 0;
+  width: 100%;
+  height: 10rem;
+  background-color: $main_black;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row; /*수평 정렬*/
+  align-items: center;
+  justify-content: center;
+  .homeBtn{
+    width: 7rem;
+    height: 7rem;
+    // background-color: red;
+    a{
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .info{
+
+  }
+}
+
+.mainBox{
+  position: relative;
+  width: 100%;
+  height: 90rem;
+  overflow: hidden;
+  .mainImg{
+    width: 100%;
+  }
+  .xayah{
+    width: 54%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    filter: drop-shadow(0 0 2rem RGB(170, 138, 75));
+    animation: moving 6s ease-in-out infinite;
+  }
+  .imgBlur{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: #000000, $alpha: 0.4);
+  }
+  .blackBlur{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient( rgba(#000, 0) 30%, rgba(#000, 1) 100%);
+  }
+  .xayahText{
+    text-align: center;
+    position: absolute;
+    bottom: 10rem;
+    left: 50%;
+    margin-left: -28rem;
+    font-size: 4rem;
+    color: #c4b898; 
+    text-shadow: 0 0 1rem rgba(#c4b898, 0.4);
+    letter-spacing: 0.3rem;
+    line-height: 6rem;
+  }
+}
+
+.xayahProfile{
+  width: 100%;
+  height: 100rem;
+  background-color: $main_black;
+  background-image: url("./IMG/img.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
