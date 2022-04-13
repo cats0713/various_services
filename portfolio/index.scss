@@ -70,10 +70,21 @@
     transform: translateY(-2rem) rotate(180deg); 
   }
   50% {
-    transform: translateY(0rem) rotate(180deg); 
+    transform: translateY(0rem) rotate(170deg); 
   }
   100% {
     transform: translateY(-2rem) rotate(180deg); 
+  }
+}
+@keyframes satellite2 {
+  0% {
+    transform: translateY(-2rem) rotate(-20deg); 
+  }
+  50% {
+    transform: translateY(0rem) rotate(-10deg); 
+  }
+  100% {
+    transform: translateY(-2rem) rotate(-20deg); 
   }
 }
 @keyframes fire {
@@ -123,7 +134,7 @@ body{
   width: 100%;
   // height: 3200rem;
   overflow-x: hidden;
-  background: linear-gradient(200deg,#6994c3 10%,#952b41 20%,#3a3a8b 40%, #0a0f20 85%, #4d3e76 90%, #cf8caa 95%, #f2f3e1 100%);
+  background: linear-gradient(200deg,#2c367b 7%,#151f55 18%, #952b41 23%,#4d3e76 25%,#0a0f20 65%, #0a0f20 85%, #4d3e76 90%, #cf8caa 93%, #f2f3e1 100%);
 }
 nav{
   position: fixed;
@@ -139,14 +150,6 @@ nav:hover{
 nav::before{
   contain: "eb9e";
 }
-
-
-section{
-  width: 100%;
-  height: 400rem;
-  // background-color: red;
-}
-
 
 //로켓
 .userBox{
@@ -339,26 +342,6 @@ section{
     filter: drop-shadow( 0 0 1rem rgba(0, 0, 0, .7));
   }
 }
-
-.endPage{
-  width: 100%;
-  height: 400rem;
-  .ah_info{
-    width: 100%;
-    height: 30%;
-    .endPlanet{
-      width: 100%;
-      background-color: red;
-      img{
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-      }
-    }
-  }
-}
-
-
 
 .introPage{
   width: 100%;
@@ -939,10 +922,18 @@ section{
     .satelliteImg{
       position: absolute;
       bottom: 10%;
-      right: 10%;
+      left: 10%;
       width: 10rem;
       height: 10rem;
       animation: satellite 2s ease-in-out infinite;
+    }
+    .satelliteImg2{
+      position: absolute;
+      bottom: 25%;
+      right: 10%;
+      width: 15rem;
+      height: 15rem;
+      animation: satellite2 2s ease-in-out infinite;
     }
     .starImg{
       position: absolute;
@@ -987,6 +978,13 @@ section{
       height: 33%;
       object-fit: cover;
       animation: twinkle 1s ease-in-out infinite; 
+    }
+    .projectText{
+      position: absolute;
+      top: 10%;
+      left: 10%; 
+      font-size: 3rem;
+      color: white;
     }
     .dropstar1{
       position: absolute;
@@ -1160,7 +1158,7 @@ section{
     position: relative;
     // background-color: red;
     .iceblur{
-      display: none;
+      // display: none;
       position: absolute;
       top: 0;
       left: 0;
@@ -1411,7 +1409,7 @@ section{
     .movieblur{
       display: none;
       position: absolute;
-      top: 0;
+      top: -10;
       left: 0;
       width: 100%;
       height: 100%;
@@ -1467,6 +1465,10 @@ section{
           margin-left: -15rem;
           font-size: 3rem;
           color: #fff;
+          i{
+            color: #fff;
+            font-size: 2.5rem;
+          }
         }
       }
     }
@@ -1536,7 +1538,7 @@ section{
     .calblur{
       display: none;
       position: absolute;
-      top: 0;
+      top: -10%;
       left: 0;
       width: 100%;
       height: 100%;
@@ -1545,29 +1547,42 @@ section{
     }
     .blackhole{
       position: absolute;
-      top: 8%;
-      right: 9%;
-      width: 80rem;
-      height: 80rem;
+      top: -5%;
+      right: -40rem;
+      width: 140rem;
+      height: 140rem;
       animation: rotate_image 10s linear infinite;
-      filter: drop-shadow( 0 0 10rem rgba(255, 255, 255, 0.7));  
+      filter: drop-shadow( 0 0 10rem rgba(0, 0, 0, 0.7));  
     }
     .decimalBox{
       position: absolute;
-      bottom: 30%;
-      right: 10rem;
+      bottom: 20%;
+      left: 5rem;
       width: 40rem;
       height: 40rem;
+      filter: drop-shadow( 0 0 3rem rgba(250, 100, 100, 0.7));  
       .decimalPlanet{
         position: relative;
         width: 100%;
         height: 100%;
         background-image: url("./IMG/deco/planet11.svg");
+        h1{
+          display: inline-block;
+          width: 30rem;
+          text-align: center;
+          border-radius: 1rem;
+          position: absolute;
+          top: 16rem;
+          left: 50%;
+          margin-left: -15rem;
+          font-size: 2.5rem;
+          color: #fff;
+        }
         .decimalBtn{
           display: inline-block;
           width: 30rem;
           text-align: center;
-          background-color: #a2aade;
+          background-color: #bd4753;
           border-radius: 1rem;
           position: absolute;
           bottom: 13rem;
@@ -1580,38 +1595,38 @@ section{
         }
         .decimalBtn:hover{
           background-color: #b30439;
-          border-radius: 3rem;
         }
       }
     }
-    .calculatorBox{
+    .matrixBox{
       position: absolute;
-      top: 0;
-      right: 21%;
-      width: 35rem;
-      height: 35rem;
-      .calculatorPlanet{
+      bottom: 30%;
+      right: 5rem;
+      width: 40rem;
+      height: 40rem;
+      filter: drop-shadow( 0 0 3rem rgba(231, 233, 243, 0.7));  
+      .matrixPlanet{
         position: relative;
         width: 100%;
         height: 100%;
-        background-image: url("./IMG/deco/planet15.svg");
+        background-image: url("./IMG/deco/planet16.svg");
         h1{
           display: inline-block;
           width: 30rem;
           text-align: center;
           border-radius: 1rem;
           position: absolute;
-          bottom: 13rem;
+          top: 16rem;
           left: 50%;
           margin-left: -15rem;
-          font-size: 3rem;
+          font-size: 2.5rem;
           color: #fff;
         }
-        .calculatorBtn{
+        .matrixBtn{
           display: inline-block;
           width: 30rem;
           text-align: center;
-          background-color: #a2aade;
+          background-color: #3e5cae;
           border-radius: 1rem;
           position: absolute;
           bottom: 13rem;
@@ -1622,16 +1637,67 @@ section{
             font-size: 3.5rem;
           }
         }
+        .matrixBtn:hover{
+          background-color: #222b71;
+        }
+      }
+    }
+    .calculatorBox{
+      position: absolute;
+      top: 0;
+      right: 21%;
+      width: 35rem;
+      height: 35rem;
+      filter: drop-shadow( 0 0 3rem rgba(231, 233, 243, 0.7));  
+      .calculatorPlanet{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background-image: url("./IMG/deco/planet15.svg");
+        .calcuImg{
+          width: 10rem;
+          height: 12rem;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          transform: rotate(50deg);
+        }
+        h1{
+          display: inline-block;
+          width: 30rem;
+          text-align: center;
+          border-radius: 1rem;
+          position: absolute;
+          top: 13rem;
+          left: 50%;
+          margin-left: -15rem;
+          font-size: 2.5rem;
+          color: #606d58;
+        }
+        .calculatorBtn{
+          display: inline-block;
+          width: 25rem;
+          text-align: center;
+          background-color: #adbda3;
+          border-radius: 1rem;
+          position: absolute;
+          bottom: 13rem;
+          left: 50%;
+          margin-left: -12.5rem;
+          font-size: 2.3rem;
+          i{
+            font-size: 2.5rem;
+          }
+        }
         .calculatorBtn:hover{
-          background-color: #b30439;
-          border-radius: 3rem;
+          background-color: #8c9a83;
         }
       }
     }
   }
   .commet1{
     position: absolute;
-    top: 45%;
+    top: 35%;
     left: 18%;
     width: 8rem;
     height: 18rem;
@@ -1639,7 +1705,7 @@ section{
   }
   .commet2{
     position: absolute;
-    top: 40%;
+    top: 30%;
     left: 5%;
     width: 10rem;
     height: 20rem;
@@ -1647,7 +1713,7 @@ section{
   }
   .commet3{
     position: absolute;
-    top: 40%;
+    top: 30%;
     left: 5%;
     width: 20rem;
     height: 30rem;
@@ -1671,3 +1737,29 @@ section{
   }
 }
 
+
+.endPage{
+  width: 100%;
+  height: 400rem;
+  .ah_infoBox{
+    width: 100%;
+    height: 33%;
+    .endPlanet{
+      width: 100%;
+      height: 130%;
+      img{
+        width: 100%;
+        height: 200%;
+        object-fit: cover;
+      }
+    }
+  }
+  .midleBox{
+    width: 100%;
+    height: 33%;
+  }
+  .webSiteBox{
+    width: 100%;
+    height: 33%;
+  }
+}

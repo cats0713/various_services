@@ -245,28 +245,37 @@ window.onload = () => {
     },
     x: -200, y: 100, duration: 1,
   });
-
-
-
+  gsap.from(".projectText", { //저의 테트스택은
+    scrollTrigger: {
+      trigger: ".projectText",
+      // markers: true,
+      start: "center center",
+      scrub: true,
+      pin: true,
+    },
+    x: 0, duration: 1, opacity: 0,
+  });
 
 }
+
 $(window).scroll(function () { 
-  if($(document).scrollTop() > 20093 && $(document).scrollTop() < 20358){
+  if($(document).scrollTop() > 12115 && $(document).scrollTop() < 12361){
     $(".iceblur").fadeIn( 'fast' );
+    console.log("a");
   }else{
     $(".iceblur").fadeOut( 'fast' ); 
   }
-  if($(document).scrollTop() > 18718 && $(document).scrollTop() < 19024){
+  if($(document).scrollTop() > 10638 && $(document).scrollTop() < 10985){
     $(".gameblur").fadeIn( 'fast' );
   }else{
     $(".gameblur").fadeOut( 'fast' ); 
   }
-  if($(document).scrollTop() > 17311 && $(document).scrollTop() < 17576){
+  if($(document).scrollTop() > 9336 && $(document).scrollTop() < 9713){
     $(".movieblur").fadeIn( 'fast' );
   }else{
     $(".movieblur").fadeOut( 'fast' ); 
   }
-  if($(document).scrollTop() > 16004 && $(document).scrollTop() < 16389){
+  if($(document).scrollTop() > 7965 && $(document).scrollTop() < 8376){
     $(".calblur").fadeIn( 'fast' );
   }else{
     $(".calblur").fadeOut( 'fast' ); 

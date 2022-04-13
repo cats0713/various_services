@@ -10,10 +10,24 @@
     transform: perspective(50rem) translateZ(0);
   }
   50% {
-    transform: perspective(50rem) translateZ(2rem);
+    transform: perspective(50rem) translateZ(1rem);
   }
   100% {
     transform: perspective(50rem) translateZ(0rem);
+  }
+}
+@keyframes twinkle {
+  0% {
+    // transform: perspective(50rem) translateZ(0) rotate(0.63turn);
+    filter: drop-shadow( 0 0 1rem rgba(255, 255, 255, 0.7)); 
+  }
+  50% {
+    // transform: perspective(50rem) translateZ(5rem) rotate(0.63turn);
+    filter: drop-shadow( 0 0 .2rem  rgba(255, 255, 255, 0.7)); 
+  }
+  100% {
+    // transform: perspective(50rem) translateZ(0) rotate(0.63turn);
+    filter: drop-shadow( 0 0 1rem  rgba(255, 255, 255, 0.7)); 
   }
 }
 $main_black: #111111;
@@ -22,6 +36,10 @@ $main_black: #111111;
   padding: 0;
   font-size: 10px;
   font-family: 'HeirofLightRegular';
+}
+body{
+  text-align: center;
+  background-color: $main_black;
 }
 
 .navBar{
@@ -37,6 +55,7 @@ $main_black: #111111;
   flex-direction: row; /*수평 정렬*/
   align-items: center;
   justify-content: center;
+  box-shadow: 0 0 3rem rgba($color: #000000, $alpha: 7.0);
   .homeBtn{
     width: 7rem;
     height: 7rem;
@@ -52,22 +71,26 @@ $main_black: #111111;
 
   }
 }
-
+.main{
+  width: 120rem;
+  display: inline-block;
+}
 .mainBox{
   position: relative;
   width: 100%;
-  height: 90rem;
+  height: 75rem;
   overflow: hidden;
   .mainImg{
     width: 100%;
+    height: 100%;
   }
   .xayah{
-    width: 54%;
+    width: 55%;
     position: absolute;
     top: 0;
-    right: 0;
+    right: -0.4rem;
     filter: drop-shadow(0 0 2rem RGB(170, 138, 75));
-    animation: moving 6s ease-in-out infinite;
+    animation: moving 4s ease-in-out infinite;
   }
   .imgBlur{
     position: absolute;
@@ -100,10 +123,35 @@ $main_black: #111111;
 }
 
 .xayahProfile{
+  position: relative;
   width: 100%;
-  height: 100rem;
   background-color: $main_black;
-  background-image: url("./IMG/img.jpg");
-  background-size: contain;
-  background-repeat: no-repeat;
+  .profileImg{
+    width: 100%;
+    margin-top: 20rem;
+  }
+  .blackBlur{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient( rgba(#000, 1) 30%, rgba(#000, 0) 60%);
+  }
+  .textBox{
+    display: inline-block;
+    width: 12rem;
+    position: absolute;
+    top: 10rem;
+    left: 50%;
+    margin-left: -6rem;
+    color: #c4b898;
+    font-size: 3rem;
+  }
+  .starImg{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: twinkle 1.5s ease-in-out infinite; 
+  }
 }

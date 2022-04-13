@@ -12,8 +12,8 @@
             transform: perspective(50rem) translateZ(0);
   }
   50% {
-    -webkit-transform: perspective(50rem) translateZ(2rem);
-            transform: perspective(50rem) translateZ(2rem);
+    -webkit-transform: perspective(50rem) translateZ(1rem);
+            transform: perspective(50rem) translateZ(1rem);
   }
   100% {
     -webkit-transform: perspective(50rem) translateZ(0rem);
@@ -27,12 +27,42 @@
             transform: perspective(50rem) translateZ(0);
   }
   50% {
-    -webkit-transform: perspective(50rem) translateZ(2rem);
-            transform: perspective(50rem) translateZ(2rem);
+    -webkit-transform: perspective(50rem) translateZ(1rem);
+            transform: perspective(50rem) translateZ(1rem);
   }
   100% {
     -webkit-transform: perspective(50rem) translateZ(0rem);
             transform: perspective(50rem) translateZ(0rem);
+  }
+}
+
+@-webkit-keyframes twinkle {
+  0% {
+    -webkit-filter: drop-shadow(0 0 1rem rgba(255, 255, 255, 0.7));
+            filter: drop-shadow(0 0 1rem rgba(255, 255, 255, 0.7));
+  }
+  50% {
+    -webkit-filter: drop-shadow(0 0 0.2rem rgba(255, 255, 255, 0.7));
+            filter: drop-shadow(0 0 0.2rem rgba(255, 255, 255, 0.7));
+  }
+  100% {
+    -webkit-filter: drop-shadow(0 0 1rem rgba(255, 255, 255, 0.7));
+            filter: drop-shadow(0 0 1rem rgba(255, 255, 255, 0.7));
+  }
+}
+
+@keyframes twinkle {
+  0% {
+    -webkit-filter: drop-shadow(0 0 1rem rgba(255, 255, 255, 0.7));
+            filter: drop-shadow(0 0 1rem rgba(255, 255, 255, 0.7));
+  }
+  50% {
+    -webkit-filter: drop-shadow(0 0 0.2rem rgba(255, 255, 255, 0.7));
+            filter: drop-shadow(0 0 0.2rem rgba(255, 255, 255, 0.7));
+  }
+  100% {
+    -webkit-filter: drop-shadow(0 0 1rem rgba(255, 255, 255, 0.7));
+            filter: drop-shadow(0 0 1rem rgba(255, 255, 255, 0.7));
   }
 }
 
@@ -41,6 +71,11 @@
   padding: 0;
   font-size: 10px;
   font-family: 'HeirofLightRegular';
+}
+
+body {
+  text-align: center;
+  background-color: #111111;
 }
 
 .navBar {
@@ -68,6 +103,8 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-shadow: 0 0 3rem black;
+          box-shadow: 0 0 3rem black;
 }
 
 .navBar .homeBtn {
@@ -80,26 +117,32 @@
   height: 100%;
 }
 
+.main {
+  width: 120rem;
+  display: inline-block;
+}
+
 .mainBox {
   position: relative;
   width: 100%;
-  height: 90rem;
+  height: 75rem;
   overflow: hidden;
 }
 
 .mainBox .mainImg {
   width: 100%;
+  height: 100%;
 }
 
 .mainBox .xayah {
-  width: 54%;
+  width: 55%;
   position: absolute;
   top: 0;
-  right: 0;
+  right: -0.4rem;
   -webkit-filter: drop-shadow(0 0 2rem RGB(170, 138, 75));
           filter: drop-shadow(0 0 2rem RGB(170, 138, 75));
-  -webkit-animation: moving 6s ease-in-out infinite;
-          animation: moving 6s ease-in-out infinite;
+  -webkit-animation: moving 4s ease-in-out infinite;
+          animation: moving 4s ease-in-out infinite;
 }
 
 .mainBox .imgBlur {
@@ -135,11 +178,42 @@
 }
 
 .xayahProfile {
+  position: relative;
   width: 100%;
-  height: 100rem;
   background-color: #111111;
-  background-image: url("./IMG/img.jpg");
-  background-size: contain;
-  background-repeat: no-repeat;
+}
+
+.xayahProfile .profileImg {
+  width: 100%;
+  margin-top: 20rem;
+}
+
+.xayahProfile .blackBlur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, black), color-stop(60%, rgba(0, 0, 0, 0)));
+  background: linear-gradient(black 30%, rgba(0, 0, 0, 0) 60%);
+}
+
+.xayahProfile .textBox {
+  display: inline-block;
+  width: 12rem;
+  position: absolute;
+  top: 10rem;
+  left: 50%;
+  margin-left: -6rem;
+  color: #c4b898;
+  font-size: 3rem;
+}
+
+.xayahProfile .starImg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  -webkit-animation: twinkle 1.5s ease-in-out infinite;
+          animation: twinkle 1.5s ease-in-out infinite;
 }
 /*# sourceMappingURL=index.css.map */

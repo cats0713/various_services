@@ -175,8 +175,8 @@
             transform: translateY(-2rem) rotate(180deg);
   }
   50% {
-    -webkit-transform: translateY(0rem) rotate(180deg);
-            transform: translateY(0rem) rotate(180deg);
+    -webkit-transform: translateY(0rem) rotate(170deg);
+            transform: translateY(0rem) rotate(170deg);
   }
   100% {
     -webkit-transform: translateY(-2rem) rotate(180deg);
@@ -190,12 +190,42 @@
             transform: translateY(-2rem) rotate(180deg);
   }
   50% {
-    -webkit-transform: translateY(0rem) rotate(180deg);
-            transform: translateY(0rem) rotate(180deg);
+    -webkit-transform: translateY(0rem) rotate(170deg);
+            transform: translateY(0rem) rotate(170deg);
   }
   100% {
     -webkit-transform: translateY(-2rem) rotate(180deg);
             transform: translateY(-2rem) rotate(180deg);
+  }
+}
+
+@-webkit-keyframes satellite2 {
+  0% {
+    -webkit-transform: translateY(-2rem) rotate(-20deg);
+            transform: translateY(-2rem) rotate(-20deg);
+  }
+  50% {
+    -webkit-transform: translateY(0rem) rotate(-10deg);
+            transform: translateY(0rem) rotate(-10deg);
+  }
+  100% {
+    -webkit-transform: translateY(-2rem) rotate(-20deg);
+            transform: translateY(-2rem) rotate(-20deg);
+  }
+}
+
+@keyframes satellite2 {
+  0% {
+    -webkit-transform: translateY(-2rem) rotate(-20deg);
+            transform: translateY(-2rem) rotate(-20deg);
+  }
+  50% {
+    -webkit-transform: translateY(0rem) rotate(-10deg);
+            transform: translateY(0rem) rotate(-10deg);
+  }
+  100% {
+    -webkit-transform: translateY(-2rem) rotate(-20deg);
+            transform: translateY(-2rem) rotate(-20deg);
   }
 }
 
@@ -296,7 +326,7 @@ html {
 body {
   width: 100%;
   overflow-x: hidden;
-  background: linear-gradient(200deg, #6994c3 10%, #952b41 20%, #3a3a8b 40%, #0a0f20 85%, #4d3e76 90%, #cf8caa 95%, #f2f3e1 100%);
+  background: linear-gradient(200deg, #2c367b 7%, #151f55 18%, #952b41 23%, #4d3e76 25%, #0a0f20 65%, #0a0f20 85%, #4d3e76 90%, #cf8caa 93%, #f2f3e1 100%);
 }
 
 nav {
@@ -313,11 +343,6 @@ nav:hover {
 
 nav::before {
   contain: "eb9e";
-}
-
-section {
-  width: 100%;
-  height: 400rem;
 }
 
 .userBox {
@@ -540,28 +565,6 @@ section {
      object-fit: contain;
   -webkit-filter: drop-shadow(0 0 1rem rgba(0, 0, 0, 0.7));
           filter: drop-shadow(0 0 1rem rgba(0, 0, 0, 0.7));
-}
-
-.endPage {
-  width: 100%;
-  height: 400rem;
-}
-
-.endPage .ah_info {
-  width: 100%;
-  height: 30%;
-}
-
-.endPage .ah_info .endPlanet {
-  width: 100%;
-  background-color: red;
-}
-
-.endPage .ah_info .endPlanet img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
 }
 
 .introPage {
@@ -1236,11 +1239,21 @@ section {
 .stackPage .moonBox .satelliteImg {
   position: absolute;
   bottom: 10%;
-  right: 10%;
+  left: 10%;
   width: 10rem;
   height: 10rem;
   -webkit-animation: satellite 2s ease-in-out infinite;
           animation: satellite 2s ease-in-out infinite;
+}
+
+.stackPage .moonBox .satelliteImg2 {
+  position: absolute;
+  bottom: 25%;
+  right: 10%;
+  width: 15rem;
+  height: 15rem;
+  -webkit-animation: satellite2 2s ease-in-out infinite;
+          animation: satellite2 2s ease-in-out infinite;
 }
 
 .stackPage .moonBox .starImg {
@@ -1294,6 +1307,14 @@ section {
      object-fit: cover;
   -webkit-animation: twinkle 1s ease-in-out infinite;
           animation: twinkle 1s ease-in-out infinite;
+}
+
+.infoProjectPage .ororaBox .projectText {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  font-size: 3rem;
+  color: white;
 }
 
 .infoProjectPage .ororaBox .dropstar1 {
@@ -1499,7 +1520,6 @@ section {
 }
 
 .infoProjectPage .info .iceblur {
-  display: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -1800,7 +1820,7 @@ section {
 .infoProjectPage2 .moviePageBox .movieblur {
   display: none;
   position: absolute;
-  top: 0;
+  top: -10;
   left: 0;
   width: 100%;
   height: 100%;
@@ -1867,6 +1887,11 @@ section {
   margin-left: -15rem;
   font-size: 3rem;
   color: #fff;
+}
+
+.infoProjectPage2 .moviePageBox .movieBox .moviePlanet h1 i {
+  color: #fff;
+  font-size: 2.5rem;
 }
 
 .infoProjectPage2 .moviePageBox .alienBox {
@@ -1950,7 +1975,7 @@ section {
 .infoProjectPage2 .calPageBox .calblur {
   display: none;
   position: absolute;
-  top: 0;
+  top: -10%;
   left: 0;
   width: 100%;
   height: 100%;
@@ -1961,22 +1986,24 @@ section {
 
 .infoProjectPage2 .calPageBox .blackhole {
   position: absolute;
-  top: 8%;
-  right: 9%;
-  width: 80rem;
-  height: 80rem;
+  top: -5%;
+  right: -40rem;
+  width: 140rem;
+  height: 140rem;
   -webkit-animation: rotate_image 10s linear infinite;
           animation: rotate_image 10s linear infinite;
-  -webkit-filter: drop-shadow(0 0 10rem rgba(255, 255, 255, 0.7));
-          filter: drop-shadow(0 0 10rem rgba(255, 255, 255, 0.7));
+  -webkit-filter: drop-shadow(0 0 10rem rgba(0, 0, 0, 0.7));
+          filter: drop-shadow(0 0 10rem rgba(0, 0, 0, 0.7));
 }
 
 .infoProjectPage2 .calPageBox .decimalBox {
   position: absolute;
-  bottom: 30%;
-  right: 10rem;
+  bottom: 20%;
+  left: 5rem;
   width: 40rem;
   height: 40rem;
+  -webkit-filter: drop-shadow(0 0 3rem rgba(250, 100, 100, 0.7));
+          filter: drop-shadow(0 0 3rem rgba(250, 100, 100, 0.7));
 }
 
 .infoProjectPage2 .calPageBox .decimalBox .decimalPlanet {
@@ -1986,11 +2013,24 @@ section {
   background-image: url("./IMG/deco/planet11.svg");
 }
 
+.infoProjectPage2 .calPageBox .decimalBox .decimalPlanet h1 {
+  display: inline-block;
+  width: 30rem;
+  text-align: center;
+  border-radius: 1rem;
+  position: absolute;
+  top: 16rem;
+  left: 50%;
+  margin-left: -15rem;
+  font-size: 2.5rem;
+  color: #fff;
+}
+
 .infoProjectPage2 .calPageBox .decimalBox .decimalPlanet .decimalBtn {
   display: inline-block;
   width: 30rem;
   text-align: center;
-  background-color: #a2aade;
+  background-color: #bd4753;
   border-radius: 1rem;
   position: absolute;
   bottom: 13rem;
@@ -2005,7 +2045,57 @@ section {
 
 .infoProjectPage2 .calPageBox .decimalBox .decimalPlanet .decimalBtn:hover {
   background-color: #b30439;
-  border-radius: 3rem;
+}
+
+.infoProjectPage2 .calPageBox .matrixBox {
+  position: absolute;
+  bottom: 30%;
+  right: 5rem;
+  width: 40rem;
+  height: 40rem;
+  -webkit-filter: drop-shadow(0 0 3rem rgba(231, 233, 243, 0.7));
+          filter: drop-shadow(0 0 3rem rgba(231, 233, 243, 0.7));
+}
+
+.infoProjectPage2 .calPageBox .matrixBox .matrixPlanet {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-image: url("./IMG/deco/planet16.svg");
+}
+
+.infoProjectPage2 .calPageBox .matrixBox .matrixPlanet h1 {
+  display: inline-block;
+  width: 30rem;
+  text-align: center;
+  border-radius: 1rem;
+  position: absolute;
+  top: 16rem;
+  left: 50%;
+  margin-left: -15rem;
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+.infoProjectPage2 .calPageBox .matrixBox .matrixPlanet .matrixBtn {
+  display: inline-block;
+  width: 30rem;
+  text-align: center;
+  background-color: #3e5cae;
+  border-radius: 1rem;
+  position: absolute;
+  bottom: 13rem;
+  left: 50%;
+  margin-left: -15rem;
+  font-size: 3rem;
+}
+
+.infoProjectPage2 .calPageBox .matrixBox .matrixPlanet .matrixBtn i {
+  font-size: 3.5rem;
+}
+
+.infoProjectPage2 .calPageBox .matrixBox .matrixPlanet .matrixBtn:hover {
+  background-color: #222b71;
 }
 
 .infoProjectPage2 .calPageBox .calculatorBox {
@@ -2014,6 +2104,8 @@ section {
   right: 21%;
   width: 35rem;
   height: 35rem;
+  -webkit-filter: drop-shadow(0 0 3rem rgba(231, 233, 243, 0.7));
+          filter: drop-shadow(0 0 3rem rgba(231, 233, 243, 0.7));
 }
 
 .infoProjectPage2 .calPageBox .calculatorBox .calculatorPlanet {
@@ -2023,44 +2115,53 @@ section {
   background-image: url("./IMG/deco/planet15.svg");
 }
 
+.infoProjectPage2 .calPageBox .calculatorBox .calculatorPlanet .calcuImg {
+  width: 10rem;
+  height: 12rem;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  -webkit-transform: rotate(50deg);
+          transform: rotate(50deg);
+}
+
 .infoProjectPage2 .calPageBox .calculatorBox .calculatorPlanet h1 {
   display: inline-block;
   width: 30rem;
   text-align: center;
   border-radius: 1rem;
   position: absolute;
-  bottom: 13rem;
+  top: 13rem;
   left: 50%;
   margin-left: -15rem;
-  font-size: 3rem;
-  color: #fff;
+  font-size: 2.5rem;
+  color: #606d58;
 }
 
 .infoProjectPage2 .calPageBox .calculatorBox .calculatorPlanet .calculatorBtn {
   display: inline-block;
-  width: 30rem;
+  width: 25rem;
   text-align: center;
-  background-color: #a2aade;
+  background-color: #adbda3;
   border-radius: 1rem;
   position: absolute;
   bottom: 13rem;
   left: 50%;
-  margin-left: -15rem;
-  font-size: 3rem;
+  margin-left: -12.5rem;
+  font-size: 2.3rem;
 }
 
 .infoProjectPage2 .calPageBox .calculatorBox .calculatorPlanet .calculatorBtn i {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
 }
 
 .infoProjectPage2 .calPageBox .calculatorBox .calculatorPlanet .calculatorBtn:hover {
-  background-color: #b30439;
-  border-radius: 3rem;
+  background-color: #8c9a83;
 }
 
 .infoProjectPage2 .commet1 {
   position: absolute;
-  top: 45%;
+  top: 35%;
   left: 18%;
   width: 8rem;
   height: 18rem;
@@ -2070,7 +2171,7 @@ section {
 
 .infoProjectPage2 .commet2 {
   position: absolute;
-  top: 40%;
+  top: 30%;
   left: 5%;
   width: 10rem;
   height: 20rem;
@@ -2080,7 +2181,7 @@ section {
 
 .infoProjectPage2 .commet3 {
   position: absolute;
-  top: 40%;
+  top: 30%;
   left: 5%;
   width: 20rem;
   height: 30rem;
@@ -2106,5 +2207,37 @@ section {
   height: 20rem;
   -webkit-animation: movingStar 2s ease-in-out infinite;
           animation: movingStar 2s ease-in-out infinite;
+}
+
+.endPage {
+  width: 100%;
+  height: 400rem;
+}
+
+.endPage .ah_infoBox {
+  width: 100%;
+  height: 33%;
+}
+
+.endPage .ah_infoBox .endPlanet {
+  width: 100%;
+  height: 130%;
+}
+
+.endPage .ah_infoBox .endPlanet img {
+  width: 100%;
+  height: 200%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.endPage .midleBox {
+  width: 100%;
+  height: 33%;
+}
+
+.endPage .webSiteBox {
+  width: 100%;
+  height: 33%;
 }
 /*# sourceMappingURL=index.css.map */
