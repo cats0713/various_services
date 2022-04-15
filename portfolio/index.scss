@@ -134,7 +134,7 @@ body{
   width: 100%;
   // height: 3200rem;
   overflow-x: hidden;
-  background: linear-gradient(200deg,#2c367b 7%,#151f55 18%, #952b41 23%,#4d3e76 25%,#0a0f20 65%, #0a0f20 85%, #4d3e76 90%, #cf8caa 93%, #f2f3e1 100%);
+  background: linear-gradient(200deg,#080f24 7%,#151f55 18%, #952b41 23%,#4d3e76 25%,#0a0f20 65%, #0a0f20 85%, #4d3e76 90%, #cf8caa 93%, #f2f3e1 100%);
 }
 nav{
   position: fixed;
@@ -147,9 +147,7 @@ nav{
 nav:hover{
   cursor: pointer;
 }
-nav::before{
-  contain: "eb9e";
-}
+
 
 //로켓
 .userBox{
@@ -157,6 +155,7 @@ nav::before{
   bottom: 35%;
   left: 50%;
   margin-left: -5rem;
+  z-index: 100;
   // background-color: red;
   animation: arrow 1.5s ease-in-out infinite; 
   .bodyBox{
@@ -330,16 +329,21 @@ nav::before{
 }
 //우주인
 .meBox{
+  display: none;
   position: fixed;
-  top: 0%;
-  width: 20rem;
-  height: 25rem;
-  background-color: red;
+  bottom: 15%;
+  left: 50%;
+  margin-left: -10rem;
+  width: 15rem;
+  height: 20rem;
+  // background-color: red;
+  animation: arrow 2s ease-in-out infinite;
+  z-index: 100;
   img{
     width: 100%;
     height: 100%;
     object-fit: contain;
-    filter: drop-shadow( 0 0 1rem rgba(0, 0, 0, .7));
+    filter: drop-shadow( 0 0 1rem rgba(122, 238, 244, 0.7));
   }
 }
 
@@ -462,6 +466,7 @@ nav::before{
       }
       .textBox{
         margin-top: 3rem;
+        color: white;
         h1{
           font-size: 2rem;
           letter-spacing: 0.2rem;
@@ -559,7 +564,7 @@ nav::before{
       position: absolute;
       bottom: -17%;
       left: 0;
-      z-index: 100;
+      z-index: 200;
       object-fit: cover;
       filter: drop-shadow( 0 0 12rem rgba(0, 0, 0, .7));
     }
@@ -1737,20 +1742,30 @@ nav::before{
   }
 }
 
-
 .endPage{
   width: 100%;
   height: 400rem;
   .ah_infoBox{
     width: 100%;
     height: 33%;
+    background-image: url("./IMG/back/endback.svg");
+    text-align: center;
     .endPlanet{
+      opacity: 0;
+      position: absolute;
+      left: 0;
+      bottom: -1rem;
       width: 100%;
-      height: 130%;
-      img{
+      svg{
         width: 100%;
-        height: 200%;
-        object-fit: cover;
+        height: 40%;
+      }
+    }
+    .textBox{
+      margin-top: 10%;
+      color: white;
+      p{
+        font-size: 3rem;
       }
     }
   }

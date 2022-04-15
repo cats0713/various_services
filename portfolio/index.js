@@ -255,30 +255,26 @@ window.onload = () => {
     },
     x: 0, duration: 1, opacity: 0,
   });
-
+  gsap.from(".endPlanet", { //java
+    scrollTrigger: {
+      trigger: ".endPlanet",
+      // markers: true,
+      start: "center center",
+      scrub: true,
+    },
+    x: 0, y: 0, duration: 1, opacity: 1,
+  });
 }
 
-$(window).scroll(function () { 
-  if($(document).scrollTop() > 12115 && $(document).scrollTop() < 12361){
-    $(".iceblur").fadeIn( 'fast' );
-    console.log("a");
+$(window).scroll(function () {
+  if($(document).scrollTop() >= 0 && $(document).scrollTop() <= 637){
+    $(".meBox").fadeIn();
+    $(".userBox").stop();
+    $(".userBox").animate({bottom: '-35%'},1000, 'swing');
   }else{
-    $(".iceblur").fadeOut( 'fast' ); 
-  }
-  if($(document).scrollTop() > 10638 && $(document).scrollTop() < 10985){
-    $(".gameblur").fadeIn( 'fast' );
-  }else{
-    $(".gameblur").fadeOut( 'fast' ); 
-  }
-  if($(document).scrollTop() > 9336 && $(document).scrollTop() < 9713){
-    $(".movieblur").fadeIn( 'fast' );
-  }else{
-    $(".movieblur").fadeOut( 'fast' ); 
-  }
-  if($(document).scrollTop() > 7965 && $(document).scrollTop() < 8376){
-    $(".calblur").fadeIn( 'fast' );
-  }else{
-    $(".calblur").fadeOut( 'fast' ); 
+    $(".meBox").fadeOut();
+    $(".userBox").stop();
+    $(".userBox").animate({bottom: '35%'},1000, 'swing');
   }
   var scrollValue = $(document).scrollTop(); 
   console.log(scrollValue); 
