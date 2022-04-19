@@ -18,13 +18,19 @@
 </head>
 
 <body>
+  <audio id="audio" src="./MP3/Stairway - Patrick Patrikios.mp3" loop></audio>
+  <div class="audioBtn"><i class="xi-play-circle"></i></div>
+  <div class="navBtn"><i class="xi-bars"></i></div>
   <nav>
-    <audio co>
-      <source src="./MP3/Stairway - Patrick Patrikios.mp3" type="audio/mp3">
-    </audio>
+    <ul class="navMenu">
+      <a href="#home">home</a> 
+      <a href="#stack">stack</a> 
+      <a href="#portfolio">portfolio</a> 
+      <a href="#endPage">contact</a> 
+    </ul>
   </nav>
 
-  <section class="endPage">
+  <section id="endPage" class="endPage">
     <div class="ah_infoBox">
       <div class="endPlanet">
         <svg id="wave" style="transform:rotate(0deg); transition: 0.3s" viewBox="0 0 1440 490" version="1.1"
@@ -43,8 +49,29 @@
       <div class="textBox">
         <p>오늘보다 내일이 더 발전된 개발자가 되고싶습니다.</p>
       </div>
+      <div class="contactBox">
+        <ul>
+          <li class="naver"><a href="mailto:cats0713@naver.com" title="cats0713@naver.com"><i class="xi-naver-square"></i>cats0713@naver.com</a></li>
+          <li class="git"><a href="https://github.com/cats0713" target="_blink"><i class="xi-github"></i>cats0713@github.com</a></li>
+        </ul>
+        <div class="gmail"><a href="mailto:cats0713@gmail.com" title="cats0713@gmail.com"><i class="xi-gmail"></i></a></div>
+        <div class="instagram"><a href="https://github.com/cats0713"><i class="xi-instagram"></i></a></div>
+        <div class="call"><a href="tel:01032721305"><i class="xi-call"></i></a></div>
+      </div>
     </div>
-    <div class="midleBox"></div>
+    <div class="midleBox">
+      <div class="wBox">
+        <img class="w1" src="./IMG/deco/whale.svg" alt="고래">
+        <img class="f1" src="./IMG/deco/fish.svg" alt="물고기">
+        <img class="f2" src="./IMG/deco/fish.svg" alt="물고기">
+        <img class="f3" src="./IMG/deco/fish.svg" alt="물고기">
+        <img class="f4" src="./IMG/deco/fish.svg" alt="물고기">
+        <img class="f5" src="./IMG/deco/fish.svg" alt="물고기">
+        <img class="f6" src="./IMG/deco/fish.svg" alt="물고기">
+        <img class="star2" src="./IMG/deco/starend2.svg" alt="star">
+        <img class="star" src="./IMG/deco/starend.svg" alt="star">
+      </div>
+    </div>
     <div class="webSiteBox"></div>
   </section>
 
@@ -56,7 +83,6 @@
       <img class="commet3" src="./IMG/deco/comet3.svg" alt="운석">
       <!-- <img class="commet4" src="./IMG/deco/comet.svg" alt="운석"> -->
       <!-- <img class="commet5" src="./IMG/deco/comet4.svg" alt="운석"> -->
-
       <img class="blackhole" src="./IMG/deco/blackhole.svg" alt="블랙홀">
       <div class="decimalBox">
         <div class="decimalPlanet">
@@ -90,15 +116,17 @@
         <div class="movieTicket">
           <div class="movieTicketBox">
             <div class="upBox">
+              <a class="movieBtn" href="./">페이지 바로가기<i class="xi-touch"></i></a>
+              <a class="moviePPTBtn" href="./">PPT 바로보기<i class="xi-file-text-o"></i></a>
               <h1>영화 키오스크 <i class="xi-coupon"></i></h1>
-              <p>nodejs를 활용한<br>영화 예매 키오스크</p>
+              <p>nodejs를 활용하여 제작한<br>영화 예매 키오스크 입니다.</p>
             </div>
-            <div class="downBox"></div>
+            <div class="downBox">
+            </div>
           </div>
         </div>
         <div class="moviePlanet">
           <div class="movieWindow"></div>
-          <a class="movieBtn" href="./">페이지 바로가기<i class="xi-touch"></i></a>
         </div>
       </div>
       <div class="alienBox">
@@ -113,9 +141,10 @@
       <img class="comet" src="./IMG/deco/comet.svg" alt="comet">
       <div class="gameTextBox">
         <img class="planet" src="./IMG/deco/planet14.svg" alt="planet">
-        <a class="gameBtn" href="http://pager.kr/~c15st19/portfoliozip/rock/" target="_blank">페이지 바로가기<i class="xi-touch"></i></a>
+        <a class="gameBtn" href="http://pager.kr/~c15st19/portfoliozip/rock/" target="_blank">페이지 바로가기<i
+            class="xi-touch"></i></a>
         <h1>가위 바위 보 게임<i class="xi-trophy"></i></h1>
-        <p>랜덤 함수를 통해 컴퓨터와 하는<br>가위바위보 게임</p>
+        <p>랜덤 함수를 통해 컴퓨터와 하는<br>가위바위보 게임 입니다.</p>
       </div>
       <div class="gameBox">
         <div class="gamePlanet">
@@ -126,7 +155,7 @@
     </div>
   </section>
 
-  <section class="infoProjectPage">
+  <section id="infoProjectPage" class="infoProjectPage">
     <div class="info">
       <img class="backgroundStar" src="./IMG/star/starback3.svg" alt="별">
       <img class="dropstar1" src="./IMG/deco/dropstar1.svg" alt="별똥별">
@@ -142,7 +171,7 @@
           <div class="iceWave">
             <h1>얼음분수축제<i class="xi-snow-crystal"></i></h1>
             <p>칠갑산의 충남의 알프스에서 펼쳐지는 겨울왕국!<br>
-              알프스마을 대표 축제를 소개하는 페이지입니다.
+              알프스마을 대표 축제를 소개하는 페이지 입니다.
             </p>
             <a href="./pdf/ice.pdf" target=”_blank”>PPT 바로보기<i class="xi-file-text-o"></i></a>
           </div>
@@ -153,7 +182,7 @@
       <img class="starback" src="./IMG/back/orora1.svg" alt="별">
       <img class="starback" src="./IMG/back/orora2.svg" alt="별">
       <div class="projectText">저의 프로젝트를 소개합니다</div>
-      <div class="dropstar1"></div>
+      <div id="portfolio" class="dropstar1"></div>
       <div class="dropstar2"></div>
       <div class="dropstar3"></div>
       <div class="dropstar4"></div>
@@ -299,7 +328,7 @@
       <h1 class="techText">저의 Tech Stack은 이렇습니다. </h1>
       <img class="starImg" src="./IMG/star/starback2.svg" alt="별">
       <img class="satelliteImg" src="./IMG/deco/satellite.svg" alt="행성">
-      <img class="satelliteImg2" src="./IMG/deco/satellite2.svg" alt="행성">
+      <img id="stack" class="satelliteImg2" src="./IMG/deco/satellite2.svg" alt="행성">
       <div class="moonPlanet">
         <img class="rabbitImg" src="./IMG/planet/rabbit.svg" alt="토끼">
       </div>
@@ -331,6 +360,19 @@
           <p></p>
         </div>
         <div class="hi_ah">
+          <!--?xml version="1.0" standalone="no"?--> <svg id="sw-js-blob-svg" viewBox="0 0 100 100"
+            xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="sw-gradient" x1="0" x2="1" y1="1" y2="0">
+                <stop id="stop1" stop-color="rgba(255, 255, 255, 1)" offset="0%"></stop>
+                <stop id="stop2" stop-color="rgba(244.007, 233.583, 216.378, 1)" offset="100%"></stop>
+              </linearGradient>
+            </defs>
+            <path fill="url(#sw-gradient)"
+              d="M24.7,-34.3C30.3,-29.8,32.1,-20.4,35,-11.4C37.9,-2.3,42,6.3,40.8,14.3C39.6,22.2,33.1,29.4,25.4,34C17.7,38.6,8.9,40.5,0.2,40.3C-8.5,40,-17.1,37.6,-24.6,33C-32.1,28.4,-38.6,21.5,-41,13.5C-43.4,5.4,-41.7,-3.8,-38.2,-11.7C-34.6,-19.5,-29.1,-26,-22.4,-30.1C-15.7,-34.2,-7.9,-36,0.8,-37.1C9.5,-38.3,19,-38.8,24.7,-34.3Z"
+              width="100%" height="100%" transform="translate(50 50)" stroke-width="0"
+              style="transition: all 0.3s ease 0s;"></path>
+          </svg>
           <div id="imgBox" class="imgBox">
             <img src="./IMG/ah/ah.jpg" alt="아현프로필사진">
             <img class="img2" src="./IMG/ah/ah3.jpg" alt="아현프로필사진">
@@ -356,7 +398,7 @@
         <img class="bird5" src="./IMG/deco/bird.svg" alt="새">
       </div>
     </div>
-    <div class="mountainBox">
+    <div id="home" class="mountainBox">
       <div class="introGuidance">
         <i class="xi-long-arrow-up"></i>
         <h1>위로 스크롤 해주세요</h1>

@@ -49,6 +49,36 @@
   }
 }
 
+@-webkit-keyframes movingF {
+  0% {
+    -webkit-transform: translateX(2rem) translateY(-2rem) rotate(-30deg);
+            transform: translateX(2rem) translateY(-2rem) rotate(-30deg);
+  }
+  50% {
+    -webkit-transform: translateX(4rem) translateY(2rem) rotate(-30deg);
+            transform: translateX(4rem) translateY(2rem) rotate(-30deg);
+  }
+  100% {
+    -webkit-transform: translateX(2rem) translateY(-2rem) rotate(-30deg);
+            transform: translateX(2rem) translateY(-2rem) rotate(-30deg);
+  }
+}
+
+@keyframes movingF {
+  0% {
+    -webkit-transform: translateX(2rem) translateY(-2rem) rotate(-30deg);
+            transform: translateX(2rem) translateY(-2rem) rotate(-30deg);
+  }
+  50% {
+    -webkit-transform: translateX(4rem) translateY(2rem) rotate(-30deg);
+            transform: translateX(4rem) translateY(2rem) rotate(-30deg);
+  }
+  100% {
+    -webkit-transform: translateX(2rem) translateY(-2rem) rotate(-30deg);
+            transform: translateX(2rem) translateY(-2rem) rotate(-30deg);
+  }
+}
+
 @-webkit-keyframes movingPlanet {
   0% {
     -webkit-transform: translateX(-7rem) translateY(-5rem);
@@ -329,16 +359,67 @@ body {
   background: linear-gradient(200deg, #080f24 7%, #151f55 18%, #952b41 23%, #4d3e76 25%, #0a0f20 65%, #0a0f20 85%, #4d3e76 90%, #cf8caa 93%, #f2f3e1 100%);
 }
 
-nav {
+.audioBtn {
+  position: fixed;
+  top: 2rem;
+  right: 6rem;
+  width: 3rem;
+  height: 3rem;
+  z-index: 1100;
+}
+
+.audioBtn i {
+  font-size: 3rem;
+  color: #fff;
+}
+
+.audioBtn:hover {
+  cursor: pointer;
+}
+
+.navBtn {
   position: fixed;
   top: 2rem;
   right: 2rem;
-  width: 5rem;
-  height: 5rem;
+  width: 3rem;
+  height: 3rem;
+  z-index: 1100;
 }
 
-nav:hover {
+.navBtn i {
+  font-size: 3rem;
+  color: #fff;
+}
+
+.navBtn:hover {
   cursor: pointer;
+}
+
+nav {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 25rem;
+  height: 100vh;
+  z-index: 1000;
+}
+
+nav .navMenu {
+  margin-left: 5rem;
+  margin-top: 10rem;
+}
+
+nav .navMenu a {
+  display: block;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  color: #000000;
+}
+
+nav .navMenu a:hover {
+  color: #fff;
 }
 
 .userBox {
@@ -721,8 +802,19 @@ nav:hover {
 }
 
 .introPage .introBox .bigInfoBox .hi_ah {
+  position: relative;
   display: inline-block;
   margin-left: 65%;
+}
+
+.introPage .introBox .bigInfoBox .hi_ah #sw-js-blob-svg {
+  position: absolute;
+  top: -10rem;
+  right: -10rem;
+  width: 30rem;
+  width: 30rem;
+  -webkit-animation: rotate_image  40s linear infinite;
+          animation: rotate_image  40s linear infinite;
 }
 
 .introPage .introBox .bigInfoBox .hi_ah .imgBox {
@@ -1393,7 +1485,7 @@ nav:hover {
 
 .infoProjectPage .ororaBox .dropstar1 {
   position: absolute;
-  top: 25%;
+  top: 15%;
   left: 20%;
   width: 6rem;
   height: 6rem;
@@ -1734,6 +1826,7 @@ nav:hover {
   color: #fff;
   letter-spacing: 0.1rem;
   line-height: 3rem;
+  text-shadow: 0 0 1rem rgba(0, 0, 0, 0.7);
 }
 
 .infoProjectPage .info .icePage .iceWaveBox .iceWave a {
@@ -1811,13 +1904,15 @@ nav:hover {
 
 .infoProjectPage2 .gamePageBox .gameTextBox p {
   position: absolute;
-  bottom: 26rem;
+  bottom: 24rem;
   left: 50%;
   margin-left: -15rem;
   -webkit-transform: rotate(15deg);
           transform: rotate(15deg);
   font-size: 2rem;
   color: #fff;
+  letter-spacing: 0.2rem;
+  line-height: 2.7rem;
 }
 
 .infoProjectPage2 .gamePageBox .gameTextBox .gameBtn {
@@ -1924,7 +2019,7 @@ nav:hover {
 .infoProjectPage2 .moviePageBox .movieBox {
   position: absolute;
   top: 10%;
-  left: -20rem;
+  left: 0rem;
   -webkit-filter: drop-shadow(0 0 12rem rgba(0, 0, 0, 0.7));
           filter: drop-shadow(0 0 12rem rgba(0, 0, 0, 0.7));
 }
@@ -1932,7 +2027,7 @@ nav:hover {
 .infoProjectPage2 .moviePageBox .movieBox .movieTicket {
   position: absolute;
   top: 0;
-  right: -18rem;
+  right: -10rem;
   width: 40rem;
   height: 70rem;
   background-color: #f3b4d8;
@@ -1952,6 +2047,50 @@ nav:hover {
   height: 40%;
 }
 
+.infoProjectPage2 .moviePageBox .movieBox .movieTicket .movieTicketBox .upBox .movieBtn {
+  display: inline-block;
+  width: 30rem;
+  text-align: center;
+  border-radius: 1rem;
+  position: absolute;
+  top: 20rem;
+  left: 50%;
+  margin-left: -15rem;
+  font-size: 3rem;
+  background-color: #ef9fcc;
+}
+
+.infoProjectPage2 .moviePageBox .movieBox .movieTicket .movieTicketBox .upBox .movieBtn i {
+  font-size: 3.5rem;
+}
+
+.infoProjectPage2 .moviePageBox .movieBox .movieTicket .movieTicketBox .upBox .movieBtn:hover {
+  cursor: pointer;
+  background-color: #ea80bc;
+}
+
+.infoProjectPage2 .moviePageBox .movieBox .movieTicket .movieTicketBox .upBox .moviePPTBtn {
+  display: inline-block;
+  width: 30rem;
+  text-align: center;
+  border-radius: 1rem;
+  position: absolute;
+  top: 35rem;
+  left: 50%;
+  margin-left: -15rem;
+  font-size: 3rem;
+  background-color: #ef9fcc;
+}
+
+.infoProjectPage2 .moviePageBox .movieBox .movieTicket .movieTicketBox .upBox .moviePPTBtn i {
+  font-size: 3.5rem;
+}
+
+.infoProjectPage2 .moviePageBox .movieBox .movieTicket .movieTicketBox .upBox .moviePPTBtn:hover {
+  cursor: pointer;
+  background-color: #ea80bc;
+}
+
 .infoProjectPage2 .moviePageBox .movieBox .movieTicket .movieTicketBox .upBox h1 {
   display: inline-block;
   text-align: center;
@@ -1968,8 +2107,13 @@ nav:hover {
 }
 
 .infoProjectPage2 .moviePageBox .movieBox .movieTicket .movieTicketBox .upBox p {
+  position: absolute;
+  top: 11rem;
+  left: 8rem;
   font-size: 2rem;
   color: #fff;
+  letter-spacing: 0.1rem;
+  line-height: 2.8rem;
 }
 
 .infoProjectPage2 .moviePageBox .movieBox .movieTicket .movieTicketBox .downBox {
@@ -2016,44 +2160,6 @@ nav:hover {
   height: 55rem;
   background: linear-gradient(50deg, #6a7eb8 70%, #fff 80%, #6a7eb8 100%);
   border-radius: 3rem;
-}
-
-.infoProjectPage2 .moviePageBox .movieBox .moviePlanet .movieBtn {
-  display: inline-block;
-  width: 30rem;
-  text-align: center;
-  background-color: #a2aade;
-  border-radius: 1rem;
-  position: absolute;
-  bottom: 10rem;
-  left: 50%;
-  margin-left: -15rem;
-  font-size: 3rem;
-}
-
-.infoProjectPage2 .moviePageBox .movieBox .moviePlanet .movieBtn i {
-  font-size: 3.5rem;
-}
-
-.infoProjectPage2 .moviePageBox .movieBox .moviePlanet .movieBtn:hover {
-  cursor: pointer;
-  background-color: #21174a;
-}
-
-.infoProjectPage2 .moviePageBox .movieBox .moviePlanet h2 {
-  display: inline-block;
-  width: 30rem;
-  text-align: center;
-  position: absolute;
-  bottom: 8rem;
-  left: 10%;
-  font-size: 3.5rem;
-  color: #fff;
-}
-
-.infoProjectPage2 .moviePageBox .movieBox .moviePlanet h2 i {
-  color: #fff;
-  font-size: 6rem;
 }
 
 .infoProjectPage2 .moviePageBox .alienBox {
@@ -2370,17 +2476,175 @@ nav:hover {
 }
 
 .endPage .ah_infoBox .textBox {
-  margin-top: 10%;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  width: 66rem;
+  margin-left: -33rem;
   color: white;
 }
 
 .endPage .ah_infoBox .textBox p {
   font-size: 3rem;
+  text-shadow: 0 0 2rem black;
+}
+
+.endPage .ah_infoBox .contactBox {
+  width: 100%;
+  text-align: left;
+  margin-left: 3rem;
+  padding-top: 3rem;
+}
+
+.endPage .ah_infoBox .contactBox ul {
+  list-style: none;
+}
+
+.endPage .ah_infoBox .contactBox li {
+  margin-bottom: 0.5rem;
+}
+
+.endPage .ah_infoBox .contactBox li a {
+  color: #fff;
+  letter-spacing: 0.2rem;
+  line-height: 2.5rem;
+  font-size: 1.7rem;
+}
+
+.endPage .ah_infoBox .contactBox li a i {
+  font-size: 2rem;
+  color: #fff;
+  vertical-align: sub;
+}
+
+.endPage .ah_infoBox .contactBox li a:hover {
+  color: #c6cbf6;
+}
+
+.endPage .ah_infoBox .contactBox li a:hover i {
+  font-size: 2rem;
+  color: #c6cbf6;
+  vertical-align: sub;
+}
+
+.endPage .ah_infoBox .contactBox div {
+  display: inline-block;
+  margin-right: 0.8rem;
+}
+
+.endPage .ah_infoBox .contactBox div a {
+  color: #fff;
+  font-size: 2rem;
+}
+
+.endPage .ah_infoBox .contactBox div a i {
+  font-size: 2rem;
+  color: #fff;
+}
+
+.endPage .ah_infoBox .contactBox div a:hover {
+  color: #c6cbf6;
+}
+
+.endPage .ah_infoBox .contactBox div a:hover i {
+  color: #c6cbf6;
 }
 
 .endPage .midleBox {
   width: 100%;
   height: 33%;
+  position: relative;
+  background-image: url("./IMG/back/endback.svg");
+}
+
+.endPage .midleBox .wBox {
+  width: 100%;
+  height: 100%;
+}
+
+.endPage .midleBox .wBox .w1 {
+  width: 80rem;
+  position: absolute;
+  bottom: 0;
+  left: -10rem;
+  -webkit-filter: drop-shadow(0 0 3rem rgba(207, 202, 255, 0.3));
+          filter: drop-shadow(0 0 3rem rgba(207, 202, 255, 0.3));
+}
+
+.endPage .midleBox .f1 {
+  position: absolute;
+  bottom: 0%;
+  left: 10%;
+  width: 5rem;
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
+}
+
+.endPage .midleBox .f2 {
+  position: absolute;
+  bottom: 40%;
+  left: 60%;
+  width: 5rem;
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
+}
+
+.endPage .midleBox .f3 {
+  position: absolute;
+  bottom: 40%;
+  left: 40%;
+  width: 5rem;
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
+  -webkit-animation: movingF 10s ease-in-out infinite;
+          animation: movingF 10s ease-in-out infinite;
+}
+
+.endPage .midleBox .f4 {
+  position: absolute;
+  bottom: 30%;
+  left: 10%;
+  width: 5rem;
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
+}
+
+.endPage .midleBox .f5 {
+  position: absolute;
+  bottom: 40%;
+  left: 10%;
+  width: 5rem;
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
+  -webkit-animation: movingF 5s ease-in-out infinite;
+          animation: movingF 5s ease-in-out infinite;
+}
+
+.endPage .midleBox .f6 {
+  position: absolute;
+  bottom: 80%;
+  left: 30%;
+  width: 5rem;
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
+}
+
+.endPage .midleBox .star2 {
+  position: absolute;
+  bottom: 20%;
+  left: 30%;
+  width: 10rem;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.endPage .midleBox .star {
+  position: absolute;
+  bottom: 50%;
+  left: 6%;
+  width: 15rem;
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
 }
 
 .endPage .webSiteBox {

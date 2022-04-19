@@ -1,4 +1,5 @@
 window.onload = () => {
+  let audio = document.querySelector("#audio");
   // window.scrollTo({ top: 31161 });
   let displayAH = () => {
     setTimeout(()=>{
@@ -9,6 +10,22 @@ window.onload = () => {
   }
   displayAH();
 
+  $(".audioBtn").on("click",()=>{
+    if(audio.paused){
+      $(".audioBtn >i").removeClass('xi-play-circle');
+      $(".audioBtn >i").addClass('xi-pause-circle');
+      audio.play();
+    }else{
+      $(".audioBtn >i").removeClass('xi-pause-circle');
+      $(".audioBtn >i").addClass('xi-play-circle');
+      audio.pause(); 
+    }
+  });
+
+  $(".navBtn").on("click",()=>{
+    // console.log("a");
+    $("nav").fadeToggle("fast");
+  });
 
   gsap.registerPlugin(ScrollTrigger);
   gsap.from(".introGuidance", { //드래그
@@ -278,7 +295,7 @@ window.onload = () => {
     },
     x: 0, y: 150, duration: 1, opacity: 1,
   });
-  gsap.from(".moviePlanet", { //달
+  gsap.from(".moviePlanet", { //영화
     scrollTrigger: {
       trigger: ".moviePlanet",
       // markers: true,
@@ -317,6 +334,17 @@ window.onload = () => {
     },
     x: 0, y: 0, duration: 1, opacity: 1,
   });
+  gsap.from(".wBox", { //고래
+    scrollTrigger: {
+      trigger: ".wBox",
+      // markers: true,
+      start: "bottom bottom",
+      scrub: true,
+    },
+    x: 500, y: -1000, duration: 1, opacity: 0, rotation: -20,
+
+  });
+
 }
 
 $(window).scroll(function () {
@@ -324,7 +352,7 @@ $(window).scroll(function () {
     $(".meBox").fadeIn();
     $(".userBox").stop();
     $(".userBox").animate({bottom: '-35%'},1000, 'swing');
-  }else if($(document).scrollTop() >= 637 && $(document).scrollTop() <= 2289){
+  }else if($(document).scrollTop() >= 637 && $(document).scrollTop() <= 1000){
     $(".meBox").fadeOut();
     $(".userBox").stop();
     $(".userBox").animate({bottom: '35%'},1000, 'swing');
