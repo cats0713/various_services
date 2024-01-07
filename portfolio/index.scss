@@ -411,95 +411,11 @@ nav{
 
 .introPage{
   width: 100%;
-  height: 400rem;
+  height: 300rem;
   overflow: hidden;
-  .cloudBox{
-    position: relative;
-    width: 100%;
-    height: 30%;
-    .backgroundStar{
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      // animation: twinkle 2s ease-in-out infinite; 
-    }
-    .airplane{
-      width: 13rem;
-      height: 13rem;
-      position: absolute;
-      bottom: 35%;
-      left: 70%;
-    }
-    .cloudBack1{
-      position: absolute;
-      top: 10%;
-      left: 10%;
-      opacity: 0.8;
-      width: 70rem;
-      height: 40rem;
-      img{
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-      }
-      .c1{
-        position: absolute;
-        bottom: -4rem;
-        right: 12rem;
-        width: 25rem;
-        height: 25rem;
-        border-radius: 50%;
-        background-color: white;
-      }
-      .c2{
-        position: absolute;
-        bottom: -8rem;
-        left: 16rem;
-        width: 25rem;
-        height: 25rem;
-        border-radius: 50%;
-        background-color: white; 
-      }
-    }
-    .cloudBack2{
-      position: absolute;
-      bottom: 10%;
-      right: 10%;
-      opacity: 0.8;
-      width: 70rem;
-      height: 40rem;
-      img{
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-      }
-      .c1{
-        position: absolute;
-        bottom: -4rem;
-        right: 12rem;
-        width: 25rem;
-        height: 25rem;
-        border-radius: 50%;
-        background-color: white;
-
-      }
-      .c2{
-        position: absolute;
-        bottom: -8rem;
-        left: 16rem;
-        width: 25rem;
-        height: 25rem;
-        border-radius: 50%;
-        background-color: white; 
-      }
-    }
-  }
   .introBox{ //intro mainBox
     width: 100%;
-    height:45%;
+    height:60%;
     position: relative;
     // background-color: rgba($color: #000000, $alpha: .7);
     .sunBox{
@@ -626,7 +542,7 @@ nav{
   .mountainBox{
     position: relative;
     width: 100%;
-    height: 25%;
+    height: 40%;
     background-image: url("./IMG/mountain/mountain1.svg");
     background-size: cover;
     overflow: hidden;
@@ -636,7 +552,7 @@ nav{
       h1{
         font-size: 3rem;
         font-weight: 100;
-        color: $main_black;
+        color: #ebdbe2;
         // text-shadow: rgba($color: #000000, $alpha: .7);
         letter-spacing: 0.3rem;
         line-height: 3rem;
@@ -644,7 +560,7 @@ nav{
       h2{
         font-size: 2rem;
         font-weight: 100;
-        color: #a45d7b;
+        color: #ebdbe2;
         text-shadow: rgba($color: #000000, $alpha: .7);
         letter-spacing: 0.3rem;
         line-height: 6rem; 
@@ -653,14 +569,14 @@ nav{
         animation: arrow 2s ease-in-out infinite;
         font-size: 5rem;
         font-weight: lighter;
-        color: $main_black;
+        color: #ebdbe2;
       }
     }
     img{
       width: 100%;
       height: 120rem;
       position: absolute;
-      bottom: -17%;
+      bottom: 0%;
       left: 0;
       z-index: 200;
       object-fit: cover;
@@ -671,7 +587,7 @@ nav{
 
 .stackPage{
   width: 100%;
-  height: 400rem;
+  height: 200rem;
 
   .planetBox{
     position: relative;
@@ -916,7 +832,7 @@ nav{
   .planetBox2{
     position: relative;
     width: 100%;
-    height: 35%;
+    height: 70%;
     .planet{
       position: absolute;
       bottom: 30%;
@@ -938,7 +854,7 @@ nav{
       position: relative;
       width: 80rem;
       height: 50rem;
-      margin-left: -30%;
+      margin-left: -20%;
       background-image: url("./IMG/planet/nodejs.svg");
       .nodeBox{
         width: 100%;
@@ -1028,10 +944,10 @@ nav{
           position: absolute;
           top: 45%;
           left: 50%;
-          margin-top: -7.5rem;
-          margin-left: -7.5rem;
-          width: 15rem;
-          height: 15rem;
+          margin-top: -11rem;
+          margin-left: -13rem;
+          width: 24rem;
+          height: 24rem;
         }
         h1{
           position: absolute;
@@ -1045,12 +961,43 @@ nav{
           color: white;
         }
       }
+      .express{
+        position: relative;
+        margin-top: -20rem;
+        margin-right: -10rem;
+        width: 35rem;
+        height: 35rem;
+        animation: movingX 4s ease-in-out infinite;
+        img{
+          width: 100%;
+          height: 100%;
+        }
+        svg{
+          position: absolute;
+          top: 30%;
+          left: 50%;
+          margin-left: -6rem;
+          width: 12rem;
+          height: 12rem;
+        }
+        h1{
+          position: absolute;
+          bottom: 25%;
+          left: 50%;
+          margin-left: -5rem;
+          text-align: center;
+          display: inline-block;
+          width: 10rem;
+          font-size: 2rem;
+          color: white;
+        }
+      }
     }
   }
   .moonBox{
     position: relative;
     width: 100%;
-    height: 30%;
+    height: 40%;
     h1{
       position: absolute;
       top: 20%;
@@ -1211,10 +1158,10 @@ nav{
     .planet4{
       position: absolute;
       bottom: 6%;
-      right: 80%;
+      left: 40%;
       width: 8rem;
       height: 8rem;
-      background-image: url("./IMG/deco/planet11.svg");
+      background-image: url("./IMG/deco/planet12.svg");
       background-repeat: no-repeat;
       background-size: cover;
       // animation: movingX 2s ease-in-out infinite;  
@@ -1290,6 +1237,37 @@ nav{
             display: inline-block;
             width: 20rem;
             font-size: 6rem;
+            color: white;
+          }
+        }
+        .express{
+          position: relative;
+          margin-top: -10rem;
+          margin-right: 10rem;
+          width: 40rem;
+          height: 40rem;
+          animation: movingPlanet 4s ease-in-out infinite;
+          img{
+            width: 100%;
+            height: 100%;
+          }
+          svg{
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            margin-left: -8rem;
+            width: 15rem;
+            height: 15rem;
+          }
+          h1{
+            position: absolute;
+            bottom: 25%;
+            left: 50%;
+            margin-left: -5rem;
+            text-align: center;
+            display: inline-block;
+            width: 10rem;
+            font-size: 2rem;
             color: white;
           }
         }

@@ -6,7 +6,7 @@ window.onload = () => {
       $(".img2").fadeToggle('slow');
       console.log("a");
       displayAH();
-    },5000);
+    },3500);
   }
   displayAH();
 
@@ -141,11 +141,11 @@ window.onload = () => {
     scrollTrigger: {
       trigger: ".nodejsPlanet",
       // markers: true,
-      start: "top center",
+      start: "bottom center",
       scrub: true,
       // pin: true,
     },
-    x: 500, y: 0, duration: 1,
+    x: 300, y: 0, duration: 1,
   });
   gsap.from(".jsPlanet", { //js
     scrollTrigger: {
